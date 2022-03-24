@@ -3,7 +3,24 @@
   color: white;
   position: relative;
 }
-
+.show > .btn-primary.dropdown-toggle,
+.show > .btn-primary.dropdown-toggle:hover,
+.show > .btn-primary.dropdown-toggle:focus,
+.btn-primary,
+.btn-primary:focus,
+.btn-primary:hover {
+  color: black;
+  background-color: black;
+  border-color: black;
+  box-shadow: 0 0 0 0.25rem rgb(49 132 253 / 0%);
+}
+.dropdown-toggle::after {
+  display: none;
+}
+.navigation .show {
+  width: max-content;
+  min-width: 100%;
+}
 .btnMenu {
   width: 90px;
   height: 90px;
@@ -20,13 +37,17 @@
 .abierto {
   display: block;
   opacity: 0.91;
-  position: absolute;
-  bottom: 7rem;
 }
 .cerrado {
   display: none;
 }
-
+.subMenu {
+  position: absolute;
+  bottom: -2rem;
+  left: 0;
+  right: 0;
+  background-color: black;
+}
 .subMenu-hijos {
   padding: 0.5rem 0;
   width: 60%;
