@@ -1,4 +1,3 @@
-import { Container, Row, Col, Image } from "react-bootstrap";
 import "./css/homeStyles.css";
 import React from "react";
 import Tablas from "../img/productos/tablas";
