@@ -9,25 +9,43 @@ function Shop(props) {
   return (
     <div className="container">
       <Navbar />
-      <div id="Tablas" className="row m-3">
+      <div id="Tablas" className="row m-3 g-3">
         <h2 className="mt-4">Tablas</h2>
 
-        <div className="col">{<img src={`${tabla}`} alt="tabla" />}</div>
-        <div className="col">{<img src={`${tabla}`} alt="tabla" />}</div>
+        <div className="col p-5 rounded shadow">
+          {<img src={`${tabla}`} alt="tabla" />}
+        </div>
+        <div className="col p-5 rounded shadow">
+          {<img src={`${tabla}`} alt="tabla" />}
+        </div>
 
-        <div className="col">{<img src={`${tabla}`} alt="tabla" />}</div>
+        <div className="col p-5 rounded shadow">
+          {<img src={`${tabla}`} alt="tabla" />}
+        </div>
       </div>
-      <div id="Hardware" className="row m-3">
+      <div id="Hardware" className="row m-3 g-3">
         <h2 className="mt-4">Hardware</h2>
-        <div className="col">{<img src={`${hardware}`} alt="tabla" />}</div>
-        <div className="col">{<img src={`${hardware}`} alt="tabla" />}</div>
-        <div className="col">{<img src={`${hardware}`} alt="tabla" />}</div>
+        <div className="col p-5 rounded shadow">
+          {<img src={`${hardware}`} alt="tabla" />}
+        </div>
+        <div className="col p-5 rounded shadow">
+          {<img src={`${hardware}`} alt="tabla" />}
+        </div>
+        <div className="col p-5 rounded shadow">
+          {<img src={`${hardware}`} alt="tabla" />}
+        </div>
       </div>
-      <div id="Ropa" className="row m-3">
+      <div id="Ropa" className="row m-3 g-3">
         <h2 className="mt-4">Ropa</h2>
-        <div className="col">{<img src={`${ropa}`} alt="tabla" />}</div>
-        <div className="col">{<img src={`${ropa}`} alt="tabla" />}</div>
-        <div className="col">{<img src={`${ropa}`} alt="tabla" />}</div>
+        <div className="col p-5 rounded shadow">
+          {<img src={`${ropa}`} alt="tabla" />}
+        </div>
+        <div className="col p-5 rounded shadow">
+          {<img src={`${ropa}`} alt="tabla" />}
+        </div>
+        <div className="col p-5 rounded shadow">
+          {<img src={`${ropa}`} alt="tabla" />}
+        </div>
       </div>
     </div>
   );
