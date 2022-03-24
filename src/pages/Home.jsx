@@ -1,7 +1,7 @@
 import { Container, Row, Col } from "react-bootstrap";
 import "./css/homeStyles.css";
 
-function HomePage() {
+function Home() {
   return (
     <>
       {/*       <div className="w-100 h-100">
@@ -38,4 +38,4 @@ function HomePage() {
   );
 }
 
-export default HomePage;
+export default Home;
