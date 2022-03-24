@@ -1,13 +1,14 @@
-.nav {
+.navigation {
   background-color: black;
   color: white;
+  position: relative;
 }
 
 .btnMenu {
   width: 90px;
   height: 90px;
-  border: 5px solid white;
-  border-radius: 50%;
+  /* border: 5px solid white;
+  border-radius: 50%; */
 }
 .btnMenu img {
   width: 100%;
@@ -18,32 +19,32 @@
 }
 .abierto {
   display: block;
-  width: 20%;
-  transition: all 5000s ease;
   opacity: 0.91;
+  position: absolute;
+  bottom: 7rem;
 }
 .cerrado {
   display: none;
 }
-.subMenu {
-  display: flex;
-  width: 100vw;
-  color: black;
-  background-color: white;
-  transition: all 5000s ease;
-  padding-left: 0;
-  background-color: black;
-}
+
 .subMenu-hijos {
   padding: 0.5rem 0;
+  width: 60%;
   cursor: pointer;
   color: white;
-  margin: 0 auto;
   z-index: 20;
   color: white;
-  padding: 1rem;
 }
 .subMenu-hijos:hover {
   background-color: white;
   color: black;
+}
+
+/* Boton del carrito */
+
+.btnCarrito i {
+  font-size: 2rem;
+}
+.btnCarrito i:hover {
+  cursor: pointer;
 }
