@@ -1,6 +1,6 @@
 import React from "react";
 // import { Link } from "react-router-dom";
-import "./Footer.css";
+import "./css/Footer.css";
 function Footer() {
   return (
     <div className="colorFooter text-white mb-0 mt-auto sticky-bottom">

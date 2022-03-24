@@ -1,5 +1,5 @@
 import React from "react";
-import "./NavegationBar.css";
+import "./css/NavegationBar.css";
 import { useState } from "react";
 // import { Nav, Navbar, NavDropdown } from "react-bootstrap";
 
