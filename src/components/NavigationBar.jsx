@@ -1,25 +1,25 @@
 import React from "react";
 import "./css/NavigationBar.css";
 import { useState } from "react";
-// import { Nav, Navbar, NavDropdown } from "react-bootstrap";
+import logo from "../img/logos/imagotipoNegro.png";
 
-import "bootstrap/dist/css/bootstrap.min.css";
 function NavigationBar() {
   const [open, setOpen] = useState(false);
 
   return (
     <>
-      <div className="text-dark">
-        <div className="position-relative container bg-transparent p-3 d-flex justify-content-between">
-          <div className="btnMenu">
-            <button
-              className="btn"
-              onClick={() => {
-                setOpen((prev) => !prev);
-              }}
-            >
-              Menu
-            </button>
+      <div className="nav">
+        <div className="position-relative container bg-transparent p-3 d-flex justify-content-between align-items-center">
+          <div
+            className="d-flex align-items-center"
+            onClick={() => {
+              setOpen((prev) => !prev);
+            }}
+          >
+            <div className="btnMenu">
+              <img src={`${logo}`} alt="Logo" />
+            </div>
+            <h2 className="ps-2 btn text-white">Inicio</h2>
           </div>
           <div className="">
             <i className="bi bi-cart3"></i>

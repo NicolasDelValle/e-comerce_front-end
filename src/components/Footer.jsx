@@ -9,7 +9,7 @@ function Footer() {
           <h5>LOSI</h5>
           <p>Todos los derechos reservados </p>
         </div>
-        <ul className="d-flex justify-content-between align-item-center">
+        <ul className="d-flex justify-content-between align-item-center ">
           <li>Home</li>
           <li>Productos</li>
           <li>Sobre el proyecto</li>
