@@ -1,9 +1,9 @@
 import { Container, Row, Col } from "react-bootstrap";
 import { useEffect } from "react";
 import "./css/homeStyles.css";
-import prod1 from "../img/productos/tabla.png";
-import prod2 from "../img/productos/tabla2.png";
-import prod3 from "../img/productos/tabla3color.png";
+import prod1 from "../img/productos/tablas/tabla.png";
+import prod2 from "../img/productos/tablas/tabla2.png";
+import prod3 from "../img/productos/tablas/tabla3color.png";
 
 function Home() {
   return (
