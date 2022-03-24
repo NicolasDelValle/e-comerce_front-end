@@ -15,7 +15,14 @@ function Home() {
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
         }}
-      ></section>
+      >
+        <div>
+          <button>
+            hola
+            <i class="bi bi-caret-down-fill"></i>
+          </button>
+        </div>
+      </section>
       <section className="vw-100 vh-100">
         <Container>
           <div>
