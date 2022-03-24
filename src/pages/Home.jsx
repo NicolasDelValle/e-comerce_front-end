@@ -1,23 +1,21 @@
 import { Container, Row, Col } from "react-bootstrap";
+import { useEffect } from "react";
 import "./css/homeStyles.css";
+import prod1 from "../img/productos/tabla.png";
+import prod2 from "../img/productos/tabla2.png";
+import prod3 from "../img/productos/tabla3color.png";
 
-function HomePage() {
+function Home() {
   return (
-    <>
-      {/*       <div className="w-100 h-100">
-        
-      </div> */}
+    <div className="scrollContainer" id="scrollContainer">
       <section
-        className="vw-100 vh-100"
+        className="vw-100 vh-100 mb-5"
         style={{
           backgroundImage: "url(https://wallpaper.dog/large/5450544.jpg)",
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
         }}
-      >
-        {" "}
-        <h1 className="bg-primary">Esto es por si queres meterle mas cosas</h1>
-      </section>
+      ></section>
       <section className="vw-100 vh-100">
         <Container>
           <div>
@@ -27,15 +25,32 @@ function HomePage() {
               </h2>
             </div>
             <Row>
-              <Col>Esto es un producto</Col>
-              <Col>Esto es un producto</Col>
-              <Col>Esto es un producto</Col>
+              <Col className="productCard m-3 py-3 ">
+                <img width="120px" height="440" src={prod1} alt="tabla 1" />
+              </Col>
+              <Col className="productCard m-3 py-3 ">
+                <img width="120px" height="440" src={prod2} alt="tyabla 2" />
+              </Col>
+              <Col className="productCard m-3 py-3 ">
+                <img width="120px" height="440" src={prod3} alt="tabla 3" />
+              </Col>
+            </Row>
+            <Row>
+              <Col className="productCard m-3 py-3 ">
+                <img width="120px" height="440" src={prod1} alt="tabla 1" />
+              </Col>
+              <Col className="productCard m-3 py-3 ">
+                <img width="120px" height="440" src={prod2} alt="tyabla 2" />
+              </Col>
+              <Col className="productCard m-3 py-3 ">
+                <img width="120px" height="440" src={prod3} alt="tabla 3" />
+              </Col>
             </Row>
           </div>
         </Container>
       </section>
-    </>
+    </div>
   );
 }
 
-export default HomePage;
+export default Home;
