@@ -1,0 +1,33 @@
+.abierto {
+  display: block;
+  width: 20%;
+  transition: all 5000s ease;
+  opacity: 0.91;
+}
+.cerrado {
+  display: none;
+}
+
+.subMenu {
+  display: flex;
+  width: 100vw;
+  color: black;
+  background-color: white;
+  transition: all 5000s ease;
+  padding-left: 0;
+  background-color: black;
+}
+.subMenu-hijos {
+  padding: 0.5rem 0;
+  cursor: pointer;
+  color: white;
+  margin: 0 auto;
+  /* border-radius: 50px; */
+  z-index: 20;
+  color: white;
+  padding: 1rem;
+}
+.subMenu-hijos:hover {
+  background-color: white;
+  color: black;
+}
