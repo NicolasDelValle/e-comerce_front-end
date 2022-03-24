@@ -13,42 +13,42 @@ function Shop(props) {
         <h2 className="mt-4">Tablas</h2>
 
         <div className="col-md-4 p-5 rounded shadow">
-          {<img src={`${tabla}`} alt="tabla" />}
+          {<img width="120px" height="440" src={`${tabla}`} alt="tabla" />}
         </div>
         <div className="col-md-4 p-5 rounded shadow">
-          {<img src={`${tabla}`} alt="tabla" />}
+          {<img width="120px" height="440" src={`${tabla}`} alt="tabla" />}
         </div>
 
         <div className="col-md-4 p-5 rounded shadow">
-          {<img src={`${tabla}`} alt="tabla" />}
+          {<img width="120px" height="440" src={`${tabla}`} alt="tabla" />}
         </div>
       </div>
       <div id="Hardware" className="row m-3 g-3">
         <h2 className="mt-4">Hardware</h2>
         <div className="col-md-4 p-5 rounded shadow">
-          {<img src={`${hardware}`} alt="tabla" />}
+          {<img width="120px" height="440" src={`${hardware}`} alt="tabla" />}
         </div>
         <div className="col-md-4 p-5 rounded shadow">
-          {<img src={`${hardware}`} alt="tabla" />}
+          {<img width="120px" height="440" src={`${hardware}`} alt="tabla" />}
         </div>
         <div className="col-md-4 p-5 rounded shadow">
-          {<img src={`${hardware}`} alt="tabla" />}
+          {<img width="120px" height="440" src={`${hardware}`} alt="tabla" />}
         </div>
       </div>
       <div id="Ropa" className="row m-3 g-3">
         <h2 className="mt-4">Ropa</h2>
         <div className="col-md-4 p-5 rounded shadow">
-          {<img src={`${ropa}`} alt="tabla" />}
+          {<img width="120px" height="440" src={`${ropa}`} alt="tabla" />}
         </div>
         <div className="col-md-4 p-5 rounded shadow">
-          {<img src={`${ropa}`} alt="tabla" />}
+          {<img width="120px" height="440" src={`${ropa}`} alt="tabla" />}
         </div>
         <div className="col-md-4 p-5 rounded shadow">
-          {<img src={`${ropa}`} alt="tabla" />}
+          {<img width="120px" height="440" src={`${ropa}`} alt="tabla" />}
         </div>
       </div>
     </div>
   );
 }
 
-// export default Shop;
+export default Shop;
