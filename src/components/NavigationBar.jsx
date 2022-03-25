@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Dropdown } from "react-bootstrap";
 import "./css/NavigationBar.css";
-import imagotipoNegro from "../img/logos/imagotipoNegro.png";
+
 import logoBlanco from "../img/logos/logoBlanco.png";
 
 function NavigationBar() {
@@ -10,72 +10,73 @@ function NavigationBar() {
     <>
       <div className="navigation mb-5">
         <div className="container">
-          <div className="mx-auto">
-            <Dropdown>
-              <div className="bg-transparent d-flex align-items-center justify-content-between  p-0 ">
-                <Link
-                  to={"/"}
-                  className="btn text-white text-decoration-none d-none d-sm-block h1"
+          <Dropdown>
+            <div className="bg-transparent p-0 ">
+              <Dropdown.Toggle
+                title="Menu"
+                className="d-flex align-items-center justify-content-between w-100"
+              >
+                <div
+                  className="text-white  text-decoration-none d-flex align-items-center w-25"
                   title="Boton de inicio"
                 >
-                  <p className="">Home</p>
-                </Link>
-                <Dropdown.Toggle title="Menu">
-                  <div className="experimento">
+                  <p className="text-white text-center mb-0 fs-2">Menu</p>
+                </div>
+                <div className="w-25">
+                  <Link to="/">
                     <img
-                      className="btnMenu"
-                      src={`${imagotipoNegro}`}
+                      className="btnMenu d-none d-sm-flex"
+                      src={`${logoBlanco}`}
                       alt="Logo"
                     />
-                    <img className="btnMenu" src={`${logoBlanco}`} alt="Logo" />
-                  </div>
-                </Dropdown.Toggle>
+                  </Link>
+                </div>
                 {/* Carrito */}
                 <Link
-                  to="/shop"
-                  className="text-white d-none d-sm-flex align-items-center btnCarrito"
+                  to="/"
+                  className="text-white align-items-center btnCarrito w-25"
                   title="Carrito de compras"
                 >
-                  <i className="bi bi-cart3 pe-2"></i>
+                  <i className="bi bi-cart3 pe-2 ms-auto"></i>
                 </Link>
-              </div>
-              <Dropdown.Menu className="mt-1 submenu">
-                <div className="row text-center px-2">
-                  <div className="col-md-3">
-                    <Dropdown.Item>
-                      <Link to={"/"} className="btn text-decoration-none">
-                        <strong>Home</strong>
-                      </Link>
-                    </Dropdown.Item>
-                  </div>
-                  <div className="col-md-3">
-                    <Dropdown.Item>
-                      <Link to={"/shop"} className="btn text-decoration-none">
-                        <strong>Productos</strong>
-                      </Link>
-                    </Dropdown.Item>
-                  </div>
-                  <div className="col-md-3">
-                    <Dropdown.Item>
-                      <Link
-                        to={"/aboutus"}
-                        className="btn text-decoration-none"
-                      >
-                        <strong>Sobre el Proyecto</strong>
-                      </Link>
-                    </Dropdown.Item>
-                  </div>
-                  <div className="col-md-3">
-                    <Dropdown.Item>
-                      <Link to={"/"} className="btn text-decoration-none">
-                        <strong>Sobre Nosotros</strong>
-                      </Link>
-                    </Dropdown.Item>
-                  </div>
+              </Dropdown.Toggle>
+            </div>
+            <Dropdown.Menu className="mt-1 submenu">
+              <div className="row text-center px-2">
+                <div className="col-md-3">
+                  <Dropdown.Item>
+                    <Link to={"/"} className="btn text-decoration-none">
+                      <strong>Home</strong>
+                    </Link>
+                  </Dropdown.Item>
                 </div>
-              </Dropdown.Menu>
-            </Dropdown>
-          </div>
+                <div className="col-md-3">
+                  <Dropdown.Item>
+                    <Link to={"/shop"} className="btn text-decoration-none">
+                      <strong>Products</strong>
+                    </Link>
+                  </Dropdown.Item>
+                </div>
+                <div className="col-md-3">
+                  <Dropdown.Item>
+                    <Link
+                      to={"/aboutproject"}
+                      className="btn text-decoration-none"
+                    >
+                      <strong>About Project</strong>
+                    </Link>
+                  </Dropdown.Item>
+                </div>
+                <div className="col-md-3">
+                  <Dropdown.Item>
+                    <Link to={"/aboutus"} className="btn text-decoration-none">
+                      <strong>About Us</strong>
+                    </Link>
+                  </Dropdown.Item>
+                </div>
+              </div>
+            </Dropdown.Menu>
+          </Dropdown>
         </div>
       </div>
     </>

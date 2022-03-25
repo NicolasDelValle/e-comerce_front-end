@@ -1,29 +1,22 @@
 import React from "react";
 import { Link } from "react-router-dom";
-// import { Link } from "react-router-dom";
 import "./css/Footer.css";
 function Footer() {
   return (
-    <div className="colorFooter text-white mb-0 mt-auto sticky-bottom">
+    <div className="colorFooter text-white mb-0 mt-auto pt-2">
       <div className="footer container py-2">
         <div className="row text-start px-0 text-center">
-          <Link
-            to={"/"}
-            className="col-sm-4 mb-0 text-decoration-none text-white"
-          >
+          <Link to={"/"} className="col-sm-3 text-white">
             Home
           </Link>
-          <Link
-            to={"/shop"}
-            className="col-sm-4 mb-0 text-decoration-none text-white"
-          >
-            Productos
+          <Link to={"/shop"} className="col-sm-3 text-white">
+            Products
           </Link>
-          <Link
-            to={"/"}
-            className="col-sm-4 mb-0 text-decoration-none text-white"
-          >
-            Sobre el proyecto
+          <Link to={"/"} className="col-sm-3 text-white">
+            About Project
+          </Link>
+          <Link to={"/aboutus"} className="col-sm-3 text-white">
+            About Us
           </Link>
         </div>
         <div className="d-flex justify-content-between align-items-center pb-2 mx-auto">
@@ -45,7 +38,7 @@ function Footer() {
             <p className="">LOSI SKATE CO.</p>
           </div>
           <div className="col-sm-6">
-            <p className="mb-0 fs-6">Todos los derechos reservados </p>
+            <p className="mb-0 fs-6">All rights reserved</p>
           </div>
         </div>
       </div>
