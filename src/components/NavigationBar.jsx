@@ -33,7 +33,7 @@ function NavigationBar() {
                 </div>
                 {/* Carrito */}
                 <Link
-                  to="/"
+                  to="/checkout"
                   className="text-white d-flex justify-content-end align-items-center btnCarrito w-25"
                   title="Carrito de compras"
                 >

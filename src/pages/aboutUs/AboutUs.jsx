@@ -1,7 +1,7 @@
 import React from "react";
 import "./aboutUs.css";
-import Footer from "./Footer";
-import NavigationBar from "./NavigationBar";
+import Footer from "../../components/Footer";
+import NavigationBar from "../../components/NavigationBar";
 
 function AboutUs() {
   return (
@@ -17,7 +17,7 @@ function AboutUs() {
             <div className="about-main-option">DESARROLLADORES</div>
           </div>
         </div>
-        <div className="about-main-proyect">
+        {/* <div className="about-main-proyect">
           <p>
             LOSI SKATEBOARDS es una marca que nace Lorem ipsum dolor sit amet
             consectetur, adipisicing elit. Numquam, sequi maxime consequatur
@@ -50,10 +50,10 @@ function AboutUs() {
           <p>
             Para nuestro proyecto decidimos basarnos en el sitio web de Culto
             Café, tomando su diseño minimalista como la raíz de una página web
-            simple y fácil de usar pero atractiva y con detalles que destaquen,
-            propios de la identidad de la marca.
+            simple y fácil de usar, con detalles propios de la identidad de la marca.
           </p>
-        </div>
+        </div> */}
+
       </div>
       <Footer />
     </>

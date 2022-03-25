@@ -19,6 +19,7 @@ function Home() {
           <Container>
             <Row className="">
               <video
+                loop
                 width={100}
                 src={losiVideoWeb}
                 autoPlay={true}

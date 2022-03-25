@@ -1,8 +1,12 @@
 import React from "react";
+import Footer from "../../components/Footer";
+import NavigationBar from "../../components/NavigationBar";
 import "./checkOut.css";
 
 function CheckOut() {
   return (
+  <>
+  <NavigationBar />
   <div className="checkout-main-container">
     <div className="checkout-main-header">
       <h1>MI CARRITO</h1>
@@ -72,7 +76,10 @@ function CheckOut() {
     <div className="checkout-main-purchase">
       <h3 className="checkout-main-purchase-title">OPCIONES DE COMPRA</h3>
     </div>
-  </div>);
+  </div>
+  {/* <Footer /> */}
+  </>
+);
 }
 
 export default CheckOut;
