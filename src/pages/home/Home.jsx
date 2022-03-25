@@ -45,6 +45,8 @@ function Home() {
                     alt="tabla 1"
                   />
                   <p>Nombre: Producto</p>
+                  <p>$ 800</p>
+
                   <AddCart />
                 </Col>
                 <Col className="productCard m-3 py-3 rounded-circle">
@@ -56,6 +58,7 @@ function Home() {
                     alt="tyabla 2"
                   />{" "}
                   <p>Nombre: Producto</p>
+                  <p>$ 800</p>
                   <AddCart />
                 </Col>
                 <Col className="productCard m-3 py-3 rounded-circle">
@@ -67,6 +70,7 @@ function Home() {
                     alt="tabla 3"
                   />{" "}
                   <p>Nombre: Producto</p>
+                  <p>$ 800</p>
                   <AddCart />
                 </Col>
               </Row>
@@ -80,6 +84,8 @@ function Home() {
                     alt="tabla 1"
                   />
                   <p>Nombre: Producto</p>
+                  <p>$ 800</p>
+
                   <AddCart />
                 </Col>
                 <Col className="productCard m-3 py-3 ">
@@ -91,6 +97,7 @@ function Home() {
                     alt="tyabla 2"
                   />{" "}
                   <p>Nombre: Producto</p>
+                  <p>$ 800</p>
                   <AddCart />
                 </Col>
                 <Col className="productCard m-3 py-3 ">
@@ -102,6 +109,7 @@ function Home() {
                     alt="tabla 3"
                   />{" "}
                   <p>Nombre: Producto</p>
+                  <p>$ 800</p>
                   <AddCart />
                 </Col>
               </Row>
