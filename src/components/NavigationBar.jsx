@@ -8,7 +8,7 @@ import logoBlanco from "../img/logos/logoBlanco.png";
 function NavigationBar() {
   return (
     <>
-      <div className="navigation mb-5">
+      <div className="navigation">
         <div className="container px-0">
           <Dropdown>
             <div className="bg-transparent p-0 ">
@@ -20,12 +20,12 @@ function NavigationBar() {
                   className="text-white  text-decoration-none d-flex align-items-center w-25"
                   title="Boton de inicio"
                 >
-                  <p className="text-white text-center mb-0 fs-2">Menu</p>
+                  <p className="text-white text-center mb-0 fs-6">Menu</p>
                 </div>
                 <div className="w-25">
                   <Link to="/">
                     <img
-                      className="btnMenu d-none d-sm-flex"
+                      className="btnMenu d-none d-sm-flex py-2 w-50 mx-auto"
                       src={`${logoBlanco}`}
                       alt="Logo"
                     />
