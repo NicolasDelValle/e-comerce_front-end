@@ -14,24 +14,20 @@ function Home() {
   return (
     <>
       <NavigationBar />
-      <div className="homeScrollContainer">
-        <section>
-          <Container>
-            <Row className="">
-              <video
-                width={100}
-                src={losiVideoWeb}
-                autoPlay={true}
-                muted={true}
-              ></video>
+      <div className="homeScrollContainer ">
+        <div className="position-fixed w-100" style={{ zIndex: -1 }}>
+          <video
+            className="vw-100"
+            src={losiVideoWeb}
+            autoPlay={true}
+            muted={true}
+          />
+        </div>
 
-              <div className="mainLogo">
-                <img className="logo-overlay" src={losilogo} alt="losiLogo" />
-              </div>
-            </Row>
-          </Container>
+        <section className="d-flex align-items-center">
+          <img className="logo-overlay" src={losilogo} alt="losiLogo" />
         </section>
-        <section className="homeScrollContainer-seccion">
+        <section className="homeScrollContainer-seccion bg-light">
           <Container>
             <div>
               <div id="shop" className="border-bottom border-2">

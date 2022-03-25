@@ -8,7 +8,7 @@ import logoBlanco from "../img/logos/logoBlanco.png";
 function NavigationBar() {
   return (
     <>
-      <div className="navigation">
+      <div className="navigation position-fixed w-100">
         <div className="container px-0">
           <Dropdown>
             <div className="bg-transparent p-0 ">
