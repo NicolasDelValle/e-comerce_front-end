@@ -9,7 +9,7 @@ function NoMatch() {
       <div className="container">
         <p>Lo sentimos, la pagina que nos solicita no existe.</p>
       </div>
-      <Footer className="mb-0" />
+      <Footer />
     </>
   );
 }

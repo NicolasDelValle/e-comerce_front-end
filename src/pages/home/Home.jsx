@@ -56,7 +56,6 @@ function Home() {
             </Row>
           </div>
         </Container>
-        <Footer />
       </section>
     </div>
   );
