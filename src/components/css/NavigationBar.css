@@ -4,14 +4,14 @@
   position: relative;
 }
 /* Para quitar los estilos propios de Bootstrap */
-.show > .btn-primary.dropdown-toggle,
-.show > .btn-primary.dropdown-toggle:hover,
-.show > .btn-primary.dropdown-toggle:focus,
-.btn-check:focus.btn-primary,
-.btn-primary:focus,
-.btn-primary,
-.btn-primary:focus,
-.btn-primary:hover {
+.navigation .show > .btn-primary.dropdown-toggle,
+.navigation .show > .btn-primary.dropdown-toggle:hover,
+.navigation .show > .btn-primary.dropdown-toggle:focus,
+.navigation .btn-check:focus.btn-primary,
+.navigation .btn-primary:focus,
+.navigation .btn-primary,
+.navigation .btn-primary:focus,
+.navigation .btn-primary:hover {
   color: black;
   background-color: black;
   border-color: black;
@@ -28,7 +28,11 @@
   transform: inherit !important;
 }
 /* Fin de quitar los estilos propios de Bootstrap */
-
+.experimento {
+  border: 5px solid white;
+  border-radius: 50px;
+  padding: 0 3rem;
+}
 .btnMenu {
   width: 90px;
   height: 100%;
