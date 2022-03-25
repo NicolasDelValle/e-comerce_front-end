@@ -8,9 +8,9 @@ import Footer from "../../components/Footer";
 
 function Home() {
   return (
-    <div className="scrollContainer" id="scrollContainer">
+    <div className="homeScrollContainer ">
       <section
-        className="vw-100 vh-100 mb-5"
+        className="homeScrollContainer-seccion "
         style={{
           backgroundImage: "url(https://wallpaper.dog/large/5450544.jpg)",
           backgroundSize: "cover",
@@ -24,7 +24,7 @@ function Home() {
           </button>
         </div>
       </section>
-      <section className="vw-100 vh-100">
+      <section className="homeScrollContainer-seccion">
         <Container>
           <div>
             <div className="border-bottom border-2">
@@ -33,13 +33,13 @@ function Home() {
               </h2>
             </div>
             <Row>
-              <Col className="productCard m-3 py-3 ">
+              <Col className="productCard m-3 py-3">
                 <img width="120px" height="440" src={prod1} alt="tabla 1" />
               </Col>
-              <Col className="productCard m-3 py-3 ">
+              <Col className="productCard m-3 py-3 rounded-circle">
                 <img width="120px" height="440" src={prod2} alt="tyabla 2" />
               </Col>
-              <Col className="productCard m-3 py-3 ">
+              <Col className="productCard m-3 py-3 rounded-circle">
                 <img width="120px" height="440" src={prod3} alt="tabla 3" />
               </Col>
             </Row>

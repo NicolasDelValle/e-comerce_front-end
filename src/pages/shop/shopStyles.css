@@ -4,8 +4,7 @@
   scroll-snap-type: y mandatory;
 }
 section {
-  width: 100vw;
-  height: 100wh;
+  height: 100vh;
   scroll-snap-align: start;
 }
 

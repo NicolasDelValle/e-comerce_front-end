@@ -1,4 +1,4 @@
-const typess = {
+const types = {
   CREATE_USER: "CREATE_USER",
   DESTROY_USER: "LOGOUT_USER",
 
