@@ -3,9 +3,9 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./pages/home/Home";
 import Shop from "./pages/shop/Shop";
 import Product from "./pages/product/Product";
-import AboutUs from "./components/AboutUs";
+import AboutUs from "./pages/aboutUs/AboutUs";
 import NoMatch from "./components/NoMatch";
-import CheckOut from "./pages/checkOut/CheckOut"
+import CheckOut from "./pages/checkOut/CheckOut";
 
 function App() {
   return (
