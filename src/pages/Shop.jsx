@@ -12,7 +12,7 @@ function Shop(props) {
       <NavigationBar />
 
       <div className="container">
-        <div id="Tablas" className="row m-3 g-3">
+        <div id="Tablas" className="row m-3">
           <h2 className="mt-4">Tablas</h2>
 
           <div className="col-md-4 p-5 h-75 rounded">
@@ -26,7 +26,7 @@ function Shop(props) {
             {<img src={`${tabla}`} alt="tabla" />}
           </div>
         </div>
-        <div id="Hardware" className="row m-3 g-3">
+        <div id="Hardware" className="row m-3">
           <h2 className="mt-4">Hardware</h2>
           <div className="col-md-4 p-5 rounded">
             {<img src={`${hardware}`} alt="tabla" />}
@@ -38,7 +38,7 @@ function Shop(props) {
             {<img src={`${hardware}`} alt="tabla" />}
           </div>
         </div>
-        <div id="Ropa" className="row m-3 g-3">
+        <div id="Ropa" className="row m-3">
           <h2 className="mt-4">Ropa</h2>
           <div className="col-md-4 p-5 rounded">
             {<img src={`${ropa}`} alt="tabla" />}

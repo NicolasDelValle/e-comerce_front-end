@@ -1,26 +1,20 @@
 import { Container, Row, Col } from "react-bootstrap";
-
+import NavigationBar from "../components/NavigationBar";
 import "./css/homeStyles.css";
 import prod1 from "../img/productos/tablas/tabla.png";
 import prod2 from "../img/productos/tablas/tabla2.png";
 import prod3 from "../img/productos/tablas/tabla3color.png";
+import videoLosi from "../Videos/LosiwebLanding.mp4";
 
 function Home() {
   return (
     <div className="scrollContainer" id="scrollContainer">
-      <section
-        className="vw-100 vh-100 mb-5"
-        style={{
-          backgroundImage: "url(https://wallpaper.dog/large/5450544.jpg)",
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
-        }}
-      >
-        <div>
-          <button>
-            hola
-            <i class="bi bi-caret-down-fill"></i>
-          </button>
+      <section>
+        <NavigationBar />
+        <div width="100%">
+          <video loop autoPlay muted playsInline fluid={false} width="100%">
+            <source src={videoLosi} type="video/mp4" />
+          </video>
         </div>
       </section>
       <section className="vw-100 vh-100">
