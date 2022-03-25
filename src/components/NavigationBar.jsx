@@ -9,12 +9,12 @@ function NavigationBar() {
   return (
     <>
       <div className="navigation mb-5">
-        <div className="container">
+        <div className="container px-0">
           <Dropdown>
             <div className="bg-transparent p-0 ">
               <Dropdown.Toggle
                 title="Menu"
-                className="d-flex align-items-center justify-content-between w-100"
+                className="d-flex align-items-center justify-content-between w-100 px-0"
               >
                 <div
                   className="text-white  text-decoration-none d-flex align-items-center w-25"
@@ -34,10 +34,10 @@ function NavigationBar() {
                 {/* Carrito */}
                 <Link
                   to="/"
-                  className="text-white align-items-center btnCarrito w-25"
+                  className="text-white d-flex justify-content-end align-items-center btnCarrito w-25"
                   title="Carrito de compras"
                 >
-                  <i className="bi bi-cart3 pe-2 ms-auto"></i>
+                  <i className="bi bi-cart3  ms-auto"></i>
                 </Link>
               </Dropdown.Toggle>
             </div>

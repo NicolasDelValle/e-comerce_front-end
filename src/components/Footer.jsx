@@ -24,9 +24,10 @@ function Footer() {
             <div className="w-75 mx-auto ">
               <hr />
             </div>
-            Proyecto de Carlos Garcia Arocena y Thomas Hughes cuyo objetivo es
-            aportarle a la escena cultural del skate uruguayo una marca que
-            refleje los verdaderos valores del Skate.
+            Este proyecto consiste en la creación de un sitio web, donde se
+            volcaron todos los conocimientos obtenidos durante la cursada,
+            reflejandolos en las características y funcionalidades que se
+            esperan encontrar a diario en un e-commerce.
             <div className="w-75 mx-auto ">
               <hr />
             </div>
