@@ -10,46 +10,73 @@ import AddCart from "../../components/AddCart";
 function Shop(props) {
   return (
     <>
-      <NavigationBar />
+      <NavigationBar className="bg-dark" />
       <div className="section">
         <div className="container">
           <div id="Tablas" className="row m-3 g-3">
             <h2 className="mt-4">Tablas</h2>
 
-            <div className="col-md-4 p-5 h-75 rounded">
+            <div className="col-md-4 h-75 rounded">
               {<img src={`${tabla}`} alt="tabla" />}
+
+              <p>Nombre: Producto</p>
+              <p>$ 800</p>
               <AddCart />
             </div>
-            <div className="col-md-4 p-5 rounded">
+            <div className="col-md-4 rounded">
               {<img src={`${tabla}`} alt="tabla" />}
+              <p>Nombre: Producto</p>
+              <p>$ 800</p>
+              <AddCart />
             </div>
 
-            <div className="col-md-4 p-5 rounded">
+            <div className="col-md-4 rounded">
               {<img src={`${tabla}`} alt="tabla" />}
+              <p>Nombre: Producto</p>
+              <p>$ 800</p>
+              <AddCart />
             </div>
           </div>
           <div id="Hardware" className="row m-3 g-3">
             <h2 className="mt-4">Hardware</h2>
-            <div className="col-md-4 p-5 rounded">
+            <div className="col-md-4 rounded">
               {<img src={`${hardware}`} alt="tabla" />}
+              <p>Nombre: Producto</p>
+              <p>$ 800</p>
+              <AddCart />
             </div>
-            <div className="col-md-4 p-5 rounded">
+            <div className="col-md-4 rounded">
               {<img src={`${hardware}`} alt="tabla" />}
+              <p>Nombre: Producto</p>
+              <p>$ 800</p>
+              <AddCart />
             </div>
-            <div className="col-md-4 p-5 rounded">
+            <div className="col-md-4 rounded">
               {<img src={`${hardware}`} alt="tabla" />}
+              <p>Nombre: Producto</p>
+              <p>$ 800</p>
+              <AddCart />
             </div>
           </div>
           <div id="Ropa" className="row m-3 g-3">
             <h2 className="mt-4">Ropa</h2>
-            <div className="col-md-4 p-5 rounded">
+            <div className="col-md-4 rounded">
               {<img src={`${ropa}`} alt="tabla" />}
+              <p>Nombre: Producto</p>
+              <p>$ 800</p>
+              <AddCart />
             </div>
-            <div className="col-md-4 p-5 rounded">
+            <div className="col-md-4 rounded">
               {<img src={`${ropa}`} alt="tabla" />}
+              <p>Nombre: Producto</p>
+              <p>$ 800</p>
+              <AddCart />
             </div>
-            <div className="col-md-4 p-5 rounded">
+            <div className="col-md-4 rounded">
               {<img src={`${ropa}`} alt="tabla" />}
+              <p>Nombre: Producto</p>
+              <p>$ 800</p>
+              <AddCart />
             </div>
           </div>
         </div>
