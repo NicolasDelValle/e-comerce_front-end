@@ -63,6 +63,32 @@ function AboutUs() {
 export default AboutUs;
 {
   /* <div className="about-main-dev">
+    </div>
+    <div className="about-main-proyect">
+      <p>
+      LOSI SKATE CO. es un proyecto de Carlos Garcia Arocena y Thomas Hughes cuyo objetivo es aportarle a la escena cultural del skate uruguayo una marca que refleje los verdaderos valores del Skate.
+      </p>
+      <p>
+        La creación del sitio web de LOSI SKATE CO. nace a raíz de la participación de uno de sus fundadores, Carlos García Arocena, 
+        en el Coding Bootcamp de Hack Academy en la edición comenzada en Enero de 2022.
+      </p>
+      <p>
+        El proyecto final del curso consiste en la creación de un sitio web de e-commerce, 
+        donde los estudiantes tienen la posibilidad de utilizar todos los conocimientos obtenidos durante la cursada, 
+        aplicándolos en la creación de una web que cuente con las características y funcionalidades que se esperan encontrar en 
+        cualquiera de las que visitamos a diario para realizar compras o ver productos.
+      </p>
+      <p>
+        El equipo de estudiantes debió organizarse para cumplir con los features estipulados con los que debe contar 
+        este trabajo para el que se cuenta con tres semanas para su desarrollo, por lo que la comunicación, el orden y 
+        el trabajo en equipo fueron factores fundamentales.
+      </p>
+      <p>
+        Para nuestro proyecto decidimos basarnos en el sitio web de Culto Café, tomando su diseño minimalista como la raíz de 
+        una página web simple y fácil de usar pero atractiva y con detalles que destaquen, propios de la identidad de la marca.
+      </p>
+    </div>
+    {/* <div className="about-main-dev">
       <div className="about-main-dev-card">
         <div className="about-main-dev-avatar">
           <img src="https://cdn.pixabay.com/photo/2015/03/04/22/35/head-659652_960_720.png" alt="Dummy" />

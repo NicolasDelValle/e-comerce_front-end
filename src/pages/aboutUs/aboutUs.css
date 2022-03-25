@@ -20,6 +20,7 @@
 }
 
 .about-main-title h1 {
+	margin: 0;
 	color: #fff;
 }
 
@@ -27,28 +28,48 @@
 	height: 30%;
 
 	display: flex;
+	flex-direction: column;
+
 	justify-content: space-between;
 	background-color: #fff;
 }
 
+@media (min-width: 768px) {
+	.about-main-options-div {
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+}
+
 .about-main-option {
 	height: 100%;
-	width: 49.9%;
-
-	border: none;
-	border-top: 3px solid #fff;
-	border-bottom: 3px solid transparent;
+	width: 100%;
 
 	display: flex;
 	justify-content: center;
 	align-items: center;
 
+	border: none;
+	border-top: 3px solid #fff;
+	border-bottom: 3px solid transparent;
+
 	background-color: #000;
 
-	font-size: 1.5rem;
+	font-size: 1.25rem;
 	color: #fff;
 
 	cursor: pointer;
+}
+
+@media (min-width: 768px) {
+	.about-main-option {
+		height: 100%;
+		width: 49.9%;
+
+		padding: 2.5% 0;
+
+		font-size: 1.5rem;
+	}
 }
 
 .about-main-option:hover {
@@ -56,11 +77,19 @@
 }
 
 .about-main-proyect {
-	padding: 2.5% 10%;
+	padding: 10% 5%;
 
-	font-size: 1.25rem;
+	font-size: 1rem;
 
 	text-align: left;
+}
+
+@media (min-width: 768px) {
+	.about-main-proyect {
+		padding: 2.5% 10%;
+
+		font-size: 1.25rem;
+	}
 }
 
 .about-main-dev {

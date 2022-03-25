@@ -5,6 +5,7 @@ import Shop from "./pages/shop/Shop";
 import Product from "./pages/product/Product";
 import AboutUs from "./components/AboutUs";
 import NoMatch from "./components/NoMatch";
+import CheckOut from "./pages/checkOut/CheckOut"
 
 function App() {
   return (
