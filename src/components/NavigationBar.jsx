@@ -30,7 +30,7 @@ function NavigationBar() {
                     <img className="btnMenu" src={`${logoBlanco}`} alt="Logo" />
                   </div>
                 </Dropdown.Toggle>
-
+                {/* Carrito */}
                 <Link
                   to="/shop"
                   className="text-white d-none d-sm-flex align-items-center btnCarrito"
@@ -50,14 +50,17 @@ function NavigationBar() {
                   </div>
                   <div className="col-md-3">
                     <Dropdown.Item>
-                      <Link to={"/"} className="btn text-decoration-none">
+                      <Link to={"/shop"} className="btn text-decoration-none">
                         <strong>Productos</strong>
                       </Link>
                     </Dropdown.Item>
                   </div>
                   <div className="col-md-3">
                     <Dropdown.Item>
-                      <Link to={"/"} className="btn text-decoration-none">
+                      <Link
+                        to={"/aboutus"}
+                        className="btn text-decoration-none"
+                      >
                         <strong>Sobre el Proyecto</strong>
                       </Link>
                     </Dropdown.Item>
