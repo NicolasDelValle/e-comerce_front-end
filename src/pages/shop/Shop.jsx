@@ -1,11 +1,14 @@
-import "./css/shopStyles.css";
+import "./shopStyles.css";
 import React from "react";
-import tabla from "../img/productos/tablas/tabla3color.png";
-import hardware from "../img/productos/hardware/bronsonbearing_720x@2x.png";
-import ropa from "../img/productos/ropa/pant_marron_1.png";
-import NavigationBar from "../components/NavigationBar";
-import Footer from "../components/Footer";
+import tabla from "../../img/productos/tablas/tabla3color.png";
 
+//./img/productos/tablas/tabla3color.png
+
+import hardware from "../../img/productos/hardware/bronsonbearing_720x@2x.png";
+import ropa from "../../img/productos/ropa/pant_marron_1.png";
+import NavigationBar from "../../components/NavigationBar";
+import Footer from "../../components/Footer";
+import AddCart from "../../components/AddCart";
 function Shop(props) {
   return (
     <div className="section">
@@ -17,6 +20,7 @@ function Shop(props) {
 
           <div className="col-md-4 p-5 h-75 rounded">
             {<img src={`${tabla}`} alt="tabla" />}
+            <AddCart />
           </div>
           <div className="col-md-4 p-5 rounded">
             {<img src={`${tabla}`} alt="tabla" />}
