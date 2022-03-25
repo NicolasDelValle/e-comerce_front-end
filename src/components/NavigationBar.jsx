@@ -1,54 +1,60 @@
 import React from "react";
-import { useState } from "react";
 import { Dropdown } from "react-bootstrap";
 import "./css/NavigationBar.css";
-import logo from "../img/logos/imagotipoNegro.png";
+import imagotipoNegro from "../img/logos/imagotipoNegro.png";
+import logoBlanco from "../img/logos/logoBlanco.png";
 
 function NavigationBar() {
-  const [open, setOpen] = useState(false);
-
   return (
     <>
-      <div className="navigation">
-        <div className="container d-flex">
-          <Dropdown className="w-100">
-            <Dropdown.Toggle
-              className="bg-transparent d-flex justify-content-between align-items-center btnMenu "
-              title="Boton de inicio"
-            >
-              <img src={`${logo}`} alt="Logo" />
-              <h2 className="ps-2 btn text-white d-none d-sm-block">Inicio</h2>
-            </Dropdown.Toggle>
-            <Dropdown.Menu className="">
-              <div className="row">
-                <div className="col-md-3">
-                  <Dropdown.Item href="#/action-1">
-                    <div className="px-2">Home</div>
-                  </Dropdown.Item>
-                </div>
-                <div className="col-md-3">
-                  <Dropdown.Item href="#/action-1">
-                    <div className="px-2">Productos</div>
-                  </Dropdown.Item>
-                </div>
-                <div className="col-md-3">
-                  <Dropdown.Item href="#/action-1">
-                    <div className="px-2">Sobre el proyecto</div>
-                  </Dropdown.Item>
-                </div>
-                <div className="col-md-3">
-                  <Dropdown.Item href="#/action-1">
-                    <div className="px-2">Sobre el Nosotros</div>
-                  </Dropdown.Item>
-                </div>
+      <div className="navigation mb-5">
+        <div className="container">
+          <div className="w-100 mx-auto">
+            <Dropdown>
+              <div className="bg-transparent w-100 d-flex align-items-center justify-content-between  p-0 ">
+                <h2 className="text-white d-none d-sm-block">Home</h2>
+                <Dropdown.Toggle title="Boton de inicio">
+                  <img
+                    className="btnMenu"
+                    src={`${imagotipoNegro}`}
+                    alt="Logo"
+                  />
+                  <img className="btnMenu" src={`${logoBlanco}`} alt="Logo" />
+                </Dropdown.Toggle>
+
+                <a
+                  href="/shop"
+                  className="text-white d-none d-sm-block btnCarrito d-flex align-items-center"
+                  title="Carrito de compras"
+                >
+                  <i className="bi bi-cart3 pe-2"></i>
+                </a>
               </div>
-            </Dropdown.Menu>
-          </Dropdown>
-          <div
-            className="btnCarrito d-flex align-items-center ms-auto"
-            title="Carrito de compras"
-          >
-            <i className="bi bi-cart3 pe-2"></i>
+              <Dropdown.Menu className=" mt-1 submenu">
+                <div className="row text-center px-2">
+                  <div className="col-md-3">
+                    <Dropdown.Item>
+                      <strong>Home</strong>
+                    </Dropdown.Item>
+                  </div>
+                  <div className="col-md-3">
+                    <Dropdown.Item>
+                      <strong>Productos</strong>
+                    </Dropdown.Item>
+                  </div>
+                  <div className="col-md-3">
+                    <Dropdown.Item>
+                      <strong>Sobre el Proyecto</strong>
+                    </Dropdown.Item>
+                  </div>
+                  <div className="col-md-3">
+                    <Dropdown.Item>
+                      <strong>Sobre Nosotros</strong>
+                    </Dropdown.Item>
+                  </div>
+                </div>
+              </Dropdown.Menu>
+            </Dropdown>
           </div>
         </div>
       </div>
