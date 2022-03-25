@@ -11,7 +11,7 @@ function Home() {
   return (
     <>
       <NavigationBar />
-      <div className="homeScrollContainer ">
+      <div className="homeScrollContainer">
         <section
           className="homeScrollContainer-seccion "
           style={{
@@ -19,18 +19,11 @@ function Home() {
             backgroundSize: "cover",
             backgroundRepeat: "no-repeat",
           }}
-        >
-          <div>
-            <button>
-              hola
-              <i className="bi bi-caret-down-fill"></i>
-            </button>
-          </div>
-        </section>
+        ></section>
         <section className="homeScrollContainer-seccion">
           <Container>
             <div>
-              <div className="border-bottom border-2">
+              <div id="shop" className="border-bottom border-2">
                 <h2>
                   <span>Shop</span>
                 </h2>
