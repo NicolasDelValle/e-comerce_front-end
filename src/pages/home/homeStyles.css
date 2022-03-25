@@ -12,8 +12,40 @@
   scroll-snap-align: start;
 }
 
-.logo-overlay {
+.homeScrollContainer-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 500px;
+}
+
+@media (max-width: 882px) {
+  .homeScrollContainer-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 400px;
+  }
+}
+@media (max-width: 720px) {
+  .homeScrollContainer-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+  }
+}
+@media (max-width: 542px) {
+  .homeScrollContainer-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20px;
+  }
+}
+
+.homeScrollContainer-header-logo_overlay {
   text-align: center;
   border: none;
-  height: 6vh;
+  height: 10vh;
 }

@@ -17,6 +17,7 @@ function Home() {
       <div className="homeScrollContainer ">
         <div className="position-fixed w-100" style={{ zIndex: -1 }}>
           <video
+            loop
             className="vw-100"
             src={losiVideoWeb}
             autoPlay={true}
@@ -24,10 +25,15 @@ function Home() {
           />
         </div>
 
-        <section className="d-flex align-items-center">
-          <img className="logo-overlay" src={losilogo} alt="losiLogo" />
-        </section>
-        <section className="homeScrollContainer-seccion bg-light">
+        <div className="homeScrollContainer-header">
+          <img
+            className="homeScrollContainer-header-logo_overlay"
+            src={losilogo}
+            alt="losiLogo"
+          />
+        </div>
+
+        <section className="homeScrollContainer-seccion bg-light pt-5">
           <Container>
             <div>
               <div id="shop" className="border-bottom border-2">
