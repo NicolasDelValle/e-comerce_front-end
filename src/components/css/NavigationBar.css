@@ -1,0 +1,62 @@
+.navigation {
+  background-color: black;
+  color: white;
+  position: relative;
+}
+/* Para quitar los estilos propios de Bootstrap */
+.navigation .show > .btn-primary.dropdown-toggle,
+.navigation .show > .btn-primary.dropdown-toggle:hover,
+.navigation .show > .btn-primary.dropdown-toggle:focus,
+.navigation .btn-check:focus.btn-primary,
+.navigation .btn-primary:focus,
+.navigation .btn-primary,
+.navigation .btn-primary:focus,
+.navigation .btn-primary:hover {
+  color: black;
+  background-color: black;
+  border-color: black;
+  box-shadow: 0 0 0 0.25rem rgb(49 132 253 / 0%);
+}
+.dropdown-toggle::after {
+  display: none;
+}
+.navigation .show {
+  min-width: 100%;
+}
+.submenu {
+  inset: inherit !important;
+  transform: inherit !important;
+}
+/* Fin de quitar los estilos propios de Bootstrap */
+.experimento {
+  border: 5px solid white;
+  border-radius: 50px;
+  padding: 0 3rem;
+}
+.btnMenu {
+  width: 90px;
+  height: 100%;
+}
+
+.btnMenu img {
+  height: 100%;
+}
+.btnMenu img:hover {
+  cursor: pointer;
+}
+.abierto {
+  display: block;
+  opacity: 0.91;
+}
+.cerrado {
+  display: none;
+}
+
+/* Boton del carrito */
+
+.btnCarrito i {
+  font-size: 2rem;
+}
+.btnCarrito i:hover {
+  cursor: pointer;
+}
