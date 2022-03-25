@@ -9,7 +9,12 @@ section {
   scroll-snap-align: start;
 }
 
-img {
+/* Hice esta modificacion 
+porque sino afecta el ancho y 
+alto de todas las imagenes */
+#Tablas img,
+#Hardware img,
+#Ropa img {
   width: 200px;
   height: 300px;
   object-fit: contain;
