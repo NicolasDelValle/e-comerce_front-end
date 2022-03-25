@@ -1,28 +1,30 @@
 import { Container, Row, Col } from "react-bootstrap";
-
+import VideoPlayer from "react-background-video-player";
 import "./homeStyles.css";
 import prod1 from "../../img/productos/tablas/tabla.png";
 import prod2 from "../../img/productos/tablas/tabla2.png";
 import prod3 from "../../img/productos/tablas/tabla3color.png";
 import Footer from "../../components/Footer";
+import losiVideoWeb from "../../videos/LosiWebVid.mp4";
+import losilogo from "../../img/logos/logoBlanco.png";
 
 function Home() {
   return (
     <div className="homeScrollContainer ">
-      <section
-        className="homeScrollContainer-seccion "
-        style={{
-          backgroundImage: "url(https://wallpaper.dog/large/5450544.jpg)",
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
-        }}
-      >
-        <div>
-          <button>
-            hola
-            <i className="bi bi-caret-down-fill"></i>
-          </button>
-        </div>
+      <section>
+        <Container>
+          <Row>
+            <VideoPlayer
+              className="video"
+              src={losiVideoWeb}
+              autoPlay={true}
+              muted={true}
+            />
+            <div className="mainLogo">
+              <img className="logo-overlay" src={losilogo} alt="losiLogo" />
+            </div>
+          </Row>
+        </Container>
       </section>
       <section className="homeScrollContainer-seccion">
         <Container>

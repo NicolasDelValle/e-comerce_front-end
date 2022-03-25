@@ -11,3 +11,9 @@
   height: 100vh;
   scroll-snap-align: start;
 }
+
+.logo-overlay {
+  text-align: center;
+  border: none;
+  height: 6vh;
+}
