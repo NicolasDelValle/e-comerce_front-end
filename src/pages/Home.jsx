@@ -10,9 +10,10 @@ function Home() {
   return (
     <div className="scrollContainer" id="scrollContainer">
       <section>
-        <NavigationBar />
         <div width="100%">
+          <NavigationBar />
           <video loop autoPlay muted playsInline fluid={false} width="100%">
+            <h1>Losi</h1>
             <source src={videoLosi} type="video/mp4" />
           </video>
         </div>
