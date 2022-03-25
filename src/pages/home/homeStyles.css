@@ -1,9 +1,13 @@
-.scrollContainer {
-  width: 100%;
+.homeScrollContainer {
+  margin: 0;
+  padding: 0;
   height: 100%;
   scroll-snap-type: y mandatory;
+  overflow-y: scroll;
 }
-section {
-  height: 100%;
+.homeScrollContainer-seccion {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
   scroll-snap-align: start;
 }
