@@ -1,22 +1,35 @@
 .about-main-container {
-	height: 80vh;
-	width: 60vw;
-
-	margin: 2vh auto;
+	margin-top: 65px;
 }
 
-.about-main-header {
-	height: 15vh;
+@media (min-width: 992px) {
+	.about-main-container {
+		width: 85vw;
+		margin: auto;
+		margin-top: 65px;
+	}
+}
 
-	background-color: #000;
+@media (min-width: 1200px) {
+	.about-main-container {
+		margin-top: 72.5px;
+	}
+}
+
+@media (min-width: 1400px) {
+	.about-main-container {
+		margin-top: 77.5px;
+	}
 }
 
 .about-main-title {
-	height: 70%;
+	height: 60px;
 
 	display: flex;
 	justify-content: center;
 	align-items: center;
+
+	background-color: #000;
 }
 
 .about-main-title h1 {
@@ -25,8 +38,6 @@
 }
 
 .about-main-options-div {
-	height: 30%;
-
 	display: flex;
 	flex-direction: column;
 
@@ -42,9 +53,6 @@
 }
 
 .about-main-option {
-	height: 100%;
-	width: 100%;
-
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -63,21 +71,19 @@
 
 @media (min-width: 768px) {
 	.about-main-option {
-		height: 100%;
+		height: 60px;
 		width: 49.9%;
-
-		padding: 2.5% 0;
 
 		font-size: 1.5rem;
 	}
 }
 
 .about-main-option:hover {
-	border-bottom: 3px solid red;
+	background-color: rgb(32, 32, 32);
 }
 
 .about-main-proyect {
-	padding: 10% 5%;
+	padding: 2.5%;
 
 	font-size: 1rem;
 
@@ -86,34 +92,41 @@
 
 @media (min-width: 768px) {
 	.about-main-proyect {
-		padding: 2.5% 10%;
+		padding: 2.5% 7.5%;
 
 		font-size: 1.25rem;
 	}
 }
 
 .about-main-dev {
-	height: 100%;
-	width: 100%;
+	margin-top: 0.2rem;
 
-	display: flex;
-	justify-content: space-between;
+	padding: 2.5%;
 }
 
+/* @media (min-width: 768px) {
+	.about-main-dev {
+		flex-direction: row;
+	}
+} */
+
 .about-main-dev-card {
-	height: 100%;
-	width: 25%;
+	height: 500px;
 
-	padding: 2.5% 1.5%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 
-	background-color: lightgray;
+	margin: 0;
+
+	background-color: #fff;
 }
 
 .about-main-dev-avatar {
 	height: 200px;
 	width: 200px;
 
-	margin: auto;
+	margin: 0 auto;
 
 	border-radius: 50%;
 
@@ -121,20 +134,47 @@
 }
 
 .about-main-dev-avatar img {
-	height: 100%;
-	width: 100%;
+	height: 200px;
+	width: 200px;
 
 	border-radius: 50%;
 }
 
+.about-main-dev-info h3 {
+	background-color: #000;
+
+	margin: 0;
+
+	font-size: 1.25rem;
+	color: #fff;
+}
+
+.about-main-dev-info p {
+	margin: 0;
+
+	padding: 0 0.25rem;
+
+	text-align: left;
+}
+
 .about-main-dev-icon-div {
 	display: flex;
+	align-items: center;
+
+	padding: 0 0.25rem;
+
+	background-color: #000;
 }
 
 .about-main-dev-icon-div p {
-	margin: 10px;
+	margin: 0;
+	color: #fff;
+
+	margin-left: 0.5rem;
+	padding: 0;
 }
 
 .dev-icon {
 	font-size: 30px;
+	color: #fff;
 }

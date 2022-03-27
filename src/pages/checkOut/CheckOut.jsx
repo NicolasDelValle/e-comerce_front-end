@@ -69,7 +69,7 @@ function CheckOut() {
             <div className="checkout-main-product-details-title">
               <h4>Tabla RF1968-2013</h4>
               <div className="checkout-main-product-options-delete">
-                <i className="bi bi-x checkout-icon checkout-icon-delete"></i>
+                <i className="bi bi-x checkout-icon-delete"></i>
               </div>
             </div>
             <div className="checkout-main-product-details-body">
@@ -78,9 +78,9 @@ function CheckOut() {
               </div>
               <div className="checkout-main-product-options">
                 <div className="checkout-main-product-options-quantity">
-                  <i className="bi bi-plus checkout-icon"></i>
+                  <i className="bi bi-plus checkout-icon-quantity"></i>
                     <input type="number" className="checkout-main-product-options-quantity-input"/>
-                  <i className="bi bi-dash checkout-icon"></i>
+                  <i className="bi bi-dash checkout-icon-quantity"></i>
                 </div>
                 <div className="checkout-main-product-options-price">
                   <small>$25000</small>
@@ -99,7 +99,7 @@ function CheckOut() {
             <div className="checkout-main-product-details-title">
               <h4>Tabla RF1968-2013</h4>
               <div className="checkout-main-product-options-delete">
-                <i className="bi bi-x checkout-icon checkout-icon-delete"></i>
+                <i className="bi bi-x checkout-icon-delete"></i>
               </div>
             </div>
             <div className="checkout-main-product-details-body">
@@ -108,9 +108,9 @@ function CheckOut() {
               </div>
               <div className="checkout-main-product-options">
                 <div className="checkout-main-product-options-quantity">
-                  <i className="bi bi-plus checkout-icon"></i>
+                  <i className="bi bi-plus checkout-icon-quantity"></i>
                     <input type="number" className="checkout-main-product-options-quantity-input"/>
-                  <i className="bi bi-dash checkout-icon"></i>
+                  <i className="bi bi-dash checkout-icon-quantity"></i>
                 </div>
                 <div className="checkout-main-product-options-price">
                   <small>$25000</small>
@@ -129,7 +129,7 @@ function CheckOut() {
             <div className="checkout-main-product-details-title">
               <h4>Tabla RF1968-2013</h4>
               <div className="checkout-main-product-options-delete">
-                <i className="bi bi-x checkout-icon checkout-icon-delete"></i>
+                <i className="bi bi-x checkout-icon-delete"></i>
               </div>
             </div>
             <div className="checkout-main-product-details-body">
@@ -138,9 +138,9 @@ function CheckOut() {
               </div>
               <div className="checkout-main-product-options">
                 <div className="checkout-main-product-options-quantity">
-                  <i className="bi bi-plus checkout-icon"></i>
+                  <i className="bi bi-plus checkout-icon-quantity"></i>
                     <input type="number" className="checkout-main-product-options-quantity-input"/>
-                  <i className="bi bi-dash checkout-icon"></i>
+                  <i className="bi bi-dash checkout-icon-quantity"></i>
                 </div>
                 <div className="checkout-main-product-options-price">
                   <small>$25000</small>
@@ -206,11 +206,13 @@ function CheckOut() {
                 <input type="tel" name="phone-number" id="phone-number" />
                 <label htmlFor="email">DIRECCIÓN DE CORREO ELECTRÓNICO</label>
                 <input type="email" />
-                <label htmlFor="address">DIRECCIÓN <small>calle, número de puerta y esquina</small></label>
+                <label htmlFor="address">DIRECCIÓN <small className="address-small">calle, número de puerta y esquina</small></label>
                 <input type="text" />  
               </div>
             </div>
-            <button className="checkout-main-payment-confirm">CONFIRMAR COMPRA</button>
+            <div className="checkout-main-payment-confirm">
+              <button className="checkout-main-payment-confirm-button">CONFIRMAR COMPRA</button>
+            </div>
           </form>
         </div>
       </div>
