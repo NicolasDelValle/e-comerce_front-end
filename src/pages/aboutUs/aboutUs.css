@@ -83,6 +83,8 @@
 }
 
 .about-main-proyect {
+	border-bottom: 60px solid #000;
+
 	padding: 2.5%;
 
 	font-size: 1rem;
