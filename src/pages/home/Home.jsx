@@ -1,5 +1,4 @@
 import { Container, Row, Col } from "react-bootstrap";
-import VideoPlayer from "react-background-video-player";
 import "./homeStyles.css";
 import prod1 from "../../img/productos/tablas/tabla.png";
 import prod2 from "../../img/productos/tablas/tabla2.png";
