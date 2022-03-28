@@ -43,23 +43,77 @@ function AboutUs() {
             </p>
           </div> */}
           <div className="about-main-dev">
-            {/* <div className="about-main-dev-card">
-              <div className="about-main-dev-avatar">
-                <img src="https://cdn.pixabay.com/photo/2015/03/04/22/35/head-659652_960_720.png" alt="Dummy" />
+            <div className="about-main-dev-card">
+              <div className="about-main-dev-avatar-container carlos">
+                <div className="about-main-dev-avatar">
+                  <img src="https://cdn.pixabay.com/photo/2015/03/04/22/35/head-659652_960_720.png" alt="Dummy" />
+                </div>
               </div>
               <div className="about-main-dev-info">
-                <h3>CARLOS GARCÍA AROCENA</h3>
+                <div className="about-main-dev-info-title">
+                  <h3>CARLOS GARCÍA AROCENA</h3>
+                </div>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis ipsam fuga rerum possimus reiciendis vitae perferendis eius nulla eos hic est, animi saepe dolor maiores. Consectetur exercitationem facere inventore atque.</p>
                 <div className="about-main-dev-icon-div">
                   <i className="bi bi-linkedin dev-icon"></i>
                   <p>/carlosgarciaarocena</p>
                 </div>
               </div>
-            </div> */}
+            </div>
+            <div className="about-main-dev-card">
+              <div className="about-main-dev-avatar-container mauro">
+                <div className="about-main-dev-avatar">
+                  <img src="https://cdn.pixabay.com/photo/2015/03/04/22/35/head-659652_960_720.png" alt="Dummy" />
+                </div>
+              </div>
+              <div className="about-main-dev-info">
+                <div className="about-main-dev-info-title">
+                  <h3>MAURO RAVIOLO</h3>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis ipsam fuga rerum possimus reiciendis vitae perferendis eius nulla eos hic est, animi saepe dolor maiores. Consectetur exercitationem facere inventore atque.</p>
+                <div className="about-main-dev-icon-div">
+                  <i className="bi bi-linkedin dev-icon"></i>
+                  <p>/mauroraviolo</p>
+                </div>
+              </div>
+            </div>
+            <div className="about-main-dev-card">
+              <div className="about-main-dev-avatar-container nico">
+                <div className="about-main-dev-avatar">
+                  <img src="https://cdn.pixabay.com/photo/2015/03/04/22/35/head-659652_960_720.png" alt="Dummy" />
+                </div>
+              </div>
+              <div className="about-main-dev-info">
+                <div className="about-main-dev-info-title">
+                  <h3>NICOLÁS DEL VALLE</h3>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis ipsam fuga rerum possimus reiciendis vitae perferendis eius nulla eos hic est, animi saepe dolor maiores. Consectetur exercitationem facere inventore atque.</p>
+                <div className="about-main-dev-icon-div">
+                  <i className="bi bi-linkedin dev-icon"></i>
+                  <p>/nicolasdelvalle</p>
+                </div>
+              </div>
+            </div>
+            <div className="about-main-dev-card">
+              <div className="about-main-dev-avatar-container luis">
+                <div className="about-main-dev-avatar">
+                  <img src="https://cdn.pixabay.com/photo/2015/03/04/22/35/head-659652_960_720.png" alt="Dummy" />
+                </div>
+              </div>
+              <div className="about-main-dev-info">
+                <div className="about-main-dev-info-title">
+                  <h3>LUIS ZUNINO</h3>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis ipsam fuga rerum possimus reiciendis vitae perferendis eius nulla eos hic est, animi saepe dolor maiores. Consectetur exercitationem facere inventore atque.</p>
+                <div className="about-main-dev-icon-div">
+                  <i className="bi bi-linkedin dev-icon"></i>
+                  <p>/luiszunino</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      {/* <Footer /> */}
     </>
   );
 }
