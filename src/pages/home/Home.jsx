@@ -8,8 +8,26 @@ import NavigationBar from "../../components/NavigationBar";
 import AddCart from "../../components/AddCart";
 import losiVideoWeb from "../../videos/LosiWebVid.mp4";
 import losilogo from "../../img/logos/logoBlanco.png";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import Product from "../../components/Product";
 
 function Home() {
+  const [products, setProducts] = useState([]);
+  useEffect(() => {
+    const getUser = async () => {
+      const { data } = await axios({
+        method: "get",
+        url: `${process.env.REACT_APP_API_URL}products`,
+
+        // headers: { Authorization: `Bearer ${token}` },
+      });
+      console.log(data);
+      setProducts(data);
+    };
+    getUser();
+  }, []);
+
   return (
     <>
       <NavigationBar />
@@ -41,81 +59,9 @@ function Home() {
                 </h2>
               </div>
               <Row>
-                <Col className="productCard m-3 py-3">
-                  <img
-                    className="d-block mx-auto"
-                    width="120px"
-                    height="440"
-                    src={prod1}
-                    alt="tabla 1"
-                  />
-                  <p>Nombre: Producto</p>
-                  <p>$ 800</p>
-                  <AddCart />
-                </Col>
-                <Col className="productCard m-3 py-3 rounded-circle">
-                  <img
-                    className="d-block mx-auto"
-                    width="120px"
-                    height="440"
-                    src={prod2}
-                    alt="tyabla 2"
-                  />
-                  <p>Nombre: Producto</p>
-                  <p>$ 800</p>
-                  <AddCart />
-                </Col>
-                <Col className="productCard m-3 py-3 rounded-circle">
-                  <img
-                    className="d-block mx-auto"
-                    width="120px"
-                    height="440"
-                    src={prod3}
-                    alt="tabla 3"
-                  />
-                  <p>Nombre: Producto</p>
-                  <p>$ 800</p>
-                  <AddCart />
-                </Col>
-              </Row>
-              <Row>
-                <Col className="productCard m-3 py-3 ">
-                  <img
-                    className="d-block mx-auto"
-                    width="120px"
-                    height="440"
-                    src={prod1}
-                    alt="tabla 1"
-                  />
-                  <p>Nombre: Producto</p>
-                  <p>$ 800</p>
-
-                  <AddCart />
-                </Col>
-                <Col className="productCard m-3 py-3 ">
-                  <img
-                    className="d-block mx-auto"
-                    width="120px"
-                    height="440"
-                    src={prod2}
-                    alt="tyabla 2"
-                  />
-                  <p>Nombre: Producto</p>
-                  <p>$ 800</p>
-                  <AddCart />
-                </Col>
-                <Col className="productCard m-3 py-3 ">
-                  <img
-                    className="d-block mx-auto"
-                    width="120px"
-                    height="440"
-                    src={prod3}
-                    alt="tabla 3"
-                  />
-                  <p>Nombre: Producto</p>
-                  <p>$ 800</p>
-                  <AddCart />
-                </Col>
+                {products.map((product) => (
+                  <Product product={product} />
+                ))}
               </Row>
             </div>
           </Container>
