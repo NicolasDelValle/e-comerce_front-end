@@ -4,10 +4,20 @@ import NavigationBar from "../../components/NavigationBar";
 import Footer from "../../components/Footer";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import AddCart from "../../components/AddCart";
 
 function Product(props) {
   const [product, setProduct] = useState([]);
   const { slug } = useParams();
+  const [quantity, setQuantity] = useState([0]);
+
+  const clickToAdd = () => {
+    setQuantity((count) => count + 1);
+  };
+
+  const clickToSubtract = () => {
+    setQuantity((count) => count - 1);
+  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -16,7 +26,7 @@ function Product(props) {
       );
 
       setProduct(data);
-      console.log(product);
+
       return data;
     };
     fetchData();
@@ -27,15 +37,44 @@ function Product(props) {
     <div className="section">
       <NavigationBar />
 
-      <div className="container">
-        <div id="Product" className="row m-3 g-3">
-          <div id="ProductImg" className="col-md-6">
+      <div className="container productSection">
+        <div
+          id="Product"
+          className="row m-3 g-3 py-5 d-flex justify-content-md-center align-items-center"
+        >
+          <div id="ProductImg" className="col-md-6 px-5">
             <img src={product.imageUrl} alt="productImage" />
           </div>
-          <div id="ProductDescription" className="col-md-6">
+          <div id="ProductInfo" className="col-md-3">
             <h2>{product.name}</h2>
-            <h2>${product.price}</h2>
-            <div>{product.description}</div>
+            <h2 className="my-4">${product.price}</h2>
+            <div className="my-4">
+              <p>{product.description}</p>
+
+              <div className="d-flex align-items-center ms-3">
+                <button
+                  className="btn btn-outline-dark"
+                  onClick={clickToSubtract}
+                >
+                  <i className="bi bi-dash-lg"></i>
+                </button>
+
+                <h2 className="d-inline mx-2 my-0"> {quantity}</h2>
+
+                <button className="btn btn-outline-dark" onClick={clickToAdd}>
+                  <i className="bi bi-plus-lg"></i>
+                </button>
+              </div>
+              <span className="mt-2 d-flex align-content-end">
+                <AddCart />
+              </span>
+              <div id="detalles" className="mt-4">
+                <h3>Detalles</h3>
+                {product.details.map((detail) => (
+                  <p className="detalles m-0">{detail}</p>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>

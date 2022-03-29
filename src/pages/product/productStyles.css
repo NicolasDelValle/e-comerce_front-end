@@ -1,5 +1,21 @@
 img {
-  width: 200px;
-  height: 300px;
-  object-fit: contain;
+  max-width: 40%;
+}
+
+h2 {
+  font-weight: 900;
+  text-align: left;
+}
+
+h3 {
+  font-weight: 600;
+  text-align: right;
+}
+
+p {
+  text-align: left;
+}
+
+.detalles {
+  text-align: right;
 }

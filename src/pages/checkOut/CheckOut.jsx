@@ -5,7 +5,6 @@ import "./checkOut.css";
 import CartItem from "../../components/CartItem";
 
 function CheckOut() {
-
   return (
     <>
       <NavigationBar />
