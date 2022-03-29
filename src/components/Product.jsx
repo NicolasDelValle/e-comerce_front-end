@@ -1,7 +1,7 @@
 import React from "react";
 import { Col } from "react-bootstrap";
 import AddCart from "./AddCart";
-
+import "./css/Product.css";
 function Product({ product }) {
   return (
     <>
@@ -13,8 +13,8 @@ function Product({ product }) {
           src={product.imageUrl}
           alt={product.name}
         />
-        <p>Nombre: {product.name}</p>
-        <p>$ {product.price}</p>
+        <p className="product-info">{product.name}</p>
+        <p className="product-info">${product.price}</p>
         <AddCart />
       </Col>
     </>

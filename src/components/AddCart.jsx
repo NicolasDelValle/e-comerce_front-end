@@ -6,11 +6,11 @@ function AddCart() {
   return (
     <>
       <div
-        className="my-2 btn btn-outline-danger w-auto"
+        className="my-2 btn bg-black text-white w-auto rounded-pill"
         onClick={() => {}}
         title="Agregar al carrito"
       >
-        <i className="bi bi-cart3 p-0 m-0"> Add to Cart</i>
+        <p className="p-0 m-0"> Agregar al carrito</p>
       </div>
     </>
   );
