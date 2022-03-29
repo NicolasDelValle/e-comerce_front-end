@@ -7,6 +7,7 @@ import AboutUs from "./pages/aboutUs/AboutUs";
 import NoMatch from "./components/NoMatch";
 import CheckOut from "./pages/checkOut/CheckOut";
 import Register from "./pages/register/Register";
+import Login from "./pages/login/Login";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/aboutproject" element={<AboutUs />} />
         <Route path="/checkout" element={<CheckOut />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
         <Route path="*" element={<NoMatch />} />
       </Routes>
     </div>
