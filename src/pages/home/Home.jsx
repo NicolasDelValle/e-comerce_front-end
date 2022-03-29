@@ -1,16 +1,12 @@
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row } from "react-bootstrap";
 import "./homeStyles.css";
-import prod1 from "../../img/productos/tablas/tabla.png";
-import prod2 from "../../img/productos/tablas/tabla2.png";
-import prod3 from "../../img/productos/tablas/tabla3color.png";
 import Footer from "../../components/Footer";
 import NavigationBar from "../../components/NavigationBar";
-import AddCart from "../../components/AddCart";
 import losiVideoWeb from "../../videos/LosiWebVid.mp4";
 import losilogo from "../../img/logos/logoBlanco.png";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import Product from "../../components/Product";
+import ProductCard from "../../components/ProductCard";
 
 function Home() {
   const [products, setProducts] = useState([]);
@@ -60,7 +56,7 @@ function Home() {
               </div>
               <Row>
                 {products.map((product) => (
-                  <Product product={product} />
+                  <ProductCard product={product} />
                 ))}
               </Row>
             </div>
