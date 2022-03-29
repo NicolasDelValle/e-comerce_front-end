@@ -2,7 +2,7 @@ import React from "react";
 import { Col } from "react-bootstrap";
 import AddCart from "./AddCart";
 import "./css/Product.css";
-function Product({ product }) {
+function ProductCard({ product }) {
   return (
     <>
       <Col className="productCard m-3 py-3">
@@ -21,4 +21,4 @@ function Product({ product }) {
   );
 }
 
-export default Product;
+export default ProductCard;
