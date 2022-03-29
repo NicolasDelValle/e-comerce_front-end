@@ -1,0 +1,138 @@
+.register-background {
+	height: 100vh;
+	width: 100vw;
+
+	display: flex;
+
+	background-image: url("https://fondosmil.com/fondo/33015.jpg");
+	background-size: cover;
+}
+
+.register-main-container {
+	height: 100vh;
+	width: 100vw;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+
+	margin: auto;
+
+	background-color: #fff;
+}
+
+@media (min-width: 768px) {
+	.register-main-container {
+		height: 80vh;
+		width: 50vw;
+	}
+}
+
+.register-main-header {
+	height: 60px;
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	background-color: #000;
+}
+
+.register-main-header span,
+a {
+	width: 60px;
+
+	margin: 0 0.125rem;
+
+	text-decoration: none;
+
+	color: #fff;
+}
+
+.register-main-header a:hover {
+	color: #fff;
+}
+
+.register-main-header h1 {
+	margin: 0;
+
+	color: #fff;
+}
+
+.register-form-container {
+	flex-grow: 1;
+}
+
+.register-form-container form {
+	height: 100%;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.register-form-data {
+	display: flex;
+	flex-direction: column;
+
+	flex-grow: 1;
+
+	justify-content: space-around;
+}
+
+@media (min-width: 1200px) {
+	.register-form-data {
+		flex-direction: row;
+		justify-content: space-between;
+	}
+}
+
+.register-form-data-unit {
+	display: flex;
+	flex-direction: column;
+}
+
+@media (min-width: 768px) {
+	.register-form-data-unit {
+		margin: auto 0.25rem;
+	}
+}
+
+@media (min-width: 1200px) {
+	.register-form-data-unit {
+		width: 45%;
+
+		justify-content: center;
+
+		margin: auto;
+	}
+}
+
+.register-form-data-unit label {
+	font-size: 1.2rem;
+	font-weight: 500;
+}
+
+@media (min-width: 1200px) {
+	.register-form-data-unit label {
+		font-size: 1.25rem;
+		font-weight: 500;
+	}
+}
+
+.register-form-data-unit input:focus {
+	outline: #000;
+}
+
+.register-form-confirm {
+	height: 60px;
+	width: 100%;
+
+	border: none;
+
+	background-color: #000;
+
+	font-size: 1.5rem;
+	font-weight: 600;
+	color: #fff;
+}

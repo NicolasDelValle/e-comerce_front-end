@@ -50,6 +50,8 @@ function CheckOut() {
 
   const [open, setOpen] = React.useState(false);
 
+function CheckOut() {
+
   return (
     <>
       <NavigationBar />
