@@ -1,7 +1,6 @@
 .navigation {
   background-color: black;
   color: white;
-  position: relative;
 }
 /* Para quitar los estilos propios de Bootstrap */
 .navigation .show > .btn-primary.dropdown-toggle,
@@ -31,7 +30,7 @@
 
 .btnMenu {
   width: 100%;
-  max-height: 90px;
+  max-height: 60px;
   object-fit: contain;
   height: 100%;
 }

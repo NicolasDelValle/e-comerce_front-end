@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 import { Dropdown } from "react-bootstrap";
 import "./css/NavigationBar.css";
 
-import logoBlanco from "../img/logos/logoBlanco.png";
+import logofFlor from "../img/logos/imagotipoNegro.png";
 
 function NavigationBar() {
   return (
     <>
-      <div className="navigation position-fixed w-100">
+      <div className="navigation w-100">
         <div className="container px-0">
           <Dropdown>
             <div className="bg-transparent p-0 ">
@@ -25,8 +25,8 @@ function NavigationBar() {
                 <div className="w-25">
                   <Link to="/">
                     <img
-                      className="btnMenu d-none d-sm-flex py-2 w-50 mx-auto"
-                      src={`${logoBlanco}`}
+                      className="btnMenu d-none d-sm-flex  w-50 mx-auto"
+                      src={`${logofFlor}`}
                       alt="Logo"
                     />
                   </Link>
