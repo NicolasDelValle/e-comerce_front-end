@@ -4,6 +4,7 @@ import NavigationBar from "../../components/NavigationBar";
 import Footer from "../../components/Footer";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import AddCart from "../../components/AddCart";
 
 function Product(props) {
   const [product, setProduct] = useState([]);
@@ -25,7 +26,7 @@ function Product(props) {
       );
 
       setProduct(data);
-      console.log(product);
+
       return data;
     };
     fetchData();
@@ -44,25 +45,34 @@ function Product(props) {
           <div id="ProductImg" className="col-md-6 px-5">
             <img src={product.imageUrl} alt="productImage" />
           </div>
-          <div id="ProductDescription" className="col-md-4">
+          <div id="ProductInfo" className="col-md-3">
             <h2>{product.name}</h2>
             <h2 className="my-4">${product.price}</h2>
             <div className="my-4">
               <p>{product.description}</p>
 
-              <div className="d-flex align-items-center">
+              <div className="d-flex align-items-center ms-3">
                 <button
                   className="btn btn-outline-dark"
                   onClick={clickToSubtract}
                 >
-                  <i class="bi bi-dash-lg"></i>
+                  <i className="bi bi-dash-lg"></i>
                 </button>
 
                 <h2 className="d-inline mx-2 my-0"> {quantity}</h2>
 
                 <button className="btn btn-outline-dark" onClick={clickToAdd}>
-                  <i class="bi bi-plus-lg"></i>
+                  <i className="bi bi-plus-lg"></i>
                 </button>
+              </div>
+              <span className="mt-2 d-flex align-content-end">
+                <AddCart />
+              </span>
+              <div id="detalles" className="mt-4">
+                <h3>Detalles</h3>
+                {product.details.map((detail) => (
+                  <p className="detalles m-0">{detail}</p>
+                ))}
               </div>
             </div>
           </div>
