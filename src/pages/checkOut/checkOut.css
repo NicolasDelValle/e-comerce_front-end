@@ -22,23 +22,6 @@
   flex-direction: column;
 }
 
-.checkout-main-header {
-  height: 60px;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  padding: 0 0.75rem;
-
-  background-color: #000;
-}
-
-.checkout-main-header h2 {
-  color: #fff;
-  margin: 0;
-}
-
 .checkout-main-product {
   display: flex;
   margin: 2.5% 0;
