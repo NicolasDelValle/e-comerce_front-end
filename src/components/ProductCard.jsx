@@ -1,21 +1,39 @@
-import React from "react";
-import { Col } from "react-bootstrap";
+import { useState } from "react";
+import { Col, Spinner } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import AddCart from "./AddCart";
-import "./css/Product.css";
+import "./css/ProductCard.css";
 function ProductCard({ product }) {
+  const [isLoading, setIsLoading] = useState(true);
+
   return (
     <>
-      <Col className="productCard m-3 py-3">
-        <img
-          className="d-block mx-auto"
-          width="120px"
-          height="440"
-          src={product.imageUrl}
-          alt={product.name}
-        />
-        <p className="product-info">{product.name}</p>
-        <p className="product-info">${product.price}</p>
-        <AddCart />
+      <Col md={5} lg={3} className="productCard">
+        <Link to={`/products/${product.slug}`}>
+          <div className=" p-1 text-black">
+            <span className="py-2" min-height="220px">
+              {isLoading && (
+                <Spinner animation="border" role="status">
+                  <span className="visually-hidden">Loading...</span>
+                </Spinner>
+              )}
+              <img
+                className={isLoading ? "d-none" : "w-auto mb-2"}
+                height="220px"
+                src={product.imageUrl}
+                alt={product.name}
+                onLoad={() => setIsLoading(false)}
+              />
+              <p className="product-info">
+                <strong>{product.name}</strong>
+              </p>
+              <p className="product-info">
+                <strong>${product.price}</strong>
+              </p>
+              <AddCart />
+            </span>
+          </div>
+        </Link>
       </Col>
     </>
   );

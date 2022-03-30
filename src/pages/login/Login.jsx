@@ -20,7 +20,7 @@ function Login() {
   const handleLogin = async () => {
     const { data } = await axios({
       method: "post",
-      url: "http://localhost:4000/tokens",
+      url: `${process.env.REACT_APP_API_URL}tokens`,
       data: userLogin,
     });
 
