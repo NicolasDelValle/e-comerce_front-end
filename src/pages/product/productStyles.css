@@ -1,4 +1,5 @@
-img {
+/* Anide esta clase porque esta afectando a todas las img del proyecto */
+.productSection img {
   max-width: 40%;
 }
 
