@@ -7,15 +7,15 @@ import logoBlanco from "../img/logos/logoBlanco.png";
 function NavigationBar() {
   const CustomToggle = React.forwardRef(({ onClick }, ref) => (
     <a
-      className="d-flex align-items-center mx-2 me-3 pe-0 "
+      className="d-flex align-items-center mx-2 me-1 pe-0"
       ref={ref}
       onClick={(e) => {
         e.preventDefault();
         onClick(e);
       }}
     >
-      {/* <i className="bi bi-person-circle fs-4 position-relative"></i> */}
-      <span>Cuenta</span>
+      <i className="bi bi-person-circle fs-4 d-flex d-sm-none"></i>
+      <span className="d-none d-sm-flex">Cuenta</span>
       <i class="bi bi-caret-down"></i>
     </a>
   ));
@@ -58,10 +58,11 @@ function NavigationBar() {
               <i class="bi bi-people fs-3 d-flex d-sm-none"></i>
               <span className="d-none d-sm-flex">Nosotros</span>
             </Link>
+            <i class="bi bi-dot"></i>
             {/*SI ES ADMIN :D */}
             {/* <Link
               to="/checkout"
-              className="d-flex ps-3 border-start align-items-start"
+              className="d-flex ps-3 align-items-start"
               title="Carrito de compras"
             >
               <i className="bi bi-gear fs-4 position-relative"></i>
@@ -113,10 +114,10 @@ function NavigationBar() {
                 </div>
               </Dropdown.Menu>
             </Dropdown>
-
+            <i class="bi bi-dot"></i>
             <Link
               to="/checkout"
-              className=" ps-3 border-start d-flex align-items-start"
+              className=" ps-3 d-flex align-items-start"
               title="Carrito de compras"
             >
               <div className="ms-auto position-relative">
