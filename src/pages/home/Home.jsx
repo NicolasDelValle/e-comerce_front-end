@@ -50,7 +50,7 @@ function Home() {
               <div id="shop" className="border-bottom border-2">
                 <h2>Shop</h2>
               </div>
-              <Row className="py-5">
+              <Row className="py-5 justify-content-around">
                 {products.map((product) => (
                   <ProductCard product={product} />
                 ))}

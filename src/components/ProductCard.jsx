@@ -8,15 +8,15 @@ function ProductCard({ product }) {
 
   return (
     <>
-      <Col className="productCard">
-        {isLoading && (
-          <Spinner animation="border" role="status">
-            <span className="visually-hidden">Loading...</span>
-          </Spinner>
-        )}
+      <Col md={5} lg={3} className="productCard">
         <Link to={`/products/${product.slug}`}>
-          <div className="card p-1 text-black">
-            <span className="py-2">
+          <div className=" p-1 text-black">
+            <span className="py-2" min-height="220px">
+              {isLoading && (
+                <Spinner animation="border" role="status">
+                  <span className="visually-hidden">Loading...</span>
+                </Spinner>
+              )}
               <img
                 className={isLoading ? "d-none" : "w-auto mb-2"}
                 height="220px"
