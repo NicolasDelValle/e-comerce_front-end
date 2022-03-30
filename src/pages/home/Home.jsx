@@ -15,8 +15,6 @@ function Home() {
       const { data } = await axios({
         method: "get",
         url: `${process.env.REACT_APP_API_URL}products`,
-
-        // headers: { Authorization: `Bearer ${token}` },
       });
       console.log(data);
       setProducts(data);
@@ -28,7 +26,7 @@ function Home() {
     <>
       <NavigationBar />
       <div className="homeScrollContainer ">
-        <div className="position-fixed w-100" style={{ zIndex: -1 }}>
+        <div className="fixed-top w-100" style={{ zIndex: -1 }}>
           <video
             loop
             className="vw-100"
@@ -47,14 +45,12 @@ function Home() {
         </div>
 
         <section className="homeScrollContainer-seccion bg-light pt-5">
-          <Container>
+          <Container className="py-5">
             <div>
               <div id="shop" className="border-bottom border-2">
-                <h2>
-                  <span>Shop</span>
-                </h2>
+                <h2>Shop</h2>
               </div>
-              <Row>
+              <Row className="py-5">
                 {products.map((product) => (
                   <ProductCard product={product} />
                 ))}
