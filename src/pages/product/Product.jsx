@@ -26,6 +26,7 @@ function Product(props) {
       setProduct(response.data);
     };
     fetchData();
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -67,8 +68,10 @@ function Product(props) {
               <div id="detalles" className="mt-4">
                 <h3>Detalles</h3>
                 {product &&
-                  product.details.map((detail) => (
-                    <p className="detalles m-0">{detail}</p>
+                  product.details.map((detail, i) => (
+                    <p key={i} className="detalles m-0">
+                      {detail}
+                    </p>
                   ))}
               </div>
             </div>
