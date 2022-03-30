@@ -1,9 +1,9 @@
 import types from "../types";
-const initialState = {};
-function CartReducer(state = initialState, { type, payload }) {
-  switch (type) {
+
+function CartReducer(state = {}, action) {
+  switch (action.type) {
     case types.ADD_TO_CART:
-      return state;
+      return action.payload;
     case types.REMOVE_FROM_CART:
       return state;
     case types.CLEAR_CART:
