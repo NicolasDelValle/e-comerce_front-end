@@ -41,7 +41,7 @@ function NavigationBar() {
               to={"/shop"}
               className="px-2 text-white text-decoration-none d-flex justify-content-between align-items-center"
             >
-              <i class="bi bi-shop-window fs-4"></i>
+              <i className="bi bi-shop-window fs-4"></i>
             </Link>
             <Link
               to="/checkout"
