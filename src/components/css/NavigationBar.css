@@ -1,6 +1,10 @@
 .navbar {
   background-color: black;
 }
-.logo {
-  height: 30px;
+.wLogoContainer {
+  width: 185px;
+}
+
+.wLogoContainer-logo {
+  object-fit: contain;
 }
