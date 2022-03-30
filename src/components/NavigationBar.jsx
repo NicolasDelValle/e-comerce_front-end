@@ -77,7 +77,7 @@ function NavigationBar() {
                 className="bg-black text-white mt-3"
               >
                 <div className="d-flex flex-column">
-                  <Link
+                  {/* <Link
                     className="p-1 w-100 "
                     to="/checkout"
                     title="Carrito de compras"
@@ -93,8 +93,8 @@ function NavigationBar() {
                   >
                     <span>Registrarse</span>
                     <i class="bi bi-box-arrow-up-right ms-1"></i>
-                  </Link>
-                  {/* Logueado
+                  </Link> */}
+                  {/* Logueado*/}
                   <Link
                     className="p-1 w-100 "
                     to="/checkout"
@@ -110,7 +110,7 @@ function NavigationBar() {
                     title="Carrito de compras"
                   >
                     <span>Cerrar Sesion</span>
-                  </Link> */}
+                  </Link>
                 </div>
               </Dropdown.Menu>
             </Dropdown>
