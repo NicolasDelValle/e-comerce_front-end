@@ -1,9 +1,9 @@
 import types from "../types";
 const initialState = {};
-function UserReducer(state = initialState, { type, payload }) {
-  switch (type) {
+function UserReducer(state = {}, action) {
+  switch (action.type) {
     case types.CREATE_USER:
-      return state;
+      return action.payload;
     case types.DESTROY_USER:
       return initialState;
     default:
