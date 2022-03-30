@@ -1,15 +1,13 @@
-import { useState } from "react";
 import "./css/AddCart.css";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import actions from "../redux/actions/cartActions";
 
 function AddCart({ product, quantity }) {
   const dispatch = useDispatch();
-  const productToAdd = useState({ product, quantity });
 
   const handleClick = () => {
-    dispatch(actions.addToCart(productToAdd));
-    console.log();
+    console.log(quantity);
+    dispatch(actions.addToCart({ ...product, quantity }));
   };
 
   return (
