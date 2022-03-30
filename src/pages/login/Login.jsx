@@ -4,6 +4,7 @@ import axios from "axios";
 import "./login.css";
 import { useDispatch, useSelector } from "react-redux";
 import actions from "../../redux/actions/userActions";
+import BackNavbar from "../../components/BackNavbar";
 
 function Login() {
   const accessToken = useSelector((state) => state.user.newToken);
@@ -30,13 +31,7 @@ function Login() {
   };
   return (
     <div className="login">
-      <div className="login-back">
-        <span>
-          <Link to="/">
-            <i className="bi bi-arrow-left me-1"></i> VOLVER
-          </Link>
-        </span>
-      </div>
+      <BackNavbar />
       <div className="login-main">
         <div className="login-main-container">
           <div className="login-main-header">
