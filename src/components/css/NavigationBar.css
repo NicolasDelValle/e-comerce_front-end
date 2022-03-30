@@ -6,5 +6,6 @@
 }
 
 .wLogoContainer-logo {
+  max-width: 40%;
   object-fit: contain;
 }
