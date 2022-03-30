@@ -7,112 +7,65 @@ import logoBlanco from "../img/logos/logoBlanco.png";
 function NavigationBar() {
   return (
     <>
-      <Navbar className="navbar" expand="lg">
-        <Container>
-          <Navbar.Toggle className="text-white">
-            <i class="bi bi-list"></i>
-          </Navbar.Toggle>
-          <Link className="logo d-flex justify-content-center" to="/">
-            <img className="logo" src={logoBlanco} alt="Logo" />
-          </Link>
+      <Navbar>
+        <Container className="d-flex justify-content-between align-items-center">
           <Link
-            to="/checkout"
-            className="text-white d-flex d-lg-none"
-            title="Carrito de compras"
+            className="wLogoContainer d-flex justify-content-center p-0 m-0 border-none"
+            to="/"
           >
-            <i className="bi bi-cart3"></i>
+            <img
+              className="wLogoContainer-logo me-auto"
+              src={logoBlanco}
+              alt="Logo"
+            />
           </Link>
 
-          <Navbar.Collapse
-            className="text-white ms-auto d-lg-flex justify-content-lg-center"
-            id="responsive-navbar-nav"
-          >
-            <Link to={"/aboutus"} className="text-decoration-none">
-              Us
+          <div className="ms-auto text-white d-flex justify-content-between align-items-center">
+            <Link to="/checkout" title="Carrito de compras">
+              <span>Ingresar</span>
             </Link>
-            <Link to={"/aboutproject"} className="text-decoration-none">
-              Project
+            <span className="mx-2">|</span>
+            <Link to="/checkout" title="Carrito de compras">
+              <span>Registrarse</span>
             </Link>
-            <Link to={"/shop"} className="text-decoration-none">
-              Products
+            {/*SI YA SE LOGUE CON EL NOMBRE Y TODO */}
+            <Link
+              to="/checkout"
+              className="ms-2 d-flex align-items-center"
+              title="Carrito de compras"
+            >
+              <i className="bi bi-person-circle fs-3 position-relative me-1"></i>
+              <span>Enrique Miguel Iglesias</span>
             </Link>
-          </Navbar.Collapse>
-          <Link
-            to="/checkout"
-            className="text-white d-none d-lg-flex"
-            title="Carrito de compras"
-          >
-            <i className="bi bi-cart3"></i>
-          </Link>
+            <Link
+              to={"/shop"}
+              className="px-2 text-white text-decoration-none d-flex justify-content-between align-items-center"
+            >
+              <i class="bi bi-shop-window fs-4"></i>
+            </Link>
+            <Link
+              to="/checkout"
+              className=" ps-2 d-flex align-items-start"
+              title="Carrito de compras"
+            >
+              <div className="ms-auto position-relative">
+                <i className="bi bi-cart3 fs-3 position-relative"></i>
+                <span className=" badge rounded-pill bg-danger py-1 px-1 position-absolute top-0 end-50">
+                  000
+                </span>
+              </div>
+            </Link>
+            {/*SI ES ADMIN :D */}
+            <Link
+              to="/checkout"
+              className=" ps-2 d-flex align-items-start"
+              title="Carrito de compras"
+            >
+              <i className="bi bi-gear fs-3 position-relative"></i>
+            </Link>
+          </div>
         </Container>
       </Navbar>
-      {/* DESDE AQUI 
-      <div className="navigation position-fixed w-100">
-        <div className="container">
-          <Dropdown>
-            <div>
-              <div>
-                
-                <div className="d-flex justify-content-between">
-                  <Link
-                    to="/checkout"
-                    className="text-white d-flex justify-content-end align-items-center btnCarrito w-25"
-                    title="Carrito de compras"
-                  >
-                    <i className="bi bi-cart3  ms-auto"></i>
-                  </Link>
-                  
-                </div>
-              </div>
-              <Dropdown.Toggle
-                title="Menu"
-                className="d-flex align-items-center justify-content-between w-100"
-              >
-                <div
-                  className="text-white  text-decoration-none d-flex align-items-center w-25"
-                  title="Boton de inicio"
-                >
-                  <p className="text-white text-center">Menu</p>
-                </div>
-
-                {/* Carrito 
-              </Dropdown.Toggle>
-            </div>
-            <Dropdown.Menu className="mt-1 submenu">
-              <div className="row text-center px-2">
-                <div className="col-md-3">
-                  <Dropdown.Item>
-                    <Link to={"/"} className="btn text-decoration-none">
-                      <strong>Home</strong>
-                    </Link>
-                  </Dropdown.Item>
-                </div>
-                <div className="col-md-3">
-                  <Dropdown.Item>
-                   
-                  </Dropdown.Item>
-                </div>
-                <div className="col-md-3">
-                  <Dropdown.Item>
-                    <Link
-                      to={"/aboutproject"}
-                      className="btn text-decoration-none"
-                    >
-                      <strong>About Project</strong>
-                    </Link>
-                  </Dropdown.Item>
-                </div>
-                <div className="col-md-3">
-                  <Dropdown.Item>
-                    
-                  </Dropdown.Item>
-                </div>
-              </div>
-            </Dropdown.Menu>
-          </Dropdown>
-        </div>
-      </div>
-      */}
     </>
   );
 }
