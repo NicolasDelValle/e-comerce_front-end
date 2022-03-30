@@ -21,11 +21,11 @@ function NavigationBar() {
           </Link>
 
           <div className="ms-auto text-white d-flex justify-content-between align-items-center">
-            <Link to="/checkout" title="Carrito de compras">
+            <Link to="/login" title="Carrito de compras">
               <span>Ingresar</span>
             </Link>
             <span className="mx-2">|</span>
-            <Link to="/checkout" title="Carrito de compras">
+            <Link to="/register" title="Carrito de compras">
               <span>Registrarse</span>
             </Link>
             {/*SI YA SE LOGUE CON EL NOMBRE Y TODO */}
