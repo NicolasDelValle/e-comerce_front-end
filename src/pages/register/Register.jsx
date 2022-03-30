@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./register.css";
 import { useState } from "react";
 import axios from "axios";
@@ -6,6 +6,7 @@ import { useDispatch } from "react-redux";
 import actions from "../../redux/actions/userActions";
 
 function Register() {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const [userRegister, setUserRegister] = useState({});
 
@@ -18,6 +19,7 @@ function Register() {
 
     if (data) {
       dispatch(actions.createUser(data));
+      navigate("/login");
     }
   };
 
