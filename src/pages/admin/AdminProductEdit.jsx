@@ -3,7 +3,8 @@ import Sidebar from "../../components/Sidebar";
 import BackNavbar from "../../components/BackNavbar";
 import { useSelector } from "react-redux";
 import axios from "axios";
-function AdminProductCreateNew() {
+
+function AdminProductEdit() {
   const { newToken } = useSelector((state) => state.user);
   const [newProduct, setNewProduct] = useState({});
 
@@ -233,4 +234,4 @@ function AdminProductCreateNew() {
   );
 }
 
-export default AdminProductCreateNew;
+export default AdminProductEdit;
