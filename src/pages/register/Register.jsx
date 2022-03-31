@@ -1,4 +1,5 @@
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
+import BackNavbar from "../../components/BackNavbar";
 import "./register.css";
 import { useState } from "react";
 import axios from "axios";
@@ -26,13 +27,7 @@ function Register() {
   return (
     <>
       <div className="register">
-        <div className="register-back">
-          <span>
-            <Link to="/">
-              <i className="bi bi-arrow-left me-1"></i>Volver
-            </Link>
-          </span>
-        </div>
+        <BackNavbar />
         <div className="register-main">
           <div className="register-main-logo"></div>
           <div className="register-main-container">

@@ -3,27 +3,8 @@
 	flex-direction: column;
 }
 
-.login-back {
-	height: 45px;
-	width: 100%;
-
-	display: flex;
-	justify-content: flex-start;
-	align-items: center;
-
-	padding: 0 1rem;
-
-	font-weight: bold;
-
-	background-color: #000;
-}
-
-.login-back a:hover {
-	color: #fff;
-}
-
 .login-main {
-	height: auto;
+	height: 80vh;
 	display: flex;
 }
 
@@ -33,7 +14,7 @@
 	}
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
 	.login-main-logo {
 		height: 300px;
 		width: 300px;
@@ -65,7 +46,13 @@
 	}
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
+	.login-main-container {
+		width: 50vw;
+	}
+}
+
+@media (min-width: 992px) {
 	.login-main-container {
 		width: 30vw;
 	}

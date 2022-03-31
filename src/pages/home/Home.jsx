@@ -11,7 +11,7 @@ import ProductCard from "../../components/ProductCard";
 function Home() {
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    const getUser = async () => {
+    const getProducts = async () => {
       const { data } = await axios({
         method: "get",
         url: `${process.env.REACT_APP_API_URL}products`,
@@ -19,7 +19,7 @@ function Home() {
       console.log(data);
       setProducts(data);
     };
-    getUser();
+    getProducts();
   }, []);
 
   return (

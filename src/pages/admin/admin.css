@@ -3,59 +3,23 @@
 	flex-direction: column;
 }
 
-.admin-back {
-	height: 45px;
-	width: 100%;
+.admin-dropdown-button {
+	padding: 0 !important;
 
-	display: flex;
-	justify-content: flex-start;
-	align-items: center;
-
-	padding: 0 1rem;
-
-	font-weight: bold;
-
-	background-color: #000;
-}
-
-.admin-back span,
-a {
-	margin: 0 0.125rem;
-
-	text-decoration: none;
-
-	color: #fff;
-}
-
-.admin-back a:hover {
-	color: #fff;
-}
-
-.admin-back button {
-	padding: 0 0.5rem;
-}
-
-.admin-back i {
-	font-size: 1.5rem;
-}
-
-.admin-back h1 {
-	margin: auto;
-
-	color: #fff;
+	line-height: 1.5rem;
 }
 
 .admin-main {
 	display: flex;
-	position: relative;
 }
 
 .admin-main-sidebar {
 	height: 90vh;
 	width: 300px;
 
-	position: absolute;
-	left: 0;
+	display: flex;
+	flex-direction: column;
+
 	padding: 0 1rem;
 
 	background-color: #000;
@@ -64,37 +28,66 @@ a {
 }
 
 .admin-main-sidebar-hidden {
-	left: -300px;
-
-	transition: all 0.5s;
+	display: none;
 }
 
 .admin-main-sidebar-option {
+	display: flex;
+	flex-direction: column;
+
 	border-bottom: 1px solid #fff;
 
-	/* margin: 1rem 0; */
+	margin: 1rem 0;
 }
 
 .admin-main-sidebar-option h2,
 h3 {
-	/* margin: 0; */
+	margin: 0;
 
 	text-align: left;
 
 	color: gray;
 }
 
-.admin-main-sidebar-option p {
-	/* margin: 0; */
-	color: rgb(172, 119, 119);
-
-	cursor: pointer;
+.admin-main-sidebar-option a {
+	text-align: left;
+	color: rgb(255, 255, 255);
 }
 
 .admin-main-sidebar-option p:hover {
 	background-color: rgb(59, 59, 59);
 }
 
-.admin-main-sidebar-option-d-none {
-	display: none;
+.admin-main-sidebar-user {
+	margin-top: auto;
+	color: #fff;
+}
+
+.admin-main-sidebar-user p {
+	margin: 0;
+
+	font-size: 1.5rem;
+}
+
+.admin-main-home {
+	margin: auto;
+}
+
+.admin-main-content {
+	margin: 2.5rem auto;
+
+	border: 1px solid #000;
+}
+
+.admin-main-content h2 {
+	text-align: center;
+
+	font-weight: normal;
+
+	color: #000;
+}
+
+.admin-main-content-data {
+	height: 500px;
+	width: 500px;
 }

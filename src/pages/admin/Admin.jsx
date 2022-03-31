@@ -1,49 +1,60 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 import { Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import axios from "axios";
+
 import "./admin.css";
+import BackNavbar from "../../components/BackNavbar";
+import AdminProducts from "./AdminProducts";
 
-function Admin () {
+function Admin() {
+	const [showSidebar, setShowSidebar] = useState(false);
 
-  const mainMenu = <> <div className="admin-main-menu">Menú Principal</div> </> ;
-
-  const productsList = <> <div className="admin-main-products-list">Lista de Productos</div> </> ;
-
-  const usersList = <> <div className="admin-main-menu-users-list">Lista de Usuarios</div> </> ;
-
-  const [showSidebar, setShowSidebar] = useState(false);
-  const [pageContent, setPageContent] = useState(mainMenu);
-
-  return(
-    <div className="admin">
-      <div className="admin-back">
-        <span><Link to="/"><i className="bi bi-arrow-left me-1"></i>VOLVER</Link></span>
-        <Button 
-          variant="dark"
-          className="ms-1"
-          onClick={() => setShowSidebar((actual) => !actual)}><i className="bi bi-list"></i></Button>
-        <h1>LOSI Administración</h1>
-      </div>
-      <div className="admin-main">
-      <div className={showSidebar ? "admin-main-sidebar" : "admin-main-sidebar-hidden" }>
-        <div className={showSidebar ? "admin-main-sidebar-option" : "admin-main-sidebar-option-d-none"}>
-          <h2>Inicio</h2>
-          <p onClick={() => setPageContent(mainMenu)}>Menú Principal</p>
-        </div>
-        <div className={showSidebar ? "admin-main-sidebar-option" : "admin-main-sidebar-option-d-none"}>
-          <h3>Productos</h3>
-          <p onClick={() => setPageContent(productsList)}>Lista de Productos</p>
-        </div>
-        <div className={showSidebar ? "admin-main-sidebar-option" : "admin-main-sidebar-option-d-none"}>
-          <h3>Usuarios</h3>
-          <p onClick={() => setPageContent(usersList)}>Lista de Usuarios</p>
-        </div>
-      </div>
-        <div className="admin-main-content">{pageContent}</div>
-      </div>
-    </div>
-  )
+	return (
+		<div className="admin">
+			<BackNavbar
+				addOns={
+					<>
+						<Button
+							variant="dark"
+							className="admin-dropdown-button"
+							onClick={() => setShowSidebar((actual) => !actual)}
+						>
+							<i className="bi bi-list"></i>
+						</Button>
+						<h1>Administración</h1>
+					</>
+				}
+			/>
+			<div className="admin-main">
+				<div
+					className={
+						showSidebar ? "admin-main-sidebar" : "admin-main-sidebar-hidden"
+					}
+				>
+					<div className="admin-main-sidebar-option">
+						<h2>Inicio</h2>
+						<Link to="/admin">Menú Principal</Link>
+					</div>
+					<div className="admin-main-sidebar-option">
+						<h3>Productos</h3>
+						<Link to="/admin/products">Lista de Productos</Link>
+					</div>
+					<div className="admin-main-sidebar-option">
+						<h3>Usuarios</h3>
+						<Link to="/admin/users">Lista de Usuarios</Link>
+					</div>
+					<div className="admin-main-sidebar-user">
+						<p>Administrador:</p>
+						<p>Pepe González</p>
+					</div>
+				</div>
+				<div className="admin-main-home">
+					<Button>Hola</Button>
+				</div>
+			</div>
+		</div>
+	);
 }
 
 export default Admin;
-
