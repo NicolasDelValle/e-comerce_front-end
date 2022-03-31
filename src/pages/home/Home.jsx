@@ -47,11 +47,11 @@ function Home() {
         <section className="homeScrollContainer-seccion bg-light pt-5">
           <Container className="py-5">
             <div>
-              <div id="shop" className="border-bottom border-2">
+              <div id="shop" className="border-bottom border-1">
                 <h2>Shop</h2>
               </div>
               <Row className="py-5 justify-content-around">
-                {products.map((product, i) => (
+                {products.slice(0, 8).map((product, i) => (
                   <ProductCard key={i} product={product} />
                 ))}
               </Row>

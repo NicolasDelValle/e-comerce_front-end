@@ -13,7 +13,6 @@ function CartReducer(state = initialState, { type, payload }) {
       return [...state, payload];
 
     case types.REMOVE_FROM_CART:
-      console.log(payload);
       return state.map((product) => {
         if (product.id !== payload) return product;
 
@@ -21,7 +20,6 @@ function CartReducer(state = initialState, { type, payload }) {
       });
 
     case types.ADD_FROM_CART:
-      console.log(payload);
       return state.map((product) => {
         if (product.id !== payload) return product;
 
@@ -30,7 +28,6 @@ function CartReducer(state = initialState, { type, payload }) {
 
     // (i => i.Id !== action.payload.Id)}
     case types.CLEAR_ITEM_IN_CART:
-      console.log(payload);
       return state.filter((product) => product.id !== payload);
 
     case types.CLEAR_CART:

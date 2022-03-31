@@ -1,245 +1,241 @@
 .about-main-container {
-	margin-top: 65px;
+  margin-top: 65px;
 }
 
 @media (min-width: 992px) {
-	.about-main-container {
-		width: 85vw;
-		margin: auto;
-		margin-top: 65px;
-	}
+  .about-main-container {
+    width: 85vw;
+    margin: auto;
+    margin-top: 65px;
+  }
 }
 
 @media (min-width: 1200px) {
-	.about-main-container {
-		margin-top: 72.5px;
-	}
+  .about-main-container {
+    margin-top: 72.5px;
+  }
 }
 
 @media (min-width: 1400px) {
-	.about-main-container {
-		margin-top: 77.5px;
-	}
+  .about-main-container {
+    margin-top: 77.5px;
+  }
 }
 
 .about-main-title {
-	height: 60px;
+  height: 60px;
 
-	display: flex;
-	justify-content: center;
-	align-items: center;
-
-	background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .about-main-title h1 {
-	margin: 0;
-	color: #fff;
+  margin: 0;
+  color: rgb(0, 0, 0);
 }
 
 .about-main-options-div {
-	display: flex;
-	flex-direction: column;
+  display: flex;
+  flex-direction: column;
 
-	justify-content: space-between;
-	background-color: #fff;
+  justify-content: space-between;
+  background-color: #fff;
 }
 
 @media (min-width: 768px) {
-	.about-main-options-div {
-		flex-direction: row;
-		flex-wrap: wrap;
-	}
+  .about-main-options-div {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 }
 
 .about-main-option {
-	display: flex;
-	justify-content: center;
-	align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-	border: none;
-	border-top: 3px solid #fff;
-	border-bottom: 3px solid transparent;
+  border: none;
 
-	background-color: #000;
+  border-bottom: 3px solid black;
 
-	font-size: 1.25rem;
-	color: #fff;
+  font-size: 1.25rem;
+  color: rgb(0, 0, 0);
 
-	cursor: pointer;
+  cursor: pointer;
 }
 
 @media (min-width: 768px) {
-	.about-main-option {
-		height: 60px;
-		width: 49.9%;
+  .about-main-option {
+    height: 60px;
+    width: 49.9%;
 
-		font-size: 1.5rem;
-	}
+    font-size: 1.5rem;
+  }
 }
 
 .about-main-option:hover {
-	background-color: rgb(32, 32, 32);
+  background-color: rgb(32, 32, 32);
 }
 
 .about-main-proyect {
-	border-bottom: 60px solid #000;
+  border-bottom: 60px solid #000;
 
-	padding: 2.5%;
+  padding: 2.5%;
 
-	font-size: 1rem;
+  font-size: 1rem;
 
-	text-align: left;
+  text-align: left;
 }
 
 @media (min-width: 768px) {
-	.about-main-proyect {
-		padding: 2.5% 7.5%;
+  .about-main-proyect {
+    padding: 2.5% 7.5%;
 
-		font-size: 1.25rem;
-	}
+    font-size: 1.25rem;
+  }
 }
 
 .about-main-dev {
-	margin-top: 0.2rem;
+  margin-top: 0.2rem;
 
-	padding: 0 0.75%;
+  padding: 0 0.75%;
 }
 
 @media (min-width: 576px) {
-	.about-main-dev {
-		display: flex;
-		flex-direction: row;
-		flex-wrap: wrap;
+  .about-main-dev {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 
-		justify-content: space-between;
+    justify-content: space-between;
 
-		padding: 0;
-	}
+    padding: 0;
+  }
 }
 
 @media (min-width: 768px) {
-	.about-main-dev {
-		padding: 0;
-	}
+  .about-main-dev {
+    padding: 0;
+  }
 }
 
 .about-main-dev-card {
-	height: 500px;
+  height: 500px;
 
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
-	margin-left: 0.125%;
-	margin-right: 0.125%;
-	margin-bottom: 0.25%;
+  margin-left: 0.125%;
+  margin-right: 0.125%;
+  margin-bottom: 0.25%;
 }
 
 @media (min-width: 768px) {
-	.about-main-dev-card {
-		height: 550px;
-		width: 49.75%;
+  .about-main-dev-card {
+    height: 550px;
+    width: 49.75%;
 
-		margin-left: 0.125%;
-		margin-right: 0.125%;
-		margin-bottom: 0.25%;
-	}
+    margin-left: 0.125%;
+    margin-right: 0.125%;
+    margin-bottom: 0.25%;
+  }
 }
 
 @media (min-width: 992px) {
-	.about-main-dev-card {
-		height: 600px;
-		width: 24.75%;
-	}
+  .about-main-dev-card {
+    height: 600px;
+    width: 24.75%;
+  }
 }
 
 .about-main-dev-avatar-container {
-	height: 100%;
-	width: 100%;
+  height: 100%;
+  width: 100%;
 
-	display: flex;
-	justify-content: center;
-	align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-	background-size: cover;
+  background-size: cover;
 }
 
 .carlos {
-	background-image: url("https://hdwallsource.com/img/2016/5/baylor-street-art-graffiti-wallpaper-49408-51077-hd-wallpapers.jpg");
+  background-image: url("https://hdwallsource.com/img/2016/5/baylor-street-art-graffiti-wallpaper-49408-51077-hd-wallpapers.jpg");
 }
 
 .mauro {
-	background-image: url("https://www.mural-wallpaper.com/wp-content/uploads/2021/10/UN-AD202.jpg");
+  background-image: url("https://www.mural-wallpaper.com/wp-content/uploads/2021/10/UN-AD202.jpg");
 }
 
 .nico {
-	background-image: url("https://previews.123rf.com/images/sergwsq/sergwsq1111/sergwsq111100033/11204865-%EB%82%99%EC%84%9C-%EB%B2%BD-%EB%8F%84%EC%8B%9C-%ED%9E%99%ED%95%A9-%EB%B0%B0%EA%B2%BD.jpg");
+  background-image: url("https://previews.123rf.com/images/sergwsq/sergwsq1111/sergwsq111100033/11204865-%EB%82%99%EC%84%9C-%EB%B2%BD-%EB%8F%84%EC%8B%9C-%ED%9E%99%ED%95%A9-%EB%B0%B0%EA%B2%BD.jpg");
 }
 
 .luis {
-	background-image: url("https://i.pinimg.com/originals/3b/9e/38/3b9e38b24e2bad1876b0c1a9b44b55db.jpg");
+  background-image: url("https://i.pinimg.com/originals/3b/9e/38/3b9e38b24e2bad1876b0c1a9b44b55db.jpg");
 }
 
 .about-main-dev-avatar {
-	height: 200px;
-	width: 200px;
+  height: 200px;
+  width: 200px;
 
-	border-radius: 50%;
+  border-radius: 50%;
 
-	background-color: #000;
+  background-color: #000;
 }
 
 .about-main-dev-avatar img {
-	height: 200px;
-	width: 200px;
+  height: 200px;
+  width: 200px;
 
-	border-radius: 50%;
+  border-radius: 50%;
 }
 
 .about-main-dev-info-title {
-	height: 45px;
+  height: 45px;
 
-	display: flex;
-	justify-content: center;
-	align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-	background-color: #000;
+  background-color: #000;
 }
 
 .about-main-dev-info-title h3 {
-	margin: 0;
+  margin: 0;
 
-	font-size: 1.2rem;
-	color: #fff;
+  font-size: 1.2rem;
+  color: #fff;
 }
 
 .about-main-dev-info p {
-	margin: 0;
+  margin: 0;
 
-	padding: 0 0.25rem;
+  padding: 0 0.25rem;
 
-	text-align: left;
+  text-align: left;
 }
 
 .about-main-dev-icon-div {
-	display: flex;
-	align-items: center;
+  display: flex;
+  align-items: center;
 
-	padding: 0 0.25rem;
+  padding: 0 0.25rem;
 
-	background-color: #000;
+  background-color: #000;
 }
 
 .about-main-dev-icon-div p {
-	margin: 0;
-	color: #fff;
+  margin: 0;
+  color: #fff;
 
-	margin-left: 0.5rem;
-	padding: 0;
+  margin-left: 0.5rem;
+  padding: 0;
 }
 
 .dev-icon {
-	font-size: 30px;
-	color: #fff;
+  font-size: 30px;
+  color: #fff;
 }

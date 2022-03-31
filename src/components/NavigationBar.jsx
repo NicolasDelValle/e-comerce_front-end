@@ -27,7 +27,6 @@ function NavigationBar() {
   const totalItemsCart = cart.reduce(function (prev, product) {
     return prev + Number(product.quantity);
   }, 0);
-  console.log(totalItemsCart);
 
   return (
     <>

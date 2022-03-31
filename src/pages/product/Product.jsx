@@ -5,11 +5,27 @@ import Footer from "../../components/Footer";
 import { useParams } from "react-router-dom";
 import AddCart from "../../components/AddCart";
 import { getProduct } from "../../api/productApi";
+import { Container, Row } from "react-bootstrap";
+import ProductCard from "../../components/ProductCard";
+import axios from "axios";
 
 function Product(props) {
   const [product, setProduct] = useState(null);
   const { slug } = useParams();
   const [quantity, setQuantity] = useState(1);
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    const getProducts = async () => {
+      const { data } = await axios({
+        method: "get",
+        url: `${process.env.REACT_APP_API_URL}products`,
+      });
+
+      setProducts(data);
+    };
+    getProducts();
+  }, []);
 
   const handleIncrement = () => {
     setQuantity((count) => count + 1);
@@ -93,45 +109,21 @@ function Product(props) {
           </div>
         </div>
       </div>
+      <Container className="py-5">
+        <div>
+          <div id="shop" className="border-bottom border-1">
+            <h2>Otros Productos</h2>
+          </div>
+          <Row className="py-5 justify-content-center ">
+            {products.map((product, i) => (
+              <ProductCard key={i} product={product} />
+            ))}
+          </Row>
+        </div>
+      </Container>
       <Footer />
     </div>
   );
 }
 
 export default Product;
-
-// <div className="container row">
-//             <div className="grid product">
-//               <div className="column-xs-12 column-md-7">
-//                 <div className="product-gallery">
-//                   <div className="product-image">
-//                     <img
-//                       className="active"
-//                       src="https://source.unsplash.com/W1yjvf5idqA"
-//                       alt="#"
-//                     />
-//                   </div>
-//                   <ul className="image-list">
-//                     <li className="image-item">
-//                       <img
-//                         src="https://source.unsplash.com/W1yjvf5idqA"
-//                         alt="#"
-//                       />
-//                     </li>
-//                     <li className="image-item">
-//                       <img
-//                         src="https://source.unsplash.com/VgbUxvW3gS4"
-//                         alt="#"
-//                       />
-//                     </li>
-//                     <li className="image-item">
-//                       <img
-//                         src="https://source.unsplash.com/5WbYFH0kf_8"
-//                         alt="#"
-//                       />
-//                     </li>
-//                   </ul>
-//                 </div>
-//               </div>
-//             </div>
-//           </div>

@@ -11,7 +11,6 @@ function CheckOut() {
   const SubTotalCost = cart.reduce(function (prev, product) {
     return prev + Number(product.price) * product.quantity;
   }, 0);
-  console.log(SubTotalCost);
 
   const total = SubTotalCost * 1.21;
 
