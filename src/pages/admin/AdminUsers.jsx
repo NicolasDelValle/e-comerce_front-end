@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Button } from "react-bootstrap";
 import axios from "axios";
 
-import "./admin.css";
+import "./css/admin.css";
 import Sidebar from "../../components/Sidebar";
 import { useSelector } from "react-redux";
 import BackNavbar from "../../components/BackNavbar";

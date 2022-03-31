@@ -1,13 +1,12 @@
 import { useState, useEffect } from "react";
-// import { Button } from "react-bootstrap";
-// import { Link } from "react-router-dom";
-import axios from "axios";
 import { useSelector } from "react-redux";
+import axios from "axios";
 
+import BackNavbar from "../../components/BackNavbar";
 import AdminProductsItem from "./AdminProductsItem";
 import Sidebar from "../../components/Sidebar";
-import BackNavbar from "../../components/BackNavbar";
-function AdminProducts({ show, handleClose }) {
+
+function AdminProducts() {
   const newToken = useSelector((state) => state.user.newToken);
 
   const [products, setProducts] = useState([]);
@@ -37,9 +36,7 @@ function AdminProducts({ show, handleClose }) {
               <table className="table">
                 <thead className="table-light">
                   <tr>
-                    <th scope="col" onClick={() => setProducts()}>
-                      Nombre
-                    </th>
+                    <th scope="col">Nombre</th>
                     <th scope="col">Precio</th>
                     <th scope="col">Destacado</th>
                     <th scope="col">Stock</th>

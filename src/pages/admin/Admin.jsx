@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { Badge, Card, ListGroup, ProgressBar } from "react-bootstrap";
 import axios from "axios";
 
-import "./admin.css";
+import "./css/admin.css";
 // import BackNavbar from "../../components/BackNavbar";
 // import AdminProducts from "./AdminProducts";
 import Sidebar from "../../components/Sidebar";
