@@ -1,15 +1,14 @@
-import { useState } from "react";
 import { Button, Modal } from "react-bootstrap";
-import axios from "axios";
 import { useSelector } from "react-redux";
+import { useState } from "react";
+import axios from "axios";
 
 function ModalNewProduct({ show, handleClose }) {
   const { newToken } = useSelector((state) => state.user);
-
   const [newProduct, setNewProduct] = useState({});
 
   const handleCreateNewProduct = async () => {
-    const { data } = await axios({
+    await axios({
       method: "post",
       url: `${process.env.REACT_APP_API_URL}admin/products`,
       data: newProduct,
@@ -19,7 +18,7 @@ function ModalNewProduct({ show, handleClose }) {
 
   return (
     <>
-      <Modal show={show} onHide={handleClose}>
+      <Modal show={show}>
         <Modal.Header closeButton>
           <Modal.Title>Nuevo Producto</Modal.Title>
         </Modal.Header>

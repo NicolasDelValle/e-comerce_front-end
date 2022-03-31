@@ -33,7 +33,7 @@ function App() {
           element={isAdmin ? <AdminProducts /> : <Home />}
         />
         <Route
-          path="admin/users"
+          path="/admin/users"
           element={isAdmin ? <AdminUsers /> : <Home />}
         />
         <Route path="*" element={<NoMatch />} />
