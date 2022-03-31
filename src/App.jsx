@@ -11,27 +11,35 @@ import Login from "./pages/login/Login";
 import Admin from "./pages/admin/Admin";
 import AdminProducts from "./pages/admin/AdminProducts";
 import AdminUsers from "./pages/admin/AdminUsers";
+import { useSelector } from "react-redux";
 
 function App() {
-	return (
-		<div className="App">
-			<Routes>
-				<Route path="/" element={<Home />} />
-				<Route path="/shop" element={<Shop />} />
-				<Route path="/products/:slug" element={<Product />} />
-				<Route path="/aboutus" element={<AboutUs />} />
-				<Route path="/aboutproject" element={<AboutUs />} />
-				<Route path="/checkout" element={<CheckOut />} />
-				<Route path="/register" element={<Register />} />
-				<Route path="/login" element={<Login />} />
-				<Route path="/admin" element={<Admin />} />
-				<Route path="/admin" element={<Admin />} />
-				<Route path="/admin/products" element={<AdminProducts />} />
-				<Route path="admin/users" element={<AdminUsers />} />
-				<Route path="*" element={<NoMatch />} />
-			</Routes>
-		</div>
-	);
+  const { isAdmin } = useSelector((state) => state.user);
+
+  return (
+    <div className="App">
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/shop" element={<Shop />} />
+        <Route path="/products/:slug" element={<Product />} />
+        <Route path="/aboutus" element={<AboutUs />} />
+        <Route path="/aboutproject" element={<AboutUs />} />
+        <Route path="/checkout" element={<CheckOut />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/admin" element={isAdmin ? <Admin /> : <Home />} />
+        <Route
+          path="/admin/products"
+          element={isAdmin ? <AdminProducts /> : <Home />}
+        />
+        <Route
+          path="admin/users"
+          element={isAdmin ? <AdminUsers /> : <Home />}
+        />
+        <Route path="*" element={<NoMatch />} />
+      </Routes>
+    </div>
+  );
 }
 
 export default App;
