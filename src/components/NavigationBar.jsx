@@ -19,7 +19,7 @@ function NavigationBar() {
     >
       <i className="bi bi-person-circle fs-4 d-flex"></i>
       {/* <span className="d-none d-sm-flex">Cuenta</span> */}
-      <i class="bi bi-chevron-down pt-1"></i>
+      <i className="bi bi-chevron-down pt-1"></i>
     </a>
   ));
 
@@ -51,14 +51,14 @@ function NavigationBar() {
               to={"/shop"}
               className="px-2 text-white text-decoration-none d-flex justify-content-between align-items-center"
             >
-              <i class="bi bi-shop-window fs-4 d-flex d-sm-none"></i>
+              <i className="bi bi-shop-window fs-4 d-flex d-sm-none"></i>
               <span className="d-none d-sm-flex">Tienda</span>
             </Link>
             <Link
               to={"/shop"}
               className="px-2 text-white text-decoration-none d-flex justify-content-between align-items-center"
             >
-              <i class="bi bi-people fs-3 d-flex d-sm-none"></i>
+              <i className="bi bi-people fs-3 d-flex d-sm-none"></i>
               <span className="d-none d-sm-flex">Nosotros</span>
             </Link>
 
@@ -86,7 +86,7 @@ function NavigationBar() {
                     title="Ingresar"
                   >
                     <span>Ingresar</span>
-                    <i class="bi bi-box-arrow-up-right ms-1"></i>
+                    <i className="bi bi-box-arrow-up-right ms-1"></i>
                   </Link>
                   <Dropdown.Divider />
                   <Link
@@ -95,16 +95,16 @@ function NavigationBar() {
                     title="Registrarse"
                   >
                     <span>Registrarse</span>
-                    <i class="bi bi-box-arrow-up-right ms-1"></i>
+                    <i className="bi bi-box-arrow-up-right ms-1"></i>
                   </Link> */}
                   {/* Logueado*/}
                   <Link className="p-1 w-100 " to="/checkout" title="Perfil">
                     <span>Perfil</span>
-                    <i class="bi bi-box-arrow-up-right ms-1"></i>
+                    <i className="bi bi-box-arrow-up-right ms-1"></i>
                   </Link>
                   <Link className="p-1 w-100 " to="/checkout" title="Historial">
                     <span>Historial</span>
-                    <i class="bi bi-box-arrow-up-right ms-1"></i>
+                    <i className="bi bi-box-arrow-up-right ms-1"></i>
                   </Link>
                   <Dropdown.Divider />
                   <Link

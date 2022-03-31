@@ -1,45 +1,37 @@
 import React from "react";
 import Footer from "../../components/Footer";
-import { Container, Table, Row, Col, Button } from "react-bootstrap";
+import { Container, Row, Col, Button } from "react-bootstrap";
 import NavigationBar from "../../components/NavigationBar";
 import "./checkOut.css";
 import CartItem from "../../components/CartItem";
+import { useSelector } from "react-redux";
 
 function CheckOut() {
+  const cart = useSelector((state) => state.cart);
+  const SubTotalCost = cart.reduce(function (prev, product) {
+    return prev + Number(product.price) * product.quantity;
+  }, 0);
+  console.log(SubTotalCost);
+
+  const total = SubTotalCost * 1.21;
+
   return (
     <>
       <NavigationBar />
       <Container className="mt-5">
         <Row className="d-flex justify-content-center">
           <Col md={12} lg={6} className="pe-lg-0">
-            <CartItem
-              url="https://cybmmybwfbmxasdepuyj.supabase.co/storage/v1/object/public/images/hardware/tornillos.png"
-              price="10"
-              mountProp="10"
-              name="Tornillos"
-              stock="20"
-            />
-            <CartItem
-              url="https://cybmmybwfbmxasdepuyj.supabase.co/storage/v1/object/public/images/ropa/Pant_negro_1.png"
-              price="80"
-              mountProp="4"
-              name="Pantalon Gostoso"
-              stock="10"
-            />
-            <CartItem
-              url="https://cybmmybwfbmxasdepuyj.supabase.co/storage/v1/object/public/images/hardware/176578197_1041929339671235_4247878052830658536_n.jpg"
-              price="3000"
-              mountProp="12"
-              name="Rueditas Facheras"
-              stock="20"
-            />
-            <CartItem
-              url="https://cybmmybwfbmxasdepuyj.supabase.co/storage/v1/object/public/images/tablas/tabla2.png"
-              price="35000"
-              mountProp="2"
-              name="Patinete DRIIIIP"
-              stock="5"
-            />
+            {cart.map((product, i) => (
+              <CartItem
+                key={i}
+                url={product.imageUrl}
+                price={product.price}
+                mountProp={product.quantity}
+                name={product.name}
+                stock={product.stack}
+                productId={product.id}
+              />
+            ))}
           </Col>
           <Col md={12} lg={4}>
             <div className="border p-3 mb-3">
@@ -48,11 +40,11 @@ function CheckOut() {
               </div>
               <div className="d-flex align-items-start mb-2">
                 <span>Subtotal</span>
-                <span className="fs-4 ms-auto">$5000</span>
+                <span className="fs-4 ms-auto">{SubTotalCost}</span>
               </div>
               <div className="d-flex align-items-start mb-2">
                 <span>Total</span>
-                <span className="fs-4 ms-auto">$5000000</span>
+                <span className="fs-4 ms-auto">{total}</span>
               </div>
               <div>
                 <Button

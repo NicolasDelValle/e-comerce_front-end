@@ -193,7 +193,7 @@ function AdminProducts() {
                 </tbody>
               </table>
             </div>
-            {/* <div class="col-xl-3 col-md-6"></div>
+            {/* <div className="col-xl-3 col-md-6"></div>
   return (
     <div className="admin">
       <BackNavbar
@@ -377,10 +377,10 @@ function AdminProducts() {
                 </tbody>
               </table>
             </div>
-            {/* <div class="col-xl-3 col-md-6"></div>
-						<div class="col-xl-3 col-md-6"></div>
-						<div class="col-xl-3 col-md-6"></div>
-						<div class="col-xl-3 col-md-6"></div> */}
+            {/* <div className="col-xl-3 col-md-6"></div>
+						<div className="col-xl-3 col-md-6"></div>
+						<div className="col-xl-3 col-md-6"></div>
+						<div className="col-xl-3 col-md-6"></div> */}
           </div>
         </div>
       </div>

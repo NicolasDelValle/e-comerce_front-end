@@ -16,7 +16,7 @@ function Home() {
         method: "get",
         url: `${process.env.REACT_APP_API_URL}products`,
       });
-      console.log(data);
+
       setProducts(data);
     };
     getProducts();
@@ -51,8 +51,8 @@ function Home() {
                 <h2>Shop</h2>
               </div>
               <Row className="py-5 justify-content-around">
-                {products.map((product) => (
-                  <ProductCard product={product} />
+                {products.map((product, i) => (
+                  <ProductCard key={i} product={product} />
                 ))}
               </Row>
             </div>

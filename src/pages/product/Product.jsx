@@ -67,6 +67,7 @@ function Product(props) {
                     className=" text-center w-75 border-0 border-start-0 border-1 border-secondary"
                     type="number"
                     value={quantity}
+                    onChange={() => quantity}
                   />
                   <button
                     onClick={() => handleDecrement()}
@@ -100,30 +101,30 @@ function Product(props) {
 export default Product;
 
 // <div className="container row">
-//             <div class="grid product">
-//               <div class="column-xs-12 column-md-7">
-//                 <div class="product-gallery">
-//                   <div class="product-image">
+//             <div className="grid product">
+//               <div className="column-xs-12 column-md-7">
+//                 <div className="product-gallery">
+//                   <div className="product-image">
 //                     <img
-//                       class="active"
+//                       className="active"
 //                       src="https://source.unsplash.com/W1yjvf5idqA"
 //                       alt="#"
 //                     />
 //                   </div>
-//                   <ul class="image-list">
-//                     <li class="image-item">
+//                   <ul className="image-list">
+//                     <li className="image-item">
 //                       <img
 //                         src="https://source.unsplash.com/W1yjvf5idqA"
 //                         alt="#"
 //                       />
 //                     </li>
-//                     <li class="image-item">
+//                     <li className="image-item">
 //                       <img
 //                         src="https://source.unsplash.com/VgbUxvW3gS4"
 //                         alt="#"
 //                       />
 //                     </li>
-//                     <li class="image-item">
+//                     <li className="image-item">
 //                       <img
 //                         src="https://source.unsplash.com/5WbYFH0kf_8"
 //                         alt="#"

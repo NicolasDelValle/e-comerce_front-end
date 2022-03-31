@@ -4,10 +4,8 @@ import actions from "../redux/actions/cartActions";
 
 function AddCart({ product, quantity }) {
   const dispatch = useDispatch();
-  console.log(product);
 
   const handleClick = () => {
-    console.log(quantity);
     dispatch(actions.addToCart({ ...product, quantity }));
   };
 
