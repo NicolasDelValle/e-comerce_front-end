@@ -1,68 +1,69 @@
 .admin {
-	display: flex;
-	flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .admin-dropdown-button {
-	padding: 0 !important;
+  padding: 0 !important;
 
-	line-height: 1.5rem;
+  line-height: 1.5rem;
 }
 
 .admin-main {
-	display: flex;
+  display: flex;
 }
 
 .admin-main-sidebar {
-	height: 95vh;
-	width: 300px;
+  height: 95vh;
+  width: 300px;
 
-	display: flex;
-	flex-direction: column;
+  display: flex;
+  flex-direction: column;
 
-	background-color: #000;
+  background-color: #000;
 
-	transition: all 0.5s;
+  transition: all 0.5s;
 }
 
 .admin-main-sidebar-hidden {
-	display: none;
+  display: none;
 }
 
 .admin-main-sidebar-option {
-	display: flex;
-	flex-direction: column;
+  display: flex;
+  flex-direction: column;
 
-	margin: 2rem 1rem;
+  margin: 2rem 1rem;
 }
 
 .admin-main-sidebar-option h3 {
-	margin: 0;
+  margin: 0;
 
   font-size: 0.8rem;
-	text-align: left;
+  text-align: left;
 }
 
-.admin-main-sidebar-option a,p {
-	text-align: left;
-	color: rgb(148, 148, 148);
+.admin-main-sidebar-option a {
+  text-align: left;
+  color: rgb(148, 148, 148);
   margin: 0;
   border-bottom: 0.5px solid rgb(89, 89, 89);
   cursor: pointer;
 }
 
-.admin-main-sidebar-option a:hover, p:hover {
+.admin-main-sidebar-option a:hover,
+p:hover {
   color: #fff;
 }
 
 .admin-main-sidebar-user {
-	margin-top: auto;
+  margin-top: auto;
 
   padding: 0 1rem;
 
   background-color: #343a40;
 
-	color: #fff;
+  color: #fff;
 }
 
 .admin-main-sidebar-user p {
