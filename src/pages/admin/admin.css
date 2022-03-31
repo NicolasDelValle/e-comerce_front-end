@@ -68,3 +68,11 @@
   margin: 0;
   text-align: left;
 }
+
+th {
+  cursor: pointer;
+}
+
+th:hover {
+  background-color: #343a40;
+}

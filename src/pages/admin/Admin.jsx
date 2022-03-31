@@ -23,7 +23,7 @@ function Admin() {
 						>
 							<i className="bi bi-list"></i>
 						</Button>
-						<h1>Administración</h1>
+						<h1 className="h3">Administración</h1>
 					</>
 				}
 			/>
@@ -60,8 +60,7 @@ function Admin() {
 					</div>
 				</div>
 				<div className="container-fluid px-4">
-					<h1 className="mt-4 text-start">Menú Principal</h1>
-					<div class="row">
+					<div class="row mt-4">
 						<div class="col-xl-3 col-md-6">
 							<Card bg="light" className="mb-4">
 								<Card.Header className="h3">Información</Card.Header>
