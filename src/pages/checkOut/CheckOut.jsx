@@ -1,5 +1,6 @@
 import React from "react";
 import Footer from "../../components/Footer";
+import { Container, Table, Row, Col, Button } from "react-bootstrap";
 import NavigationBar from "../../components/NavigationBar";
 import "./checkOut.css";
 import CartItem from "../../components/CartItem";
@@ -8,121 +9,42 @@ function CheckOut() {
   return (
     <>
       <NavigationBar />
-      <div className="checkout-main-container pt-5">
-        <div className="checkout-main-content">
-          <div className="checkout-main-product-container">
+      <Container className="mt-5">
+        <Row>
+          <Col md={12} lg={8} className="pe-lg-0">
             <CartItem />
-            <div className="checkout-main-purchase">
-              <h2>TOTAL</h2>
-              <h2>$100000</h2>
+            <CartItem />
+            <CartItem />
+            <CartItem />
+            <CartItem />
+          </Col>
+          <Col md={12} lg={4}>
+            <div className="border p-3 mb-3">
+              <div className="border-bottom d-flex align-items-start mb-2 fs-5 fw-bold">
+                <span>TOTAL DEL CARRITO</span>
+              </div>
+              <div className="d-flex align-items-start mb-2">
+                <span>Subtotal</span>
+                <span className="fs-4 ms-auto">$5000</span>
+              </div>
+              <div className="d-flex align-items-start mb-2">
+                <span>Total</span>
+                <span className="fs-4 ms-auto">$5000000</span>
+              </div>
+              <div>
+                <Button
+                  className="rounded-pill w-100 px-auto py-1"
+                  variant="dark"
+                  size="lg"
+                >
+                  Finalizar Compra
+                </Button>
+              </div>
             </div>
-          </div>
-          <div className="checkout-main-payment">
-            <div className="checkout-main-payment-body">
-              <form action="">
-                <div className="payment-option">
-                  <div className="checkout-main-payment-header">
-                    <h3>OPCIONES DE PAGO</h3>
-                  </div>
-                  <div className="payment-option-toggle">
-                    <input
-                      type="radio"
-                      name="payment-option"
-                      id="wire-transfer"
-                    />
-                    <label htmlFor="wire-transfer">
-                      TRANSFERENCIA BANCARIA
-                    </label>
-                    <div className="payment-option-input">
-                      <label htmlFor="wire-transfer-bank">BANCO</label>
-                      <select name="wire-transfer-bank" id="wire-transfer-bank">
-                        <option value="DEFAULT" selected disabled>
-                          Seleccionar
-                        </option>
-                        <option value="BROU">Banco República</option>
-                        <option value="SANTANDER">Banco Santander</option>
-                        <option value="SCOTIA-BANK">Scotia Bank</option>
-                      </select>
-                    </div>
-                    <div className="payment-option-input">
-                      <label htmlFor="wire-transfer-account-number">
-                        NÚMERO DE CUENTA
-                      </label>
-                      <input type="number" />
-                    </div>
-                  </div>
-                  <div className="payment-option-toggle">
-                    <input
-                      type="radio"
-                      name="payment-option"
-                      id="credit-card"
-                    />
-                    <label htmlFor="credit-card">TARJETA DE CRÉDITO</label>
-                    <div className="payment-option-input">
-                      <label htmlFor="credit-card-number">
-                        NÚMERO DE TARJETA
-                      </label>
-                      <input
-                        type="number"
-                        name="credit-card-number"
-                        id="credit-card-number"
-                      />
-                      <label htmlFor="credit-card-owner">
-                        NOMBRE Y APELLIDO DEL TITULAR
-                      </label>
-                      <input
-                        type="text"
-                        name="credit-card-owner"
-                        id="credit-card-owner"
-                      />
-                      <label htmlFor="credit-card-expiration">
-                        FECHA DE VENCIMIENTO
-                      </label>
-                      <input
-                        type="date"
-                        name="credit-card-expiration"
-                        id="credit-card-expiration"
-                      />
-                      <label htmlFor="credit-card-security-code">
-                        CÓDIGO DE SEGURIDAD
-                      </label>
-                      <input type="number" />
-                    </div>
-                  </div>
-                </div>
-                <div className="payment-option">
-                  <div className="checkout-main-payment-header">
-                    <h3>DETALLES DE FACTURACIÓN</h3>
-                  </div>
-                  <div className="payment-option-input">
-                    <label htmlFor="fullname">NOMBRE Y APELLIDO</label>
-                    <input type="text" />
-                    <label htmlFor="phone-number">TELÉFONO</label>
-                    <input type="tel" name="phone-number" id="phone-number" />
-                    <label htmlFor="email">
-                      DIRECCIÓN DE CORREO ELECTRÓNICO
-                    </label>
-                    <input type="email" />
-                    <label htmlFor="address">
-                      DIRECCIÓN{" "}
-                      <small className="address-small">
-                        calle, número de puerta y esquina
-                      </small>
-                    </label>
-                    <input type="text" />
-                  </div>
-                </div>
-                <div className="checkout-main-payment-confirm">
-                  <button className="checkout-main-payment-confirm-button">
-                    CONFIRMAR COMPRA
-                  </button>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-      {/* <Footer /> */}
+          </Col>
+        </Row>
+      </Container>
+      <Footer />
     </>
   );
 }
