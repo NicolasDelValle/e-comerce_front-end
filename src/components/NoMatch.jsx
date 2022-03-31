@@ -7,7 +7,9 @@ function NoMatch() {
     <>
       <NavigationBar />
       <div className="container">
-        <p>Lo sentimos, la pagina que nos solicita no existe.</p>
+        <p className="w-100 h-100">
+          Lo sentimos, la pagina que nos solicita no existe.
+        </p>
       </div>
       <Footer />
     </>

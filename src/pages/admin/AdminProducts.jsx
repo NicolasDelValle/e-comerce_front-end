@@ -103,7 +103,9 @@ function AdminProducts() {
                 </thead>
                 <tbody>
                   {products.length > 0 &&
-                    products.map((item) => <AdminProductsItem item={item} />)}
+                    products.map((item) => (
+                      <AdminProductsItem key={item.slug} item={item} />
+                    ))}
                 </tbody>
               </table>
             </div>
