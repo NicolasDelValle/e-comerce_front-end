@@ -9,6 +9,7 @@ import actions from "../redux/actions/userActions";
 function NavigationBar() {
   const dispatch = useDispatch();
   const CustomToggle = React.forwardRef(({ onClick }, ref) => (
+    // eslint-disable-next-line jsx-a11y/anchor-is-valid
     <a
       className="d-flex align-items-center mx-2 me-1 pe-0"
       ref={ref}
@@ -99,8 +100,8 @@ function NavigationBar() {
                   </Link> */}
                   {/* Logueado*/}
                   <Link className="p-1 w-100 " to="/checkout" title="Perfil">
-                    <span>Perfil</span>
-                    <i className="bi bi-box-arrow-up-right ms-1"></i>
+                    <span>Ajustes</span>
+                    <i class="bi bi-box-arrow-up-right ms-1"></i>
                   </Link>
                   <Link className="p-1 w-100 " to="/checkout" title="Historial">
                     <span>Historial</span>
