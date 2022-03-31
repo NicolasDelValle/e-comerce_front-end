@@ -3,11 +3,12 @@ import { Link } from "react-router-dom";
 import { Dropdown, Container, Navbar } from "react-bootstrap";
 import "./css/NavigationBar.css";
 import logoBlanco from "../img/logos/logoBlanco.png";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import actions from "../redux/actions/userActions";
 
 function NavigationBar() {
   const dispatch = useDispatch();
+  const cart = useSelector((state) => state.cart);
   const CustomToggle = React.forwardRef(({ onClick }, ref) => (
     // eslint-disable-next-line jsx-a11y/anchor-is-valid
     <a
@@ -23,6 +24,10 @@ function NavigationBar() {
       <i className="bi bi-chevron-down pt-1"></i>
     </a>
   ));
+  const totalItemsCart = cart.reduce(function (prev, product) {
+    return prev + Number(product.quantity);
+  }, 0);
+  console.log(totalItemsCart);
 
   return (
     <>
@@ -129,7 +134,7 @@ function NavigationBar() {
               <div className="ms-auto position-relative">
                 <i className="bi bi-cart3 fs-4 position-relative"></i>
                 <span className=" badge rounded-pill bg-danger py-1 px-1 position-absolute top-0 end-50">
-                  99
+                  {totalItemsCart}
                 </span>
               </div>
             </Link>
