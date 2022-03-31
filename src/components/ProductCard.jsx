@@ -1,14 +1,14 @@
 import { useState } from "react";
 import { Col, Spinner } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import AddCart from "./AddCart";
+import DetailsButton from "./DetailsButton";
 import "./css/ProductCard.css";
 function ProductCard({ product }) {
   const [isLoading, setIsLoading] = useState(true);
 
   return (
     <>
-      <Col md={5} lg={3} className="productCard">
+      <Col md={5} lg={3} className="productCard rounded">
         <Link to={`/products/${product.slug}`}>
           <div className=" p-1 text-black">
             <span className="py-2" min-height="220px">
@@ -24,13 +24,13 @@ function ProductCard({ product }) {
                 alt={product.name}
                 onLoad={() => setIsLoading(false)}
               />
-              <p className="product-info">
+              <p className="product-info mt-2">
                 <strong>{product.name}</strong>
               </p>
               <p className="product-info">
                 <strong>${product.price}</strong>
               </p>
-              <AddCart />
+              <DetailsButton />
             </span>
           </div>
         </Link>

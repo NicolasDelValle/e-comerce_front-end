@@ -13,12 +13,12 @@ export const CartItem = ({ url, price, mountProp, name, stock }) => {
   return (
     <div className="d-flex flex-row align-items-center w-100 mb-3">
       <div
-        className="item-image rounded me-2"
+        className="item-image rounded border me-2"
         style={{
           backgroundImage: `url(${url})`,
         }}
       ></div>
-      <div className="w-100">
+      <div className="w-100 me-3 ps-2">
         <div className="w-100 d-flex flex-row align-items-start mb-1">
           <span className="w-75 text-start overflow-hidden">{name}</span>
           <span className="ms-auto fw-bold">
