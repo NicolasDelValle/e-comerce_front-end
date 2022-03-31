@@ -10,8 +10,8 @@ function CheckOut() {
     <>
       <NavigationBar />
       <Container className="mt-5">
-        <Row>
-          <Col md={12} lg={8} className="pe-lg-0">
+        <Row className="d-flex justify-content-center">
+          <Col md={12} lg={6} className="pe-lg-0">
             <CartItem
               url="https://cybmmybwfbmxasdepuyj.supabase.co/storage/v1/object/public/images/hardware/tornillos.png"
               price="10"
