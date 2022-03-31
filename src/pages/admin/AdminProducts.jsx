@@ -31,54 +31,6 @@ function AdminProducts() {
 
 	return (
 		<Sidebar />
-		// 	<div className="admin">
-		// 		<BackNavbar
-		// 			addOns={
-		// 				<>
-		// 					<Button
-		// 						variant="dark"
-		// 						className="admin-dropdown-button"
-		// 						onClick={() => setShowSidebar((actual) => !actual)}
-		// 					>
-		// 						<i className="bi bi-list"></i>
-		// 					</Button>
-		// 					<h1 className="h3">Administración</h1>
-		// 				</>
-		// 			}
-		// 		/>
-		// 		<div className="admin-main">
-		// 			{/* <div
-		// 				className={
-		// 					showSidebar ? "admin-main-sidebar bg-dark" : "admin-main-sidebar-hidden"
-		// 				}
-		// 			>
-		// 				<div className="admin-main-sidebar-option">
-		// 					<h3 className="text-secondary">INICIO</h3>
-		// 					<Link to="/admin">Menú Principal</Link>
-		// 				</div>
-		// 				<div className="admin-main-sidebar-option">
-		// 					<h3 className="text-secondary">PRODUCTOS</h3>
-		// 					<Link to="/admin/products">Lista de Productos</Link>
-		// 					<p onClick={handleShow}>Nuevo Producto</p>
-		// 				</div>
-		// 				<div className="admin-main-sidebar-option">
-		// 					<h3 className="text-secondary">ÓRDENES</h3>
-		// 					<Link to="/admin/users">Lista de Órdenes</Link>
-		// 				</div>
-		// 				<div className="admin-main-sidebar-option">
-		// 					<h3 className="text-secondary">USUARIOS</h3>
-		// 					<Link to="/admin/users">Lista de Usuarios</Link>
-		// 				</div>
-		// 				<div className="admin-main-sidebar-user d-flex align-items-center justify-content-between">
-		// 					<div className="d-flex flex-column align-items-center justify-content-between">
-		// 						<p>Administrador:</p>
-		// 						<p>Pepe González</p>
-		// 					</div>
-		// 					<button className="btn btn-danger p-1">
-		// 						<i className="bi bi-box-arrow-left h5"></i>
-		// 					</button>
-		// 				</div>
-		// 			</div> */}
 		// 			<div className="container-fluid px-4">
 		// 				<Modal show={show} onHide={handleClose}>
 		// 					<Modal.Header closeButton>

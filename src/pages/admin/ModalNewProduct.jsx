@@ -1,14 +1,12 @@
 import { useState } from "react";
 import { Button, Modal } from "react-bootstrap";
-// import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useSelector } from "react-redux";
 
 function ModalNewProduct({ show, handleClose }) {
-  const { newToken } = useSelector((state) => state.user);
+  const { newToken, id } = useSelector((state) => state.user);
 
   const [newProduct, setNewProduct] = useState({});
-  console.log(newProduct);
 
   const handleCreateNewProduct = async () => {
     const { data } = await axios({
@@ -17,8 +15,8 @@ function ModalNewProduct({ show, handleClose }) {
       data: newProduct,
       headers: { Authorization: `Bearer ${newToken}` },
     });
-    console.log(data);
   };
+
   return (
     <>
       <Modal show={show} onHide={handleClose}>
@@ -190,7 +188,6 @@ function ModalNewProduct({ show, handleClose }) {
                   });
                 }}
                 className="form-control"
-                // placeholder="Elegir opcion"
               >
                 <option disabled>Seleccionar</option>
                 <option value="true">Sí</option>
@@ -216,7 +213,11 @@ function ModalNewProduct({ show, handleClose }) {
                 className="form-control"
               />
             </div>
-            <button type="submit" className="btn btn-success">
+            <button
+              type="submit"
+              className="btn btn-success"
+              onClick={handleClose}
+            >
               Aceptar
             </button>
           </form>
