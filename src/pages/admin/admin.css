@@ -33,8 +33,6 @@
 	display: flex;
 	flex-direction: column;
 
-	border-bottom: 1px solid rgb(89, 89, 89);
-
 	margin: 2rem 1rem;
 }
 
@@ -45,9 +43,12 @@
 	text-align: left;
 }
 
-.admin-main-sidebar-option a {
+.admin-main-sidebar-option a,p {
 	text-align: left;
 	color: rgb(148, 148, 148);
+  margin: 0;
+  border-bottom: 0.5px solid rgb(89, 89, 89);
+  cursor: pointer;
 }
 
 .admin-main-sidebar-option a:hover {

@@ -61,7 +61,7 @@ function AdminProducts() {
 					<div className="admin-main-sidebar-option">
 						<h3 className="text-secondary">PRODUCTOS</h3>
 						<Link to="/admin/products">Lista de Productos</Link>
-						<p>Nuevo Producto</p>
+						<p onClick={handleShow}>Nuevo Producto</p>
 					</div>
 					<div className="admin-main-sidebar-option">
 						<h3 className="text-secondary">ÓRDENES</h3>
@@ -82,87 +82,72 @@ function AdminProducts() {
 					</div>
 				</div>
 				<div className="container-fluid px-4">
-					<div className="row mt-4">
-						<div className="col-xl-3 col-md-6">
-							<Button variant="primary" onClick={handleShow}>
-								Nuevo Producto
+					<Modal show={show} onHide={handleClose}>
+						<Modal.Header closeButton>
+							<Modal.Title>Nuevo Producto</Modal.Title>
+						</Modal.Header>
+						<Modal.Body>
+							<form id="product-form" className="product-form">
+								<label htmlFor="product-name">Nombre</label>
+								<input type="text" name="product-name" id="product-name" />
+								<label for="product-category">Categoría</label>
+								<select id="product-category" name="category-list" form="product-form">
+									<option value="Seleccionar" selected disabled>
+										Seleccionar
+									</option>
+									<option value="Tablas">Tablas</option>
+									<option value="Ruedas">Ruedas</option>
+									<option value="Hardware">Hardware</option>
+									<option value="Ropa">Ropa</option>
+								</select>
+								<label htmlFor="product-description">Descripción</label>
+								<textarea
+									type="text"
+									name="product-description"
+									id="product-description"
+									size="50"
+								/>
+								<label htmlFor="product-details">Detalles</label>
+								<textarea
+									type="text"
+									name="product-details"
+									id="product-details"
+									size="50"
+								/>
+								<label htmlFor="product-image">Imagen</label>
+								<input type="text" placeholder="http://via.placeholder.com/640x360" />
+								<label htmlFor="product-price">Precio</label>
+								<input type="number" name="product-price" id="product-price" />
+								<label htmlFor="product-stock">Stock</label>
+								<input type="number" name="product-stock" id="product-stock" />
+								<label for="product-featured">Destacado</label>
+								<select
+									id="product-featured"
+									name="featured-options"
+									form="product-form"
+								>
+									<option value="Seleccionar" selected disabled>
+										Seleccionar
+									</option>
+									<option value="true">Sí</option>
+									<option value="false">No</option>
+								</select>
+								<label htmlFor="product-slug">Slug</label>
+								<input type="text" name="product-slug" id="product-slug" />
+								<button type="submit" className="btn btn-success" onClick={handleClose}>
+									Aceptar
+								</button>
+							</form>
+						</Modal.Body>
+						<Modal.Footer>
+							<Button variant="danger" onClick={handleClose}>
+								Cancelar
 							</Button>
-							<Modal show={show} onHide={handleClose}>
-								<Modal.Header closeButton>
-									<Modal.Title>Nuevo Producto</Modal.Title>
-								</Modal.Header>
-								<Modal.Body>
-									<form id="product-form" className="product-form">
-										<label htmlFor="product-name">Nombre</label>
-										<input type="text" name="product-name" id="product-name" />
-										<label for="product-category">Categoría</label>
-										<select
-											id="product-category"
-											name="category-list"
-											form="product-form"
-										>
-											<option value="Seleccionar" selected disabled>
-												Seleccionar
-											</option>
-											<option value="Tablas">Tablas</option>
-											<option value="Ruedas">Ruedas</option>
-											<option value="Hardware">Hardware</option>
-											<option value="Ropa">Ropa</option>
-										</select>
-										<label htmlFor="product-description">Descripción</label>
-										<textarea
-											type="text"
-											name="product-description"
-											id="product-description"
-											size="50"
-										/>
-										<label htmlFor="product-details">Detalles</label>
-										<textarea
-											type="text"
-											name="product-details"
-											id="product-details"
-											size="50"
-										/>
-										<label htmlFor="product-image">Imagen</label>
-										<input type="text" placeholder="http://via.placeholder.com/640x360" />
-										<label htmlFor="product-price">Precio</label>
-										<input type="number" name="product-price" id="product-price" />
-										<label htmlFor="product-stock">Stock</label>
-										<input type="number" name="product-stock" id="product-stock" />
-										<label for="product-featured">Destacado</label>
-										<select
-											id="product-featured"
-											name="featured-options"
-											form="product-form"
-										>
-											<option value="Seleccionar" selected disabled>
-												Seleccionar
-											</option>
-											<option value="true">Sí</option>
-											<option value="false">No</option>
-										</select>
-										<label htmlFor="product-slug">Slug</label>
-										<input type="text" name="product-slug" id="product-slug" />
-										<button
-											type="submit"
-											className="btn btn-success"
-											onClick={handleClose}
-										>
-											Aceptar
-										</button>
-									</form>
-								</Modal.Body>
-								<Modal.Footer>
-									<Button variant="danger" onClick={handleClose}>
-										Cancelar
-									</Button>
-								</Modal.Footer>
-							</Modal>
-						</div>
-					</div>
+						</Modal.Footer>
+					</Modal>
 					<div className="row mt-4">
 						<div className="table-responsive">
-							<table className="table table-bordered">
+							<table className="table">
 								<thead className="table-light">
 									<tr>
 										<th scope="col" onClick={() => setProducts()}>
