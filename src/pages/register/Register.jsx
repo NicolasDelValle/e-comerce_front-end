@@ -1,5 +1,5 @@
 import { useNavigate, Link } from "react-router-dom";
-import BackNavbar from "../../components/BackNavbar";
+import NavigationBar from "../../components/NavigationBar";
 import "./register.css";
 import { useState } from "react";
 import axios from "axios";
@@ -27,7 +27,7 @@ function Register() {
   return (
     <>
       <div className="register">
-        <BackNavbar />
+        <NavigationBar />
         <div className="register-main">
           <div className="register-main-logo"></div>
           <div className="register-main-container">

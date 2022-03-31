@@ -14,9 +14,9 @@ function NavigationBar() {
         onClick(e);
       }}
     >
-      <i className="bi bi-person-circle fs-4 d-flex d-sm-none"></i>
-      <span className="d-none d-sm-flex">Cuenta</span>
-      <i class="bi bi-caret-down"></i>
+      <i className="bi bi-person-circle fs-4 d-flex"></i>
+      {/* <span className="d-none d-sm-flex">Cuenta</span> */}
+      <i class="bi bi-chevron-down pt-1"></i>
     </a>
   ));
 
@@ -58,7 +58,7 @@ function NavigationBar() {
               <i class="bi bi-people fs-3 d-flex d-sm-none"></i>
               <span className="d-none d-sm-flex">Nosotros</span>
             </Link>
-            <i class="bi bi-dot"></i>
+
             {/*SI ES ADMIN :D */}
             {/* <Link
               to="/checkout"
@@ -79,8 +79,8 @@ function NavigationBar() {
                 <div className="d-flex flex-column">
                   {/* <Link
                     className="p-1 w-100 "
-                    to="/checkout"
-                    title="Carrito de compras"
+                    to="/login"
+                    title="Ingresar"
                   >
                     <span>Ingresar</span>
                     <i class="bi bi-box-arrow-up-right ms-1"></i>
@@ -88,18 +88,18 @@ function NavigationBar() {
                   <Dropdown.Divider />
                   <Link
                     className="p-1 w-100"
-                    to="/checkout"
-                    title="Carrito de compras"
+                    to="/register"
+                    title="Registrarse"
                   >
                     <span>Registrarse</span>
                     <i class="bi bi-box-arrow-up-right ms-1"></i>
                   </Link> */}
                   {/* Logueado*/}
-                  <Link
-                    className="p-1 w-100 "
-                    to="/checkout"
-                    title="Carrito de compras"
-                  >
+                  <Link className="p-1 w-100 " to="/checkout" title="Perfil">
+                    <span>Perfil</span>
+                    <i class="bi bi-box-arrow-up-right ms-1"></i>
+                  </Link>
+                  <Link className="p-1 w-100 " to="/checkout" title="Historial">
                     <span>Historial</span>
                     <i class="bi bi-box-arrow-up-right ms-1"></i>
                   </Link>
@@ -114,7 +114,7 @@ function NavigationBar() {
                 </div>
               </Dropdown.Menu>
             </Dropdown>
-            <i class="bi bi-dot"></i>
+
             <Link
               to="/checkout"
               className=" ps-3 d-flex align-items-start"
