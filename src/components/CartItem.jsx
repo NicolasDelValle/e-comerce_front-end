@@ -2,43 +2,46 @@ import React from "react";
 
 export const CartItem = (props) => {
   return (
-    <div className="checkout-main-product">
+    <div className="d-flex flex-row align-items-center w-100 mb-3">
       <div
-        className="checkout-main-product-img"
+        className="item-image rounded me-2"
         style={{
-          backgroundImage: `url("https://cdn.shopify.com/s/files/1/0427/7095/6453/products/XBOX-SKATEBOARD-100391-Bottom-MF_a1d979f8-01d9-488f-970b-716f63302139.png?v=1631547186")`,
+          backgroundImage:
+            "url(https://cybmmybwfbmxasdepuyj.supabase.co/storage/v1/object/public/images/hardware/tornillos.png)",
         }}
       ></div>
-      <div className="checkout-main-product-body">
-        <div className="checkout-main-product-details">
-          <div className="checkout-main-product-details-title">
-            <h4>Tabla RF1968-2013</h4>
-            <div className="checkout-main-product-options-delete">
-              <button>
-                <i className="bi bi-x checkout-icon-delete"></i>
+      <div className="w-100">
+        <div className="w-100 d-flex flex-row align-items-start mb-1">
+          <span className="w-75 text-start overflow-hidden">
+            NOMBRE RE GOD CON LA PATINETA DE LO DIOSE
+          </span>
+          <span className="ms-auto fw-bold">$3123123123</span>
+        </div>
+        <div className="d-flex flex-row align-items-start text-secondary fw-light mb-1">
+          <span>
+            $12.99<i class="bi bi-x"></i>Unidad
+          </span>
+        </div>
+        <div className="d-flex flex-row align-items-center">
+          <div>
+            <div className="d-flex flex-row align-items-center rounded-pill border px-2 w-50">
+              <button className="text-secondary fs-5 me-1 border-0 rounded-pill bg-white">
+                +
+              </button>
+              <input
+                className=" text-center w-50 border-0 border-start-0 border-1 border-secondary"
+                type="number"
+                value={1}
+              />
+              <button className="text-secondary fs-5 ms-1 border-0 rounded-pill bg-white">
+                -
               </button>
             </div>
           </div>
-          <div className="checkout-main-product-details-body">
-            <div className="checkout-main-product-options">
-              <div className="checkout-main-product-options-quantity">
-                <button>
-                  <i className="bi bi-plus checkout-icon-quantity"></i>
-                </button>
-                <input
-                  type="number"
-                  className="checkout-main-product-options-quantity-input"
-                />
-
-                <button>
-                  <i className="bi bi-dash checkout-icon-quantity"></i>
-                </button>
-              </div>
-              <div className="checkout-main-product-options-price">
-                <small>$25000</small>
-                <h6>$50000</h6>
-              </div>
-            </div>
+          <div className="ms-auto">
+            <button className="rounded-pill border d-flex flex-row fw-light text-secondary">
+              <i class="bi bi-trash3"></i> <span>Eliminar</span>
+            </button>
           </div>
         </div>
       </div>
