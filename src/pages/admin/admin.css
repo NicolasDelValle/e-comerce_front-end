@@ -1,16 +1,7 @@
-.admin {
-  display: flex;
-  flex-direction: column;
-}
-
 .admin-dropdown-button {
   padding: 0 !important;
 
   line-height: 1.5rem;
-}
-
-.admin-main {
-  display: flex;
 }
 
 .admin-main-sidebar {
