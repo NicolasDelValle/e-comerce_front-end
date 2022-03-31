@@ -3,8 +3,11 @@ import { Link } from "react-router-dom";
 import { Dropdown, Container, Navbar } from "react-bootstrap";
 import "./css/NavigationBar.css";
 import logoBlanco from "../img/logos/logoBlanco.png";
+import { useDispatch } from "react-redux";
+import actions from "../redux/actions/userActions";
 
 function NavigationBar() {
+  const dispatch = useDispatch();
   const CustomToggle = React.forwardRef(({ onClick }, ref) => (
     <a
       className="d-flex align-items-center mx-2 me-1 pe-0"
@@ -106,8 +109,10 @@ function NavigationBar() {
                   <Dropdown.Divider />
                   <Link
                     className="p-1 w-100 text-danger"
-                    to="/checkout"
+                    to="/"
                     title="Carrito de compras"
+                    /*cerrar sesion*/
+                    onClick={() => dispatch(actions.deleteUser)}
                   >
                     <span>Cerrar Sesion</span>
                   </Link>
