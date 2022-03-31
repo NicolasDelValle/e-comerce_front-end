@@ -12,11 +12,34 @@ function CheckOut() {
       <Container className="mt-5">
         <Row>
           <Col md={12} lg={8} className="pe-lg-0">
-            <CartItem />
-            <CartItem />
-            <CartItem />
-            <CartItem />
-            <CartItem />
+            <CartItem
+              url="https://cybmmybwfbmxasdepuyj.supabase.co/storage/v1/object/public/images/hardware/tornillos.png"
+              price="10"
+              mountProp="10"
+              name="Tornillos"
+              stock="20"
+            />
+            <CartItem
+              url="https://cybmmybwfbmxasdepuyj.supabase.co/storage/v1/object/public/images/ropa/Pant_negro_1.png"
+              price="80"
+              mountProp="4"
+              name="Pantalon Gostoso"
+              stock="10"
+            />
+            <CartItem
+              url="https://cybmmybwfbmxasdepuyj.supabase.co/storage/v1/object/public/images/hardware/176578197_1041929339671235_4247878052830658536_n.jpg"
+              price="3000"
+              mountProp="12"
+              name="Rueditas Facheras"
+              stock="20"
+            />
+            <CartItem
+              url="https://cybmmybwfbmxasdepuyj.supabase.co/storage/v1/object/public/images/tablas/tabla2.png"
+              price="35000"
+              mountProp="2"
+              name="Patinete DRIIIIP"
+              stock="5"
+            />
           </Col>
           <Col md={12} lg={4}>
             <div className="border p-3 mb-3">
