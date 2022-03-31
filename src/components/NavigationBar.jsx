@@ -99,7 +99,7 @@ function NavigationBar() {
                   </Link> */}
                   {/* Logueado*/}
                   <Link className="p-1 w-100 " to="/checkout" title="Perfil">
-                    <span>Perfil</span>
+                    <span>Ajustes</span>
                     <i class="bi bi-box-arrow-up-right ms-1"></i>
                   </Link>
                   <Link className="p-1 w-100 " to="/checkout" title="Historial">
