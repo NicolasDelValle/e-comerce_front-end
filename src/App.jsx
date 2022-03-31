@@ -14,7 +14,7 @@ import AdminUsers from "./pages/admin/AdminUsers";
 import { useSelector } from "react-redux";
 
 function App() {
-  const { isAdmin } = useSelector((state) => state.user);
+  const { isAdmin, newToken } = useSelector((state) => state.user);
 
   return (
     <div className="App">
@@ -24,7 +24,7 @@ function App() {
         <Route path="/products/:slug" element={<Product />} />
         <Route path="/aboutus" element={<AboutUs />} />
         <Route path="/aboutproject" element={<AboutUs />} />
-        <Route path="/checkout" element={<CheckOut />} />
+        <Route path="/checkout" element={newToken ? <CheckOut /> : <Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/admin" element={isAdmin ? <Admin /> : <Home />} />

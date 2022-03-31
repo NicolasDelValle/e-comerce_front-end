@@ -4,7 +4,7 @@ import axios from "axios";
 import { useSelector } from "react-redux";
 
 function ModalNewProduct({ show, handleClose }) {
-  const { newToken, id } = useSelector((state) => state.user);
+  const { newToken } = useSelector((state) => state.user);
 
   const [newProduct, setNewProduct] = useState({});
 
