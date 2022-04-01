@@ -1,9 +1,9 @@
 import "./shopStyles.css";
-import { Col, Row } from "react-bootstrap";
+
 import React, { useEffect, useState } from "react";
 import NavigationBar from "../../components/NavigationBar";
 import Footer from "../../components/Footer";
-import AddCart from "../../components/AddCart";
+
 import ProductCard from "../../components/ProductCard";
 import axios from "axios";
 
@@ -30,6 +30,7 @@ function Shop(props) {
     getProducts();
     console.log(categories);
     console.log(products);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

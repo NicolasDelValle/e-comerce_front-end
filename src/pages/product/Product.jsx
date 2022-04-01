@@ -5,7 +5,7 @@ import Footer from "../../components/Footer";
 import { useParams } from "react-router-dom";
 import AddCart from "../../components/AddCart";
 import { getProduct } from "../../api/productApi";
-import { Container, Row } from "react-bootstrap";
+import { Row } from "react-bootstrap";
 import ProductCard from "../../components/ProductCard";
 import axios from "axios";
 
