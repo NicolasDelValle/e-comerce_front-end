@@ -63,14 +63,18 @@ function NavigationBar() {
               <span className="d-none d-sm-flex">Nosotros</span>
             </Link>
 
-            {/*SI ES ADMIN :D */}
-            {/* <Link
-              to="/checkout"
-              className="d-flex ps-3 align-items-start"
-              title="Carrito de compras"
-            >
-              <i className="bi bi-gear fs-4 position-relative"></i>
-            </Link> */}
+            {user?.isAdmin ? (
+              <Link
+                to="/checkout"
+                className="d-flex ps-3 align-items-start"
+                title="Carrito de compras"
+              >
+                <i className="bi bi-gear fs-4 position-relative"></i>
+              </Link>
+            ) : (
+              <></>
+            )}
+
             <Dropdown>
               <Dropdown.Toggle
                 as={CustomToggle}
