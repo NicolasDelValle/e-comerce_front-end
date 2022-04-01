@@ -13,6 +13,8 @@ import AdminProducts from "./pages/admin/AdminProducts";
 import AdminUsers from "./pages/admin/AdminUsers";
 import AdminProductCreateNew from "./pages/admin/AdminProductCreateNew";
 import AdminProductEdit from "./pages/admin/AdminProductEdit";
+import UserSettingsAccount from "./pages/userSettings/UserSettingsAccount";
+import UserSettingsAdress from "./pages/userSettings/UserSettingsAdress";
 
 import { useSelector } from "react-redux";
 
@@ -28,6 +30,8 @@ function App() {
         <Route path="/aboutus" element={<AboutUs />} />
         <Route path="/aboutproject" element={<AboutUs />} />
         <Route path="/checkout" element={newToken ? <CheckOut /> : <Login />} />
+        <Route path="/settings/account" element={<UserSettingsAccount />} />
+        <Route path="/settings/adress" element={<UserSettingsAdress />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/admin" element={isAdmin ? <Admin /> : <Home />} />
