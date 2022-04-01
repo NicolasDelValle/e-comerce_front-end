@@ -56,7 +56,7 @@ function NavigationBar() {
               <span className="d-none d-sm-flex">Tienda</span>
             </Link>
             <Link
-              to={"/shop"}
+              to={"/about"}
               className="px-2 text-white text-decoration-none d-flex justify-content-between align-items-center"
             >
               <i className="bi bi-people fs-3 d-flex d-sm-none"></i>
@@ -65,7 +65,7 @@ function NavigationBar() {
 
             {user?.isAdmin ? (
               <Link
-                to="/checkout"
+                to="/admin"
                 className="d-flex ps-3 align-items-start"
                 title="Carrito de compras"
               >
