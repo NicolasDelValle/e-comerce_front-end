@@ -13,9 +13,14 @@ function ProductCard({ product }) {
           <div className=" p-1 text-black">
             <span className="py-2" min-height="220px">
               {isLoading && (
-                <Spinner animation="border" role="status">
-                  <span className="visually-hidden">Loading...</span>
-                </Spinner>
+                <div
+                  className="d-flex justify-content-center align-items-center"
+                  style={{ height: "220px" }}
+                >
+                  <Spinner animation="border" role="status">
+                    <span className="visually-hidden">Loading...</span>
+                  </Spinner>
+                </div>
               )}
               <img
                 className={isLoading ? "d-none" : "w-auto mb-2"}

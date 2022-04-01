@@ -1,4 +1,4 @@
-import { FaLock, FaCcVisa, FaCcMastercard, FaCcPaypal } from "react-icons/fa";
+import { FaCcVisa, FaCcMastercard, FaCcPaypal } from "react-icons/fa";
 import { FcLock } from "react-icons/fc";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import NavigationBar from "../../components/NavigationBar";
@@ -54,10 +54,7 @@ function CheckOut() {
                   variant="dark"
                   size="lg"
                 >
-                  <Link
-                    to={user.newToken ? /*indicar ruta */ "" : "/login"}
-                    className=""
-                  >
+                  <Link to={user.newToken ? /*indicar ruta */ "" : "/login"}>
                     Finalizar Compra
                   </Link>
                 </Button>
