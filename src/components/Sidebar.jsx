@@ -3,6 +3,7 @@ import { RiFileList3Line } from "react-icons/ri";
 import "react-pro-sidebar/dist/css/styles.css";
 import { CgUserList } from "react-icons/cg";
 import { FiUsers } from "react-icons/fi";
+import { MdAdminPanelSettings } from "react-icons/md";
 import { GoPlus } from "react-icons/go";
 import { Link } from "react-router-dom";
 import { useState } from "react";
@@ -26,8 +27,8 @@ function Sidebar() {
   const [showSidebar, setShowSidebar] = useState(true);
 
   return (
-    <div className="vh-100">
-      <ProSidebar collapsed={showSidebar}>
+    <div className="me-5">
+      <ProSidebar collapsed={showSidebar} className="position-fixed ">
         <SidebarHeader className="py-4 d-flex justify-content-center align-items-center">
           <Link
             className="wLogoContainer d-flex justify-content-center p-0 m-0 border-none"
@@ -42,6 +43,15 @@ function Sidebar() {
         </SidebarHeader>
         <SidebarContent className="d-flex flex-column">
           <Menu iconShape="circle">
+            <SubMenu
+              title="Administrador"
+              icon={<MdAdminPanelSettings size={20} />}
+              className="mb-2 fs-5"
+            >
+              <MenuItem icon={<BsList />}>
+                <Link to="/admin">Administrador</Link>
+              </MenuItem>
+            </SubMenu>
             <SubMenu
               title="Productos"
               icon={<BsBox size={20} />}

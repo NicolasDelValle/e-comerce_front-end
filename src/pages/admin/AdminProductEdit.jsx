@@ -33,9 +33,9 @@ function AdminProductEdit() {
   return (
     <div className="d-flex">
       <Sidebar />
-      <div className="w-100">
+      <div className="w-100 ">
         <BackNavbar />
-        <div className="container-fluid px-4 w-75  mx-auto pt-5 ">
+        <div className="container px-4 mx-auto pt-5 ">
           <form
             id="product-form"
             className="d-flex flex-column"
