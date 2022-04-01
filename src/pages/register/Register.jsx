@@ -1,4 +1,4 @@
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import NavigationBar from "../../components/NavigationBar";
 import "./register.css";
 import { useState } from "react";
