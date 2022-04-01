@@ -1,30 +1,32 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Sidebar from "../../components/Sidebar";
 import BackNavbar from "../../components/BackNavbar";
 import { useSelector } from "react-redux";
 import axios from "axios";
+import { Link, useParams } from "react-router-dom";
 
 function AdminProductEdit() {
   const { newToken } = useSelector((state) => state.user);
-  const [newProduct, setNewProduct] = useState({});
+  const [editProduct, setEditProduct] = useState({});
 
-  const handleCreateNewProduct = async () => {
+  let { slug } = useParams();
+
+  useEffect(() => {
+    const getProduct = async () => {
+      const { data } = await axios({
+        method: "get",
+        url: `${process.env.REACT_APP_API_URL}products/${slug}`,
+      });
+      setEditProduct(data);
+    };
+    getProduct();
+  }, []);
+  const handleEditProduct = async () => {
     await axios({
-      method: "post",
-      url: `${process.env.REACT_APP_API_URL}admin/products`,
-      data: newProduct,
+      method: "patch",
+      url: `${process.env.REACT_APP_API_URL}admin/products/${slug}`,
+      data: editProduct,
       headers: { Authorization: `Bearer ${newToken}` },
-    });
-    setNewProduct({
-      name: "",
-      categoryId: "",
-      featured: "",
-      price: "",
-      stock: "",
-      slug: "",
-      imageUrl: "",
-      description: "",
-      details: "",
     });
   };
   return (
@@ -38,7 +40,7 @@ function AdminProductEdit() {
             className="d-flex flex-column"
             onSubmit={(e) => {
               e.preventDefault();
-              handleCreateNewProduct();
+              handleEditProduct();
             }}
           >
             <h2>Crear un producto</h2>
@@ -48,13 +50,13 @@ function AdminProductEdit() {
                   Nombre
                 </label>
                 <input
-                  value={newProduct.name}
+                  value={editProduct.name}
                   type="text"
                   name="name"
                   id="product-name"
                   onChange={(e) => {
-                    setNewProduct({
-                      ...newProduct,
+                    setEditProduct({
+                      ...editProduct,
                       name: e.target.value,
                     });
                   }}
@@ -67,13 +69,13 @@ function AdminProductEdit() {
                   Categoría
                 </label>
                 <select
-                  defaultValue={newProduct.category}
+                  defaultValue={editProduct.category}
                   id="product-category"
                   name="categoryId"
                   className="form-select"
                   onChange={(e) => {
-                    setNewProduct({
-                      ...newProduct,
+                    setEditProduct({
+                      ...editProduct,
                       categoryId: e.target.value,
                     });
                   }}
@@ -89,12 +91,12 @@ function AdminProductEdit() {
                   Destacado
                 </label>
                 <select
-                  defaultValue={newProduct.featured}
+                  defaultValue={editProduct.featured}
                   id="product-featured"
                   name="featured"
                   onChange={(e) => {
-                    setNewProduct({
-                      ...newProduct,
+                    setEditProduct({
+                      ...editProduct,
                       featured: e.target.value,
                     });
                   }}
@@ -110,13 +112,13 @@ function AdminProductEdit() {
                   Precio
                 </label>
                 <input
-                  value={newProduct.price}
+                  value={editProduct.price}
                   type="number"
                   name="price"
                   id="product-price"
                   onChange={(e) => {
-                    setNewProduct({
-                      ...newProduct,
+                    setEditProduct({
+                      ...editProduct,
                       price: e.target.value,
                     });
                   }}
@@ -129,13 +131,13 @@ function AdminProductEdit() {
                   Stock
                 </label>
                 <input
-                  value={newProduct.stock}
+                  value={editProduct.stock}
                   type="number"
                   name="stock"
                   id="product-stock"
                   onChange={(e) => {
-                    setNewProduct({
-                      ...newProduct,
+                    setEditProduct({
+                      ...editProduct,
                       stock: e.target.value,
                     });
                   }}
@@ -148,13 +150,13 @@ function AdminProductEdit() {
                   Slug
                 </label>
                 <input
-                  value={newProduct.slug}
+                  value={editProduct.slug}
                   type="text"
                   id="product-slug"
                   name="slug"
                   onChange={(e) => {
-                    setNewProduct({
-                      ...newProduct,
+                    setEditProduct({
+                      ...editProduct,
                       slug: e.target.value,
                     });
                   }}
@@ -167,13 +169,13 @@ function AdminProductEdit() {
                   Imagen
                 </label>
                 <input
-                  value={newProduct.imageUrl}
+                  value={editProduct.imageUrl}
                   type="text"
                   placeholder="http://via.placeholder.com/640x360"
                   name="imageUrl"
                   onChange={(e) => {
-                    setNewProduct({
-                      ...newProduct,
+                    setEditProduct({
+                      ...editProduct,
                       imageUrl: e.target.value,
                     });
                   }}
@@ -185,14 +187,14 @@ function AdminProductEdit() {
                   Descripción
                 </label>
                 <textarea
-                  value={newProduct.description}
+                  value={editProduct.description}
                   type="text"
                   name="description"
                   id="product-description"
                   size="50"
                   onChange={(e) => {
-                    setNewProduct({
-                      ...newProduct,
+                    setEditProduct({
+                      ...editProduct,
                       description: e.target.value,
                     });
                   }}
@@ -205,14 +207,14 @@ function AdminProductEdit() {
                   Detalles
                 </label>
                 <textarea
-                  value={newProduct.details}
+                  value={editProduct.details}
                   type="text"
                   name="details"
                   id="product-details"
                   size="50"
                   onChange={(e) => {
-                    setNewProduct({
-                      ...newProduct,
+                    setEditProduct({
+                      ...editProduct,
                       details: e.target.value,
                     });
                   }}
@@ -223,7 +225,7 @@ function AdminProductEdit() {
             </div>
             <div>
               <button className="btn btn-success" type="submit">
-                Aceptar
+                <Link to={"/admin/products"}>Aceptar</Link>
               </button>
               <button className="btn btn-danger">Cancelar</button>
             </div>
