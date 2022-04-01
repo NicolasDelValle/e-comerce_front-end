@@ -15,7 +15,7 @@ import AdminProductCreateNew from "./pages/admin/AdminProductCreateNew";
 import AdminProductEdit from "./pages/admin/AdminProductEdit";
 import UserSettingsAccount from "./pages/userSettings/UserSettingsAccount";
 import UserSettingsAdress from "./pages/userSettings/UserSettingsAdress";
-
+import AdminUsersOrders from "./pages/admin/AdminUsersOrders";
 import { useSelector } from "react-redux";
 
 function App() {
@@ -50,6 +50,10 @@ function App() {
         <Route
           path="/admin/users"
           element={isAdmin ? <AdminUsers /> : <Home />}
+        />
+        <Route
+          path="/admin/orders"
+          element={isAdmin ? <AdminUsersOrders /> : <Home />}
         />
         <Route path="*" element={<NoMatch />} />
       </Routes>

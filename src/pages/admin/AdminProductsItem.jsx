@@ -22,24 +22,24 @@ function AdminProductsItem({ item }) {
   return (
     <>
       {show && (
-        <tr key={item.id} className={show ? "" : "d-none"}>
-          <td>{item.name}</td>
-          <td>{item.price}</td>
-          <td>{item.featured ? "Sí" : "No"}</td>
-          <td>{item.stock}</td>
-          <td className="mx-auto">
+        <tr key={item.id} className="align-middle">
+          <td className="p-0 fw-bold text-start">{item.name}</td>
+          <td className="p-0">{item.price}</td>
+          <td className="p-0">{item.featured ? "Sí" : "No"}</td>
+          <td className="p-0">{item.stock}</td>
+          <td className=" mx-auto p-0">
             <Link to={`/admin/products/edit/${item.slug}`}>
-              <Button className="mx-1">
+              <button className="mx-1 btn btn-outliner-secondary">
                 <i className="bi bi-pencil"></i>
-              </Button>
+              </button>
             </Link>
-            <Button
-              className="mx-1"
+            <button
+              className="mx-1  btn btn-outliner-secondary"
               variant="danger"
               onClick={() => handleDelete(item.slug)}
             >
               <i className="bi bi-trash3-fill"></i>
-            </Button>
+            </button>
           </td>
         </tr>
       )}
