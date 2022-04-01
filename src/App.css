@@ -17,8 +17,8 @@ body,
   /* font-family: Arial, Helvetica, sans-serif; */
 }
 a {
-  /* Saca subrayado de todos los enlaces */
   text-decoration: none;
+  color: white;
 }
 .App-logo {
   height: 40vmin;
