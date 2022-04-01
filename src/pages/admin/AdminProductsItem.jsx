@@ -6,7 +6,7 @@ import axios from "axios";
 
 function AdminProductsItem({ item }) {
   const newToken = useSelector((state) => state.user.newToken);
-  const [show, setShow] = useState(true);
+  const [borraritem, setBorraritem] = useState(true);
 
   const handleDelete = (slug) => {
     const getProducts = async () => {
@@ -16,13 +16,13 @@ function AdminProductsItem({ item }) {
         headers: { Authorization: `Bearer ${newToken}` },
       });
     };
-    setShow((prev) => !prev);
+    setBorraritem((prev) => !prev);
     getProducts();
   };
   return (
     <>
-      {show && (
-        <tr key={item.id} className="align-middle">
+      {borraritem && (
+        <tr key={item.id} className={borraritem ? "align-middle" : "d-none"}>
           <td className="p-0 fw-bold text-start">{item.name}</td>
           <td className="p-0">{item.price}</td>
           <td className="p-0">{item.featured ? "Sí" : "No"}</td>
