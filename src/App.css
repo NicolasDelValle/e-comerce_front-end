@@ -16,7 +16,10 @@ body,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   /* font-family: Arial, Helvetica, sans-serif; */
 }
-
+a {
+  /* Saca subrayado de todos los enlaces */
+  text-decoration: none;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
