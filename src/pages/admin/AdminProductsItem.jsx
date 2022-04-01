@@ -1,7 +1,8 @@
-import { useState } from "react";
-import { Button } from "react-bootstrap";
-import axios from "axios";
 import { useSelector } from "react-redux";
+import { Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import { useState } from "react";
+import axios from "axios";
 
 function AdminProductsItem({ item }) {
   const newToken = useSelector((state) => state.user.newToken);
@@ -27,9 +28,11 @@ function AdminProductsItem({ item }) {
           <td>{item.featured ? "Sí" : "No"}</td>
           <td>{item.stock}</td>
           <td className="mx-auto">
-            <Button className="mx-1">
-              <i className="bi bi-pencil"></i>
-            </Button>
+            <Link to={`/admin/products/edit/${item.slug}`}>
+              <Button className="mx-1">
+                <i className="bi bi-pencil"></i>
+              </Button>
+            </Link>
             <Button
               className="mx-1"
               variant="danger"

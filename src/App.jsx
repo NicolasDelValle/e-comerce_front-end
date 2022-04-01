@@ -12,6 +12,7 @@ import Admin from "./pages/admin/Admin";
 import AdminProducts from "./pages/admin/AdminProducts";
 import AdminUsers from "./pages/admin/AdminUsers";
 import AdminProductCreateNew from "./pages/admin/AdminProductCreateNew";
+import AdminProductEdit from "./pages/admin/AdminProductEdit";
 
 import { useSelector } from "react-redux";
 
@@ -37,6 +38,10 @@ function App() {
         <Route
           path="/admin/products/create"
           element={isAdmin ? <AdminProductCreateNew /> : <Home />}
+        />
+        <Route
+          path="/admin/products/edit/:slug"
+          element={isAdmin ? <AdminProductEdit /> : <Home />}
         />
         <Route
           path="/admin/users"
