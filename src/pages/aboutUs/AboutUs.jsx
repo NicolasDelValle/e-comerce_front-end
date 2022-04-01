@@ -20,6 +20,7 @@ import {
 	SiLinkedin,
 	SiGithub,
 } from "react-icons/si";
+import Footer from "../../components/Footer";
 
 function AboutUs() {
 	return (
@@ -186,6 +187,7 @@ function AboutUs() {
 						</div>
 					</div>
 				</div>
+				<Footer />
 			</div>
 		</>
 	);
