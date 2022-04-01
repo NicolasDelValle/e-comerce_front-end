@@ -48,7 +48,7 @@ function Footer() {
 				<hr />
 				<div className="container">
 					<div className="d-flex justify-content-between  pt-2">
-						<p>LOSI SKATE CO.</p>
+						<p>© 2022 LOSI SKATE CO.</p>
 
 						<p>
 							By <a href="https://www.linkedin.com/in/luis-zunino/">L. Zunino</a>,
