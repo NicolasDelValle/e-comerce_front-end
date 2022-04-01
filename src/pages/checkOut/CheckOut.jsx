@@ -49,15 +49,15 @@ function CheckOut() {
                 <span className="fs-4 ms-auto">{total}</span>
               </div>
               <div>
-                <Button
-                  className="rounded-pill w-100 px-auto py-1 text-decoration-none"
-                  variant="dark"
-                  size="lg"
-                >
-                  <Link to={user.newToken ? /*indicar ruta */ "" : "/login"}>
+                <Link to={user.newToken ? /*indicar ruta */ "" : "/login"}>
+                  <Button
+                    className="rounded-pill w-100 px-auto py-1 text-decoration-none"
+                    variant="dark"
+                    size="lg"
+                  >
                     Finalizar Compra
-                  </Link>
-                </Button>
+                  </Button>
+                </Link>
               </div>
               <div className="d-flex pt-4 justify-content-between">
                 <div className=" align-items-center justify-content-end">
