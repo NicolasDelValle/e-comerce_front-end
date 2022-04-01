@@ -3,12 +3,13 @@
 }
 
 .productSection h2 {
+  font-size: 1.3rem;
   font-weight: 900;
   text-align: left;
 }
 
 .productSection h3 {
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: 500;
   text-align: left;
 }
