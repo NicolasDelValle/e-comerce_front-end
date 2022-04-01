@@ -46,7 +46,7 @@ function Sidebar() {
             <SubMenu
               title="Administrador"
               icon={<MdAdminPanelSettings size={20} />}
-              className="mb-2 fs-5"
+              className="mb-2"
             >
               <MenuItem icon={<BsList />}>
                 <Link to="/admin">Administrador</Link>
@@ -55,7 +55,7 @@ function Sidebar() {
             <SubMenu
               title="Productos"
               icon={<BsBox size={20} />}
-              className="mb-2 fs-5"
+              className="mb-2 "
             >
               <MenuItem icon={<BsList />}>
                 <Link to="/admin/products"> Lista de Productos</Link>
@@ -67,7 +67,7 @@ function Sidebar() {
             <SubMenu
               title="Órdenes"
               icon={<CgUserList size={20} />}
-              className="mb-2 fs-5"
+              className="mb-2 "
             >
               <MenuItem icon={<RiFileList3Line />}>
                 <Link to="/admin/orders"> Lista de Órdenes</Link>
@@ -76,7 +76,7 @@ function Sidebar() {
             <SubMenu
               title="Usuarios"
               icon={<FiUsers size={20} />}
-              className="mb-2 fs-5"
+              className="mb-2 "
             >
               <MenuItem icon={<CgUserList />}>
                 <Link to="/admin/users"> Lista de Usuarios</Link>
@@ -86,7 +86,7 @@ function Sidebar() {
           <Menu iconShape="circle">
             <MenuItem
               icon={<BsArrowLeftRight size={20} />}
-              className="fs-5"
+              className=""
               onClick={() => setShowSidebar((prev) => !prev)}
             >
               Colapsar
