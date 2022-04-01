@@ -10,7 +10,6 @@ function NavigationBar() {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart);
   const CustomToggle = React.forwardRef(({ onClick }, ref) => (
-    // eslint-disable-next-line jsx-a11y/anchor-is-valid
     <a
       className="d-flex align-items-center mx-2 me-1 pe-0"
       ref={ref}
