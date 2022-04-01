@@ -12,12 +12,12 @@ function Admin() {
         <BackNavbar className="py-4" />
         <div className="container px-4 pt-5">
           <div className="row mt-4">
-            <div className="col-xl-3 col-md-6">
+            <div className="col-md-3 col-md-">
               <Card bg="light" className="mb-4">
-                <Card.Header className="h3">Información</Card.Header>
+                <Card.Header className="">Información</Card.Header>
                 <Card.Body className="text-start">
                   <Card.Title>
-                    <Badge bg="info">Nuevo</Badge> Reporte de Ventas
+                    <Badge bg="secondary">Nuevo</Badge> Reporte de Ventas
                   </Card.Title>
                   <Card.Text>
                     El reporte de ventas del primer trimestre de 2022 está
@@ -31,9 +31,9 @@ function Admin() {
                 </Card.Footer>
               </Card>
             </div>
-            <div className="col-xl-3 col-md-6">
+            <div className="col-md-3 ">
               <Card bg="light" className="mb-4">
-                <Card.Header className="h3">Más vendidos: Marzo</Card.Header>
+                <Card.Header className="">Más vendidos: Marzo</Card.Header>
                 <Card.Body>
                   <ListGroup className="text-start">
                     <ListGroup.Item>Tabla Girl Anderson 8.25''</ListGroup.Item>
@@ -56,11 +56,9 @@ function Admin() {
               </Card>
             </div>
 
-            <div className="col-xl-3 col-md-6">
+            <div className="col-md-3 ">
               <Card className="mb-4">
-                <Card.Header bg="warning" className="h3">
-                  Tareas
-                </Card.Header>
+                <Card.Header className="">Tareas</Card.Header>
                 <Card.Body>
                   <ListGroup className="text-start">
                     <ListGroup.Item>
@@ -82,11 +80,9 @@ function Admin() {
                 </Card.Footer>
               </Card>
             </div>
-            <div className="col-xl-3 col-md-6">
+            <div className="col-md-3 ">
               <Card className="mb-4">
-                <Card.Header className="h3 text-white bg-danger">
-                  Stock Mínimo
-                </Card.Header>
+                <Card.Header className=" text-black">Stock Mínimo</Card.Header>
                 <Card.Body>
                   <ListGroup className="text-start">
                     <ListGroup.Item>
