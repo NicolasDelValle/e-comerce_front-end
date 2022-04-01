@@ -3,10 +3,12 @@ import Sidebar from "../../components/Sidebar";
 import BackNavbar from "../../components/BackNavbar";
 import { useSelector } from "react-redux";
 import axios from "axios";
+import { Link, useNavigate } from "react-router-dom";
+
 function AdminProductCreateNew() {
   const { newToken } = useSelector((state) => state.user);
   const [newProduct, setNewProduct] = useState({});
-
+  const navigate = useNavigate();
   const handleCreateNewProduct = async () => {
     await axios({
       method: "post",
@@ -14,6 +16,7 @@ function AdminProductCreateNew() {
       data: newProduct,
       headers: { Authorization: `Bearer ${newToken}` },
     });
+
     setNewProduct({
       name: "",
       categoryId: "",
@@ -25,6 +28,7 @@ function AdminProductCreateNew() {
       description: "",
       details: "",
     });
+    navigate("/admin/products");
   };
   return (
     <div className="d-flex">
@@ -224,7 +228,9 @@ function AdminProductCreateNew() {
               <button className="btn btn-success" type="submit">
                 Aceptar
               </button>
-              <button className="btn btn-danger">Cancelar</button>
+              <button className="btn btn-danger">
+                <Link to={"/admin/products"}>Cancelar</Link>
+              </button>
             </div>
           </form>
         </div>
