@@ -42,8 +42,7 @@
   cursor: pointer;
 }
 
-.admin-main-sidebar-option a:hover,
-p:hover {
+.admin-main-sidebar-option a:hover {
   color: #fff;
 }
 
