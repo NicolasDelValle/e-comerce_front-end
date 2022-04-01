@@ -227,7 +227,9 @@ function AdminProductEdit() {
               <button className="btn btn-success" type="submit">
                 <Link to={"/admin/products"}>Aceptar</Link>
               </button>
-              <button className="btn btn-danger">Cancelar</button>
+              <button className="btn btn-danger">
+                <Link to={"/admin/products"}>Cancelar</Link>
+              </button>
             </div>
           </form>
         </div>
