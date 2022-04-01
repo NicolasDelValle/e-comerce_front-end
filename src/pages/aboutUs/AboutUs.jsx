@@ -6,6 +6,7 @@ import Carlos from "../../img/fotosDePerfil/CarlosGAF.jpg";
 import Mauro from "../../img/fotosDePerfil/MauroR.jpg";
 import Luis from "../../img/fotosDePerfil/LuisZ.png";
 import Nico from "../../img/fotosDePerfil/NicoDLV.jpg";
+import OMAR from "../../img/fotosDePerfil/Omar.jpg";
 
 import {
 	SiReact,
@@ -86,7 +87,7 @@ function AboutUs() {
 						<div className="about-profile-div flex-grow-1">
 							<div
 								className="about-profile-img"
-								style={{ backgroundImage: `url(${Mauro})` }}
+								style={{ backgroundImage: `url(${OMAR})` }}
 							></div>
 							<div className="about-profile-name">
 								<h3 className="mt-3 mb-2">Mauro Raviolo</h3>
