@@ -1,13 +1,16 @@
-import React from "react";
-import Footer from "../../components/Footer";
+import { FaCcVisa, FaCcMastercard, FaCcPaypal } from "react-icons/fa";
+import { FcLock } from "react-icons/fc";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import NavigationBar from "../../components/NavigationBar";
-import "./checkOut.css";
 import CartItem from "../../components/CartItem";
+import Footer from "../../components/Footer";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import React from "react";
+import "./checkOut.css";
 
 function CheckOut() {
-  const cart = useSelector((state) => state.cart);
+  const { cart, user } = useSelector((state) => state);
   const SubTotalCost = cart.reduce(function (prev, product) {
     return prev + Number(product.price) * product.quantity;
   }, 0);
@@ -47,12 +50,25 @@ function CheckOut() {
               </div>
               <div>
                 <Button
-                  className="rounded-pill w-100 px-auto py-1"
+                  className="rounded-pill w-100 px-auto py-1 text-decoration-none"
                   variant="dark"
                   size="lg"
                 >
-                  Finalizar Compra
+                  <Link to={user.newToken ? /*indicar ruta */ "" : "/login"}>
+                    Finalizar Compra
+                  </Link>
                 </Button>
+              </div>
+              <div className="d-flex pt-4 justify-content-between">
+                <div className=" align-items-center justify-content-end">
+                  <FcLock size={25} />
+                  {/* <FaLock size={25}  /> */}
+                </div>
+                <div className=" align-items-center justify-content-end">
+                  <FaCcVisa size={30} className="ms-1" />
+                  <FaCcMastercard size={30} className="ms-1" />
+                  <FaCcPaypal size={30} className="ms-1" />
+                </div>
               </div>
             </div>
           </Col>

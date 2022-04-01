@@ -9,7 +9,6 @@ function AdminProductsItem({ item }) {
   const [show, setShow] = useState(true);
 
   const handleDelete = (slug) => {
-    setShow((prev) => !prev);
     const getProducts = async () => {
       await axios({
         method: "delete",
@@ -17,6 +16,7 @@ function AdminProductsItem({ item }) {
         headers: { Authorization: `Bearer ${newToken}` },
       });
     };
+    setShow((prev) => !prev);
     getProducts();
   };
   return (

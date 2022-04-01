@@ -19,7 +19,7 @@ import UserSettingsAdress from "./pages/userSettings/UserSettingsAdress";
 import { useSelector } from "react-redux";
 
 function App() {
-  const { isAdmin, newToken } = useSelector((state) => state.user);
+  const { isAdmin } = useSelector((state) => state.user);
 
   return (
     <div className="App">
@@ -29,7 +29,7 @@ function App() {
         <Route path="/products/:slug" element={<Product />} />
         <Route path="/aboutus" element={<AboutUs />} />
         <Route path="/aboutproject" element={<AboutUs />} />
-        <Route path="/checkout" element={newToken ? <CheckOut /> : <Login />} />
+        <Route path="/checkout" element={<CheckOut />} />
         <Route path="/settings/account" element={<UserSettingsAccount />} />
         <Route path="/settings/adress" element={<UserSettingsAdress />} />
         <Route path="/register" element={<Register />} />
