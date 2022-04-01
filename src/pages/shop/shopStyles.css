@@ -8,6 +8,10 @@ section {
   scroll-snap-align: start;
 }
 
+.product-category-section h2 {
+  font-weight: 700;
+}
+
 /* Hice esta modificacion 
 porque sino afecta el ancho y 
 alto de todas las imagenes */

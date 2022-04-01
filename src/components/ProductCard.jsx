@@ -8,7 +8,7 @@ function ProductCard({ product }) {
 
   return (
     <>
-      <Col md={5} lg={3} className="productCard rounded">
+      <Col md={5} lg={3} className="productCard rounded mb-5">
         <Link to={`/products/${product.slug}`}>
           <div className=" p-1 text-black">
             <span className="py-2" min-height="220px">

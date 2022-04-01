@@ -36,10 +36,10 @@ function Shop(props) {
     <>
       <NavigationBar className="bg-dark" />
       <div className="section">
-        <div className="container">
+        <div className="container product-category-section pt-3">
           {categories.map((category) => (
-            <div className="row m-3 g-3">
-              <h2 className="mt-4">{category.name}</h2>
+            <div className="row  d-flex justify-content-center">
+              <h2 className="my-4">{category.name}</h2>
               {products
                 .filter((product) => product.categoryId === category.id)
                 .map((filteredProduct) => (

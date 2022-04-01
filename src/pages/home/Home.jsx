@@ -44,7 +44,7 @@ function Home() {
           />
         </div>
 
-        <section className="homeScrollContainer-seccion bg-light pt-5">
+        <section className="homeScrollContainer-seccion bg-white pt-5">
           <Container className="py-5">
             <div>
               <div id="shop" className="border-bottom border-1">
