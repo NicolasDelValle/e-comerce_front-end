@@ -53,7 +53,8 @@ function Product(props) {
       <div className="container productSection">
         <div
           id="Product"
-          className="row m-3 g-3 py-5 d-flex justify-content-md-center align-items-center"
+          className="row m-3 g-3 py-2
+           d-flex justify-content-md-center align-items-center"
         >
           <div id="ProductImg" className="col-md-6 px-5">
             <img
@@ -65,14 +66,14 @@ function Product(props) {
 
           <div id="ProductInfo" className="col-md-3 shadow p-5 rounded">
             <h2>{product && product.name}</h2>
-            <h3 className="my-4 text-black ">
+            <h3 className="my2 text-black ">
               Precio: ${product && product.price}
             </h3>
-            <div className="my-4">
+            <div className="my-2">
               <p>{product && product.description}</p>
 
               <div>
-                <div className="d-flex flex-row align-items-center rounded-pill border px-2 w-100">
+                <div className="d-flex flex-row align-items-center rounded-pill border px-2 ">
                   <button
                     onClick={() => handleIncrement()}
                     className="text-secondary fs-5 me-1 border-0 rounded-pill bg-white"
@@ -96,7 +97,7 @@ function Product(props) {
               <span className="mt-2 d-flex align-content-end w-100">
                 <AddCart product={product} quantity={quantity} />
               </span>
-              <div id="detalles" className="mt-4">
+              <div id="detalles" className="mt-2">
                 <h3 className="text-black">Detalles</h3>
                 {product &&
                   product.details.map((detail, i) => (
@@ -108,19 +109,20 @@ function Product(props) {
             </div>
           </div>
         </div>
-      </div>
-      <Container className="py-5">
-        <div>
-          <div id="shop" className="border-bottom border-1">
-            <h2>Otros Productos</h2>
+
+        <div className="py-2">
+          <div>
+            <div className="border-bottom border-1">
+              <h2>Otros Productos</h2>
+            </div>
+            <Row className="pt-3  justify-content-center ">
+              {products.map((product, i) => (
+                <ProductCard key={i} product={product} />
+              ))}
+            </Row>
           </div>
-          <Row className="py-5 justify-content-center ">
-            {products.map((product, i) => (
-              <ProductCard key={i} product={product} />
-            ))}
-          </Row>
         </div>
-      </Container>
+      </div>
       <Footer />
     </div>
   );
