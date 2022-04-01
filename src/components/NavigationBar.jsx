@@ -9,6 +9,8 @@ import actions from "../redux/actions/userActions";
 function NavigationBar() {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart);
+  const user = useSelector((state) => state.user);
+
   const CustomToggle = React.forwardRef(({ onClick }, ref) => (
     <a
       className="d-flex align-items-center mx-2 me-1 pe-0"
@@ -23,6 +25,7 @@ function NavigationBar() {
       <i className="bi bi-chevron-down pt-1"></i>
     </a>
   ));
+
   const totalItemsCart = cart.reduce(function (prev, product) {
     return prev + Number(product.quantity);
   }, 0);
@@ -43,13 +46,7 @@ function NavigationBar() {
           </Link>
 
           <div className="ms-auto text-white d-flex justify-content-between align-items-center">
-            {/* 
-            {/*SI YA SE LOGUE CON EL NOMBRE Y TODO 
-            <Link
-              to="/checkout"
-              className="ms-2 d-flex align-items-center"
-              title="Carrito de compras"
-            ></Link>*/}
+            {/*SI YA SE LOGUE CON EL NOMBRE Y TODO */}
 
             <Link
               to={"/shop"}
@@ -83,48 +80,52 @@ function NavigationBar() {
                 align={{ xxl: "start" }}
                 className="bg-black text-white mt-3"
               >
-                <div className="d-flex flex-column">
-                  {/* <Link
-                    className="p-1 w-100 "
-                    to="/login"
-                    title="Ingresar"
-                  >
-                    <span>Ingresar</span>
-                    <i className="bi bi-box-arrow-up-right ms-1"></i>
-                  </Link>
-                  <Dropdown.Divider />
-                  <Link
-                    className="p-1 w-100"
-                    to="/register"
-                    title="Registrarse"
-                  >
-                    <span>Registrarse</span>
-                    <i className="bi bi-box-arrow-up-right ms-1"></i>
-                  </Link> */}
-                  {/* Logueado*/}
-                  <Link
-                    className="p-1 w-100 "
-                    to="/settings/account"
-                    title="Perfil"
-                  >
-                    <span>Ajustes</span>
-                    <i className="bi bi-box-arrow-up-right ms-1"></i>
-                  </Link>
-                  <Link className="p-1 w-100 " to="/checkout" title="Historial">
-                    <span>Historial</span>
-                    <i className="bi bi-box-arrow-up-right ms-1"></i>
-                  </Link>
-                  <Dropdown.Divider />
-                  <Link
-                    className="p-1 w-100 text-danger"
-                    to="/"
-                    title="Carrito de compras"
-                    /*cerrar sesion*/
-                    onClick={() => dispatch(actions.deleteUser)}
-                  >
-                    <span>Cerrar Sesion</span>
-                  </Link>
-                </div>
+                {user?.newToken ? (
+                  <div className="d-flex flex-column">
+                    <Link
+                      className="p-1 w-100 "
+                      to="/settings/account"
+                      title="Perfil"
+                    >
+                      <span>Ajustes</span>
+                      <i className="bi bi-box-arrow-up-right ms-1"></i>
+                    </Link>
+                    <Link
+                      className="p-1 w-100 "
+                      to="/checkout"
+                      title="Historial"
+                    >
+                      <span>Historial</span>
+                      <i className="bi bi-box-arrow-up-right ms-1"></i>
+                    </Link>
+                    <Dropdown.Divider />
+                    <Link
+                      className="p-1 w-100 text-danger"
+                      to="/"
+                      title="Carrito de compras"
+                      /*cerrar sesion*/
+                      onClick={() => dispatch(actions.deleteUser)}
+                    >
+                      <span>Cerrar Sesion</span>
+                    </Link>
+                  </div>
+                ) : (
+                  <div className="d-flex flex-column">
+                    <Link className="p-1 w-100 " to="/login" title="Ingresar">
+                      <span>Ingresar</span>
+                      <i className="bi bi-box-arrow-up-right ms-1"></i>
+                    </Link>
+                    <Dropdown.Divider />
+                    <Link
+                      className="p-1 w-100"
+                      to="/register"
+                      title="Registrarse"
+                    >
+                      <span>Registrarse</span>
+                      <i className="bi bi-box-arrow-up-right ms-1"></i>
+                    </Link>
+                  </div>
+                )}
               </Dropdown.Menu>
             </Dropdown>
 
