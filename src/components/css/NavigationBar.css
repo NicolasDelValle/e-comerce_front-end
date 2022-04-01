@@ -1,11 +1,5 @@
-.bg-black {
-  background-color: black;
-}
-.wLogoContainer {
-  width: 185px;
-}
-
 .wLogoContainer-logo {
-  max-width: 40%;
   object-fit: contain;
+  min-width: 80px;
+  width: 80px;
 }

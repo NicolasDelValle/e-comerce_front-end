@@ -3,12 +3,14 @@ import { Link } from "react-router-dom";
 import { Dropdown, Container, Navbar } from "react-bootstrap";
 import "./css/NavigationBar.css";
 import logoBlanco from "../img/logos/logoBlanco.png";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import actions from "../redux/actions/userActions";
 
 function NavigationBar() {
   const dispatch = useDispatch();
+  const cart = useSelector((state) => state.cart);
   const CustomToggle = React.forwardRef(({ onClick }, ref) => (
+    // eslint-disable-next-line jsx-a11y/anchor-is-valid
     <a
       className="d-flex align-items-center mx-2 me-1 pe-0"
       ref={ref}
@@ -19,9 +21,12 @@ function NavigationBar() {
     >
       <i className="bi bi-person-circle fs-4 d-flex"></i>
       {/* <span className="d-none d-sm-flex">Cuenta</span> */}
-      <i class="bi bi-chevron-down pt-1"></i>
+      <i className="bi bi-chevron-down pt-1"></i>
     </a>
   ));
+  const totalItemsCart = cart.reduce(function (prev, product) {
+    return prev + Number(product.quantity);
+  }, 0);
 
   return (
     <>
@@ -51,14 +56,14 @@ function NavigationBar() {
               to={"/shop"}
               className="px-2 text-white text-decoration-none d-flex justify-content-between align-items-center"
             >
-              <i class="bi bi-shop-window fs-4 d-flex d-sm-none"></i>
+              <i className="bi bi-shop-window fs-4 d-flex d-sm-none"></i>
               <span className="d-none d-sm-flex">Tienda</span>
             </Link>
             <Link
               to={"/shop"}
               className="px-2 text-white text-decoration-none d-flex justify-content-between align-items-center"
             >
-              <i class="bi bi-people fs-3 d-flex d-sm-none"></i>
+              <i className="bi bi-people fs-3 d-flex d-sm-none"></i>
               <span className="d-none d-sm-flex">Nosotros</span>
             </Link>
 
@@ -86,7 +91,7 @@ function NavigationBar() {
                     title="Ingresar"
                   >
                     <span>Ingresar</span>
-                    <i class="bi bi-box-arrow-up-right ms-1"></i>
+                    <i className="bi bi-box-arrow-up-right ms-1"></i>
                   </Link>
                   <Dropdown.Divider />
                   <Link
@@ -95,7 +100,7 @@ function NavigationBar() {
                     title="Registrarse"
                   >
                     <span>Registrarse</span>
-                    <i class="bi bi-box-arrow-up-right ms-1"></i>
+                    <i className="bi bi-box-arrow-up-right ms-1"></i>
                   </Link> */}
                   {/* Logueado*/}
                   <Link
@@ -104,11 +109,11 @@ function NavigationBar() {
                     title="Perfil"
                   >
                     <span>Ajustes</span>
-                    <i class="bi bi-box-arrow-up-right ms-1"></i>
+                    <i className="bi bi-box-arrow-up-right ms-1"></i>
                   </Link>
                   <Link className="p-1 w-100 " to="/checkout" title="Historial">
                     <span>Historial</span>
-                    <i class="bi bi-box-arrow-up-right ms-1"></i>
+                    <i className="bi bi-box-arrow-up-right ms-1"></i>
                   </Link>
                   <Dropdown.Divider />
                   <Link
@@ -132,7 +137,7 @@ function NavigationBar() {
               <div className="ms-auto position-relative">
                 <i className="bi bi-cart3 fs-4 position-relative"></i>
                 <span className=" badge rounded-pill bg-danger py-1 px-1 position-absolute top-0 end-50">
-                  99
+                  {totalItemsCart}
                 </span>
               </div>
             </Link>

@@ -1,13 +1,17 @@
-import React, { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
+import actions from "../redux/actions/cartActions";
 
-export const CartItem = ({ url, price, mountProp, name, stock }) => {
-  const [mount, setMount] = useState(mountProp);
+export const CartItem = ({ url, price, mountProp, name, stock, productId }) => {
+  const dispatch = useDispatch();
 
   const handleIncrement = () => {
-    setMount(Number(mount) + 1);
+    dispatch(actions.addFromCart(productId));
   };
   const handleDecrement = () => {
-    Number(mount) === 0 ? setMount(0) : setMount(Number(mount) - 1);
+    dispatch(actions.removeFromCart(productId));
+  };
+  const handleDelete = () => {
+    dispatch(actions.clearItemInCart(productId));
   };
 
   return (
@@ -22,15 +26,15 @@ export const CartItem = ({ url, price, mountProp, name, stock }) => {
         <div className="w-100 d-flex flex-row align-items-start mb-1">
           <span className="w-75 text-start overflow-hidden">{name}</span>
           <span className="ms-auto fw-bold">
-            ${Number(price) * Number(mount)}
+            ${Number(price) * Number(mountProp)}
           </span>
         </div>
         <div className="d-flex flex-sm-row flex-column align-items-sm-center align-items-start text-secondary fw-light mb-1 ">
           <span>
             ${price}
-            <i class="bi bi-x"></i>Unidad
+            <i className="bi bi-x"></i>Unidad
           </span>
-          <i class="bi bi-dot d-none d-sm-flex"></i>
+          <i className="bi bi-dot d-none d-sm-flex"></i>
           <span>{stock} En Stock</span>
         </div>
         <div className="d-flex flex-row align-items-center">
@@ -45,7 +49,7 @@ export const CartItem = ({ url, price, mountProp, name, stock }) => {
               <input
                 className=" text-center w-75 border-0 border-start-0 border-1 border-secondary"
                 type="number"
-                value={mount}
+                value={mountProp}
               />
               <button
                 onClick={() => handleDecrement()}
@@ -56,8 +60,11 @@ export const CartItem = ({ url, price, mountProp, name, stock }) => {
             </div>
           </div>
           <div className="ms-auto">
-            <button className="rounded-pill border d-flex flex-row fw-light text-secondary">
-              <i class="bi bi-trash3"></i> <span>Eliminar</span>
+            <button
+              className="rounded-pill border d-flex flex-row fw-light text-secondary"
+              onClick={() => handleDelete()}
+            >
+              <i className="bi bi-trash3"></i> <span>Eliminar</span>
             </button>
           </div>
         </div>

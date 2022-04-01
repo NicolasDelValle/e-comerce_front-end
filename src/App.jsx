@@ -11,10 +11,14 @@ import Login from "./pages/login/Login";
 import Admin from "./pages/admin/Admin";
 import AdminProducts from "./pages/admin/AdminProducts";
 import AdminUsers from "./pages/admin/AdminUsers";
-import UserSettingsAccount from "./pages/userSettings/UserSettingsAccount";
-import UserSettingsAdress from "./pages/userSettings/UserSettingsAdress";
-import UserSettingsPayment from "./pages/userSettings/UserSettingsPayment";
+import AdminProductCreateNew from "./pages/admin/AdminProductCreateNew";
+import AdminProductEdit from "./pages/admin/AdminProductEdit";
+
+import { useSelector } from "react-redux";
+
 function App() {
+  const { isAdmin, newToken } = useSelector((state) => state.user);
+
   return (
     <div className="App">
       <Routes>
@@ -23,16 +27,26 @@ function App() {
         <Route path="/products/:slug" element={<Product />} />
         <Route path="/aboutus" element={<AboutUs />} />
         <Route path="/aboutproject" element={<AboutUs />} />
-        <Route path="/checkout" element={<CheckOut />} />
+        <Route path="/checkout" element={newToken ? <CheckOut /> : <Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/admin" element={<Admin />} />
-        <Route path="/admin" element={<Admin />} />
-        <Route path="/admin/products" element={<AdminProducts />} />
-        <Route path="admin/users" element={<AdminUsers />} />
-        <Route path="/settings/account" element={<UserSettingsAccount />} />
-        <Route path="/settings/adress" element={<UserSettingsAdress />} />
-        <Route path="/settings/payment" element={<UserSettingsPayment />} />
+        <Route path="/admin" element={isAdmin ? <Admin /> : <Home />} />
+        <Route
+          path="/admin/products"
+          element={isAdmin ? <AdminProducts /> : <Home />}
+        />
+        <Route
+          path="/admin/products/create"
+          element={isAdmin ? <AdminProductCreateNew /> : <Home />}
+        />
+        <Route
+          path="/admin/products/edit/:slug"
+          element={isAdmin ? <AdminProductEdit /> : <Home />}
+        />
+        <Route
+          path="/admin/users"
+          element={isAdmin ? <AdminUsers /> : <Home />}
+        />
         <Route path="*" element={<NoMatch />} />
       </Routes>
     </div>

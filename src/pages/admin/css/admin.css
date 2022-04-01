@@ -1,0 +1,70 @@
+.admin-dropdown-button {
+  padding: 0 !important;
+
+  line-height: 1.5rem;
+}
+
+.admin-main-sidebar {
+  height: 95vh;
+  width: 300px;
+
+  display: flex;
+  flex-direction: column;
+
+  background-color: #000;
+
+  transition: all 0.5s;
+}
+
+.admin-main-sidebar-hidden {
+  display: none;
+}
+
+.admin-main-sidebar-option {
+  display: flex;
+  flex-direction: column;
+
+  margin: 2rem 1rem;
+}
+
+.admin-main-sidebar-option h3 {
+  margin: 0;
+
+  font-size: 0.8rem;
+  text-align: left;
+}
+
+.admin-main-sidebar-option a {
+  text-align: left;
+  color: rgb(148, 148, 148);
+  margin: 0;
+  border-bottom: 0.5px solid rgb(89, 89, 89);
+  cursor: pointer;
+}
+
+.admin-main-sidebar-option a:hover {
+  color: #fff;
+}
+
+.admin-main-sidebar-user {
+  margin-top: auto;
+
+  padding: 0 1rem;
+
+  background-color: #343a40;
+
+  color: #fff;
+}
+
+.admin-main-sidebar-user p {
+  margin: 0;
+  text-align: left;
+}
+
+th {
+  cursor: pointer;
+}
+
+th:hover {
+  background-color: #343a40;
+}

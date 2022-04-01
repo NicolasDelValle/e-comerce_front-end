@@ -13,7 +13,7 @@ async function getProduct(slug) {
     method: "get",
     url: "/products/" + slug,
   });
-  console.log(product);
+
   return product;
 }
 
