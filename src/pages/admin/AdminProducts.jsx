@@ -29,7 +29,7 @@ function AdminProducts() {
       <Sidebar />
       <div className="w-100">
         <BackNavbar />
-        <div className="container-fluid px-4 w-75  mx-auto py-5">
+        <div className="container px-4 mx-auto py-5">
           <h3>Lista de Productos</h3>
           <div className="row mt-4">
             <div className="table-responsive">

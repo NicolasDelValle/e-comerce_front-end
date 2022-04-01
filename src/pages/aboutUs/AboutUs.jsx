@@ -1,10 +1,11 @@
 import React from "react";
 import "./aboutUs.css";
 import NavigationBar from "../../components/NavigationBar";
-import { Link } from "react-router-dom";
 
-import LOSILogo from "../../img/logos/Logotipo.png";
-import HACKLogo from "../../img/logos/hackAcademy.png";
+import Carlos from "../../img/fotosDePerfil/CarlosGAF.jpg";
+import Mauro from "../../img/fotosDePerfil/MauroR.jpg";
+import Luis from "../../img/fotosDePerfil/LuisZ.png";
+import Nico from "../../img/fotosDePerfil/NicoDLV.jpg";
 
 import {
 	SiReact,
@@ -15,6 +16,8 @@ import {
 	SiBootstrap,
 	SiNodedotjs,
 	SiExpress,
+	SiLinkedin,
+	SiGithub,
 } from "react-icons/si";
 
 function AboutUs() {
@@ -22,15 +25,89 @@ function AboutUs() {
 		<>
 			<NavigationBar />
 			<div className="about-header">
-				<h1 className="about-header-title">Sobre el Proyecto</h1>
+				<h1 className="about-header-title">NOSOTROS</h1>
 			</div>
-			<div className="row p-3">
-				<div className="col-12 col-md-8 m-auto about-text">
+			<div>
+				<div className="col-12 col-md-8 mx-auto my-5 d-flex flex-wrap justify-content-between">
+					<div className="d-flex justify-content-between flex-grow-1 flex-wrap">
+						<div className="about-profile-div flex-grow-1">
+							<div
+								className="about-profile-img"
+								style={{ backgroundImage: `url(${Luis})` }}
+							></div>
+							<div className="about-profile-name">
+								<h3 className="mt-3 mb-2">Luis Zunino</h3>
+								<div className="d-flex">
+									<a href="https://www.linkedin.com/in/luis-zunino/">
+										<SiLinkedin size={25} className="mx-1" />
+									</a>
+									<a href="https://github.com/luis-zunino">
+										<SiGithub size={25} className="mx-1" />
+									</a>
+								</div>
+							</div>
+						</div>
+						<div className="about-profile-div flex-grow-1">
+							<div
+								className="about-profile-img"
+								style={{ backgroundImage: `url(${Nico})` }}
+							></div>
+							<div className="about-profile-name">
+								<h3 className="mt-3 mb-2">Nicolás Del Valle</h3>
+								<div className="d-flex">
+									<a href="https://www.linkedin.com/in/nico-del-valle-dev/">
+										<SiLinkedin size={25} className="mx-1" />
+									</a>
+									<a href="https://github.com/NicolasDelValle">
+										<SiGithub size={25} className="mx-1" />
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div className="d-flex justify-content-between flex-grow-1 flex-wrap">
+						<div className="about-profile-div flex-grow-1">
+							<div
+								className="about-profile-img"
+								style={{ backgroundImage: `url(${Carlos})` }}
+							></div>
+							<div className="about-profile-name">
+								<h3 className="mt-3 mb-2">C. García Arocena</h3>
+								<div className="d-flex">
+									<a href="https://www.linkedin.com/in/carlos-garcia-arocena-fernandez/">
+										<SiLinkedin size={25} className="mx-1" />
+									</a>
+									<a href="https://github.com/charlygaf">
+										<SiGithub size={25} className="mx-1" />
+									</a>
+								</div>
+							</div>
+						</div>
+						<div className="about-profile-div flex-grow-1">
+							<div
+								className="about-profile-img"
+								style={{ backgroundImage: `url(${Mauro})` }}
+							></div>
+							<div className="about-profile-name">
+								<h3 className="mt-3 mb-2">Mauro Raviolo</h3>
+								<div className="d-flex">
+									<a href="https://www.linkedin.com/in/mauroraviolo/">
+										<SiLinkedin size={25} className="mx-1" />
+									</a>
+									<a href="https://github.com/mauroraviolo23">
+										<SiGithub size={25} className="mx-1" />
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div className="about-image-project">
+					<h2>Sobre el Proyecto</h2>
+				</div>
+				<div className="col-12 col-md-8 mx-auto my-5 about-text">
 					<p>
-						<div
-							className="about-text-losi-logo"
-							style={{ backgroundImage: `url(${LOSILogo})` }}
-						></div>{" "}
+						<b>LOSI SKATE CO. </b>
 						es un proyecto de Carlos Garcia Arocena y Thomas Hughes cuyo objetivo es
 						aportarle a la escena cultural del skate uruguayo una marca que refleje
 						los verdaderos valores del Skate.
@@ -38,7 +115,7 @@ function AboutUs() {
 					<p>
 						La creación de este sitio web nace a raíz de la participación de uno de
 						sus fundadores, Carlos García Arocena, en el Coding Bootcamp de{" "}
-						<a className="about-text-hack" href="http://ha.dev">
+						<a className="about-text-link" href="http://ha.dev">
 							Hack Academy{" "}
 						</a>
 						en la edición comenzada en Enero de 2022.
@@ -57,23 +134,14 @@ function AboutUs() {
 						<b>tres semanas para su desarrollo,</b> por lo que la comunicación, el
 						orden y el trabajo en equipo fueron factores fundamentales.
 					</p>
-					<p>
-						Para nuestro proyecto decidimos basarnos en el sitio web de{" "}
-						<a href="http://cultocafe.uy" className="about-text-culto">
-							CULTO CAFÉ
-						</a>
-						, tomando su diseño minimalista como la raíz de una página web simple y
-						fácil de usar pero atractiva y con detalles que destaquen, propios de la
-						identidad de la marca.
-					</p>
 				</div>
-				<div className="about-scroll-image">
+				<div className="about-image-details">
 					<h2>Detalles</h2>
 				</div>
-				<div className="col-12 col-md-8 m-auto about-text">
+				<div className="col-12 col-md-8 mx-auto my-5 about-text">
 					<p>
 						Utilizamos{" "}
-						<a className="about-text-trello" href="http://trello.com">
+						<a className="about-text-link" href="http://trello.com">
 							Trello
 						</a>{" "}
 						para organizarnos, dividirnos tareas y para llevar al día el proceso de
@@ -96,16 +164,16 @@ function AboutUs() {
 							<p>CSS</p>
 						</div>
 						<div className="tecnology-applied">
+							<SiBootstrap size={45} />
+							<p>Bootstrap</p>
+						</div>
+						<div className="tecnology-applied">
 							<SiSequelize size={45} />
 							<p>Sequelize</p>
 						</div>
 						<div className="tecnology-applied">
 							<SiJsonwebtokens size={45} />
 							<p>JWT</p>
-						</div>
-						<div className="tecnology-applied">
-							<SiBootstrap size={45} />
-							<p>Bootstrap</p>
 						</div>
 						<div className="tecnology-applied">
 							<SiNodedotjs size={45} />

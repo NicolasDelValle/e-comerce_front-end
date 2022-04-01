@@ -1,4 +1,12 @@
-import { Button } from "react-bootstrap";
+import logoBlanco from "../img/logos/logoBlanco.png";
+import { RiFileList3Line } from "react-icons/ri";
+import "react-pro-sidebar/dist/css/styles.css";
+import { CgUserList } from "react-icons/cg";
+import { FiUsers } from "react-icons/fi";
+import { MdAdminPanelSettings } from "react-icons/md";
+import { GoPlus } from "react-icons/go";
+import { Link } from "react-router-dom";
+import { useState } from "react";
 import {
   ProSidebar,
   Menu,
@@ -8,31 +16,19 @@ import {
   SidebarFooter,
   SidebarHeader,
 } from "react-pro-sidebar";
-import "react-pro-sidebar/dist/css/styles.css";
-import { useState } from "react";
 import {
   BsList,
   BsBox,
   BsArrowLeftRight,
   BsPersonCircle,
 } from "react-icons/bs";
-import { FiUsers } from "react-icons/fi";
-import { CgUserList } from "react-icons/cg";
-import { RiFileList3Line } from "react-icons/ri";
-import { GoPlus } from "react-icons/go";
-// import { FaArrowLeft } from "react-icons/fa";
-
-import { Link } from "react-router-dom";
-import logoBlanco from "../img/logos/logoBlanco.png";
-import ModalNewProduct from "../pages/admin/ModalNewProduct";
 
 function Sidebar() {
   const [showSidebar, setShowSidebar] = useState(true);
-  const [show, setShow] = useState(false);
 
   return (
-    <div className="vh-100">
-      <ProSidebar collapsed={showSidebar}>
+    <div className="me-5">
+      <ProSidebar collapsed={showSidebar} className="position-fixed ">
         <SidebarHeader className="py-4 d-flex justify-content-center align-items-center">
           <Link
             className="wLogoContainer d-flex justify-content-center p-0 m-0 border-none"
@@ -48,6 +44,15 @@ function Sidebar() {
         <SidebarContent className="d-flex flex-column">
           <Menu iconShape="circle">
             <SubMenu
+              title="Administrador"
+              icon={<MdAdminPanelSettings size={20} />}
+              className="mb-2 fs-5"
+            >
+              <MenuItem icon={<BsList />}>
+                <Link to="/admin">Administrador</Link>
+              </MenuItem>
+            </SubMenu>
+            <SubMenu
               title="Productos"
               icon={<BsBox size={20} />}
               className="mb-2 fs-5"
@@ -55,12 +60,8 @@ function Sidebar() {
               <MenuItem icon={<BsList />}>
                 <Link to="/admin/products"> Lista de Productos</Link>
               </MenuItem>
-              <MenuItem
-                icon={<GoPlus />}
-                onClick={() => setShow((prev) => !prev)}
-              >
-                Nuevo Producto
-                <ModalNewProduct show={show} />
+              <MenuItem icon={<GoPlus />}>
+                <Link to="/admin/products/create">Nuevo Producto</Link>
               </MenuItem>
             </SubMenu>
             <SubMenu

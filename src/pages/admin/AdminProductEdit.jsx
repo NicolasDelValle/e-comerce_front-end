@@ -1,14 +1,14 @@
-import { useState, useEffect } from "react";
-import Sidebar from "../../components/Sidebar";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import BackNavbar from "../../components/BackNavbar";
+import Sidebar from "../../components/Sidebar";
+import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import axios from "axios";
-import { Link, useParams } from "react-router-dom";
 
 function AdminProductEdit() {
   const { newToken } = useSelector((state) => state.user);
   const [editProduct, setEditProduct] = useState({});
-
+  const navigate = useNavigate;
   let { slug } = useParams();
 
   useEffect(() => {
@@ -28,13 +28,14 @@ function AdminProductEdit() {
       data: editProduct,
       headers: { Authorization: `Bearer ${newToken}` },
     });
+    navigate("/admin/products");
   };
   return (
     <div className="d-flex">
       <Sidebar />
-      <div className="w-100">
+      <div className="w-100 ">
         <BackNavbar />
-        <div className="container-fluid px-4 w-75  mx-auto pt-5 ">
+        <div className="container px-4 mx-auto pt-5 ">
           <form
             id="product-form"
             className="d-flex flex-column"
@@ -43,7 +44,7 @@ function AdminProductEdit() {
               handleEditProduct();
             }}
           >
-            <h2>Crear un producto</h2>
+            <h2>Editar un producto</h2>
             <div className="row text-start">
               <div className="col- col-lg-4 py-2">
                 <label className="pe-2" htmlFor="product-name">
@@ -225,7 +226,7 @@ function AdminProductEdit() {
             </div>
             <div>
               <button className="btn btn-success" type="submit">
-                <Link to={"/admin/products"}>Aceptar</Link>
+                Aceptar
               </button>
               <button className="btn btn-danger">
                 <Link to={"/admin/products"}>Cancelar</Link>
