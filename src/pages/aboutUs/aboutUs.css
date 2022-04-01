@@ -1,4 +1,3 @@
-
 .about-header {
   height: 100vh;
   width: 100vw;
@@ -13,8 +12,6 @@
   align-items: center;
 }
 
-
-
 .about-header-title {
   font-size: 3rem;
   margin: 0;
@@ -28,13 +25,13 @@
   }
 }
 
-.about-text > p{
+.about-text > p {
   font-size: 1.25rem;
   text-align: justify;
 }
 
 @media (min-width: 768px) {
-  .about-text > p{
+  .about-text > p {
     font-size: 1.5rem;
   }
 }
@@ -53,8 +50,8 @@
 }
 
 .about-text-hack {
-  font-family: 'Poppins', sans-serif;
-  font-size: 2rem;
+  font-weight: 700;
+  /* font-size: 2rem; */
   color: #000;
 }
 
@@ -92,7 +89,7 @@
 }
 
 .about-text-trello {
-  font-family: 'Kanit', sans-serif;
+  font-family: "Kanit", sans-serif;
   font-size: 2.5rem;
 
   color: #000;
