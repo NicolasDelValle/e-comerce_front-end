@@ -5,7 +5,7 @@ import Shop from "./pages/shop/Shop";
 import Product from "./pages/product/Product";
 import AboutUs from "./pages/aboutUs/AboutUs";
 import NoMatch from "./components/NoMatch";
-import CheckOut from "./pages/checkOut/CheckOut";
+import Cart from "./pages/cart/Cart";
 import Register from "./pages/register/Register";
 import Login from "./pages/login/Login";
 import Admin from "./pages/admin/Admin";
@@ -29,7 +29,7 @@ function App() {
         <Route path="/products/:slug" element={<Product />} />
         <Route path="/aboutus" element={<AboutUs />} />
         <Route path="/about" element={<AboutUs />} />
-        <Route path="/checkout" element={<CheckOut />} />
+        <Route path="/cart" element={<Cart />} />
         <Route path="/settings/account" element={<UserSettingsAccount />} />
         <Route path="/settings/adress" element={<UserSettingsAdress />} />
         <Route path="/register" element={<Register />} />
