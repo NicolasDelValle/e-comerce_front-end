@@ -128,7 +128,7 @@ export const UserSettingsAddress = (props) => {
                   name={address.name}
                   state={address.state}
                   city={address.city}
-                  adress={address.adress}
+                  adress={address.address}
                   number={address.number}
                   postalCode={address.postalCode}
                 />
