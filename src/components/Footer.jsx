@@ -38,7 +38,7 @@ function Footer() {
 								Recibirás todas las novedades de LOSI, nuevos lanzamientos y
 								promociones.
 							</p>
-							<div className="d-flex">
+							<div className="d-flex flex-wrap">
 								<input type="email" placeholder="nombre@mail.com" className="rounded" />
 								<button className="btn-dark ms-1">Suscribirme</button>
 							</div>
