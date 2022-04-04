@@ -116,11 +116,15 @@ function AboutUs() {
 					</p>
 					<p>
 						La creación de este sitio web nace a raíz de la participación de uno de
-						sus fundadores, Carlos García Arocena, en el Coding Bootcamp de{" "}
-						<a className="about-text-link" href="http://ha.dev">
-							Hack Academy{" "}
+						sus fundadores, Carlos García Arocena, en el{" "}
+						<a
+							className="about-text-link"
+							href="https://ha.dev/cursos/coding-bootcamp"
+						>
+							Coding Bootcamp de Hack Academy{" "}
 						</a>
-						en la edición comenzada en Enero de 2022.
+						en la edición comenzada en Enero de 2022. Se trata de un curso de
+						dedicación <b>full-time</b>, con clases de Lunes a Viernes de 9 a 18hs.
 					</p>
 					<p>
 						El proyecto final del curso consiste en la creación de un sitio web de
