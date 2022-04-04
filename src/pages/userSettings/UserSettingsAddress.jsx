@@ -64,14 +64,15 @@ export const UserSettingsAddress = (props) => {
           <Col md={10} className="d-flex align-itmes-start">
             <div className="d-flex flex-column align-items-start p-3 border rounded w-100">
               <span className="fs-4 mb-3">Direcciones</span>
-              <div className="d-flex flex-column justify-content-start mb-3">
-                <span className="me-auto fw-light">Nombre*</span>
-                <input className="border rounded p-1" type="text" />
-              </div>
-              <Row className="w-100">
-                <Col className="pe-auto" xl={8} lg={10} md={12} sm={12}>
-                  <div className="border p-3 w-100">
-                    <div className="d-flex flex-column justify-content-start mb-2">
+
+              <div className="w-100 ">
+                <div className="border rounded-3 p-3 w-100">
+                  <div className="d-flex flex-column justify-content-start mb-3">
+                    <span className="me-auto fw-light">Nombre*</span>
+                    <input className="border rounded p-1 me-auto" type="text" />
+                  </div>
+                  <div className="d-flex flex-column flex-md-row">
+                    <div className=" w-100 d-flex flex-column justify-content-start mb-2 me-sm-2">
                       <span className="me-auto fw-light">Departamento*</span>
                       <select className="border rounded p-1" name="" id="">
                         {dep.map((dep) => (
@@ -79,61 +80,93 @@ export const UserSettingsAddress = (props) => {
                         ))}
                       </select>
                     </div>
-                    <div className="d-flex flex-column justify-content-start mb-2">
+                    <div className="w-100 d-flex flex-column justify-content-start mb-2">
                       <span className="me-auto fw-light">Ciudad*</span>
                       <input className="border rounded p-1" type="text" />
                     </div>
+                  </div>
+                  <div className="d-flex flex-column justify-content-start mb-2">
+                    <span className="me-auto fw-light">Direccion 1*</span>
                     <div className="d-flex flex-column justify-content-start mb-2">
-                      <span className="me-auto fw-light">Direccion 1*</span>
-                      <div className="d-flex flex-column justify-content-start mb-2">
-                        <input
-                          className="border rounded p-1 mb-1"
-                          type="text"
-                        />
-                        <span className="me-auto fw-light">Direccion 2</span>
-                        <input className="border rounded p-1" type="text" />
-                      </div>
-                    </div>
-
-                    <div className=" d-flex flex-column flex-sm-row ">
-                      <div className="w-100 d-flex flex-column justify-content-start mb-2 me-sm-2">
-                        <span className="me-auto fw-light">Numero*</span>
-                        <input className="border rounded p-1" type="text" />
-                      </div>
-                      <div className="w-100 d-flex flex-column justify-content-start mb-2">
-                        <span className="me-auto fw-light">Codigo Postal*</span>
-                        <input className="border rounded p-1" type="text" />
-                      </div>
-                    </div>
-                    <div>
-                      <button className="my-1 rounded-pill border d-flex flex-row align-items-center text-success fw-bold">
-                        <i className="bi bi-plus-circle-dotted me-1 fs-6"></i>
-                        <span>Agregar Direccion</span>
-                      </button>
+                      <input className="border rounded p-1 mb-1" type="text" />
+                      <span className="me-auto fw-light">Direccion 2</span>
+                      <input className="border rounded p-1" type="text" />
                     </div>
                   </div>
-                </Col>
-                <Col lg={4} className="p-0 m-0"></Col>
-              </Row>
+
+                  <div className=" d-flex flex-column flex-sm-row ">
+                    <div className="w-100 d-flex flex-column justify-content-start mb-2 me-sm-2">
+                      <span className="me-auto fw-light">Numero*</span>
+                      <input className="border rounded p-1" type="text" />
+                    </div>
+                    <div className="w-100 d-flex flex-column justify-content-start mb-2">
+                      <span className="me-auto fw-light">Codigo Postal*</span>
+                      <input className="border rounded p-1" type="text" />
+                    </div>
+                  </div>
+                  <div>
+                    <button className="my-1 rounded-pill border d-flex flex-row align-items-center text-success fw-bold">
+                      <i className="bi bi-plus-circle-dotted me-1 fs-6"></i>
+                      <span>Agregar Direccion</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
 
               <div>
                 <span className="fs-5 mb-3">Direcciones Registradas</span>
               </div>
-              <div className="w-100">
-                <ListGroup>
-                  <ListGroup.Item>
-                    <div className="d-flex flex-column">
-                      <span>Casa</span>
-                      <span>Luis albeto de herrera y juansito perez, 335-</span>
+              <div className="w-100 d-flex flex-row border rounded-3  mb-2">
+                <div className="d-flex align-items-center">
+                  <i className="bi bi-geo-alt fs-4 mx-2 "></i>
+                </div>
+                <div className="w-100">
+                  <div className="w-100 mx-1 d-flex flex-column justify-content-center align-items-start">
+                    <div>
+                      <span className="fw-bold fs-6">Casa</span>
                     </div>
-                    <span>Montevideo,Montevideo</span>
-                    <span>11900</span>
-                  </ListGroup.Item>
-                  <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
-                  <ListGroup.Item>Morbi leo risus</ListGroup.Item>
-                  <ListGroup.Item>Porta ac consectetur ac</ListGroup.Item>
-                  <ListGroup.Item>Vestibulum at eros</ListGroup.Item>
-                </ListGroup>
+                    <div className="d-flex flex-row align-items-start me-auto my-1">
+                      <span className="fw-light pe-1">
+                        Luis albeto de herrera y juansito perez, 335
+                        Montevideo,Montevideo 11900
+                      </span>
+                    </div>
+                    <div>
+                      <button className="my-1 rounded-pill border d-flex flex-row align-items-center text-danger fw-bold">
+                        <i className="bi bi-trash me-1"></i>
+                        <span>Eliminar</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="w-100 d-flex flex-row border rounded-3">
+                <div className="d-flex align-items-center">
+                  <i className="bi bi-geo-alt fs-4 mx-2 "></i>
+                </div>
+                <div className="w-100">
+                  <div className="w-100 mx-1 d-flex flex-column justify-content-center align-items-start">
+                    <div>
+                      <span className="fw-bold fs-6">Casa</span>
+                    </div>
+                    <div className="d-flex flex-row align-items-start me-auto my-1">
+                      <span className="fw-light pe-1">
+                        Luis albeto de herrera y juansito perez,
+                      </span>
+                      <span className="fw-light pe-1">335</span>
+                      <span className="fw-light pe-1">
+                        Montevideo,Montevideo
+                      </span>
+                      <span className="mx-auto">11900</span>
+                    </div>
+                    <div>
+                      <button className="my-1 rounded-pill border d-flex flex-row align-items-center text-danger fw-bold">
+                        <i className="bi bi-trash me-1"></i>
+                        <span>Eliminar</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </Col>
