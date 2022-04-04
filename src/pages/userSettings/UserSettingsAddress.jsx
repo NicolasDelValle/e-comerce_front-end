@@ -112,61 +112,8 @@ export const UserSettingsAddress = (props) => {
                   </div>
                 </div>
               </div>
-
-              <div>
-                <span className="fs-5 mb-3">Direcciones Registradas</span>
-              </div>
-              <div className="w-100 d-flex flex-row border rounded-3  mb-2">
-                <div className="d-flex align-items-center">
-                  <i className="bi bi-geo-alt fs-4 mx-2 "></i>
-                </div>
-                <div className="w-100">
-                  <div className="w-100 mx-1 d-flex flex-column justify-content-center align-items-start">
-                    <div>
-                      <span className="fw-bold fs-6">Casa</span>
-                    </div>
-                    <div className="d-flex flex-row align-items-start me-auto my-1">
-                      <span className="fw-light pe-1">
-                        Luis albeto de herrera y juansito perez, 335
-                        Montevideo,Montevideo 11900
-                      </span>
-                    </div>
-                    <div>
-                      <button className="my-1 rounded-pill border d-flex flex-row align-items-center text-danger fw-bold">
-                        <i className="bi bi-trash me-1"></i>
-                        <span>Eliminar</span>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="w-100 d-flex flex-row border rounded-3">
-                <div className="d-flex align-items-center">
-                  <i className="bi bi-geo-alt fs-4 mx-2 "></i>
-                </div>
-                <div className="w-100">
-                  <div className="w-100 mx-1 d-flex flex-column justify-content-center align-items-start">
-                    <div>
-                      <span className="fw-bold fs-6">Casa</span>
-                    </div>
-                    <div className="d-flex flex-row align-items-start me-auto my-1">
-                      <span className="fw-light pe-1">
-                        Luis albeto de herrera y juansito perez,
-                      </span>
-                      <span className="fw-light pe-1">335</span>
-                      <span className="fw-light pe-1">
-                        Montevideo,Montevideo
-                      </span>
-                      <span className="mx-auto">11900</span>
-                    </div>
-                    <div>
-                      <button className="my-1 rounded-pill border d-flex flex-row align-items-center text-danger fw-bold">
-                        <i className="bi bi-trash me-1"></i>
-                        <span>Eliminar</span>
-                      </button>
-                    </div>
-                  </div>
-                </div>
+              <div className="my-3">
+                <span className="fs-5">Direcciones Registradas</span>
               </div>
             </div>
           </Col>
