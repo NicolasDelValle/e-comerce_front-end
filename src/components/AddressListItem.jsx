@@ -1,6 +1,6 @@
 import React from "react";
 
-export const Component = ({
+export const AddressListItem = ({
   id,
   name,
   state,
@@ -30,4 +30,4 @@ export const Component = ({
   );
 };
 
-export default Component;
+export default AddressListItem;

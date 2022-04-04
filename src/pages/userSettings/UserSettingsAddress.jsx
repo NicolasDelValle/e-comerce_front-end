@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import NavigationBar from "../../components/NavigationBar";
-
+import types from "../../redux/types";
 import { Col, Container, Row, ListGroup } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { getAddresses, postAddress } from "../../api/addressApi";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import actions from "../../redux/actions/adressActions";
+import AddressListItem from "../../components/AddressListItem";
 
 export const UserSettingsAddress = (props) => {
   const dep = [
@@ -28,16 +30,21 @@ export const UserSettingsAddress = (props) => {
     "Tacuarembó",
     "Treinta y Tres",
   ];
+  const dispatch = useDispatch();
   const { newToken } = useSelector((state) => state.user);
   const [addresses, setAddresses] = useState();
+  const [stateAddresses, setStateAddresses] = useState(
+    useSelector((state) => state.address)
+  );
   useEffect(() => {
     const asyncAddresses = async () => {
       const addresses = await getAddresses(newToken);
       setAddresses(addresses.data);
+      dispatch(actions.addAdresses(addresses));
     };
     asyncAddresses();
   }, []);
-  console.log(addresses);
+  console.log(stateAddresses);
   return (
     <>
       <NavigationBar />
@@ -115,6 +122,17 @@ export const UserSettingsAddress = (props) => {
               <div className="my-3">
                 <span className="fs-5">Direcciones Registradas</span>
               </div>
+              {stateAddresses?.map((address) => (
+                <AddressListItem
+                  id={address.id}
+                  name={address.name}
+                  state={address.state}
+                  city={address.city}
+                  adress={address.adress}
+                  number={address.number}
+                  postalCode={address.postalCode}
+                />
+              ))}
             </div>
           </Col>
         </Row>
