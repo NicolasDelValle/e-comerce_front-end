@@ -1,7 +1,7 @@
 import React from "react";
 import NavigationBar from "../../components/NavigationBar";
 
-import { Col, Container, Row, Button } from "react-bootstrap";
+import { Col, Container, Row, ListGroup } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 export const UserSettingsAdress = (props) => {
@@ -51,17 +51,17 @@ export const UserSettingsAdress = (props) => {
             </div>
           </Col>
           <Col md={10} className="d-flex align-itmes-start">
-            <div className="d-flex flex-column align-items-start p-3 pe-0 border rounded w-100">
+            <div className="d-flex flex-column align-items-start p-3 border rounded w-100">
               <span className="fs-4 mb-3">Direcciones</span>
               <div className="d-flex flex-column justify-content-start mb-3">
-                <span className="me-auto fw-light">Nombre</span>
+                <span className="me-auto fw-light">Nombre*</span>
                 <input className="border rounded p-1" type="text" />
               </div>
-              <Row className="w-100">
-                <Col className="pe-0" xl={8} lg={10} md={12} sm={12}>
+              <Row className="w-100 m-0">
+                <Col className="pe-auto" xl={8} lg={10} md={12} sm={12}>
                   <div className="border p-3 w-100">
                     <div className="d-flex flex-column justify-content-start mb-2">
-                      <span className="me-auto fw-light">Departamento</span>
+                      <span className="me-auto fw-light">Departamento*</span>
                       <select className="border rounded p-1" name="" id="">
                         {dep.map((dep) => (
                           <option value={dep}>{dep}</option>
@@ -69,11 +69,11 @@ export const UserSettingsAdress = (props) => {
                       </select>
                     </div>
                     <div className="d-flex flex-column justify-content-start mb-2">
-                      <span className="me-auto fw-light">Ciudad</span>
+                      <span className="me-auto fw-light">Ciudad*</span>
                       <input className="border rounded p-1" type="text" />
                     </div>
                     <div className="d-flex flex-column justify-content-start mb-2">
-                      <span className="me-auto fw-light">Direccion 1</span>
+                      <span className="me-auto fw-light">Direccion 1*</span>
                       <div className="d-flex flex-column justify-content-start mb-2">
                         <input
                           className="border rounded p-1 mb-1"
@@ -86,18 +86,39 @@ export const UserSettingsAdress = (props) => {
 
                     <div className=" d-flex flex-column flex-sm-row ">
                       <div className="w-100 d-flex flex-column justify-content-start mb-2 me-sm-2">
-                        <span className="me-auto fw-light">Numero</span>
+                        <span className="me-auto fw-light">Numero*</span>
                         <input className="border rounded p-1" type="text" />
                       </div>
                       <div className="w-100 d-flex flex-column justify-content-start mb-2">
-                        <span className="me-auto fw-light">Codigo Postal</span>
+                        <span className="me-auto fw-light">Codigo Postal*</span>
                         <input className="border rounded p-1" type="text" />
                       </div>
                     </div>
                   </div>
                 </Col>
-                <Col lg={4}></Col>
+                <Col lg={4} className="p-0 m-0">
+                  <ListGroup className="w-100">
+                    <ListGroup.Item>Cras justo odio</ListGroup.Item>
+                    <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
+                    <ListGroup.Item>Morbi leo risus</ListGroup.Item>
+                    <ListGroup.Item>Porta ac consectetur ac</ListGroup.Item>
+                    <ListGroup.Item>Vestibulum at eros</ListGroup.Item>
+                  </ListGroup>
+                </Col>
               </Row>
+
+              <div>
+                <span className="fs-5 mb-3">Direcciones Registradas</span>
+              </div>
+              <div className="w-100">
+                <ListGroup>
+                  <ListGroup.Item>Cras justo odio</ListGroup.Item>
+                  <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
+                  <ListGroup.Item>Morbi leo risus</ListGroup.Item>
+                  <ListGroup.Item>Porta ac consectetur ac</ListGroup.Item>
+                  <ListGroup.Item>Vestibulum at eros</ListGroup.Item>
+                </ListGroup>
+              </div>
             </div>
           </Col>
         </Row>
