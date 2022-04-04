@@ -7,9 +7,9 @@ import Footer from "../../components/Footer";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import React from "react";
-import "./cart.css";
+import "./checkOut.css";
 
-function Cart() {
+function CheckOut() {
   const { cart, user } = useSelector((state) => state);
   const SubTotalCost = cart.reduce(function (prev, product) {
     return prev + Number(product.price) * product.quantity;
@@ -50,7 +50,7 @@ function Cart() {
                   <span className="fs-4 ms-auto">{total}</span>
                 </div>
                 <div>
-                  <Link to={user.newToken ? "/cart/checkout" : "/login"}>
+                  <Link to={user.newToken ? /*indicar ruta */ "" : "/login"}>
                     <Button
                       className="rounded-pill w-100 px-auto py-1 text-decoration-none"
                       variant="dark"
@@ -60,9 +60,10 @@ function Cart() {
                     </Button>
                   </Link>
                 </div>
-                <div className="d-flex pt-2 justify-content-between">
+                <div className="d-flex pt-4 justify-content-between">
                   <div className=" align-items-center justify-content-end">
                     <FcLock size={25} />
+                    {/* <FaLock size={25}  /> */}
                   </div>
                   <div className=" align-items-center justify-content-end">
                     <FaCcVisa size={30} className="ms-1" />
@@ -74,19 +75,18 @@ function Cart() {
             </Col>
           </Row>
         ) : (
-          <div className="mx-auto d-flex flex-column">
-            <i className="bi bi-cart3 fs-1 position-relative"></i>
-            <span className="fs-3 fw-bolder my-4">
-              NO HAS AGREGADO ARTÍCULOS AL CARRITO
-            </span>
+          <div>
+            <i className="bi bi-cart3 fs-4 position-relative"></i>
+            <span>NO HAS AGREGADO ARTÍCULOS AL CARRITO</span>
             <Link
               to={"/shop"}
-              className="text-white text-decoration-none mx-auto"
+              className="px-2 text-white text-decoration-none d-flex justify-content-between align-items-center"
             >
+              <i className="bi bi-shop-window fs-4 d-flex d-sm-none"></i>
               <Button
-                className="rounded-pill w-100 py-1 px-5"
+                className="rounded-pill w-100 px-auto py-1 text-decoration-none"
                 variant="dark"
-                size="md"
+                size="lg"
               >
                 VOLVER A LA TIENDA
               </Button>
@@ -99,4 +99,4 @@ function Cart() {
   );
 }
 
-export default Cart;
+export default CheckOut;

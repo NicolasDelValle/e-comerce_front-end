@@ -6,6 +6,7 @@ import Product from "./pages/product/Product";
 import AboutUs from "./pages/aboutUs/AboutUs";
 import NoMatch from "./components/NoMatch";
 import Cart from "./pages/cart/Cart";
+import CheckOut from "./pages/checkOut/CheckOut";
 import Register from "./pages/register/Register";
 import Login from "./pages/login/Login";
 import Admin from "./pages/admin/Admin";
@@ -30,6 +31,7 @@ function App() {
         <Route path="/aboutus" element={<AboutUs />} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/cart/checkout" element={<CheckOut />} />
         <Route path="/settings/account" element={<UserSettingsAccount />} />
         <Route path="/settings/adress" element={<UserSettingsAdress />} />
         <Route path="/register" element={<Register />} />
