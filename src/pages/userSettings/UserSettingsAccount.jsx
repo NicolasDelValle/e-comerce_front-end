@@ -20,7 +20,7 @@ export const UserSettingsAccount = (props) => {
               <Link className="my-2" to="/settings/account">
                 <span className="text-dark me-3">Cuenta</span>
               </Link>
-              <Link className="my-2" to="/settings/adress">
+              <Link className="my-2" to="/settings/address">
                 <span className="text-dark me-3">Dirrecciones</span>
               </Link>
               <Link className="my-2" to="/settings/payment">

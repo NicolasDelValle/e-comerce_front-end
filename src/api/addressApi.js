@@ -1,20 +1,19 @@
 import axiosInstance from "./axios";
 
-async function getAdresses() {
-  const adresses = await axios({
+async function getAddresses(newToken) {
+  const adresses = await axiosInstance({
     method: "get",
     url: "adress",
-    data: newProduct,
     headers: { Authorization: `Bearer ${newToken}` },
   });
   return adresses;
 }
 
-async function postAdress(adress) {
+async function postAddress(adress, newToken) {
   try {
-    await axios({
+    await axiosInstance({
       method: "post",
-      url: `${process.env.REACT_APP_API_URL}admin/products`,
+      url: "adress",
       data: adress,
       headers: { Authorization: `Bearer ${newToken}` },
     });
@@ -23,4 +22,4 @@ async function postAdress(adress) {
   }
 }
 
-export default { getAdresses, postAdress };
+export { getAddresses, postAddress };
