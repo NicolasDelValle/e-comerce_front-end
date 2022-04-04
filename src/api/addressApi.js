@@ -1,7 +1,6 @@
-import { useSelector } from "react-redux";
 import axiosInstance from "./axios";
 
-async function getAdresses(newToken) {
+async function getAddresses(newToken) {
   const adresses = await axiosInstance({
     method: "get",
     url: "adress",
@@ -10,7 +9,7 @@ async function getAdresses(newToken) {
   return adresses;
 }
 
-async function postAdress(adress, newToken) {
+async function postAddress(adress, newToken) {
   try {
     await axiosInstance({
       method: "post",
@@ -23,4 +22,4 @@ async function postAdress(adress, newToken) {
   }
 }
 
-export { getAdresses, postAdress };
+export { getAddresses, postAddress };

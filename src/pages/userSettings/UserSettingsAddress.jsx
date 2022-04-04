@@ -3,7 +3,7 @@ import NavigationBar from "../../components/NavigationBar";
 
 import { Col, Container, Row, ListGroup } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { getAdresses, postAdress } from "../../api/adressApi";
+import { getAddresses, postAddress } from "../../api/addressApi";
 import { useSelector } from "react-redux";
 
 export const UserSettingsAddress = (props) => {
@@ -29,15 +29,15 @@ export const UserSettingsAddress = (props) => {
     "Treinta y Tres",
   ];
   const { newToken } = useSelector((state) => state.user);
-  const [adresses, setAdresses] = useState();
+  const [addresses, setAddresses] = useState();
   useEffect(() => {
-    const asyncAdresses = async () => {
-      const adresses = await getAdresses(newToken);
-      setAdresses(adresses.data);
+    const asyncAddresses = async () => {
+      const addresses = await getAddresses(newToken);
+      setAddresses(addresses.data);
     };
-    asyncAdresses();
+    asyncAddresses();
   }, []);
-  console.log(adresses);
+  console.log(addresses);
   return (
     <>
       <NavigationBar />
@@ -53,7 +53,7 @@ export const UserSettingsAddress = (props) => {
               <Link className="my-2" to="/settings/account">
                 <span className="text-dark me-3">Cuenta</span>
               </Link>
-              <Link className="my-2" to="/settings/adress">
+              <Link className="my-2" to="/settings/address">
                 <span className="text-dark me-3">Dirrecciones</span>
               </Link>
               <Link className="my-2" to="/settings/payment">
