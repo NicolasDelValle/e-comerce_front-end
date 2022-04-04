@@ -1,8 +1,10 @@
-import React from "react";
+import { useEffect, useState } from "react";
 import NavigationBar from "../../components/NavigationBar";
 
 import { Col, Container, Row, ListGroup } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { getAdresses, postAdress } from "../../api/adressApi";
+import { useSelector } from "react-redux";
 
 export const UserSettingsAdress = (props) => {
   const dep = [
@@ -26,7 +28,16 @@ export const UserSettingsAdress = (props) => {
     "Tacuarembó",
     "Treinta y Tres",
   ];
-
+  const { newToken } = useSelector((state) => state.user);
+  const [adresses, setAdresses] = useState();
+  useEffect(() => {
+    const asyncAdresses = async () => {
+      const adresses = await getAdresses(newToken);
+      setAdresses(adresses.data);
+    };
+    asyncAdresses();
+  }, []);
+  console.log(adresses);
   return (
     <>
       <NavigationBar />
@@ -57,7 +68,7 @@ export const UserSettingsAdress = (props) => {
                 <span className="me-auto fw-light">Nombre*</span>
                 <input className="border rounded p-1" type="text" />
               </div>
-              <Row className="w-100 m-0">
+              <Row className="w-100">
                 <Col className="pe-auto" xl={8} lg={10} md={12} sm={12}>
                   <div className="border p-3 w-100">
                     <div className="d-flex flex-column justify-content-start mb-2">
@@ -94,17 +105,15 @@ export const UserSettingsAdress = (props) => {
                         <input className="border rounded p-1" type="text" />
                       </div>
                     </div>
+                    <div>
+                      <button className="my-1 rounded-pill border d-flex flex-row align-items-center text-success fw-bold">
+                        <i className="bi bi-plus-circle-dotted me-1 fs-6"></i>
+                        <span>Agregar Direccion</span>
+                      </button>
+                    </div>
                   </div>
                 </Col>
-                <Col lg={4} className="p-0 m-0">
-                  <ListGroup className="w-100">
-                    <ListGroup.Item>Cras justo odio</ListGroup.Item>
-                    <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
-                    <ListGroup.Item>Morbi leo risus</ListGroup.Item>
-                    <ListGroup.Item>Porta ac consectetur ac</ListGroup.Item>
-                    <ListGroup.Item>Vestibulum at eros</ListGroup.Item>
-                  </ListGroup>
-                </Col>
+                <Col lg={4} className="p-0 m-0"></Col>
               </Row>
 
               <div>
@@ -112,7 +121,12 @@ export const UserSettingsAdress = (props) => {
               </div>
               <div className="w-100">
                 <ListGroup>
-                  <ListGroup.Item>Cras justo odio</ListGroup.Item>
+                  <ListGroup.Item>
+                    <div>
+                      <span></span>
+                      <span></span>
+                    </div>
+                  </ListGroup.Item>
                   <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
                   <ListGroup.Item>Morbi leo risus</ListGroup.Item>
                   <ListGroup.Item>Porta ac consectetur ac</ListGroup.Item>
