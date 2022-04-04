@@ -3,7 +3,7 @@ import "./css/backNavbar.css";
 
 function BackNavbar({ addOns }) {
 	return (
-		<div className="back-navbar bg-dark">
+		<div className="back-navbar bg-black">
 			{addOns}
 			<span>
 				<Link to="/">
