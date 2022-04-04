@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { getAdresses, postAdress } from "../../api/adressApi";
 import { useSelector } from "react-redux";
 
-export const UserSettingsAdress = (props) => {
+export const UserSettingsAddress = (props) => {
   const dep = [
     "Artigas",
     "Canelones",
@@ -124,7 +124,7 @@ export const UserSettingsAdress = (props) => {
                   <ListGroup.Item>
                     <div className="d-flex flex-column">
                       <span>Casa</span>
-                      <span>Luis albeto de herrera y juansito perez, 335</span>
+                      <span>Luis albeto de herrera y juansito perez, 335-</span>
                     </div>
                     <span>Montevideo,Montevideo</span>
                     <span>11900</span>
@@ -143,4 +143,4 @@ export const UserSettingsAdress = (props) => {
   );
 };
 
-export default UserSettingsAdress;
+export default UserSettingsAddress;
