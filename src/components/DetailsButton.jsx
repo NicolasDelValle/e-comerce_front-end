@@ -3,10 +3,10 @@ import React from "react";
 function DetailsButton() {
   return (
     <button
-      className="my-3 btn bg-black text-white w-auto rounded-pill"
-      title="Agregar al carrito"
+      className="btn bg-dark text-white rounded-pill"
+      title="Agregar al carritoVer producto"
     >
-      <p className="p-0 m-0">Ver producto</p>
+      <p className="p-0 m-0">Ver</p>
     </button>
   );
 }
