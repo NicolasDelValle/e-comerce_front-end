@@ -122,10 +122,12 @@ export const UserSettingsAdress = (props) => {
               <div className="w-100">
                 <ListGroup>
                   <ListGroup.Item>
-                    <div>
-                      <span></span>
-                      <span></span>
+                    <div className="d-flex flex-column">
+                      <span>Casa</span>
+                      <span>Luis albeto de herrera y juansito perez, 335</span>
                     </div>
+                    <span>Montevideo,Montevideo</span>
+                    <span>11900</span>
                   </ListGroup.Item>
                   <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
                   <ListGroup.Item>Morbi leo risus</ListGroup.Item>
