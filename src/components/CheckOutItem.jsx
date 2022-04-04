@@ -11,9 +11,9 @@ export const CheckOutItem = ({
   productId,
 }) => {
   return (
-    <div className="d-flex flex-row align-items-center w-100 mb-3">
-      <div className="w-100 me-3 ps-2">
-        <div className="w-100 d-flex flex-row align-items-start mb-1">
+    <div className="d-flex flex-row align-items-center w-100 mb-1">
+      <div className="w-100 me-1 ps-2">
+        <div className="w-100 d-flex flex-row align-items-start">
           <span className="w-75 fs-6 fw-light text-start overflow-hidden">
             <span className="fw-bold me-1">{mountProp}x</span>
             {name}

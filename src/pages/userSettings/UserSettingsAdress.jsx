@@ -72,13 +72,25 @@ export const UserSettingsAdress = (props) => {
                       <span className="me-auto fw-light">Ciudad</span>
                       <input className="border rounded p-1" type="text" />
                     </div>
-                    <div>
-                      <span>Direccion</span>
+                    <div className="d-flex flex-column justify-content-start mb-2">
+                      <span className="me-auto fw-light">Direccion 1</span>
                       <div className="d-flex flex-column justify-content-start mb-2">
                         <input
                           className="border rounded p-1 mb-1"
                           type="text"
                         />
+                        <span className="me-auto fw-light">Direccion 2</span>
+                        <input className="border rounded p-1" type="text" />
+                      </div>
+                    </div>
+
+                    <div className=" d-flex flex-column flex-sm-row ">
+                      <div className="w-100 d-flex flex-column justify-content-start mb-2 me-sm-2">
+                        <span className="me-auto fw-light">Numero</span>
+                        <input className="border rounded p-1" type="text" />
+                      </div>
+                      <div className="w-100 d-flex flex-column justify-content-start mb-2">
+                        <span className="me-auto fw-light">Codigo Postal</span>
                         <input className="border rounded p-1" type="text" />
                       </div>
                     </div>

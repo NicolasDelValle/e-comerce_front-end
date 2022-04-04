@@ -11,11 +11,12 @@ import "./checkOut.css";
 
 function CheckOut() {
   const { cart, user } = useSelector((state) => state);
-  const SubTotalCost = cart.reduce(function (prev, product) {
+  const subTotalCost = cart.reduce(function (prev, product) {
     return prev + Number(product.price) * product.quantity;
   }, 0);
 
-  const total = SubTotalCost * 1.21;
+  const total = subTotalCost * 1.21;
+  const taxes = total - subTotalCost;
 
   return (
     <>
@@ -25,7 +26,7 @@ function CheckOut() {
           <Col md={12} lg={7} className="pe-lg-0"></Col>
           <Col md={12} lg={5}>
             <div className="border p-3 mb-3">
-              <div className="border-bottom d-flex align-items-start mb-2 fs-5 fw-bold">
+              <div className="border-start border-3 border-dark d-flex flex-column align-items-start mb-2 bg-light">
                 {cart.map((product, i) => (
                   <CheckOutItem
                     key={i}
@@ -38,13 +39,19 @@ function CheckOut() {
                   />
                 ))}
               </div>
-              <div className="d-flex align-items-start mb-2">
-                <span>Subtotal</span>
-                <span className="fs-4 ms-auto">{SubTotalCost}</span>
+              <div className="d-flex align-items-start">
+                <span className="fs-6 fw-light">Subtotal</span>
+                <span className="fs-6 me-1 ms-auto">${subTotalCost}</span>
               </div>
               <div className="d-flex align-items-start mb-2">
-                <span>Total</span>
-                <span className="fs-4 ms-auto">{total}</span>
+                <span className="fs-6 fw-light">IVA</span>
+                <span className="fs-6 ms-auto me-1">${taxes.toFixed(2)}</span>
+              </div>
+              <div className="d-flex align-items-start py-1 my-2 border-top">
+                <span className="fs-5 fw-light">Total</span>
+                <span className="fs-5 fw-bold ms-auto me-1">
+                  ${total.toFixed(2)}
+                </span>
               </div>
               <div>
                 <Link to={user.newToken ? /*indicar ruta */ "" : "/login"}>
@@ -56,17 +63,6 @@ function CheckOut() {
                     Comprar
                   </Button>
                 </Link>
-              </div>
-              <div className="d-flex pt-4 justify-content-between">
-                <div className=" align-items-center justify-content-end">
-                  <FcLock size={25} />
-                  {/* <FaLock size={25}  /> */}
-                </div>
-                <div className=" align-items-center justify-content-end">
-                  <FaCcVisa size={30} className="ms-1" />
-                  <FaCcMastercard size={30} className="ms-1" />
-                  <FaCcPaypal size={30} className="ms-1" />
-                </div>
               </div>
             </div>
           </Col>
