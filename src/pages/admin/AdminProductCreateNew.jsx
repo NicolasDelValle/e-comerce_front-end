@@ -8,13 +8,21 @@ import { Link, useNavigate } from "react-router-dom";
 function AdminProductCreateNew() {
   const { newToken } = useSelector((state) => state.user);
   const [newProduct, setNewProduct] = useState({});
+
   const navigate = useNavigate();
-  const handleCreateNewProduct = async () => {
+
+  const handleCreateNewProduct = async (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+
     await axios({
       method: "post",
       url: `${process.env.REACT_APP_API_URL}admin/products`,
-      data: newProduct,
-      headers: { Authorization: `Bearer ${newToken}` },
+      data: formData,
+      headers: {
+        Authorization: `Bearer ${newToken}`,
+        "Content-Type": "multipart/form-data",
+      },
     });
 
     setNewProduct({
@@ -26,10 +34,17 @@ function AdminProductCreateNew() {
       slug: "",
       imageUrl: "",
       description: "",
-      details: "",
+      details: [],
     });
     navigate("/admin/products");
   };
+
+  // const handlerDetails = (value) => {
+  //   let data = [...details, value];
+  //   setDetails(...data);
+  //   console.log(details);
+  // };
+
   return (
     <div className="d-flex">
       <Sidebar />
@@ -39,10 +54,7 @@ function AdminProductCreateNew() {
           <form
             id="product-form"
             className="d-flex flex-column"
-            onSubmit={(e) => {
-              e.preventDefault();
-              handleCreateNewProduct();
-            }}
+            onSubmit={(e) => handleCreateNewProduct(e)}
           >
             <h2>Crear un producto</h2>
             <div className="row text-start">
@@ -171,7 +183,7 @@ function AdminProductCreateNew() {
                 </label>
                 <input
                   value={newProduct.imageUrl}
-                  type="text"
+                  type="file"
                   placeholder="http://via.placeholder.com/640x360"
                   name="imageUrl"
                   onChange={(e) => {
@@ -206,29 +218,33 @@ function AdminProductCreateNew() {
               <div className="col- py-2">
                 <label className="pe-2" htmlFor="product-details">
                   Detalles
+                  <div className="d-flex">
+                    <input
+                      value={newProduct.details}
+                      type="text"
+                      name="details"
+                      id="product-details"
+                      placeholder="Detalles del producto"
+                      className="form-control"
+                      onChange={(e) => {
+                        setNewProduct({
+                          ...newProduct,
+                          details: e.target.value,
+                        });
+                      }}
+                    />
+                    <button type="submit" className="boton">
+                      Agregar a la lista de detalles
+                    </button>
+                  </div>
                 </label>
-                <textarea
-                  value={newProduct.details}
-                  type="text"
-                  name="details"
-                  id="product-details"
-                  size="50"
-                  onChange={(e) => {
-                    setNewProduct({
-                      ...newProduct,
-                      details: e.target.value,
-                    });
-                  }}
-                  placeholder="Detalles del producto"
-                  className="form-control"
-                />
               </div>
             </div>
             <div>
-              <button className="btn btn-success" type="submit">
-                Aceptar
+              <button className="boton me-2 botonCrear" type="submit">
+                Crear
               </button>
-              <button className="btn btn-danger">
+              <button className="boton text-dark botonEliminar">
                 <Link to={"/admin/products"}>Cancelar</Link>
               </button>
             </div>

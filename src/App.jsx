@@ -5,6 +5,7 @@ import Shop from "./pages/shop/Shop";
 import Product from "./pages/product/Product";
 import AboutUs from "./pages/aboutUs/AboutUs";
 import NoMatch from "./components/NoMatch";
+import Cart from "./pages/cart/Cart";
 import CheckOut from "./pages/checkOut/CheckOut";
 import Register from "./pages/register/Register";
 import Login from "./pages/login/Login";
@@ -14,7 +15,7 @@ import AdminUsers from "./pages/admin/AdminUsers";
 import AdminProductCreateNew from "./pages/admin/AdminProductCreateNew";
 import AdminProductEdit from "./pages/admin/AdminProductEdit";
 import UserSettingsAccount from "./pages/userSettings/UserSettingsAccount";
-import UserSettingsAdress from "./pages/userSettings/UserSettingsAdress";
+import UserSettingsAddress from "./pages/userSettings/UserSettingsAddress";
 import AdminUsersOrders from "./pages/admin/AdminUsersOrders";
 import { useSelector } from "react-redux";
 
@@ -30,9 +31,10 @@ function App() {
         <Route path="/products/:slug" element={<Product />} />
         <Route path="/aboutus" element={<AboutUs />} />
         <Route path="/about" element={<AboutUs />} />
-        <Route path="/checkout" element={<CheckOut />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/cart/checkout" element={<CheckOut />} />
         <Route path="/settings/account" element={<UserSettingsAccount />} />
-        <Route path="/settings/address" element={<UserSettingsAdress />} />
+        <Route path="/settings/address" element={<UserSettingsAddress />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/admin" element={isAdmin ? <Admin /> : <Home />} />

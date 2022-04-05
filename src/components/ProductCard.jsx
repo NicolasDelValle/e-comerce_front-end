@@ -35,8 +35,10 @@ function ProductCard({ product }) {
               <p className="product-info">
                 <strong>${product.price}</strong>
               </p>
-              <DetailsButton />
             </span>
+            <div className="d-flex justify-content-end">
+              <DetailsButton />
+            </div>
           </div>
         </Link>
       </Col>

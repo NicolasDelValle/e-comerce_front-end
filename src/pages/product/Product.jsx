@@ -46,6 +46,8 @@ function Product(props) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  console.log(product);
+
   return (
     <div className="section">
       <NavigationBar />
@@ -99,12 +101,11 @@ function Product(props) {
               </span>
               <div id="detalles" className="mt-2">
                 <h3 className="text-black">Detalles</h3>
-                {product &&
-                  product.details.map((detail, i) => (
-                    <p key={i} className="detalles m-0">
-                      {detail}
-                    </p>
-                  ))}
+                {/* {product?.details.map((detail, i) => (
+                  <p key={i} className="detalles m-0">
+                    {detail}
+                  </p>
+                ))} */}
               </div>
             </div>
           </div>

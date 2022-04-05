@@ -134,7 +134,7 @@ function NavigationBar() {
             </Dropdown>
 
             <Link
-              to="/checkout"
+              to="/cart"
               className=" ps-3 d-flex align-items-start"
               title="Carrito de compras"
             >

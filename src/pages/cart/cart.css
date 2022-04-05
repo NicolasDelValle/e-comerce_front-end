@@ -1,0 +1,18 @@
+.item-image {
+  width: 140px;
+  height: 160px;
+  background-size: cover;
+  background-position: center;
+}
+.border-solid {
+  border: solid;
+}
+
+/* Remueve las arrows de los inputs */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}

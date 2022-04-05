@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useDispatch } from "react-redux";
 import actions from "../redux/actions/cartActions";
 
@@ -5,10 +6,14 @@ export const CartItem = ({ url, price, mountProp, name, stock, productId }) => {
   const dispatch = useDispatch();
 
   const handleIncrement = () => {
-    dispatch(actions.addFromCart(productId));
+    mountProp === stock
+      ? (mountProp = stock)
+      : dispatch(actions.addFromCart(productId));
   };
   const handleDecrement = () => {
-    dispatch(actions.removeFromCart(productId));
+    mountProp === 0
+      ? (mountProp = 0)
+      : dispatch(actions.removeFromCart(productId));
   };
   const handleDelete = () => {
     dispatch(actions.clearItemInCart(productId));
@@ -22,7 +27,7 @@ export const CartItem = ({ url, price, mountProp, name, stock, productId }) => {
           backgroundImage: `url(${url})`,
         }}
       ></div>
-      <div className="w-100 me-3 ps-2">
+      <div className="w-100 me-3 ps-2 position-relative">
         <div className="w-100 d-flex flex-row align-items-start mb-1">
           <span className="w-75 text-start overflow-hidden">{name}</span>
           <span className="ms-auto fw-bold">
@@ -39,7 +44,7 @@ export const CartItem = ({ url, price, mountProp, name, stock, productId }) => {
         </div>
         <div className="d-flex flex-row align-items-center">
           <div>
-            <div className="d-flex flex-row align-items-center rounded-pill border px-2 w-75">
+            <div className="d-flex flex-row align-items-center rounded-pill border px-2 w-75 position-relative">
               <button
                 onClick={() => handleIncrement()}
                 className="text-secondary fs-5 me-1 border-0 rounded-pill bg-white"
@@ -51,14 +56,23 @@ export const CartItem = ({ url, price, mountProp, name, stock, productId }) => {
                 type="number"
                 value={mountProp}
               />
+
               <button
                 onClick={() => handleDecrement()}
                 className="text-secondary fs-5 ms-1 border-0 rounded-pill bg-white"
               >
                 -
               </button>
+              {mountProp === stock ? (
+                <span className="me-auto w-100 position-absolute start-0 top-100">
+                  Full Stock
+                </span>
+              ) : (
+                <></>
+              )}
             </div>
           </div>
+
           <div className="ms-auto">
             <button
               className="rounded-pill border d-flex flex-row fw-light text-secondary"
