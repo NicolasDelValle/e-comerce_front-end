@@ -2,9 +2,8 @@ import BackNavbar from "../../components/BackNavbar";
 import { Link, useNavigate } from "react-router-dom";
 import Sidebar from "../../components/Sidebar";
 import { useSelector } from "react-redux";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import axios from "axios";
-import DetailsProduct from "./components/DetailsProduct";
 
 function AdminProductCreateNew() {
   const { newToken } = useSelector((state) => state.user);
@@ -218,10 +217,6 @@ function AdminProductCreateNew() {
                 />
               </div>
               <div className="col- py-2">
-                {/*  <DetailsProduct
-                  setNewProduct={setNewProduct}
-                  newProduct={newProduct}
-                /> */}
                 <label className="form-label pe-2" htmlFor="product-details">
                   Detalles
                 </label>
