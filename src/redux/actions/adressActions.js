@@ -1,7 +1,8 @@
 import types from "../types";
 
 const actions = {
-  addAdresses: (data) => {
+  addAddresses: (data) => {
+    console.log("se realizo el action adresses", data);
     return { type: types.ADD_ADDRESSES, payload: data };
   },
   addAdresse: (data) => {

@@ -3,7 +3,7 @@ import axiosInstance from "./axios";
 async function getAddresses(newToken) {
   const adresses = await axiosInstance({
     method: "get",
-    url: "adress",
+    url: "address",
     headers: { Authorization: `Bearer ${newToken}` },
   });
   return adresses;
@@ -13,7 +13,7 @@ async function postAddress(adress, newToken) {
   try {
     await axiosInstance({
       method: "post",
-      url: "adress",
+      url: "address",
       data: adress,
       headers: { Authorization: `Bearer ${newToken}` },
     });
@@ -22,4 +22,17 @@ async function postAddress(adress, newToken) {
   }
 }
 
-export { getAddresses, postAddress };
+async function deleteAddress(adressId, newToken) {
+  try {
+    await axiosInstance({
+      method: "post",
+      url: "address",
+      data: adressId,
+      headers: { Authorization: `Bearer ${newToken}` },
+    });
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+export { getAddresses, postAddress, deleteAddress };

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import NavigationBar from "../../components/NavigationBar";
-import types from "../../redux/types";
+
 import { Col, Container, Row, ListGroup } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { getAddresses, postAddress } from "../../api/addressApi";
@@ -38,7 +38,8 @@ export const UserSettingsAddress = (props) => {
   useEffect(() => {
     const asyncAddresses = async () => {
       const addresses = await getAddresses(newToken);
-      dispatch(actions.addAdresses(addresses.data));
+      setAddresses(addresses.data);
+      dispatch(actions.addAddresses(addresses.data));
     };
     asyncAddresses();
   }, []);
