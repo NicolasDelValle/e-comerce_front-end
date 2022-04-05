@@ -17,4 +17,13 @@ async function getProduct(slug) {
   return product;
 }
 
-export { getProducts, getProduct };
+async function getNewRelease() {
+  const newReleases = await axiosInstance({
+    method: "get",
+    url: "/newRelease",
+  });
+
+  return newReleases;
+}
+
+export { getProducts, getProduct, getNewRelease };

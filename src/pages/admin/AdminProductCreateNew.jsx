@@ -1,9 +1,9 @@
-import { useState } from "react";
-import Sidebar from "../../components/Sidebar";
 import BackNavbar from "../../components/BackNavbar";
-import { useSelector } from "react-redux";
-import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
+import Sidebar from "../../components/Sidebar";
+import { useSelector } from "react-redux";
+import { useState } from "react";
+import axios from "axios";
 
 function AdminProductCreateNew() {
   const { newToken } = useSelector((state) => state.user);
@@ -14,7 +14,7 @@ function AdminProductCreateNew() {
   const handleCreateNewProduct = async (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
-
+    setNewProduct(formData);
     await axios({
       method: "post",
       url: `${process.env.REACT_APP_API_URL}admin/products`,
@@ -38,19 +38,14 @@ function AdminProductCreateNew() {
     });
     navigate("/admin/products");
   };
-
-  // const handlerDetails = (value) => {
-  //   let data = [...details, value];
-  //   setDetails(...data);
-  //   console.log(details);
-  // };
+  console.log(newProduct);
 
   return (
     <div className="d-flex">
       <Sidebar />
       <div className="w-100">
         <BackNavbar />
-        <div className="container px-4 mx-auto pt-5 ">
+        <div className="container px-4 mx-auto py-3 ">
           <form
             id="product-form"
             className="d-flex flex-column"
@@ -58,8 +53,8 @@ function AdminProductCreateNew() {
           >
             <h2>Crear un producto</h2>
             <div className="row text-start">
-              <div className="col- col-lg-4 py-2">
-                <label className="pe-2" htmlFor="product-name">
+              <div className="col- col-lg-6 py-2">
+                <label className="pe-2 form-label" htmlFor="product-name">
                   Nombre
                 </label>
                 <input
@@ -74,15 +69,16 @@ function AdminProductCreateNew() {
                     });
                   }}
                   placeholder="Nombre del producto"
-                  className="form-control"
+                  className="form-control p-1"
                 />
               </div>
-              <div className="col-4 col-lg-4  py-2">
-                <label className="pe-2" htmlFor="product-category">
+              <div className="col-4 col-lg-2  py-2">
+                <label className="pe-2 form-label" htmlFor="product-category">
                   Categoría
                 </label>
                 <select
-                  defaultValue={newProduct.category}
+                  defaultValue={"Seleccionar"}
+                  value={newProduct.category}
                   id="product-category"
                   name="categoryId"
                   className="form-select"
@@ -93,18 +89,20 @@ function AdminProductCreateNew() {
                     });
                   }}
                 >
+                  <option disabled>Seleccionar</option>
                   <option value="1">Tablas</option>
                   <option value="2">Hardware</option>
                   <option value="3">Ruedas</option>
                   <option value="4">Ropa</option>
                 </select>
               </div>
-              <div className="col-4 col-lg-4 py-2">
-                <label className="pe-2" htmlFor="product-featured">
+              <div className="col-4 col-lg-2 py-2">
+                <label className="form-label pe-2" htmlFor="product-featured">
                   Destacado
                 </label>
                 <select
-                  defaultValue={newProduct.featured}
+                  defaultValue={"Seleccionar"}
+                  value={newProduct.featured}
                   id="product-featured"
                   name="featured"
                   onChange={(e) => {
@@ -116,12 +114,12 @@ function AdminProductCreateNew() {
                   className="form-control"
                 >
                   <option disabled>Seleccionar</option>
-                  <option value="true">Sí</option>
+                  <option value="true">Si</option>
                   <option value="false">No</option>
                 </select>
               </div>
-              <div className="col-4 col-lg-4 py-2">
-                <label className="pe-2" htmlFor="product-price">
+              <div className="col-4 col-lg-2 py-2">
+                <label className="form-label pe-2" htmlFor="product-price">
                   Precio
                 </label>
                 <input
@@ -135,31 +133,12 @@ function AdminProductCreateNew() {
                       price: e.target.value,
                     });
                   }}
-                  placeholder="Precio del producto"
+                  placeholder="($) Precio "
                   className="form-control"
                 />
               </div>
-              <div className="col- col-lg-4 py-2">
-                <label className="pe-2" htmlFor="product-stock">
-                  Stock
-                </label>
-                <input
-                  value={newProduct.stock}
-                  type="number"
-                  name="stock"
-                  id="product-stock"
-                  onChange={(e) => {
-                    setNewProduct({
-                      ...newProduct,
-                      stock: e.target.value,
-                    });
-                  }}
-                  placeholder="Stock del producto"
-                  className="form-control"
-                />
-              </div>
-              <div className="col- col-lg-4 py-2">
-                <label className="pe-2" htmlFor="product-slug">
+              <div className="col- col-lg-6 py-2">
+                <label className="form-label pe-2" htmlFor="product-slug">
                   Slug
                 </label>
                 <input
@@ -177,8 +156,27 @@ function AdminProductCreateNew() {
                   className="form-control"
                 />
               </div>
-              <div className="col- py-2">
-                <label className="pe-2" htmlFor="product-image">
+              <div className="col- col-lg-2 py-2">
+                <label className="form-label pe-2" htmlFor="product-stock">
+                  Stock
+                </label>
+                <input
+                  value={newProduct.stock}
+                  type="number"
+                  name="stock"
+                  id="product-stock"
+                  onChange={(e) => {
+                    setNewProduct({
+                      ...newProduct,
+                      stock: e.target.value,
+                    });
+                  }}
+                  placeholder="Stock"
+                  className="form-control"
+                />
+              </div>
+              <div className="col- col-lg-4 py-2">
+                <label className="form-label pe-2" htmlFor="product-image">
                   Imagen
                 </label>
                 <input
@@ -196,7 +194,10 @@ function AdminProductCreateNew() {
                 />
               </div>
               <div className="col- py-2">
-                <label className="pe-2" htmlFor="product-description">
+                <label
+                  className="form-label pe-2"
+                  htmlFor="product-description"
+                >
                   Descripción
                 </label>
                 <textarea
@@ -216,28 +217,23 @@ function AdminProductCreateNew() {
                 />
               </div>
               <div className="col- py-2">
-                <label className="pe-2" htmlFor="product-details">
+                <label className="form-label pe-2" htmlFor="product-details">
                   Detalles
-                  <div className="d-flex">
-                    <input
-                      value={newProduct.details}
-                      type="text"
-                      name="details"
-                      id="product-details"
-                      placeholder="Detalles del producto"
-                      className="form-control"
-                      onChange={(e) => {
-                        setNewProduct({
-                          ...newProduct,
-                          details: e.target.value,
-                        });
-                      }}
-                    />
-                    <button type="submit" className="boton">
-                      Agregar a la lista de detalles
-                    </button>
-                  </div>
                 </label>
+                <input
+                  value={newProduct.details}
+                  type="text"
+                  name="details"
+                  id="product-details"
+                  placeholder="Detalles del producto"
+                  className="form-control"
+                  onChange={(e) => {
+                    setNewProduct({
+                      ...newProduct,
+                      details: e.target.value,
+                    });
+                  }}
+                />
               </div>
             </div>
             <div>
