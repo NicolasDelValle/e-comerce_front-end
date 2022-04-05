@@ -36,7 +36,7 @@ function ProductCard({ product }) {
                 <strong>${product.price}</strong>
               </p>
             </span>
-            <div className="d-flex justify-content-end">
+            <div className="d-flex justify-content-center mt-2">
               <DetailsButton />
             </div>
           </div>
