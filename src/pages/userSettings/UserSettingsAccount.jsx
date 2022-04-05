@@ -23,9 +23,6 @@ export const UserSettingsAccount = (props) => {
               <Link className="my-2" to="/settings/address">
                 <span className="text-dark me-3">Dirrecciones</span>
               </Link>
-              <Link className="my-2" to="/settings/payment">
-                <span className="text-dark me-3">Pagos</span>
-              </Link>
             </div>
           </Col>
           <Col md={10} className="d-flex align-itmes-start">

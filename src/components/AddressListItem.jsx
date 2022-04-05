@@ -10,7 +10,7 @@ export const AddressListItem = ({
   postalCode,
 }) => {
   return (
-    <div className="w-100 d-flex flex-row border rounded-3  mb-2 ps-3">
+    <div key={id} className="w-100 d-flex flex-row border rounded-3  mb-2 ps-3">
       <div className="w-100">
         <div className="w-100 d-flex flex-column justify-content-center align-items-start ">
           <div className="d-flex flex-row w-100">

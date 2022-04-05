@@ -32,19 +32,17 @@ export const UserSettingsAddress = (props) => {
   ];
   const dispatch = useDispatch();
   const { newToken } = useSelector((state) => state.user);
-  const [addresses, setAddresses] = useState();
-  const [stateAddresses, setStateAddresses] = useState(
+  const [addresses, setAddresses] = useState(
     useSelector((state) => state.address)
   );
   useEffect(() => {
     const asyncAddresses = async () => {
       const addresses = await getAddresses(newToken);
-      setAddresses(addresses.data);
-      dispatch(actions.addAdresses(addresses));
+      dispatch(actions.addAdresses(addresses.data));
     };
     asyncAddresses();
   }, []);
-  console.log(stateAddresses);
+  console.log(addresses);
   return (
     <>
       <NavigationBar />
@@ -62,9 +60,6 @@ export const UserSettingsAddress = (props) => {
               </Link>
               <Link className="my-2" to="/settings/address">
                 <span className="text-dark me-3">Dirrecciones</span>
-              </Link>
-              <Link className="my-2" to="/settings/payment">
-                <span className="text-dark me-3">Pagos</span>
               </Link>
             </div>
           </Col>
@@ -122,7 +117,7 @@ export const UserSettingsAddress = (props) => {
               <div className="my-3">
                 <span className="fs-5">Direcciones Registradas</span>
               </div>
-              {stateAddresses?.map((address) => (
+              {addresses?.map((address) => (
                 <AddressListItem
                   id={address.id}
                   name={address.name}
