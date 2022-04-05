@@ -10,6 +10,9 @@ import axios from "axios";
 function Shop(props) {
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
+  const [apiCategories, setApiCategories] = useState([]);
+  const [apiProducts, setApiProducts] = useState([]);
+  const [itemTitle, setItemTitle] = useState("");
 
   useEffect(() => {
     const getCategories = async () => {
@@ -17,6 +20,7 @@ function Shop(props) {
         method: "get",
         url: `${process.env.REACT_APP_API_URL}categories`,
       });
+      setApiCategories(data);
       setCategories(data);
     };
     const getProducts = async () => {
@@ -24,6 +28,7 @@ function Shop(props) {
         method: "get",
         url: `${process.env.REACT_APP_API_URL}products`,
       });
+      setApiProducts(data);
       setProducts(data);
     };
     getCategories();
@@ -33,21 +38,54 @@ function Shop(props) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  const handleSearch = (e) => {
+    if (e !== "") {
+      setItemTitle(e);
+      setProducts(
+        apiProducts.filter((product) => product.name.toLowerCase().includes(e))
+      );
+    } else {
+      setProducts(apiProducts);
+      setCategories(apiCategories);
+    }
+  };
+
   return (
     <>
       <NavigationBar className="bg-dark" />
       <div className="section">
         <div className="container product-category-section pt-3">
-          {categories.map((category) => (
-            <div className="row  d-flex justify-content-center">
-              <h2 className="my-4">{category.name}</h2>
-              {products
-                .filter((product) => product.categoryId === category.id)
-                .map((filteredProduct) => (
-                  <ProductCard product={filteredProduct} />
-                ))}{" "}
-            </div>
-          ))}
+          <div className="row search mt-4 d-flex justify-content-center ">
+            <input
+              type="text"
+              name="search"
+              className=" w-25 py-2"
+              value={itemTitle}
+              placeholder="Que estas buscando?"
+              id=""
+              onChange={(e) => {
+                handleSearch(e.target.value.toLowerCase());
+              }}
+            />
+          </div>
+          {categories.map(
+            (category, i) =>
+              products.some(
+                (product) => product.categoryId === category.id
+              ) && (
+                <div key={i} className="row  d-flex justify-content-center">
+                  <h2 className="my-4">{category.name}</h2>
+                  {products
+                    .filter((product) => product.categoryId === category.id)
+                    .map((filteredProduct) => (
+                      <ProductCard
+                        key={filteredProduct.id}
+                        product={filteredProduct}
+                      />
+                    ))}{" "}
+                </div>
+              )
+          )}
         </div>
       </div>
       <Footer />
