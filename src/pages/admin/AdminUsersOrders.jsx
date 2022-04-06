@@ -50,7 +50,6 @@ function AdminUsersOrders() {
 												<td>{order.address}</td>
 												<td>{order.totalPrice}</td>
 												<td>
-													{" "}
 													<Link to={`/admin/orders/${order.id}`}>
 														<button className="mx-1 btn btn-outliner-secondary">
 															<i className="bi bi-pencil"></i>
