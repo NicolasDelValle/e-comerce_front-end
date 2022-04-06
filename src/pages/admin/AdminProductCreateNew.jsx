@@ -38,7 +38,6 @@ function AdminProductCreateNew() {
     });
     navigate("/admin/products");
   };
-  console.log(newProduct);
 
   return (
     <div className="d-flex">

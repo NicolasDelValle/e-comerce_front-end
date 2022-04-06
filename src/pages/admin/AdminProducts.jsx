@@ -18,7 +18,7 @@ function AdminProducts() {
         url: `${process.env.REACT_APP_API_URL}products`,
         headers: { Authorization: `Bearer ${newToken}` },
       });
-      console.log(data);
+
       setProducts(data);
     };
     getProducts();
