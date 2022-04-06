@@ -1,9 +1,9 @@
+import { MdAdminPanelSettings } from "react-icons/md";
 import logoBlanco from "../img/logos/logoBlanco.png";
 import { RiFileList3Line } from "react-icons/ri";
 import "react-pro-sidebar/dist/css/styles.css";
 import { CgUserList } from "react-icons/cg";
 import { FiUsers } from "react-icons/fi";
-import { MdAdminPanelSettings } from "react-icons/md";
 import { GoPlus } from "react-icons/go";
 import { Link } from "react-router-dom";
 import { useState } from "react";
@@ -35,7 +35,7 @@ function Sidebar() {
             to="/"
           >
             <img
-              className="wLogoContainer-logo p-1"
+              className="wLogoContainer-logo px-2"
               src={logoBlanco}
               alt="Logo"
             />

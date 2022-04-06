@@ -1,8 +1,21 @@
 .boton {
   border: 1px solid gray;
   border-radius: 10px;
+  color: black;
 }
 .boton:hover {
   background-color: rgba(128, 128, 128, 0.473);
   color: white;
+}
+.boton a {
+  color: black;
+}
+.boton a:hover {
+  color: white;
+}
+.botonCrear:hover {
+  background-color: green;
+}
+.botonEliminar:hover {
+  background-color: red;
 }
