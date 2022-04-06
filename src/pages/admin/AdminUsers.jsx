@@ -6,7 +6,7 @@ import axios from "axios";
 function AdminUsers() {
   const { newToken } = useSelector((state) => state.user);
   const [users, setUsers] = useState({});
-  const [checkbox, setCheckbox] = useState();
+  const [isChecked, setIsChecked] = useState(false);
 
   useEffect(() => {
     const getUsers = async () => {
@@ -19,19 +19,17 @@ function AdminUsers() {
       setUsers(data);
     };
     getUsers();
-  }, [checkbox]);
+  }, [isChecked]);
 
-  const handleEditUser = async (e, id, isAdmin) => {
+  const handleEditUser = async (e, id) => {
     e.preventDefault(e);
 
-    setCheckbox((prev) => !prev);
-
-    const { data } = await axios({
+    await axios({
       method: "patch",
       url: `${process.env.REACT_APP_API_URL}admin/users/${id}`,
       headers: { Authorization: `Bearer ${newToken}` },
     });
-    console.log(data.isAdmin);
+    setIsChecked((prev) => !prev);
   };
 
   return (
@@ -58,25 +56,17 @@ function AdminUsers() {
                     <td>{user.lastname}</td>
                     <td>{user.email}</td>
                     <td>
-                      <form
-                        onClick={(e) => {
-                          handleEditUser(e, user.id, user.isAdmin);
-                        }}
-                      >
-                        <label htmlFor={user.id}>
-                          <input
-                            onChange={console.log(checkbox)}
-                            onClick={() => {
-                              console.log(user.isAdmin);
-                            }}
-                            defaultChecked={user.isAdmin}
-                            value={checkbox}
-                            type="checkbox"
-                            name="isAdmin"
-                            id={user.id}
-                          />
-                        </label>
-                      </form>
+                      <label htmlFor={user.id}>
+                        <input
+                          onChange={(e) => {
+                            handleEditUser(e, user.id);
+                          }}
+                          checked={user.isAdmin}
+                          type="checkbox"
+                          name="isAdmin"
+                          id={user.id}
+                        />
+                      </label>
                     </td>
                     <td className="mx-auto">
                       <button className="mx-1  btn btn-outliner-secondary">
