@@ -9,6 +9,7 @@ import "./checkOut.css";
 import "./card.css";
 import { postOrder } from "../../api/orderApi";
 import CardReactFormContainer from "card-react";
+
 function CheckOut() {
   const { cart, user, address } = useSelector((state) => state);
   const subTotalCost = cart.reduce(function (prev, product) {

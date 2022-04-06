@@ -15,6 +15,8 @@ function Product(props) {
   const [quantity, setQuantity] = useState(1);
   const [products, setProducts] = useState([]);
 
+  const randomProducts = products.sort(() => 0.5 - Math.random());
+
   useEffect(() => {
     const getProducts = async () => {
       const { data } = await axios({
@@ -24,8 +26,14 @@ function Product(props) {
 
       setProducts(data);
     };
+    const fetchData = async () => {
+      const response = await getProduct(slug);
+
+      setProduct(response.data);
+    };
     getProducts();
-  }, []);
+    fetchData();
+  }, [slug]);
 
   const handleIncrement = () => {
     setQuantity((count) => count + 1);
@@ -34,17 +42,6 @@ function Product(props) {
   const handleDecrement = () => {
     setQuantity((count) => count - 1);
   };
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const response = await getProduct(slug);
-
-      setProduct(response.data);
-    };
-    fetchData();
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   console.log(product);
 
@@ -75,7 +72,7 @@ function Product(props) {
               <p>{product && product.description}</p>
 
               <div>
-                <div className="d-flex flex-row align-items-center rounded-pill border px-2 ">
+                <div className="d-flex flex-row align-items-center rounded border px-2 ">
                   <button
                     onClick={() => handleIncrement()}
                     className="text-secondary fs-5 me-1 border-0 rounded-pill bg-white"
@@ -101,11 +98,11 @@ function Product(props) {
               </span>
               <div id="detalles" className="mt-2">
                 <h3 className="text-black">Detalles</h3>
-                {/* {product?.details.map((detail, i) => (
+                {product?.details.map((detail, i) => (
                   <p key={i} className="detalles m-0">
                     {detail}
                   </p>
-                ))} */}
+                ))}
               </div>
             </div>
           </div>
@@ -117,7 +114,7 @@ function Product(props) {
               <h2>Otros Productos</h2>
             </div>
             <Row className="pt-3  justify-content-center ">
-              {products.map((product, i) => (
+              {randomProducts.splice(0, 4).map((product, i) => (
                 <ProductCard key={i} product={product} />
               ))}
             </Row>

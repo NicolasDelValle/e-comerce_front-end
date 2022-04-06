@@ -77,7 +77,7 @@ function Home() {
                 </div>
               </Row>
 
-              <Row className="border-top border-1 justify-content-around  home-shop-section pt-5">
+              <Row className="border-top border-1 justify-content-around  home-shop-section py-5">
                 <div className="">
                   <h2>Shop</h2>
                 </div>

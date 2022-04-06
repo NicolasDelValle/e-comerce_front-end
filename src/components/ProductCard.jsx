@@ -3,12 +3,13 @@ import { Col, Spinner } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import DetailsButton from "./DetailsButton";
 import "./css/ProductCard.css";
+
 function ProductCard({ product }) {
   const [isLoading, setIsLoading] = useState(true);
 
   return (
     <>
-      <Col md={5} lg={3} className="productCard rounded mb-5">
+      <Col md={5} lg={3} className="productCard rounded py-4">
         <Link to={`/products/${product.slug}`}>
           <div className=" p-1 text-black">
             <span className="py-2" min-height="220px">
