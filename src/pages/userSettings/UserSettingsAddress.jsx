@@ -31,19 +31,39 @@ export const UserSettingsAddress = (props) => {
     "Treinta y Tres",
   ];
   const dispatch = useDispatch();
-  const { newToken } = useSelector((state) => state.user);
+  const user = useSelector((state) => state.user);
   const [addresses, setAddresses] = useState(
     useSelector((state) => state.address)
   );
+  const [name, setName] = useState("");
+  const [state, setState] = useState("");
+  const [city, setCity] = useState("");
+  const [address, setAddress] = useState("");
+  const [postalCode, setPostalCode] = useState("");
+
   useEffect(() => {
     const asyncAddresses = async () => {
-      const addresses = await getAddresses(newToken);
+      const addresses = await getAddresses(user.newToken);
       setAddresses(addresses.data);
       dispatch(actions.addAddresses(addresses.data));
     };
     asyncAddresses();
   }, []);
   console.log(addresses);
+
+  const handleCreateAddress = async () => {
+    if (
+      name === "" ||
+      state === "" ||
+      city === "" ||
+      address === "" ||
+      postalCode === ""
+    ) {
+    } else {
+      await postAddress({name,state,city,address,postalCode,user.id},user.newToken)
+    }
+  };
+
   return (
     <>
       <NavigationBar />
