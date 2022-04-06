@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Col, Spinner } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import DetailsButton from "./DetailsButton";
@@ -6,7 +6,9 @@ import "./css/ProductCard.css";
 
 function ProductCard({ product }) {
   const [isLoading, setIsLoading] = useState(true);
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <Col md={5} lg={3} className="productCard rounded py-4">
