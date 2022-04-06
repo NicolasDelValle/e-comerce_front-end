@@ -1,25 +1,40 @@
-import { FaCcVisa, FaCcMastercard, FaCcPaypal } from "react-icons/fa";
-import { FcLock } from "react-icons/fc";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import NavigationBar from "../../components/NavigationBar";
 import CheckOutItem from "../../components/CheckOutItem";
 import Footer from "../../components/Footer";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import React from "react";
+import { useState } from "react";
 import "./checkOut.css";
 import "./card.css";
+import { postOrder } from "../../api/orderApi";
 import CardReactFormContainer from "card-react";
-
 function CheckOut() {
   const { cart, user, address } = useSelector((state) => state);
   const subTotalCost = cart.reduce(function (prev, product) {
     return prev + Number(product.price) * product.quantity;
   }, 0);
-
+  const [CCNumber, setCCNumber] = useState("");
+  const [CCExpiry, setCCExpiry] = useState("");
+  const [CCCvc, setCCCvc] = useState("");
+  const [CCName, setCCName] = useState("");
+  const [addressSelected, setAddressSelected] = useState();
+  const [show, setShow] = useState(false);
   const total = subTotalCost * 1.21;
   const taxes = total - subTotalCost;
 
+  const handlebuy = async () => {
+    const productList = [];
+    cart.map((item) =>
+      productList.push({
+        name: item.name,
+        price: item.price,
+        quantity: item.quantity,
+      })
+    );
+    await postOrder(productList, addressSelected, total, user.newToken);
+  };
+  console.log(user);
   return (
     <>
       <NavigationBar />
@@ -96,9 +111,10 @@ function CheckOut() {
                     <span className="me-auto fw-bold mb-1">Direccion</span>
                     <select
                       className="border rounded p-1 me-auto "
-                      name=""
-                      id=""
+                      name="address"
+                      onChange={(e) => setAddressSelected(e.target.value)}
                     >
+                      <option value="">Seleccione una direccion</option>
                       {address?.map(
                         ({ address, number, state, city, postalCode }) => (
                           <option
@@ -109,11 +125,13 @@ function CheckOut() {
                     </select>
                   </div>
                 </div>
+
                 <Link to={user.newToken ? /*indicar ruta */ "" : "/login"}>
                   <Button
                     className="rounded-pill w-100 px-auto py-1 text-decoration-none"
                     variant="dark"
                     size="lg"
+                    onClick={() => handlebuy()}
                   >
                     Finalizar Compra
                   </Button>
