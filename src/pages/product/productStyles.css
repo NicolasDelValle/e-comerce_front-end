@@ -18,6 +18,10 @@
   text-align: center;
 }
 
+.product-info p{
+  text-align: left;
+}
+
 .productSection .detalles {
   text-align: left;
 }

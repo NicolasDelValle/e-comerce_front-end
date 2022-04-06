@@ -55,7 +55,7 @@ function Product(props) {
           className="row m-3 g-3 py-2
            d-flex justify-content-md-center align-items-center"
         >
-          <div id="ProductImg" className="col-md-6 px-5">
+          <div id="ProductImg" className="col-lg-6 px-5">
             <img
               src={product && product.imageUrl}
               className="img-fluid"
@@ -63,7 +63,7 @@ function Product(props) {
             />
           </div>
 
-          <div id="ProductInfo" className="col-md-3 shadow p-5 rounded">
+          <div id="ProductInfo" className="col-lg-3 shadow p-5 rounded">
             <h2>{product && product.name}</h2>
             <h3 className="my2 text-black ">
               Precio: ${product && product.price}
