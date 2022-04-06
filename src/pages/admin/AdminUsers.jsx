@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import axios from "axios";
 
 function AdminUsers() {
-  const { newToken } = useSelector((state) => state.user);
+  const { newToken, id } = useSelector((state) => state.user);
   const [users, setUsers] = useState({});
   const [isChecked, setIsChecked] = useState(false);
 
@@ -21,12 +21,12 @@ function AdminUsers() {
     getUsers();
   }, [isChecked]);
 
-  const handleEditUser = async (e, id) => {
+  const handleEditUser = async (e, usarioId) => {
     e.preventDefault(e);
 
     await axios({
       method: "patch",
-      url: `${process.env.REACT_APP_API_URL}admin/users/${id}`,
+      url: `${process.env.REACT_APP_API_URL}admin/users/${usarioId}`,
       headers: { Authorization: `Bearer ${newToken}` },
     });
     setIsChecked((prev) => !prev);
@@ -61,6 +61,7 @@ function AdminUsers() {
                           onChange={(e) => {
                             handleEditUser(e, user.id);
                           }}
+                          disabled={id === user.id}
                           checked={user.isAdmin}
                           type="checkbox"
                           name="isAdmin"
