@@ -18,6 +18,10 @@ function Product(props) {
   const randomProducts = products.sort(() => 0.5 - Math.random());
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [slug]);
+
+  useEffect(() => {
     const getProducts = async () => {
       const { data } = await axios({
         method: "get",
