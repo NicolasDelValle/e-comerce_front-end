@@ -3,7 +3,6 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
-import BackNavbar from "../../components/BackNavbar";
 import Sidebar from "../../components/Sidebar";
 
 function AdminUsersOrders() {
@@ -28,7 +27,6 @@ function AdminUsersOrders() {
 		<div className="d-flex">
 			<Sidebar />
 			<div className="w-100">
-				<BackNavbar />
 				<div className="container px-4 mx-auto py-5">
 					<h3>Lista de órdenes</h3>
 					<div className="row mt-4">

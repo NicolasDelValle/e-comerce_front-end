@@ -3,7 +3,6 @@ import { useSelector } from "react-redux";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 
-import BackNavbar from "../../components/BackNavbar";
 import Sidebar from "../../components/Sidebar";
 
 function AdminUsersOrderById() {
@@ -41,7 +40,6 @@ function AdminUsersOrderById() {
 		<div className="d-flex">
 			<Sidebar />
 			<div className="w-100">
-				<BackNavbar />
 				<div className="container px-4 mx-auto py-5">
 					<h3>Órden #{order.id}</h3>
 					<div className="mt-4">

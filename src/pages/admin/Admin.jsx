@@ -1,5 +1,4 @@
 import { Card, ListGroup, ProgressBar } from "react-bootstrap";
-import BackNavbar from "../../components/BackNavbar";
 import Sidebar from "../../components/Sidebar";
 import "./css/Admin.css";
 
@@ -8,7 +7,6 @@ function Admin() {
 		<div className="d-flex">
 			<Sidebar />
 			<div className="w-100 ">
-				<BackNavbar className="py-4" />
 				<div className="container px-4 pt-5">
 					<div className="row mt-4">
 						<div className="col-md-3 col-md-">

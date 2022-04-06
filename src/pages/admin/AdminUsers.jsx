@@ -3,7 +3,6 @@ import { Button } from "react-bootstrap";
 import axios from "axios";
 import { useSelector } from "react-redux";
 import Sidebar from "../../components/Sidebar";
-import BackNavbar from "../../components/BackNavbar";
 
 function AdminUsers() {
 	const { newToken } = useSelector((state) => state.user);
@@ -33,7 +32,6 @@ function AdminUsers() {
 		<div className="d-flex">
 			<Sidebar />
 			<div className="w-100">
-				<BackNavbar />
 				<div className="container px-4 mx-auto py-5">
 					<h2>Lista de Usuarios</h2>
 
