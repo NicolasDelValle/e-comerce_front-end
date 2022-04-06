@@ -1,14 +1,13 @@
-import { useState, useEffect } from "react";
-import { Button } from "react-bootstrap";
-import axios from "axios";
-import { useSelector } from "react-redux";
 import Sidebar from "../../components/Sidebar";
+import { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
+import axios from "axios";
 
 function AdminUsers() {
   const { newToken } = useSelector((state) => state.user);
   const [users, setUsers] = useState({});
-  const [newProduct, setNewProduct] = useState({});
-  console.log(users);
+  const [checkbox, setCheckbox] = useState();
+
   useEffect(() => {
     const getUsers = async () => {
       const { data } = await axios({
@@ -20,15 +19,21 @@ function AdminUsers() {
       setUsers(data);
     };
     getUsers();
-  }, []);
+  }, [checkbox]);
 
-  const handleEditUser = async (id) => {
-    await axios({
+  const handleEditUser = async (e, id, isAdmin) => {
+    e.preventDefault(e);
+
+    setCheckbox((prev) => !prev);
+
+    const { data } = await axios({
       method: "patch",
       url: `${process.env.REACT_APP_API_URL}admin/users/${id}`,
       headers: { Authorization: `Bearer ${newToken}` },
     });
+    console.log(data.isAdmin);
   };
+
   return (
     <div className="d-flex">
       <Sidebar />
@@ -54,14 +59,18 @@ function AdminUsers() {
                     <td>{user.email}</td>
                     <td>
                       <form
-                        onSubmit={(e) => {
-                          e.preventDefault();
-                          handleEditUser(user.id);
+                        onClick={(e) => {
+                          handleEditUser(e, user.id, user.isAdmin);
                         }}
                       >
                         <label htmlFor={user.id}>
                           <input
-                            value={user.isAdmin}
+                            onChange={console.log(checkbox)}
+                            onClick={() => {
+                              console.log(user.isAdmin);
+                            }}
+                            defaultChecked={user.isAdmin}
+                            value={checkbox}
                             type="checkbox"
                             name="isAdmin"
                             id={user.id}
