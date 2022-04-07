@@ -4,7 +4,7 @@
   background-image: url("https://i.pinimg.com/originals/53/24/7e/53247ef4e2481f4d8acbaffdf03648db.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position: bottom;
   background-attachment: fixed;
 
   display: flex;
@@ -26,15 +26,11 @@
 }
 
 .about-text > p {
-  font-size: 1.25rem;
+  font-size: 1rem;
   text-align: justify;
+  line-height: 1.5rem;
+  /* text-align: center; */
 }
-/* 
-@media (min-width: 768px) {
-  .about-text > p {
-    font-size: 1.5rem;
-  }
-} */
 
 .about-text-losi-logo {
   height: 38px;
@@ -50,16 +46,15 @@
 }
 
 .about-text-hack {
-  font-weight: 700;
-  /* font-size: 2rem; */
+  font-weight: 400;
 }
 .about-text-link {
-  font-weight: bold;
+  font-weight: 500;
   color: #000;
 }
 
 .about-text-link:hover {
-  color: rgb(54, 54, 54);
+  color: rgb(113, 112, 112);
 }
 
 .about-image-project {
@@ -70,6 +65,7 @@
   align-items: center;
 
   background-image: url("https://www.wallpaperup.com/uploads/wallpapers/2012/12/13/24691/de1a95515890ce9e607da7e8c7756030.jpg");
+  background-color: #000;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -83,13 +79,13 @@
 }
 
 .about-image-details {
-  height: 50vh;
+  /* height: 50vh; */
 
   display: flex;
   justify-content: center;
   align-items: center;
 
-  background-image: url("https://images.wallpaperscraft.com/image/single/skateboard_skate_skater_205475_3840x2160.jpg");
+  /* background-image: url("https://images.wallpaperscraft.com/image/single/skateboard_skate_skater_205475_3840x2160.jpg"); */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -97,9 +93,9 @@
 }
 
 .about-image-details > h2 {
-  font-size: 5rem;
-  font-weight: 400;
-  color: #fff;
+  /* font-size: 2.5rem; */
+  /* font-weight: 400; */
+  color: rgb(0, 0, 0);
 }
 
 .about-text-title {
@@ -107,7 +103,7 @@
 }
 
 .about-profile-div {
-  width: 250px;
+  width: 200px;
 
   display: flex;
   flex-direction: column;
@@ -175,14 +171,3 @@
     margin: 0;
   }
 }
-/* 
-.about-profile-img {
-  position: relative;
-  height: 200px;
-  width: 200px;
-
-  background-size: cover;
-  background-position: center;
-
-  border-radius: 50%;
-} */

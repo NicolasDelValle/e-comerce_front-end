@@ -51,11 +51,11 @@ function AdminUsersOrderById() {
 								className="container px-4 mx-auto py-4 table-responsive"
 								id="order-div"
 							>
-								<table className="table table-bordered">
+								<table className="table">
 									<thead className="table-light">
-										<tr>
+										<tr className="text-start">
 											<th scope="col">Concepto</th>
-											<th scope="col"></th>
+											<th scope="col">Detalles</th>
 										</tr>
 									</thead>
 									<tbody className="text-start">
@@ -94,10 +94,11 @@ function AdminUsersOrderById() {
 														<select className="me-1" name="status-option" id="status-option">
 															<option value="Procesando">Procesando</option>
 															<option value="Enviado">Enviado</option>
+															<option value="Recibido">Recibido</option>
 														</select>
 														<button
 															type="submit"
-															className="btn btn-dark p-0"
+															className="p-0 border-0 rounded-circle btn-dark"
 															onClick={() =>
 																setOrder({
 																	...order,
