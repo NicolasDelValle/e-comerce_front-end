@@ -67,7 +67,7 @@ function NavigationBar() {
               <Link
                 to="/admin"
                 className="d-flex  align-items-start "
-                title="Carrito de compras"
+                title="Administrador"
               >
                 <i className="bi bi-gear fs-6 position-relative"></i>
               </Link>
@@ -106,7 +106,7 @@ function NavigationBar() {
                     <Link
                       className="p-1 w-100 text-danger"
                       to="/"
-                      title="Carrito de compras"
+                      title="Cerrar sesion"
                       /*cerrar sesion*/
                       onClick={() => dispatch(actions.deleteUser)}
                     >
