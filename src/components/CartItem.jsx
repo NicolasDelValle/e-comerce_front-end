@@ -46,10 +46,10 @@ export const CartItem = ({ url, price, mountProp, name, stock, productId }) => {
           <div>
             <div className="d-flex flex-row align-items-center rounded-pill border px-2 w-75 position-relative">
               <button
-                onClick={() => handleIncrement()}
-                className="text-secondary fs-5 me-1 border-0 rounded-pill bg-white"
+                onClick={() => handleDecrement()}
+                className="text-secondary fs-5 ms-1 border-0 rounded-pill bg-white"
               >
-                +
+                -
               </button>
               <input
                 className=" text-center w-75 border-0 border-start-0 border-1 border-secondary"
@@ -58,10 +58,10 @@ export const CartItem = ({ url, price, mountProp, name, stock, productId }) => {
               />
 
               <button
-                onClick={() => handleDecrement()}
-                className="text-secondary fs-5 ms-1 border-0 rounded-pill bg-white"
+                onClick={() => handleIncrement()}
+                className="text-secondary fs-5 me-1 border-0 rounded-pill bg-white"
               >
-                -
+                +
               </button>
               {mountProp === stock ? (
                 <span className="me-auto w-100 position-absolute start-0 top-100">

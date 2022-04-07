@@ -45,7 +45,9 @@ function Product(props) {
   };
 
   const handleDecrement = () => {
-    setQuantity((count) => count - 1);
+    if (quantity > 0) {
+      setQuantity((count) => count - 1);
+    }
   };
 
   console.log(product);
@@ -79,10 +81,10 @@ function Product(props) {
               <div>
                 <div className="d-flex flex-row align-items-center rounded border px-2 ">
                   <button
-                    onClick={() => handleIncrement()}
-                    className="text-secondary fs-5 me-1 border-0 rounded-pill bg-white"
+                    onClick={() => handleDecrement()}
+                    className="text-secondary fs-5 ms-1 border-0 rounded-pill bg-white"
                   >
-                    +
+                    -
                   </button>
                   <input
                     className=" text-center w-75 border-0 border-start-0 border-1 border-secondary"
@@ -91,10 +93,10 @@ function Product(props) {
                     onChange={() => quantity}
                   />
                   <button
-                    onClick={() => handleDecrement()}
-                    className="text-secondary fs-5 ms-1 border-0 rounded-pill bg-white"
+                    onClick={() => handleIncrement()}
+                    className="text-secondary fs-5 me-1 border-0 rounded-pill bg-white"
                   >
-                    -
+                    +
                   </button>
                 </div>
               </div>

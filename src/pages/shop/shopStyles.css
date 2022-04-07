@@ -9,7 +9,8 @@ section {
 }
 
 .product-category-section h2 {
-  font-weight: 700;
+  font-weight: 600;
+  text-align: left;
 }
 
 .form-check .form-check-input{

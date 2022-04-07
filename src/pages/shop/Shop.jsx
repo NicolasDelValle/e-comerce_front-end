@@ -109,8 +109,8 @@ function Shop(props) {
               products.some(
                 (product) => product.categoryId === category.id
               ) && (
-                <div key={i} className="row  d-flex justify-content-center">
-                  <h2 className="my-4">{category.name}</h2>
+                <div key={i} className="row  d-flex  category mb-3">
+                  <h2 className="mt-3">{category.name}</h2>
                   {products
                     .filter((product) => product.categoryId === category.id)
                     .map((filteredProduct) => (
