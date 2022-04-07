@@ -1,5 +1,5 @@
 import "./shopStyles.css";
-import { FormCheck } from "react-bootstrap";
+import { FormCheck, Form } from "react-bootstrap";
 import React, { useEffect, useState } from "react";
 import NavigationBar from "../../components/NavigationBar";
 import Footer from "../../components/Footer";
@@ -79,12 +79,12 @@ function Shop(props) {
       <div className="section">
         <div className="container product-category-section pt-3">
           <span className="row search mt-4 d-flex justify-content-center">
-            <div className="col">
+            <span className="col-md-4 ">
               {" "}
               <input
                 type="text"
                 name="search"
-                className=" w-25 py-2"
+                className=" w-100 py-2"
                 value={itemTitle}
                 placeholder="¿Qué estás buscando?"
                 id=""
@@ -92,18 +92,16 @@ function Shop(props) {
                   handleSearch(e.target.value.toLowerCase());
                 }}
               />
-            </div>
-            <div className="col">
-              <label htmlFor="Filtrar por Destacados">
-                <input
-                  disabled={false}
-                  onChange={(e) => handleChecked(e.target.checked)}
-                  type="checkbox"
-                  name="featuredProduct"
-                  id="featuredProduct"
-                />
-              </label>
-            </div>
+              <Form.Check
+                className="mt-3"
+                label="Filtrar por destacados"
+                disabled={false}
+                onChange={(e) => handleChecked(e.target.checked)}
+                type="switch"
+                name="featuredProduct"
+                id="custom-switch"
+              />
+            </span>
           </span>
 
           {categories.map(
