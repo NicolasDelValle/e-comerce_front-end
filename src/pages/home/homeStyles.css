@@ -16,9 +16,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 800px;
+  height: 40vw;
 }
-
+/* 
 @media (max-width: 882px) {
   .homeScrollContainer-header {
     display: flex;
@@ -42,12 +42,33 @@
     justify-content: center;
     height: 20px;
   }
+} */
+
+
+@media (max-width: 880px) {
+  .homeScrollContainer-header-logo_overlay {
+    display: none;
+  }
 }
 
 .homeScrollContainer-header-logo_overlay {
   text-align: center;
   border: none;
-  height: 10vh;
+  height: 10vw;
+ animation: logoLoop 3s infinite;
+}
+
+
+@keyframes logoLoop { 
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 #videoLosi {
