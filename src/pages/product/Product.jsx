@@ -36,6 +36,7 @@ function Product(props) {
       setProduct(response.data);
     };
     getProducts();
+    console.log(products);
     fetchData();
   }, [slug]);
 

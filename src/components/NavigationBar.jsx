@@ -33,7 +33,7 @@ function NavigationBar() {
   return (
     <>
       <Navbar className="bg-black">
-        <Container className="d-flex justify-content-between align-items-center">
+        <Container className="d-flex justify-content-between align-items-center py-3">
           <Link
             className="wLogoContainer d-flex justify-content-center p-0 m-0 border-none"
             to="/"
