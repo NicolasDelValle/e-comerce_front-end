@@ -56,7 +56,7 @@
 .about-text-link:hover {
   color: rgb(113, 112, 112);
 }
-
+/* 
 .about-image-project {
   height: 50vh;
 
@@ -70,12 +70,12 @@
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-}
+} */
 
 .about-image-project > h2 {
-  font-size: 5rem;
+  font-size: 3rem;
   font-weight: 400;
-  color: #fff;
+  color: rgb(0, 0, 0);
 }
 
 .about-image-details {
@@ -99,7 +99,7 @@
 }
 
 .about-text-title {
-  font-size: 2.5rem;
+  font-size: 2rem;
 }
 
 .about-profile-div {
@@ -113,8 +113,8 @@
 }
 
 .about-profile-img {
-  height: 200px;
-  width: 200px;
+  height: 150px;
+  width: 150px;
 
   background-size: cover;
   background-position: center;
@@ -130,7 +130,7 @@
 }
 
 .about-profile-name > h3 {
-  font-size: 1.5rem;
+  font-size: 1rem;
   margin: 0;
 }
 
@@ -152,8 +152,7 @@
   height: 80px;
   width: 80px;
 
-  border: 1px solid rgb(22, 22, 22);
-  border-radius: 5px;
+  
 
   margin: 2.5px;
   padding: 5px;
