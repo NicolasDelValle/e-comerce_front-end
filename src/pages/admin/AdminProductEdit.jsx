@@ -38,9 +38,6 @@ function AdminProductEdit() {
         "Content-Type": "multipart/form-data",
       },
     });
-    // setLoading((prev) => !prev);
-
-    navigate("/admin");
   };
 
   return (
