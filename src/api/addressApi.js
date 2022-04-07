@@ -22,12 +22,12 @@ async function postAddress(adress, newToken) {
   }
 }
 
-async function deleteAddress(adressId, newToken) {
+async function deleteAddress(id, newToken) {
   try {
     await axiosInstance({
-      method: "post",
+      method: "delete",
       url: "address",
-      data: adressId,
+      data: { id },
       headers: { Authorization: `Bearer ${newToken}` },
     });
   } catch (err) {

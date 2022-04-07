@@ -24,6 +24,21 @@ function CheckOut() {
   const total = subTotalCost * 1.21;
   const taxes = total - subTotalCost;
 
+  const handleVerifyForm = () => {
+    if (
+      CCNumber === "" ||
+      CCExpiry === "" ||
+      CCCvc === "" ||
+      CCName === "" ||
+      addressSelected === undefined
+    ) {
+      setShow(false);
+    } else {
+      setShow(true);
+    }
+    console.log(show);
+  };
+
   const handlebuy = async () => {
     const productList = [];
     cart.map((item) =>
@@ -66,6 +81,10 @@ function CheckOut() {
                         Numero De Tarjeta
                       </span>
                       <input
+                        onInput={(e) => {
+                          setCCNumber(e.target.value);
+                          handleVerifyForm();
+                        }}
                         placeholder="•••• •••• •••• ••••"
                         className="border rounded p-1 me-auto w-100"
                         type="text"
@@ -78,6 +97,10 @@ function CheckOut() {
                           Vencimiento
                         </span>
                         <input
+                          onInput={(e) => {
+                            setCCExpiry(e.target.value);
+                            handleVerifyForm();
+                          }}
                           placeholder="••/••"
                           className="border rounded p-1 me-auto"
                           type="text"
@@ -89,6 +112,10 @@ function CheckOut() {
                           Codigo de Seguridad
                         </span>
                         <input
+                          onInput={(e) => {
+                            setCCCvc(e.target.value);
+                            handleVerifyForm();
+                          }}
                           placeholder="•••"
                           className="border rounded p-1 me-auto"
                           type="text"
@@ -102,6 +129,10 @@ function CheckOut() {
                       Nombre en Tarjeta
                     </span>
                     <input
+                      onInput={(e) => {
+                        setCCName(e.target.value);
+                        handleVerifyForm();
+                      }}
                       placeholder="Nombre Completo"
                       className="border rounded p-1 me-auto"
                       type="text"
@@ -113,7 +144,10 @@ function CheckOut() {
                     <select
                       className="border rounded p-1 me-auto "
                       name="address"
-                      onChange={(e) => setAddressSelected(e.target.value)}
+                      onInput={(e) => {
+                        setAddressSelected(e.target.value);
+                        handleVerifyForm();
+                      }}
                     >
                       <option value="">Seleccione una direccion</option>
                       {address?.map(

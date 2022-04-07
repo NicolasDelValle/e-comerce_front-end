@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Modal, Button } from "react-bootstrap";
 import { deleteAddress } from "../api/addressApi";
-import actions from "../redux/actions/adressActions";
 import { useDispatch, useSelector } from "react-redux";
 export const AddressListItem = ({
   id,
@@ -11,13 +10,14 @@ export const AddressListItem = ({
   adress,
   number,
   postalCode,
+  reloadAddresses,
 }) => {
   const { newToken } = useSelector((state) => state.user);
-  const dispatch = useDispatch();
+
   const [show, setShow] = useState(false);
   const handleDeleteAddress = async () => {
-    dispatch(actions.removeAddress(id));
     await deleteAddress(id, newToken);
+    reloadAddresses();
   };
   return (
     <div key={id} className="w-100 d-flex flex-row border rounded-3  mb-2 ps-3">

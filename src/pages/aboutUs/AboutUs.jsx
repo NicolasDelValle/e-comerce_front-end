@@ -88,7 +88,7 @@ function AboutUs() {
 						<div className="about-profile-div flex-grow-1">
 							<div
 								className="about-profile-img"
-								style={{ backgroundImage: `url(${OMAR})` }}
+								style={{ backgroundImage: `url(${Mauro})` }}
 							></div>
 							<div className="about-profile-name">
 								<h3 className="mt-3 mb-2">Mauro Raviolo</h3>
