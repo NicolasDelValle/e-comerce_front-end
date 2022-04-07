@@ -3,3 +3,13 @@
   min-width: 80px;
   width: 80px;
 }
+/* cree la clase navegacion para que no afecte los estilos al proyecto */
+.navegacion p {
+  font-size: 0.7rem;
+}
+.navegacion p:hover {
+  font-weight: bold;
+}
+.navegacion a:hover {
+  color: white;
+}

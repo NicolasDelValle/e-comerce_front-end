@@ -85,7 +85,7 @@ function NavigationBar() {
                 className="bg-black text-white mt-3"
               >
                 {user?.newToken ? (
-                  <div className="d-flex flex-column text-center">
+                  <div className="navegacion d-flex flex-column text-center">
                     <Link
                       className="p-1 w-100 "
                       to="/settings/account"
@@ -96,7 +96,7 @@ function NavigationBar() {
                     </Link>
                     <Link
                       className="p-1 w-100 "
-                      to="/checkout"
+                      to="/history"
                       title="Historial"
                     >
                       <p className="p-0 m-0 ">Historial</p>
@@ -114,7 +114,7 @@ function NavigationBar() {
                     </Link>
                   </div>
                 ) : (
-                  <div className="d-flex flex-column">
+                  <div className="navegacion d-flex flex-column">
                     <Link
                       className="p-1 w-100 text-center"
                       to="/login"
