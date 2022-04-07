@@ -96,7 +96,7 @@ function NavigationBar() {
                     </Link>
                     <Link
                       className="p-1 w-100 "
-                      to="/checkout"
+                      to="/history"
                       title="Historial"
                     >
                       <p className="p-0 m-0 ">Historial</p>

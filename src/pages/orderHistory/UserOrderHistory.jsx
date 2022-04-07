@@ -1,7 +1,7 @@
 import React from "react";
 import NavigationBar from "../../components/NavigationBar";
 
-import { Col, Container, Row, Button } from "react-bootstrap";
+import { Col, Container, Row, Button, Accordion } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 export const UserOrderHistory = (props) => {
@@ -9,60 +9,66 @@ export const UserOrderHistory = (props) => {
     <>
       <NavigationBar />
       <Container className="mt-3 px-lg-5">
-        <Row className="d-flex justify-content-center px-lg-5">
-          <Col lg={12} className="border-bottom mb-3">
-            <div className="d-flex flex-column align-items-start fs-3">
-              <span>Ajustes</span>
-            </div>
-          </Col>
-          <Col md={2}>
-            <div className="d-flex flex-md-column align-items-start mb-2">
-              <Link className="my-2" to="/settings/account">
-                <span className="text-dark me-3">Cuenta</span>
-              </Link>
-              <Link className="my-2" to="/settings/address">
-                <span className="text-dark me-3">Dirrecciones</span>
-              </Link>
-            </div>
-          </Col>
-          <Col md={10} className="d-flex align-itmes-start">
-            <div className="d-flex flex-column align-items-start p-3 border rounded">
-              <span className="fs-4 mb-3">Cuenta</span>
-              <div className="d-flex flex-row pb-3 ">
-                <div className="me-2 d-flex flex-column justify-content-start">
-                  <span className="me-auto fw-light">Nombre</span>
-                  <input className="border rounded p-1 " type="text" />
-                </div>
-                <div className=" d-flex flex-column justify-content-start">
-                  <span className="me-auto fw-light">Apellido</span>
-                  <input className="border rounded p-1" type="text" />
-                </div>
-              </div>
+        <div>
+          <span>Total de cuenta</span>
+          <span>$44022</span>
+        </div>
+        <span className="w-100 me-auto d-flex fs-4 fw-light">Historial</span>
+        <div>
+          <Accordion>
+            <Accordion.Item eventKey="0">
+              <Accordion.Header>
+                <div className="d-flex flex-column w-100 border-end me-3">
+                  <div className="w-100 d-flex align-items-center ">
+                    <span className="">19/12/11</span>
 
-              <div>
-                <div className="d-flex flex-column justify-content-start mb-3">
-                  <span className="me-auto fw-light">E-mail</span>
-                  <input className="border rounded p-1" type="text" />
+                    <span className="mx-auto fw-light text-secondary--">
+                      Calle 1, 233
+                    </span>
+                    <span className=" fs-4 fw-bold  me-3">$4404</span>
+                  </div>
+                  <div className=" d-flex align-items-center ">
+                    <span className="me-auto badge rounded-pill bg-success">
+                      Recibido
+                    </span>
+                    <span className="me-3 fw-light text-secondary">
+                      id: 3211
+                    </span>
+                  </div>
                 </div>
-              </div>
-              <div>
-                <div className="d-flex flex-column justify-content-start mb-5">
-                  <span className="me-auto fw-light">Contraseña</span>
-                  <input className="border rounded p-1" type="text" />
+              </Accordion.Header>
+              <Accordion.Body>
+                <div className="d-flex flex-column">
+                  <div className="d-flex flex-column bg-light ps-1 py-1 border-start border-4 border-dark">
+                    <div className="w-100 d-flex">
+                      <span className="fs-6 fw-bold me-1">x4</span>
+                      <span className="fs-6">Tabla re linda </span>
+                      <span className="fs-6 fw-bold ms-auto">$5000</span>
+                    </div>
+                    <div className="w-100 d-flex">
+                      <span className="fs-6 fw-bold me-1">x4</span>
+                      <span className="fs-6">Tabla re linda </span>
+                      <span className="fs-6 fw-bold ms-auto">$5000</span>
+                    </div>
+                    <div className="w-100 d-flex">
+                      <span className="fs-6 fw-bold me-1">x4</span>
+                      <span className="fs-6">Tabla re linda </span>
+                      <span className="fs-6 fw-bold ms-auto">$5000</span>
+                    </div>
+                  </div>
+                  <div className="w-100 d-flex mt-1">
+                    <span className="fs-5 fw-light">IVA</span>
+                    <span className="fs-5 fw-bold ms-auto">$500</span>
+                  </div>
+                  <div className="w-100 d-flex">
+                    <span className="fs-5 fw-light">Subtotal</span>
+                    <span className="fs-5 fw-bold ms-auto">$5000</span>
+                  </div>
                 </div>
-              </div>
-              <div className="d-flex flex-column align-items-start">
-                <span className="mb-2 text-start bg-warning px-3 fw-light">
-                  Esta opción deshabilitara tu cuenta y no volverás a tener
-                  acceso a tus datos, LOSI seguirá teniendo tus datos de compra.
-                </span>
-                <Button className="rounded-pill" variant="dark">
-                  Darse de Baja
-                </Button>
-              </div>
-            </div>
-          </Col>
-        </Row>
+              </Accordion.Body>
+            </Accordion.Item>
+          </Accordion>
+        </div>
       </Container>
     </>
   );

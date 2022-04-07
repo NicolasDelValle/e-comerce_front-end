@@ -90,9 +90,11 @@ export const UserSettingsAddress = (props) => {
           autohide
         >
           <Toast.Header>
-            <strong className="me-auto">Bootstrap</strong>
+            <strong className="me-auto">Advertencia</strong>
           </Toast.Header>
-          <Toast.Body>Woohoo, you're reading this text in a Toast!</Toast.Body>
+          <Toast.Body>
+            Tiene que completar los campos para agregara una nueva dirección
+          </Toast.Body>
         </Toast>
         <Row className="d-flex justify-content-center px-lg-5">
           <Col lg={12} className="border-bottom mb-3">
