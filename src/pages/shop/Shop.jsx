@@ -1,5 +1,5 @@
 import "./shopStyles.css";
-
+import { FormCheck, Form } from "react-bootstrap";
 import React, { useEffect, useState } from "react";
 import NavigationBar from "../../components/NavigationBar";
 import Footer from "../../components/Footer";
@@ -13,6 +13,7 @@ function Shop(props) {
   const [apiCategories, setApiCategories] = useState([]);
   const [apiProducts, setApiProducts] = useState([]);
   const [itemTitle, setItemTitle] = useState("");
+  const [isChecked, setIsChecked] = useState(false);
 
   useEffect(() => {
     const getCategories = async () => {
@@ -38,11 +39,33 @@ function Shop(props) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  const handleChecked = (e) => {
+    if (e) {
+      setProducts(
+        apiProducts.filter(
+          (product) =>
+            product.featured === true &&
+            product.name.toLowerCase().includes(itemTitle)
+        )
+      );
+    } else {
+      setProducts(
+        apiProducts.filter((product) =>
+          product.name.toLowerCase().includes(itemTitle)
+        )
+      );
+    }
+  };
+  console.log(isChecked);
+
   const handleSearch = (e) => {
     setItemTitle(e);
+
     if (e !== "") {
       setProducts(
-        apiProducts.filter((product) => product.name.toLowerCase().includes(e))
+        apiProducts.filter((product) =>
+          product.name.toLowerCase().includes(itemTitle)
+        )
       );
     } else {
       setProducts(apiProducts);
@@ -55,19 +78,32 @@ function Shop(props) {
       <NavigationBar className="bg-dark" />
       <div className="section">
         <div className="container product-category-section pt-3">
-          <div className="row search mt-4 d-flex justify-content-center ">
-            <input
-              type="text"
-              name="search"
-              className=" w-25 py-2"
-              value={itemTitle}
-              placeholder="¿Qué estás buscando?"
-              id=""
-              onChange={(e) => {
-                handleSearch(e.target.value.toLowerCase());
-              }}
-            />
-          </div>
+          <span className="row search mt-4 d-flex justify-content-center">
+            <span className="col-md-4 ">
+              {" "}
+              <input
+                type="text"
+                name="search"
+                className=" w-100 py-2"
+                value={itemTitle}
+                placeholder="¿Qué estás buscando?"
+                id=""
+                onChange={(e) => {
+                  handleSearch(e.target.value.toLowerCase());
+                }}
+              />
+              <Form.Check
+                className="mt-3"
+                label="Filtrar por destacados"
+                disabled={false}
+                onChange={(e) => handleChecked(e.target.checked)}
+                type="switch"
+                name="featuredProduct"
+                id="custom-switch"
+              />
+            </span>
+          </span>
+
           {categories.map(
             (category, i) =>
               products.some(
