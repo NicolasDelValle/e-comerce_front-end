@@ -9,6 +9,7 @@ import "./checkOut.css";
 import "./card.css";
 import { postOrder } from "../../api/orderApi";
 import CardReactFormContainer from "card-react";
+import { Modal } from "react-bootstrap";
 
 function CheckOut() {
 	const { cart, user, address } = useSelector((state) => state);
@@ -23,8 +24,13 @@ function CheckOut() {
 	const [show, setShow] = useState(false);
 	const total = subTotalCost * 1.21;
 	const taxes = total - subTotalCost;
-
 	const navigate = useNavigate();
+
+	const [showModal, setShowModal] = useState(false);
+	const handleClose = () => {
+		setShowModal(false);
+		navigate("/");
+	};
 
 	const handleVerifyForm = () => {
 		if (
@@ -51,7 +57,8 @@ function CheckOut() {
 			})
 		);
 		await postOrder(productList, addressSelected, total, user.newToken);
-		navigate("/cart/thankyou");
+		// navigate("/cart/thankyou");
+		setShowModal(true);
 	};
 	console.log(user);
 	return (
@@ -164,6 +171,21 @@ function CheckOut() {
 										Finalizar Compra
 									</Button>
 								</Link>
+								<Modal show={showModal} onHide={handleClose}>
+									<Modal.Header closeButton>
+										<Modal.Title>¡Compra realizada con éxito!</Modal.Title>
+									</Modal.Header>
+									<Modal.Body className="text-start">
+										Has realizado tu compra en LOSI con éxito. Ya puedes verla en el
+										historial de órdenes. Nos comunicaremos contigo para coordinar el
+										envío. ¡Muchas gracias!
+									</Modal.Body>
+									<Modal.Footer>
+										<Button variant="dark" className="rounded-pill" onClick={handleClose}>
+											Entendido
+										</Button>
+									</Modal.Footer>
+								</Modal>
 							</CardReactFormContainer>
 						</div>
 					</Col>
