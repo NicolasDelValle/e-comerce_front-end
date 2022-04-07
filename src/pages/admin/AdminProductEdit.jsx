@@ -3,10 +3,12 @@ import Sidebar from "../../components/Sidebar";
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import axios from "axios";
+import { Toast, ToastContainer } from "react-bootstrap";
 
 function AdminProductEdit() {
   const { newToken } = useSelector((state) => state.user);
   const [editProduct, setEditProduct] = useState({});
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate;
   let { slug } = useParams();
 
@@ -25,7 +27,8 @@ function AdminProductEdit() {
     e.preventDefault();
 
     const formData = new FormData(e.target);
-    setEditProduct(formData);
+
+    setLoading((prev) => !prev);
     await axios({
       method: "patch",
       url: `${process.env.REACT_APP_API_URL}admin/products/${slug}`,
@@ -35,20 +38,22 @@ function AdminProductEdit() {
         "Content-Type": "multipart/form-data",
       },
     });
-    navigate("/admin/products");
+    // setLoading((prev) => !prev);
+
+    navigate("/admin");
   };
-  console.log(editProduct);
+
   return (
-    <div className="d-flex">
+    <div className="d-flex  ">
       <Sidebar />
-      <div className="w-100 ">
+      <div className="w-100  position-relative">
         <div className="container px-4 mx-auto pt-5 ">
+          <h2>Editar un producto</h2>
           <form
             id="product-form"
-            className="d-flex flex-column"
+            className="d-flex flex-column "
             onSubmit={(e) => handleEditProduct(e)}
           >
-            <h2>Editar un producto</h2>
             <div className="row text-start">
               <div className="col- col-lg-4 py-2">
                 <label className="pe-2" htmlFor="product-name">
@@ -150,33 +155,15 @@ function AdminProductEdit() {
                   className="form-control"
                 />
               </div>
-              <div className="col- col-lg-4 py-2">
-                <label className="pe-2" htmlFor="product-slug">
-                  Slug
-                </label>
-                <input
-                  value={editProduct.slug}
-                  type="text"
-                  id="product-slug"
-                  name="slug"
-                  onChange={(e) => {
-                    setEditProduct({
-                      ...editProduct,
-                      slug: e.target.value,
-                    });
-                  }}
-                  placeholder="Slug del producto"
-                  className="form-control"
-                />
-              </div>
               <div className="col- py-2">
                 <label className="form-label pe-2" htmlFor="product-image">
                   Imagen
                 </label>
                 <input
-                  value={editProduct.imageUrl}
+                  defaultValue={editProduct.imageUrl}
+                  //value={editProduct.imageUrl}
                   type="file"
-                  placeholder="http://via.placeholder.com/640x360"
+                  placeholder={editProduct.imageUrl}
                   name="imageUrl"
                   onChange={(e) => {
                     setEditProduct({
@@ -228,14 +215,36 @@ function AdminProductEdit() {
                 />
               </div>
             </div>
-            <div>
-              <button className="btn btn-success" type="submit">
-                Aceptar
-              </button>
-              <button className="btn btn-danger">
-                <Link to={"/admin/products"}>Cancelar</Link>
-              </button>
-            </div>
+            {loading ? (
+              <ToastContainer
+                className="p-3 position-absolute"
+                position={"middle-center"}
+              >
+                <Toast>
+                  <div className="text-end pe-2 pt-1">
+                    <button className="btn"> X</button>
+                  </div>
+                  <Toast.Body className="p-5">
+                    <h6>Todos los cambios han sido realizados con éxito.</h6>
+                  </Toast.Body>
+                  <Link
+                    to={"/admin/products"}
+                    className="btn boton d-block m-2"
+                  >
+                    Regresar
+                  </Link>
+                </Toast>
+              </ToastContainer>
+            ) : (
+              <div>
+                <button className="boton me-2 botonCrear" type="submit">
+                  Aceptar
+                </button>
+                <button className="boton text-dark botonEliminar">
+                  <Link to={"/admin/products"}>Cancelar</Link>
+                </button>
+              </div>
+            )}
           </form>
         </div>
       </div>
