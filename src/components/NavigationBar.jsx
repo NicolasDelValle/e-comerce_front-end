@@ -13,14 +13,14 @@ function NavigationBar() {
 
   const CustomToggle = React.forwardRef(({ onClick }, ref) => (
     <a
-      className="d-flex align-items-center mx-2 me-1 pe-0"
+      className="d-flex align-items-center mx-2 me-1 pe-0 "
       ref={ref}
       onClick={(e) => {
         e.preventDefault();
         onClick(e);
       }}
     >
-      <i className="bi bi-person-circle fs-4 d-flex"></i>
+      <i className="bi bi-person-circle fs-5 d-flex me-1"></i>
       {/* <span className="d-none d-sm-flex">Cuenta</span> */}
       <i className="bi bi-chevron-down pt-1"></i>
     </a>
@@ -32,7 +32,7 @@ function NavigationBar() {
 
   return (
     <>
-      <Navbar className="bg-black">
+      <Navbar className="bg-black navegacion">
         <Container className="d-flex justify-content-between align-items-center">
           <Link
             className="wLogoContainer d-flex justify-content-center p-0 m-0 border-none"
@@ -52,24 +52,24 @@ function NavigationBar() {
               to={"/shop"}
               className="px-2 text-white text-decoration-none d-flex justify-content-between align-items-center"
             >
-              <i className="bi bi-shop-window fs-4 d-flex d-sm-none"></i>
+              <i className="bi bi-shop-window fs-6 d-flex d-sm-none"></i>
               <span className="d-none d-sm-flex">Tienda</span>
             </Link>
             <Link
               to={"/about"}
               className="px-2 text-white text-decoration-none d-flex justify-content-between align-items-center"
             >
-              <i className="bi bi-people fs-3 d-flex d-sm-none"></i>
+              <i className="bi bi-people fs-6 d-flex d-sm-none"></i>
               <span className="d-none d-sm-flex">Nosotros</span>
             </Link>
 
             {user?.isAdmin ? (
               <Link
                 to="/admin"
-                className="d-flex ps-3 align-items-start"
+                className="d-flex  align-items-start "
                 title="Carrito de compras"
               >
-                <i className="bi bi-gear fs-4 position-relative"></i>
+                <i className="bi bi-gear fs-6 position-relative"></i>
               </Link>
             ) : (
               <></>
@@ -85,22 +85,22 @@ function NavigationBar() {
                 className="bg-black text-white mt-3"
               >
                 {user?.newToken ? (
-                  <div className="d-flex flex-column">
+                  <div className="d-flex flex-column text-center">
                     <Link
                       className="p-1 w-100 "
                       to="/settings/account"
                       title="Perfil"
                     >
-                      <span>Ajustes</span>
-                      <i className="bi bi-box-arrow-up-right ms-1"></i>
+                      <p className="p-0 m-0 ">Ajustes</p>
+                      {/* <i className="bi bi-box-arrow-up-right ms-1"></i> */}
                     </Link>
                     <Link
                       className="p-1 w-100 "
                       to="/checkout"
                       title="Historial"
                     >
-                      <span>Historial</span>
-                      <i className="bi bi-box-arrow-up-right ms-1"></i>
+                      <p className="p-0 m-0 ">Historial</p>
+                      {/* <i className="bi bi-box-arrow-up-right ms-1"></i> */}
                     </Link>
                     <Dropdown.Divider />
                     <Link
@@ -115,18 +115,22 @@ function NavigationBar() {
                   </div>
                 ) : (
                   <div className="d-flex flex-column">
-                    <Link className="p-1 w-100 " to="/login" title="Ingresar">
-                      <span>Ingresar</span>
-                      <i className="bi bi-box-arrow-up-right ms-1"></i>
+                    <Link
+                      className="p-1 w-100 text-center"
+                      to="/login"
+                      title="Ingresar"
+                    >
+                      <p className="p-0 m-0 ">Ingresar</p>
+                      {/* <i className="bi bi-box-arrow-up-right ms-1"></i> */}
                     </Link>
                     <Dropdown.Divider />
                     <Link
-                      className="p-1 w-100"
+                      className="p-1 w-100 text-center"
                       to="/register"
                       title="Registrarse"
                     >
-                      <span>Registrarse</span>
-                      <i className="bi bi-box-arrow-up-right ms-1"></i>
+                      <p className="p-0 m-0 fw-6">Registrarse</p>
+                      {/* <i className="bi bi-box-arrow-up-right ms-1"></i> */}
                     </Link>
                   </div>
                 )}
@@ -139,7 +143,7 @@ function NavigationBar() {
               title="Carrito de compras"
             >
               <div className="ms-auto position-relative">
-                <i className="bi bi-cart3 fs-4 position-relative"></i>
+                <i className="bi bi-cart3 fs-6 position-relative"></i>
                 <span className=" badge rounded-pill bg-danger py-1 px-1 position-absolute top-0 end-50">
                   {totalItemsCart}
                 </span>
