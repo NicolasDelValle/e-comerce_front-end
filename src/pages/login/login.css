@@ -1,131 +1,46 @@
-.login {
-	display: flex;
-	flex-direction: column;
-}
-
 .login-main {
-	height: 80vh;
-	display: flex;
+  height: 80vh;
 }
 
 @media (min-width: 768px) {
-	.login-main {
-		height: 80vh;
-	}
+  .login-main {
+    height: 80vh;
+  }
 }
 
 @media (min-width: 992px) {
-	.login-main-logo {
-		height: 300px;
-		width: 300px;
-
-		margin: auto;
-
-		background-image: url("https://cybmmybwfbmxasdepuyj.supabase.co/storage/v1/object/public/images/logos/imagotipo.png");
-		background-size: cover;
-		background-position: center;
-	}
-}
-
-.login-main-container {
-	width: 100vw;
-
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-
-	margin: auto;
-
-	background-color: #fff;
+  .login-main-logo {
+    height: 300px;
+    width: 300px;
+    background-image: url("https://cybmmybwfbmxasdepuyj.supabase.co/storage/v1/object/public/images/logos/imagotipo.png");
+    background-size: cover;
+    background-position: center;
+  }
 }
 
 @media (min-width: 576px) {
-	.login-main-container {
-		height: 100%;
-		width: 70vw;
-	}
+  .login-main-container {
+    height: 100%;
+    width: 70vw;
+  }
 }
 
 @media (min-width: 992px) {
-	.login-main-container {
-		width: 50vw;
-	}
+  .login-main-container {
+    width: 50vw;
+  }
 }
 
 @media (min-width: 992px) {
-	.login-main-container {
-		width: 30vw;
-	}
+  .login-main-container {
+    width: 30vw;
+  }
 }
-
-.login-main-header {
-	display: flex;
-	justify-content: center;
-}
-
-.login-main-header h1 {
-	margin: 0.5rem;
-
-	font-weight: 900;
-	font-size: 1.5rem;
-
-	color: #000;
-}
-
-.login-form-container form {
-	display: flex;
-	flex-direction: column;
-
-	padding: 0 1rem;
-}
-
-.login-form-data {
-	display: flex;
-	flex-direction: column;
-}
-
 .login-form-data-unit {
-	display: flex;
-	flex-direction: column;
-
-	margin: 0.25rem 0;
+  margin: 0.25rem 0;
 }
-
-.login-form-data-unit label {
-	text-align: left;
-	font-size: 1rem;
-	font-weight: 500;
-}
-
 @media (min-width: 1200px) {
-	.login-form-data-unit label {
-		font-weight: 500;
-	}
-}
-
-.login-form-data-unit input {
-	border: 1px solid lightgray;
-	border-radius: 2.5px;
-
-	line-height: 2rem;
-}
-
-.login-form-data-unit input:focus {
-	outline: #000;
-}
-
-.login-form-confirm {
-	width: 200px;
-
-	margin: 1rem auto 0 auto;
-
-	background-color: #000;
-
-	font-size: 1rem;
-
-	color: #fff;
-}
-
-.login-form-confirm:hover {
-	color: #fff;
+  .login-form-data-unit label {
+    font-weight: 500;
+  }
 }
