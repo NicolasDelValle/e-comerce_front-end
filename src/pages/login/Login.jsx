@@ -90,7 +90,7 @@ function Login() {
             </form>
             <p className="mt-3">
               ¿No tienes una cuenta?
-              <Link className="text-black" to="/register">
+              <Link className="text-black ps-1" to="/register">
                 Regístrate
               </Link>
             </p>
