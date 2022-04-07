@@ -103,8 +103,6 @@
 }
 
 .about-profile-div {
-  width: 200px;
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -113,8 +111,8 @@
 }
 
 .about-profile-img {
-  height: 150px;
-  width: 150px;
+  height: 155px;
+  width: 155px;
 
   background-size: cover;
   background-position: center;
@@ -169,4 +167,12 @@
   .tecnology-applied {
     margin: 0;
   }
+}
+
+.credentials-div {
+  font-size: 0.75rem;
+}
+
+.credentials-div > div > span {
+  font-weight: bold;
 }
