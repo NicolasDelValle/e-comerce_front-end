@@ -21,6 +21,7 @@ function Home() {
 
   function handleModalClick() {
     navigate("/login");
+    dispatch(actions.changeWelcome());
   }
 
   useEffect(() => {
