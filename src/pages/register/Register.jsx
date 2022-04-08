@@ -55,14 +55,16 @@ function Register() {
                   type="text"
                   {...register("firstname", {
                     required: true,
+                    minLength: 3,
+                    maxLength: 30,
                   })}
                   id="firstname"
                   placeholder="Nombre"
                 />
                 {errors.firstname && (
                   <div className=" text-center">
-                    <span className="mt-1 pt-2 text-danger">
-                      Este campo es requerido
+                    <span className=" validacionAlerta text-danger">
+                      Campo requerido, por favor corrobore.
                     </span>
                   </div>
                 )}
@@ -77,13 +79,15 @@ function Register() {
                   type="text"
                   {...register("lastname", {
                     required: true,
+                    minLength: 3,
+                    maxLength: 30,
                   })}
                   id="lastname"
                 />
                 {errors.lastname && (
                   <div className=" text-center">
-                    <span className="mt-1 pt-2 text-danger">
-                      Este campo es requerido
+                    <span className=" validacionAlerta text-danger">
+                      Campo requerido, por favor corrobore.
                     </span>
                   </div>
                 )}
@@ -101,8 +105,8 @@ function Register() {
                 />
                 {errors.number && (
                   <div className=" text-center">
-                    <span className="pt-2 text-danger">
-                      Este campo es requerido
+                    <span className=" validacionAlerta text-danger">
+                      Campo requerido, por favor corrobore.
                     </span>
                   </div>
                 )}
@@ -123,8 +127,8 @@ function Register() {
                 />
                 {errors.email && (
                   <div className=" text-center">
-                    <span className="mt-1 pt-2 text-danger">
-                      Este campo es requerido
+                    <span className=" validacionAlerta text-danger">
+                      Campo requerido, por favor corrobore.
                     </span>
                   </div>
                 )}
@@ -142,8 +146,8 @@ function Register() {
                 />
                 {errors.password && (
                   <div className=" text-center">
-                    <span className="mt-1 pt-2 text-danger">
-                      Este campo es requerido
+                    <span className=" validacionAlerta text-danger">
+                      Campo requerido, por favor corrobore.
                     </span>
                   </div>
                 )}
@@ -161,8 +165,8 @@ function Register() {
                 />
                 {errors.address && (
                   <div className=" text-center">
-                    <span className="pt-2 text-danger">
-                      Este campo es requerido
+                    <span className=" validacionAlerta text-danger">
+                      Campo requerido, por favor corrobore.
                     </span>
                   </div>
                 )}
