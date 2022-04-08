@@ -40,8 +40,7 @@ function Home() {
       });
       setNewRelease(data);
     };
-    console.log(newRelease);
-    console.log(products);
+
     getProducts();
     getNewRelease();
   }, []);
