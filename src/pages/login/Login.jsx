@@ -1,24 +1,18 @@
+import { Button, Form, Toast, ToastContainer } from "react-bootstrap";
+import NavigationBar from "../../components/NavigationBar";
+import { useDispatch, useSelector } from "react-redux";
+import actions from "../../redux/actions/userActions";
 import { useNavigate, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import "./login.css";
-import { useDispatch, useSelector } from "react-redux";
-import actions from "../../redux/actions/userActions";
-import NavigationBar from "../../components/NavigationBar";
-import { Toast, ToastContainer } from "react-bootstrap";
 
 function Login() {
+  const [errorInicioSesion, setErrorInicioSesion] = useState(false);
   const accessToken = useSelector((state) => state.user.newToken);
+  const [userLogin, setUserLogin] = useState({});
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const [userLogin, setUserLogin] = useState({});
-  const [errorInicioSesion, seterrorInicioSesion] = useState(false);
-
-  useEffect(() => {
-    if (accessToken) {
-      navigate("/");
-    }
-  }, [accessToken, navigate]);
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -30,14 +24,15 @@ function Login() {
       });
       if (data) {
         dispatch(actions.createUser(data));
+        navigate("/");
       }
     } catch (error) {
-      seterrorInicioSesion((prev) => !prev);
-      console.log("hola");
+      setErrorInicioSesion((prev) => !prev);
     }
   };
+
   return (
-    <div className="d-flex flex-column ">
+    <>
       <NavigationBar />
       <div className="container pt-5 mt-5">
         <div className="row">
@@ -48,16 +43,17 @@ function Login() {
               </h1>
             </div>
             <div className="login-form-container">
-              <form
-                onSubmit={(e) => handleLogin(e)}
-                className="d-flex flex-column py-1"
-              >
-                <div className=" d-flex flex-column">
-                  <div className="py-2 d-flex flex-column">
-                    <label className="form-label text-start" htmlFor="email">
+              <Form onSubmit={(e) => handleLogin(e)} className="py-1">
+                <div className="">
+                  <Form.Group className="py-2 d-flex flex-column">
+                    <Form.Label
+                      className="form-label text-start"
+                      htmlFor="email"
+                    >
                       Email
-                    </label>
-                    <input
+                    </Form.Label>
+                    <Form.Control
+                      required
                       className="form-control"
                       type="email"
                       name="email"
@@ -67,12 +63,20 @@ function Login() {
                       }}
                       placeholder="Escribe tu E-mail"
                     />
-                  </div>
-                  <div className="py-2 d-flex flex-column">
-                    <label className="form-label text-start" htmlFor="password">
+
+                    {/* <Form.Control.Feedback type="invalid">
+                      Por favor ingresa tu email
+                    </Form.Control.Feedback> */}
+                  </Form.Group>
+                  <Form.Group className="py-2">
+                    <Form.Label
+                      className="form-label text-start"
+                      htmlFor="password"
+                    >
                       Contraseña
-                    </label>
-                    <input
+                    </Form.Label>
+                    <Form.Control
+                      required
                       className="form-control"
                       type="password"
                       name="password"
@@ -85,15 +89,19 @@ function Login() {
                       }}
                       placeholder="Contraseña"
                     />
-                  </div>
+
+                    {/* <Form.Control.Feedback type="invalid">
+                      Por favor ingresa tu contraseña
+                    </Form.Control.Feedback> */}
+                  </Form.Group>
                 </div>
-                <button
+                <Button
                   type="submit"
                   className="login-form-confirm btn rounded-pill bg-black text-white mt-2 mx-auto w-50 fs-6"
                 >
                   Ingresar
-                </button>
-              </form>
+                </Button>
+              </Form>
               <p className="mt-3">
                 ¿No tienes una cuenta?
                 <Link className="text-black ps-1" to="/register">
@@ -103,23 +111,26 @@ function Login() {
             </div>
             {errorInicioSesion && (
               <ToastContainer
-                className="p-3 position-absolute "
-                position={"middle-center"}
+                className=" position-absolute "
+                position={"bottom-center"}
               >
                 <Toast className="bg-white">
                   <div className="text-end pe-2 pt-1 ">
                     <button
                       className="btn"
-                      onClick={() => seterrorInicioSesion((prev) => !prev)}
+                      onClick={() => setErrorInicioSesion((prev) => !prev)}
                     >
                       X
                     </button>
                   </div>
-                  <Toast.Body className="p-5">
-                    <h6>A ocurrido un error.</h6>
+                  <Toast.Body className="">
+                    <h6 className="fs-6">
+                      El usuario y/o contraseña ingresados no son correctos, por
+                      favor corrobore.
+                    </h6>
                   </Toast.Body>
                   <button
-                    onClick={() => seterrorInicioSesion((prev) => !prev)}
+                    onClick={() => setErrorInicioSesion((prev) => !prev)}
                     className="btn boton m-2 mx-auto"
                   >
                     Intentar nuevamente
@@ -131,7 +142,7 @@ function Login() {
           <div className="col-lg-6 d-none d-xl-flex login-main-logo m-auto"></div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 
