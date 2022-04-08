@@ -20,7 +20,7 @@ function CheckOut() {
   const [CCExpiry, setCCExpiry] = useState("44/44");
   const [CCCvc, setCCCvc] = useState("123");
   const [CCName, setCCName] = useState("Juana Pepe");
-  const [addressSelected, setAddressSelected] = useState();
+  const [addressSelected, setAddressSelected] = useState("Rivera 1234");
   const [show, setShow] = useState(false);
   const total = subTotalCost * 1.21;
   const taxes = total - subTotalCost;
