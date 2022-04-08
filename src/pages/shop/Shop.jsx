@@ -1,5 +1,5 @@
 import "./shopStyles.css";
-import { FormCheck, Form } from "react-bootstrap";
+import { Form } from "react-bootstrap";
 import React, { useEffect, useState } from "react";
 import NavigationBar from "../../components/NavigationBar";
 import Footer from "../../components/Footer";
@@ -7,13 +7,12 @@ import Footer from "../../components/Footer";
 import ProductCard from "../../components/ProductCard";
 import axios from "axios";
 
-function Shop(props) {
+function Shop() {
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
   const [apiCategories, setApiCategories] = useState([]);
   const [apiProducts, setApiProducts] = useState([]);
   const [itemTitle, setItemTitle] = useState("");
-  const [isChecked, setIsChecked] = useState(false);
 
   useEffect(() => {
     const getCategories = async () => {
@@ -34,8 +33,7 @@ function Shop(props) {
     };
     getCategories();
     getProducts();
-    console.log(categories);
-    console.log(products);
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -56,7 +54,6 @@ function Shop(props) {
       );
     }
   };
-  console.log(isChecked);
 
   const handleSearch = (e) => {
     setItemTitle(e);

@@ -16,9 +16,6 @@ function Product() {
   const { slug } = useParams();
   const [quantity, setQuantity] = useState(1);
   const [products, setProducts] = useState([]);
-
-  const [productDetails, setProductDetails] = useState();
-
   const [show, setShow] = useState(false);
 
   const randomProducts = products;
