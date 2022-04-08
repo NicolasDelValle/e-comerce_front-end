@@ -80,7 +80,6 @@ function Shop(props) {
         <div className="container product-category-section pt-3">
           <span className="row search mt-4 d-flex justify-content-center">
             <span className="col-md-4 ">
-              {" "}
               <input
                 type="text"
                 name="search"
@@ -118,7 +117,7 @@ function Shop(props) {
                         key={filteredProduct.id}
                         product={filteredProduct}
                       />
-                    ))}{" "}
+                    ))}
                 </div>
               )
           )}
