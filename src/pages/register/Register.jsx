@@ -47,7 +47,7 @@ function Register() {
                 </Form.Label>
                 <Form.Control
                   required
-                  className="form-control "
+                  className="form-control"
                   type="text"
                   name="firstname"
                   id="firstname"

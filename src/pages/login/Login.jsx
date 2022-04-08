@@ -35,20 +35,15 @@ function Login() {
       <NavigationBar />
       <div className="container pt-5 mt-5">
         <div className="row">
-          <div className="col col-lg-6  m-auto  bg-white">
-            <div className="login-main-header text-center ">
-              <h1>
-                <strong className="fs-4">LOGIN</strong>
-              </h1>
-            </div>
-            <div className="login-form-container">
-              <Form onSubmit={(e) => handleLogin(e)} className="py-1">
-                <div className="">
-                  <Form.Group className="py-2 d-flex flex-column">
-                    <Form.Label
-                      className="form-label text-start"
-                      htmlFor="email"
-                    >
+          <div className="col col-lg-6 m-auto bg-white">
+            <h1>
+              <strong className="fs-4 text-center">LOGIN</strong>
+            </h1>
+            <div>
+              <Form onSubmit={(e) => handleLogin(e)} className="py-1 ">
+                <div>
+                  <Form.Group className="py-2 text-start">
+                    <Form.Label className="form-label" htmlFor="email">
                       Email
                     </Form.Label>
                     <Form.Control
@@ -63,11 +58,8 @@ function Login() {
                       placeholder="Escribe tu E-mail"
                     />
                   </Form.Group>
-                  <Form.Group className="py-2">
-                    <Form.Label
-                      className="form-label text-start"
-                      htmlFor="password"
-                    >
+                  <Form.Group className="py-2 text-start">
+                    <Form.Label className="form-label" htmlFor="password">
                       Contraseña
                     </Form.Label>
                     <Form.Control
@@ -88,7 +80,7 @@ function Login() {
                 </div>
                 <Button
                   type="submit"
-                  className="login-form-confirm btn rounded-pill bg-black text-white mt-2 mx-auto w-50 fs-6"
+                  className="btn rounded-pill bg-black text-white mt-2 mx-auto w-auto px-4 fs-6"
                 >
                   Ingresar
                 </Button>
@@ -102,7 +94,7 @@ function Login() {
             </div>
             {errorInicioSesion && (
               <ToastContainer
-                className=" position-absolute "
+                className="position-absolute"
                 position={"bottom-center"}
               >
                 <Toast className="bg-white">
@@ -114,7 +106,7 @@ function Login() {
                       X
                     </button>
                   </div>
-                  <Toast.Body className="">
+                  <Toast.Body>
                     <h6 className="fs-6">
                       El usuario y/o contraseña ingresados no son correctos, por
                       favor corrobore.
