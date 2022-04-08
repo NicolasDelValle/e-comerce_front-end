@@ -73,7 +73,7 @@ function Shop() {
   return (
     <>
       <NavigationBar className="bg-dark" />
-      <div className="section">
+      <div className="section pb-5 mb-5">
         <div className="container product-category-section pt-3">
           <span className="row search mt-4 d-flex justify-content-center">
             <span className="col-md-4 ">
@@ -105,7 +105,7 @@ function Shop() {
               products.some(
                 (product) => product.categoryId === category.id
               ) && (
-                <div key={i} className="row  d-flex  category mb-3">
+                <div key={i} className="row  d-flex  category mb-5">
                   <h2 className="mt-3">{category.name}</h2>
                   {products
                     .filter((product) => product.categoryId === category.id)
