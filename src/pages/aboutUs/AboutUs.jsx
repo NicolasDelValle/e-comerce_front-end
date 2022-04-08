@@ -61,14 +61,6 @@ function AboutUs() {
 								></div>
 								<div className="about-profile-name">
 									<h3 className="mt-3 mb-2">Nicolás Del Valle</h3>
-									<div className="d-flex">
-										<a href="https://www.linkedin.com/in/nico-del-valle-dev/">
-											<SiLinkedin size={25} className="mx-1" />
-										</a>
-										<a href="https://github.com/NicolasDelValle">
-											<SiGithub size={25} className="mx-1" />
-										</a>
-									</div>
 								</div>
 							</div>
 							<div className="about-profile-div col-12 col-sm-6 col-lg-3">
