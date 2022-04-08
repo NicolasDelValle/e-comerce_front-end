@@ -37,7 +37,6 @@ function Register() {
             <h4>
               <strong>REGISTRO</strong>
             </h4>
-
             <Form
               className="row text-start"
               onSubmit={(e) => handleRegister(e)}
@@ -118,7 +117,6 @@ function Register() {
                   }}
                 />
               </Form.Group>
-
               <Form.Group className="col-md-6">
                 <Form.Label className="form-label my-2" htmlFor="password">
                   Contraseña
@@ -158,7 +156,6 @@ function Register() {
                   }}
                 />
               </Form.Group>
-
               <Button
                 type="submit"
                 className="w-auto bg-black text-white fs-6  mt-4 mx-auto btn rounded-pill"

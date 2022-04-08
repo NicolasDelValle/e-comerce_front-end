@@ -63,10 +63,6 @@ function Login() {
                       }}
                       placeholder="Escribe tu E-mail"
                     />
-
-                    {/* <Form.Control.Feedback type="invalid">
-                      Por favor ingresa tu email
-                    </Form.Control.Feedback> */}
                   </Form.Group>
                   <Form.Group className="py-2">
                     <Form.Label
@@ -89,10 +85,6 @@ function Login() {
                       }}
                       placeholder="Contraseña"
                     />
-
-                    {/* <Form.Control.Feedback type="invalid">
-                      Por favor ingresa tu contraseña
-                    </Form.Control.Feedback> */}
                   </Form.Group>
                 </div>
                 <Button
