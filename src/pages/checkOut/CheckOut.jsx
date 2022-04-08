@@ -9,21 +9,23 @@ import "./checkOut.css";
 import "./card.css";
 import { postOrder } from "../../api/orderApi";
 import CardReactFormContainer from "card-react";
+import actions from "../../redux/actions/cartActions";
 
 function CheckOut() {
   const { cart, user, address } = useSelector((state) => state);
   const subTotalCost = cart.reduce(function (prev, product) {
     return prev + Number(product.price) * product.quantity;
   }, 0);
-  const [CCNumber, setCCNumber] = useState("");
-  const [CCExpiry, setCCExpiry] = useState("");
-  const [CCCvc, setCCCvc] = useState("");
-  const [CCName, setCCName] = useState("");
+  const [CCNumber, setCCNumber] = useState("5225367281910265");
+  const [CCExpiry, setCCExpiry] = useState("44/44");
+  const [CCCvc, setCCCvc] = useState("123");
+  const [CCName, setCCName] = useState("Juana Pepe");
   const [addressSelected, setAddressSelected] = useState();
   const [show, setShow] = useState(false);
   const total = subTotalCost * 1.21;
   const taxes = total - subTotalCost;
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const [showModal, setShowModal] = useState(false);
   const handleClose = () => {
@@ -43,7 +45,6 @@ function CheckOut() {
     } else {
       setShow(true);
     }
-    console.log(show);
   };
 
   const handlebuy = async () => {
@@ -59,8 +60,9 @@ function CheckOut() {
     // navigate("/cart/thankyou");
     setShowModal(true);
     setTimeout(() => handleClose(), 5000);
+    dispatch(actions.clearCart());
   };
-  console.log(user);
+
   return (
     <>
       <NavigationBar />
@@ -99,6 +101,7 @@ function CheckOut() {
                         className="border rounded p-1 me-auto w-100"
                         type="text"
                         name="CCnumber"
+                        value="5225367281910265"
                       />
                     </div>
                     <div className="d-flex flex-row">
@@ -115,6 +118,7 @@ function CheckOut() {
                           className="border rounded p-1 me-auto"
                           type="text"
                           name="CCexpiry"
+                          value="44/44"
                         />
                       </div>
                       <div className="d-flex flex-column justify-content-start mb-2">
@@ -130,6 +134,7 @@ function CheckOut() {
                           className="border rounded p-1 me-auto"
                           type="text"
                           name="CCcvc"
+                          value="123"
                         />
                       </div>
                     </div>
@@ -147,6 +152,7 @@ function CheckOut() {
                       className="border rounded p-1 me-auto"
                       type="text"
                       name="CCname"
+                      value="Juana Pepe"
                     />
                   </div>
                   <div className="d-flex flex-column justify-content-start mb-3 w-100 overflow-hidden">
@@ -159,7 +165,9 @@ function CheckOut() {
                         handleVerifyForm();
                       }}
                     >
+                      <option value="Av.Italia 1555">Av.Italia 1555</option>
                       <option value="">Seleccione una direccion</option>
+
                       {address?.map(
                         ({ address, number, state, city, postalCode }) => (
                           <option

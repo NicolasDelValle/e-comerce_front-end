@@ -13,8 +13,8 @@ const actions = {
   clearItemInCart: (productId) => {
     return { type: types.CLEAR_ITEM_IN_CART, payload: productId };
   },
-  clearCart: (data) => {
-    return { type: types.CLEAR_CART, payload: data };
+  clearCart: () => {
+    return { type: types.CLEAR_CART };
   },
 };
 

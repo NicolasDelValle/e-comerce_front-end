@@ -31,7 +31,7 @@ function CartReducer(state = initialState, { type, payload }) {
       return state.filter((product) => product.id !== payload);
 
     case types.CLEAR_CART:
-      return state;
+      return (state = []);
     default:
       return state;
   }
