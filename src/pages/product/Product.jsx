@@ -16,9 +16,6 @@ function Product() {
   const { slug } = useParams();
   const [quantity, setQuantity] = useState(1);
   const [products, setProducts] = useState([]);
-
-  const [productDetails, setProductDetails] = useState();
-
   const [show, setShow] = useState(false);
 
   const randomProducts = products.sort(() => 0.5 - Math.random());
@@ -134,7 +131,7 @@ function Product() {
                 <div id="detalles" className="mt-2">
                   <h3 className="text-black">Detalles</h3>
                   {product &&
-                    JSON.parse(product.details).map((detail, i) => (
+                    product.details.map((detail, i) => (
                       <p key={i} className="detalles m-0">
                         {detail}
                       </p>
