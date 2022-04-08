@@ -11,7 +11,7 @@ async function getProducts() {
 async function getProduct(slug) {
   const product = await axiosInstance({
     method: "get",
-    url: "/products/" + slug,
+    url: "products/" + slug,
   });
 
   return product;
