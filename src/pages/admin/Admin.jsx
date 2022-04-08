@@ -30,7 +30,7 @@ function Admin() {
       <div className="w-100 ">
         <div className="container px-4 pt-5">
           <div className="row mt-4">
-            <div className="col-lg-6 col-">
+            <div className="col-lg-3 col-md-6 col-">
               <Card bg="light" className="mb-4">
                 <Card.Header className="">Información</Card.Header>
                 <Card.Body className="text-start">
@@ -44,7 +44,7 @@ function Admin() {
                 </Card.Footer>
               </Card>
             </div>
-            <div className="col-lg-6 col- ">
+            <div className="col-lg-3 col-md-6 col- ">
               <Card bg="light" className="mb-4">
                 <Card.Header className="">Más vendidos: Marzo</Card.Header>
                 <Card.Body>
@@ -69,7 +69,7 @@ function Admin() {
               </Card>
             </div>
 
-            <div className="col-lg-6 col-">
+            <div className="col-lg-3 col-md-6 col-">
               <Card className="mb-4">
                 <Card.Header className="">Tareas</Card.Header>
                 <Card.Body>
@@ -89,7 +89,7 @@ function Admin() {
                 </Card.Footer>
               </Card>
             </div>
-            <div className="col-lg-6 ">
+            <div className="col-lg-3 col-md-6 ">
               <Card className="mb-4">
                 <Card.Header className=" text-black">Stock Mínimo</Card.Header>
                 <Card.Body>
