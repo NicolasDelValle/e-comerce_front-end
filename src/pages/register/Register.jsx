@@ -180,6 +180,7 @@ function Register() {
                 )}
               </Form.Group>
               <Button
+                title="Registrarme"
                 type="submit"
                 className="w-auto bg-black text-white fs-6  mt-4 mx-auto btn rounded-pill"
               >
