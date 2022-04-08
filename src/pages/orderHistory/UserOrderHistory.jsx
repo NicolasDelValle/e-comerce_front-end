@@ -18,7 +18,7 @@ export const UserOrderHistory = () => {
   useEffect(() => {
     handleGetOrders();
   }, []);
-  console.log(orders);
+
   return (
     <>
       <NavigationBar />
