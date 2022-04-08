@@ -62,6 +62,7 @@ function Login() {
                     })}
                     id="email"
                     placeholder="Escribe tu E-mail"
+                    defaultValue={"admin@mail.com"}
                   />
                   {errors.email && (
                     <div className=" text-center">
@@ -81,6 +82,7 @@ function Login() {
                     {...register("password", { required: true })}
                     id="password"
                     placeholder="Contraseña"
+                    defaultValue={"1234"}
                   />
                   {errors.password && (
                     <div className=" text-center">

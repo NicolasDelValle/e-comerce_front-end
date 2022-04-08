@@ -22,10 +22,6 @@ export const UserOrderHistory = () => {
     <>
       <NavigationBar />
       <Container className="mt-3 px-lg-5">
-        <div>
-          <span>Total de cuenta</span>
-          <span>$44022</span>
-        </div>
         <span className="w-100 me-auto d-flex fs-4 fw-light">Historial</span>
         <div>
           {orders?.map((order) => (
