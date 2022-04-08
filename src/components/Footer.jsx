@@ -7,14 +7,14 @@ function Footer() {
       <div className=" pt-5 w-100 bg-black">
         <div className="container">
           <div className="row py-2">
-            <div className="col-md-4 col-sm-6 col- text-start">
+            <div className="col-md-3 col-sm-6 col text-start">
               <h6 className="mb-3">
                 <strong>Contacto</strong>
               </h6>
               <p>contacto@contacto.uy</p>
               <p>091 234 567</p>
             </div>
-            <div className="col-md-4 col-sm-6 col- text-start">
+            <div className="col-md-3 col-sm-6 col text-start">
               <h6 className="mb-3">
                 <strong>Tienda</strong>{" "}
               </h6>
@@ -30,7 +30,7 @@ function Footer() {
                 </Link>
               </div>
             </div>
-            <div className="col-md-4 col-sm-6 col- text-start">
+            <div className="col-md-3 col-sm-6 col text-start">
               <h6 className="mb-3">
                 <strong>Síguenos</strong>
               </h6>
@@ -40,7 +40,7 @@ function Footer() {
                 </a>
               </div>
             </div>
-            <div className="col-md-4 col- pt-2 ms-auto text-start">
+            <div className="col-md-3 col-sm-6 col pt-2 ms-auto text-start">
               <h6 className="mb-3">Suscríbete</h6>
               <p>
                 Recibirás todas las novedades de LOSI, nuevos lanzamientos y
