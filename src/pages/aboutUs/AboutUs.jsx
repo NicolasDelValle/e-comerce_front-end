@@ -91,7 +91,7 @@ function AboutUs() {
 							<div className="about-profile-div col-12 col-sm-6 col-lg-3">
 								<div
 									className="about-profile-img"
-									style={{ backgroundImage: `url(${Omar})` }}
+									style={{ backgroundImage: `url(${Mauro})` }}
 								></div>
 								<div className="about-profile-name">
 									<h3 className="mt-3 mb-2">Mauro Raviolo</h3>
