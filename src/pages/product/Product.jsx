@@ -3,42 +3,48 @@ import React, { useEffect, useState } from "react";
 import NavigationBar from "../../components/NavigationBar";
 import Footer from "../../components/Footer";
 import { useParams } from "react-router-dom";
-import AddCart from "../../components/AddCart";
 import { getProduct } from "../../api/productApi";
 import { Row } from "react-bootstrap";
 import ProductCard from "../../components/ProductCard";
 import axios from "axios";
+import actions from "../../redux/actions/cartActions";
+import { useDispatch } from "react-redux";
+import { Toast } from "react-bootstrap";
 
-function Product(props) {
+function Product() {
   const [product, setProduct] = useState(null);
   const { slug } = useParams();
   const [quantity, setQuantity] = useState(1);
   const [products, setProducts] = useState([]);
 
+  const [productDetails, setProductDetails] = useState();
+
+  const [show, setShow] = useState(false);
+
   const randomProducts = products.sort(() => 0.5 - Math.random());
+
+  const dispatch = useDispatch();
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [slug]);
-
-  useEffect(() => {
-    const getProducts = async () => {
-      const { data } = await axios({
-        method: "get",
-        url: `${process.env.REACT_APP_API_URL}products`,
-      });
-
-      setProducts(data);
-    };
-    const fetchData = async () => {
-      const response = await getProduct(slug);
-
-      setProduct(response.data);
-    };
+    getProductBySlug();
     getProducts();
-    console.log(products);
-    fetchData();
-  }, [slug]);
+  }, []);
+
+  const getProductBySlug = async () => {
+    console.log("este es get product");
+    const { data } = await getProduct(slug);
+    setProduct(data);
+  };
+
+  const getProducts = async () => {
+    const { data } = await axios({
+      method: "get",
+      url: `${process.env.REACT_APP_API_URL}products`,
+    });
+
+    setProducts(data);
+  };
 
   const handleIncrement = () => {
     setQuantity((count) => count + 1);
@@ -50,13 +56,27 @@ function Product(props) {
     }
   };
 
-  console.log(product);
+  const handleClick = () => {
+    dispatch(actions.addToCart({ ...product, quantity }));
+    setShow(true);
+  };
 
   return (
     <>
       <NavigationBar />
       <div className="section">
-        <div className="container productSection">
+        <div className="container productSection position-relative">
+          <Toast
+            className="position-absolute end-0"
+            onClose={() => setShow(false)}
+            show={show}
+            delay={2000}
+            autohide
+          >
+            <Toast.Body>
+              {product && product.name} agregado al carrito
+            </Toast.Body>
+          </Toast>
           <div
             id="Product"
             className="row m-3 g-3 py-2
@@ -103,15 +123,22 @@ function Product(props) {
                   </div>
                 </div>
                 <span className="mt-2 d-flex align-content-end w-100">
-                  <AddCart product={product} quantity={quantity} />
+                  <button
+                    className="my-2 btn bg-black text-white w-auto rounded-pill"
+                    onClick={() => handleClick()}
+                    title="Agregar al carrito"
+                  >
+                    <p className="p-0 m-0"> Agregar al carrito</p>
+                  </button>
                 </span>
                 <div id="detalles" className="mt-2">
                   <h3 className="text-black">Detalles</h3>
-                  {product?.details.map((detail, i) => (
-                    <p key={i} className="detalles m-0">
-                      {detail}
-                    </p>
-                  ))}
+                  {product &&
+                    JSON.parse(product.details).map((detail, i) => (
+                      <p key={i} className="detalles m-0">
+                        {detail}
+                      </p>
+                    ))}
                 </div>
               </div>
             </div>
