@@ -8,6 +8,7 @@ import Carlos from "../../img/fotosDePerfil/CarlosGAF.jpg";
 import Mauro from "../../img/fotosDePerfil/MauroR.jpg";
 import Luis from "../../img/fotosDePerfil/LuisZ.png";
 import Nico from "../../img/fotosDePerfil/NicoDLV.jpg";
+// import Omar from "../../img/fotosDePerfil/Omar.jpg";
 
 import {
 	SiReact,
