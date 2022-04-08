@@ -34,8 +34,7 @@ function Shop(props) {
     };
     getCategories();
     getProducts();
-    console.log(categories);
-    console.log(products);
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -56,7 +55,6 @@ function Shop(props) {
       );
     }
   };
-  console.log(isChecked);
 
   const handleSearch = (e) => {
     setItemTitle(e);
