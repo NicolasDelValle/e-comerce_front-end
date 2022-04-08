@@ -1,4 +1,4 @@
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Sidebar from "../../components/Sidebar";
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
@@ -9,7 +9,6 @@ function AdminProductEdit() {
   const { newToken } = useSelector((state) => state.user);
   const [editProduct, setEditProduct] = useState({});
   const [loading, setLoading] = useState(false);
-  const navigate = useNavigate;
   let { slug } = useParams();
 
   useEffect(() => {
@@ -21,7 +20,7 @@ function AdminProductEdit() {
       setEditProduct(data);
     };
     getProduct();
-  }, []);
+  }, [slug]);
 
   const handleEditProduct = async (e) => {
     e.preventDefault();

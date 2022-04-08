@@ -1,15 +1,14 @@
 import { Button, Form, Toast, ToastContainer } from "react-bootstrap";
 import NavigationBar from "../../components/NavigationBar";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import actions from "../../redux/actions/userActions";
 import { useNavigate, Link } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import axios from "axios";
 import "./login.css";
 
 function Login() {
   const [errorInicioSesion, setErrorInicioSesion] = useState(false);
-  const accessToken = useSelector((state) => state.user.newToken);
   const [userLogin, setUserLogin] = useState({});
   const navigate = useNavigate();
   const dispatch = useDispatch();
