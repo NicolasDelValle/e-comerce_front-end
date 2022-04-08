@@ -70,7 +70,7 @@ function Home() {
             <h2>Bienvenidos a Losi Skateboards</h2>
             <p>Este es un proyecto académico</p>
             <Button
-              className="my-5"
+              className="my-3"
               variant=" btn-dark"
               onClick={() => handleCloseModal()}
             >
