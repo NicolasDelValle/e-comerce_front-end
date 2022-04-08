@@ -53,7 +53,7 @@ function Home() {
   return (
     <>
       <Modal
-        className="rounded text-white my-modal container-fluid"
+        className="rounded text-white my-modal container-fluid p-0"
         show={welcomeModal}
         size="lg"
         aria-labelledby="contained-modal-title-vcenter "
