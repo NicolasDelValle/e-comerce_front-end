@@ -129,7 +129,7 @@ function Admin() {
           </div>
 
           <div className="row">
-            <div className="col-xl-6">
+            <div className="col-xl">
               <div className="card mb-4">
                 <div className="card-header">
                   <i className="fas fa-table me-1"></i>
