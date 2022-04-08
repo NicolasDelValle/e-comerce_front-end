@@ -10,7 +10,7 @@
 
   padding: 10px;
   border-radius: 0px 10px 10px 0px;
-
+  box-shadow: 1px 1px 12px 1px #878787;
   background-color: rgb(0, 0, 0);
 
   writing-mode: vertical-rl;
@@ -32,6 +32,16 @@
 
 .tongue-checkbox:checked ~ .tongue-label {
   right: 300px;
+  background-color: #fff;
+}
+
+.tongue-checkbox:checked ~ .tongue-label > .tongue-label-title {
+  color: #000 !important;
+}
+
+.tongue-checkbox:checked ~ .tongue-label > .tongue-label-caret {
+  color: #000 !important;
+  transform: rotate(180deg);
 }
 
 .tongue-modal {
@@ -41,8 +51,7 @@
   position: fixed;
   top: 0px;
   right: -300px;
-
-
+  z-index: 15;
 
   background-color: rgb(255, 255, 255);
 

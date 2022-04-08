@@ -23,7 +23,7 @@ function AboutProjectTongue() {
 					<BsFillCaretRightFill size={15} className="me-1 mb-1 tongue-label-caret" />
 					<h6 className="m-0 tongue-label-title">Sobre el Proyecto</h6>
 				</label>
-				<div className="tongue-modal px-3 pt-4">
+				<div className="tongue-modal px-3 pt-5">
 					<div className="d-flex justify-content-between align-items-center">
 						<h6 className="tongue-modal-title m-0">Sobre el Proyecto</h6>
 					</div>
