@@ -22,7 +22,7 @@ export const CartItem = ({ url, price, mountProp, name, stock, productId }) => {
   return (
     <div className="d-flex flex-row align-items-center w-100 mb-3">
       <div
-        className="item-image rounded border me-2"
+        className="item-image rounded  me-2"
         style={{
           backgroundImage: `url(${url})`,
         }}
