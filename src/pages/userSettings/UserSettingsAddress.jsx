@@ -104,9 +104,9 @@ export const UserSettingsAddress = (props) => {
           </Col>
           <Col md={2}>
             <div className="d-flex flex-md-column align-items-start mb-2">
-              <Link className="my-2" to="/settings/account">
+              {/* <Link className="my-2" to="/settings/account">
                 <span className="text-dark me-3">Cuenta</span>
-              </Link>
+              </Link> */}
               <Link className="my-2" to="/settings/address">
                 <span className="text-dark me-3">Dirrecciones</span>
               </Link>
