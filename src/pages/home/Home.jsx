@@ -1,4 +1,4 @@
-import { Container, Row, Spinner } from "react-bootstrap";
+import { Container, Row } from "react-bootstrap";
 import "./homeStyles.css";
 import Footer from "../../components/Footer";
 import NavigationBar from "../../components/NavigationBar";
@@ -52,7 +52,6 @@ function Home() {
 
   return (
     <>
-      {" "}
       <Modal
         className="rounded text-white my-modal container-fluid"
         show={welcomeModal}
@@ -60,26 +59,22 @@ function Home() {
         aria-labelledby="contained-modal-title-vcenter "
         centered
       >
-        {" "}
         <div className="row mx-0">
           <div
             className="col m-0 border-end-2 modalImage"
             style={{
               backgroundImage: `url(${tablasDestacadas})`,
             }}
-          >
-            {" "}
-          </div>
+          ></div>
           <div className="col p-3 pt-5 text-center text-black ">
-            {" "}
             <h2>Bienvenidos a Losi Skateboards</h2>
-            <p>Este es un proyecto academico</p>
+            <p>Este es un proyecto académico</p>
             <Button
               className="my-5"
               variant=" btn-dark"
               onClick={() => handleCloseModal()}
             >
-              Solo quiero navegar la pagina.
+              Solo quiero navegar la página.
             </Button>
             <Button variant=" btn-dark" onClick={() => handleModalClick()}>
               Me interesa navegar como administrador.
@@ -102,7 +97,7 @@ function Home() {
           />
         </div>
 
-        <div className="homeScrollContainer-header d-none d-sm-flex ">
+        <div className="homeScrollContainer-header d-none d-sm-flex">
           <img
             className="homeScrollContainer-header-logo_overlay"
             src={losilogo}

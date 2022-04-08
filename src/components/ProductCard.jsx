@@ -29,6 +29,7 @@ function ProductCard({ product }) {
                 className={isLoading ? "d-none" : "w-auto mb-2"}
                 height="220px"
                 // agregar supabaseurl para imagenes de la DB
+                // src={product && `https://cybmmybwfbmxasdepuyj.supabase.co/storage/v1/object/public/images/${product.imageUrl}`}
                 src={product.imageUrl}
                 alt={product.name}
                 onLoad={() => setIsLoading(false)}
