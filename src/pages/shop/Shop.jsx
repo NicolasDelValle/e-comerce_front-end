@@ -99,25 +99,26 @@ function Shop() {
               />
             </span>
           </span>
-
-          {categories.map(
-            (category, i) =>
-              products.some(
-                (product) => product.categoryId === category.id
-              ) && (
-                <div key={i} className="row  d-flex  category mb-5">
-                  <h2 className="mt-3">{category.name}</h2>
-                  {products
-                    .filter((product) => product.categoryId === category.id)
-                    .map((filteredProduct) => (
-                      <ProductCard
-                        key={filteredProduct.id}
-                        product={filteredProduct}
-                      />
-                    ))}
-                </div>
-              )
-          )}
+          <div className="alturaMinima">
+            {categories.map(
+              (category, i) =>
+                products.some(
+                  (product) => product.categoryId === category.id
+                ) && (
+                  <div key={i} className="row  d-flex  category mb-5">
+                    <h2 className="mt-3">{category.name}</h2>
+                    {products
+                      .filter((product) => product.categoryId === category.id)
+                      .map((filteredProduct) => (
+                        <ProductCard
+                          key={filteredProduct.id}
+                          product={filteredProduct}
+                        />
+                      ))}
+                  </div>
+                )
+            )}
+          </div>
         </div>
       </div>
       <Footer />

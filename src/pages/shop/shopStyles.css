@@ -7,13 +7,15 @@ section {
   height: 100vh;
   scroll-snap-align: start;
 }
-
+.alturaMinima {
+  min-height: 300px;
+}
 .product-category-section h2 {
   font-weight: 600;
   text-align: left;
 }
 
-.form-check .form-check-input{
+.form-check .form-check-input {
   float: none;
   margin-right: 1rem;
 }
