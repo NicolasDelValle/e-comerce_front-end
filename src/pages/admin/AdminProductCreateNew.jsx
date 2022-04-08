@@ -232,12 +232,12 @@ function AdminProductCreateNew() {
               </Form.Group>
             </div>
             <div>
-              <Button className="boton me-2 botonCrear" type="submit">
+              <button className="boton me-2 botonCrear" type="submit">
                 Crear
-              </Button>
-              <Button className="boton text-dark botonEliminar">
+              </button>
+              <button className="boton text-dark botonEliminar">
                 <Link to={"/admin/products"}>Cancelar</Link>
-              </Button>
+              </button>
             </div>
           </Form>
         </div>
