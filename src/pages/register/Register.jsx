@@ -62,7 +62,7 @@ function Register() {
                 {errors.firstname && (
                   <div className=" text-center">
                     <span className="mt-1 pt-2 text-danger">
-                      This field is required
+                      Este campo es requerido
                     </span>
                   </div>
                 )}
@@ -83,7 +83,7 @@ function Register() {
                 {errors.lastname && (
                   <div className=" text-center">
                     <span className="mt-1 pt-2 text-danger">
-                      This field is required
+                      Este campo es requerido
                     </span>
                   </div>
                 )}
@@ -102,7 +102,7 @@ function Register() {
                 {errors.number && (
                   <div className=" text-center">
                     <span className="pt-2 text-danger">
-                      This field is required
+                      Este campo es requerido
                     </span>
                   </div>
                 )}
@@ -124,7 +124,7 @@ function Register() {
                 {errors.email && (
                   <div className=" text-center">
                     <span className="mt-1 pt-2 text-danger">
-                      This field is required
+                      Este campo es requerido
                     </span>
                   </div>
                 )}
@@ -143,7 +143,7 @@ function Register() {
                 {errors.password && (
                   <div className=" text-center">
                     <span className="mt-1 pt-2 text-danger">
-                      This field is required
+                      Este campo es requerido
                     </span>
                   </div>
                 )}
@@ -162,7 +162,7 @@ function Register() {
                 {errors.address && (
                   <div className=" text-center">
                     <span className="pt-2 text-danger">
-                      This field is required
+                      Este campo es requerido
                     </span>
                   </div>
                 )}

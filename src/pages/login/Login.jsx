@@ -59,7 +59,7 @@ function Login() {
                   {errors.email && (
                     <div className=" text-center">
                       <span className="mt-1 pt-2 text-danger">
-                        This field is required
+                        Este campo es requerido
                       </span>
                     </div>
                   )}
@@ -78,7 +78,7 @@ function Login() {
                   {errors.password && (
                     <div className=" text-center">
                       <span className="pt-2 text-danger">
-                        This field is required
+                        Este campo es requerido
                       </span>
                     </div>
                   )}
