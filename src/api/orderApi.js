@@ -3,7 +3,7 @@ import axiosInstance from "./axios";
 async function getUserOrders(newToken) {
   const adresses = await axiosInstance({
     method: "get",
-    url: "address",
+    url: "orders",
     headers: { Authorization: `Bearer ${newToken}` },
   });
   return adresses;
