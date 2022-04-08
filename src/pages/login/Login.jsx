@@ -1,32 +1,33 @@
 import { Button, Form, Toast, ToastContainer } from "react-bootstrap";
 import NavigationBar from "../../components/NavigationBar";
-import { useDispatch } from "react-redux";
 import actions from "../../redux/actions/userActions";
 import { useNavigate, Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import { useState } from "react";
 import axios from "axios";
 import "./login.css";
+import { useForm } from "react-hook-form";
 
 function Login() {
   const [errorInicioSesion, setErrorInicioSesion] = useState(false);
-  const [userLogin, setUserLogin] = useState({});
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const patronEmail = /^\w+([.-]?\w+)@\w+([.-]?\w+)(.\w{2,3})+$/;
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
-  const handleLogin = async (e) => {
-    e.preventDefault();
-    try {
-      const { data } = await axios({
-        method: "post",
-        url: `${process.env.REACT_APP_API_URL}tokens`,
-        data: userLogin,
-      });
-      if (data) {
-        dispatch(actions.createUser(data));
-        navigate("/");
-      }
-    } catch (error) {
-      setErrorInicioSesion((prev) => !prev);
+  const onSubmit = async (formData) => {
+    const { data } = await axios({
+      method: "post",
+      url: `${process.env.REACT_APP_API_URL}tokens`,
+      data: formData,
+    });
+    if (data) {
+      dispatch(actions.createUser(data));
+      navigate("/");
     }
   };
 
@@ -40,42 +41,48 @@ function Login() {
               <strong className="fs-4 text-center">LOGIN</strong>
             </h1>
             <div>
-              <Form onSubmit={(e) => handleLogin(e)} className="py-1 ">
+              <Form onSubmit={handleSubmit(onSubmit)} className="py-1 ">
                 <div>
                   <Form.Group className="py-2 text-start">
                     <Form.Label className="form-label" htmlFor="email">
                       Email
                     </Form.Label>
                     <Form.Control
-                      required
                       className="form-control"
                       type="email"
-                      name="email"
+                      {...register("email", {
+                        required: true,
+                        pattern: patronEmail,
+                      })}
                       id="email"
-                      onChange={(e) => {
-                        setUserLogin({ ...userLogin, email: e.target.value });
-                      }}
                       placeholder="Escribe tu E-mail"
                     />
+                    {errors.email && (
+                      <div className=" text-center">
+                        <span className="mt-1 pt-2 text-danger">
+                          This field is required
+                        </span>
+                      </div>
+                    )}
                   </Form.Group>
                   <Form.Group className="py-2 text-start">
                     <Form.Label className="form-label" htmlFor="password">
                       Contraseña
                     </Form.Label>
                     <Form.Control
-                      required
                       className="form-control"
                       type="password"
-                      name="password"
+                      {...register("password", { required: true })}
                       id="password"
-                      onChange={(e) => {
-                        setUserLogin({
-                          ...userLogin,
-                          password: e.target.value,
-                        });
-                      }}
                       placeholder="Contraseña"
                     />
+                    {errors.password && (
+                      <div className=" text-center">
+                        <span className="pt-2 text-danger">
+                          This field is required
+                        </span>
+                      </div>
+                    )}
                   </Form.Group>
                 </div>
                 <Button
