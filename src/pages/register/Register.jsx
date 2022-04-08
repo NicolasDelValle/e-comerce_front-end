@@ -1,32 +1,29 @@
-import { useNavigate, Link } from "react-router-dom";
+import { Button, Form, Toast, ToastContainer } from "react-bootstrap";
 import NavigationBar from "../../components/NavigationBar";
-import "./register.css";
+import actions from "../../redux/actions/userActions";
+import { useNavigate, Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import { useState } from "react";
 import axios from "axios";
-import { useDispatch } from "react-redux";
-import actions from "../../redux/actions/userActions";
-import { Toast, ToastContainer } from "react-bootstrap";
+import "./register.css";
 
 function Register() {
+  const [userRegister, setUserRegister] = useState({});
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const [userRegister, setUserRegister] = useState({});
-  const [errorInicioSesion, seterrorInicioSesion] = useState(false);
 
-  const handleRegister = async () => {
-    try {
-      const { data } = await axios({
-        method: "post",
-        url: `${process.env.REACT_APP_API_URL}users`,
-        data: userRegister,
-      });
+  const handleRegister = async (e) => {
+    e.preventDefault();
 
-      if (data) {
-        dispatch(actions.createUser(data));
-        navigate("/login");
-      }
-    } catch (error) {
-      seterrorInicioSesion((prev) => !prev);
+    const { data } = await axios({
+      method: "post",
+      url: `${process.env.REACT_APP_API_URL}users`,
+      data: userRegister,
+    });
+
+    if (data) {
+      dispatch(actions.createUser(data));
+      navigate("/login");
     }
   };
 
@@ -41,18 +38,16 @@ function Register() {
               <strong>REGISTRO</strong>
             </h4>
 
-            <form
+            <Form
               className="row text-start"
-              onSubmit={(e) => {
-                e.preventDefault();
-                handleRegister();
-              }}
+              onSubmit={(e) => handleRegister(e)}
             >
-              <div className="col-md-4 ">
-                <label className="form-label my-2" htmlFor="firstname">
+              <Form.Group className="col-md-4 ">
+                <Form.Label className="form-label my-2" htmlFor="firstname">
                   Nombre
-                </label>
-                <input
+                </Form.Label>
+                <Form.Control
+                  required
                   className="form-control "
                   type="text"
                   name="firstname"
@@ -65,12 +60,13 @@ function Register() {
                     });
                   }}
                 />
-              </div>
-              <div className="col-md-4  ">
-                <label className="form-label my-2" htmlFor="lastname">
+              </Form.Group>
+              <Form.Group className="col-md-4  ">
+                <Form.Label className="form-label my-2" htmlFor="lastname">
                   Apellido
-                </label>
-                <input
+                </Form.Label>
+                <Form.Control
+                  required
                   placeholder="Apellido"
                   className="form-control "
                   type="text"
@@ -83,12 +79,13 @@ function Register() {
                     });
                   }}
                 />
-              </div>
-              <div className="col-md-4  ">
-                <label className="form-label my-2" htmlFor="number">
+              </Form.Group>
+              <Form.Group className="col-md-4  ">
+                <Form.Label className="form-label my-2" htmlFor="number">
                   Teléfono
-                </label>
-                <input
+                </Form.Label>
+                <Form.Control
+                  required
                   placeholder="Teléfono"
                   className="form-control "
                   type="number"
@@ -101,12 +98,13 @@ function Register() {
                     });
                   }}
                 />
-              </div>
-              <div className="col-md-6  ">
-                <label className="form-label my-2" htmlFor="email">
+              </Form.Group>
+              <Form.Group className="col-md-6  ">
+                <Form.Label className="form-label my-2" htmlFor="email">
                   Email
-                </label>
-                <input
+                </Form.Label>
+                <Form.Control
+                  required
                   placeholder="E-mail"
                   className="form-control "
                   type="email"
@@ -119,13 +117,14 @@ function Register() {
                     });
                   }}
                 />
-              </div>
+              </Form.Group>
 
-              <div className="col-md-6">
-                <label className="form-label my-2" htmlFor="password">
+              <Form.Group className="col-md-6">
+                <Form.Label className="form-label my-2" htmlFor="password">
                   Contraseña
-                </label>
-                <input
+                </Form.Label>
+                <Form.Control
+                  required
                   placeholder="Contraseña"
                   className="form-control "
                   type="password"
@@ -138,12 +137,14 @@ function Register() {
                     });
                   }}
                 />
-              </div>
-              <div className="">
-                <label className="form-label my-2" htmlFor="address">
+                {userRegister.password === "" && <p>Error</p>}
+              </Form.Group>
+              <Form.Group className="">
+                <Form.Label className="form-label my-2" htmlFor="address">
                   Dirección
-                </label>
-                <input
+                </Form.Label>
+                <Form.Control
+                  required
                   placeholder="Dirección"
                   className="form-control "
                   type="text"
@@ -156,15 +157,15 @@ function Register() {
                     });
                   }}
                 />
-              </div>
+              </Form.Group>
 
-              <button
+              <Button
                 type="submit"
                 className="w-auto bg-black text-white fs-6  mt-4 mx-auto btn rounded-pill"
               >
                 Registrarme
-              </button>
-            </form>
+              </Button>
+            </Form>
             <p className="mt-3">
               ¿Ya tienes una cuenta?
               <Link className="text-black ps-2" to="/login">
@@ -173,32 +174,6 @@ function Register() {
             </p>
           </div>
         </div>
-        {errorInicioSesion && (
-          <ToastContainer
-            className="p-3 position-absolute "
-            position={"middle-center"}
-          >
-            <Toast className="bg-white">
-              <div className="text-end pe-2 pt-1 ">
-                <button
-                  className="btn"
-                  onClick={() => seterrorInicioSesion((prev) => !prev)}
-                >
-                  X
-                </button>
-              </div>
-              <Toast.Body className="p-5">
-                <h6>A ocurrido un error.</h6>
-              </Toast.Body>
-              <button
-                onClick={() => seterrorInicioSesion((prev) => !prev)}
-                className="btn boton m-2 mx-auto"
-              >
-                Intentar nuevamente
-              </button>
-            </Toast>
-          </ToastContainer>
-        )}
       </div>
     </>
   );
