@@ -3,8 +3,15 @@ import NavigationBar from "../../components/NavigationBar";
 
 import { Col, Container, Row, Button, Accordion } from "react-bootstrap";
 import { Link } from "react-router-dom";
-
+import { useSelector } from "react-redux";
+import { getUserOrders } from "../../api/orderApi";
 export const UserOrderHistory = (props) => {
+  const user = useSelector((state) => state.user);
+
+  const handleGetOrders = async () => {
+    const orders = await getUserOrders(user.newToken);
+    console.log(orders);
+  };
   return (
     <>
       <NavigationBar />
