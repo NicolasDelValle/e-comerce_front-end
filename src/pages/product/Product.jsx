@@ -85,6 +85,7 @@ function Product() {
             <div id="ProductImg" className="col-lg-6 px-5">
               <img
                 // agregar supabaseurl para imagenes de la DB
+                // src={product && `https://cybmmybwfbmxasdepuyj.supabase.co/storage/v1/object/public/images/${product.imageUrl}`}
                 src={product && product.imageUrl}
                 className="img-fluid"
                 alt="productImage"

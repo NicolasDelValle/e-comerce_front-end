@@ -2,13 +2,14 @@ import { Button, Form, Toast, ToastContainer } from "react-bootstrap";
 import NavigationBar from "../../components/NavigationBar";
 import actions from "../../redux/actions/userActions";
 import { useNavigate, Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import "./login.css";
 import { useForm } from "react-hook-form";
 
 function Login() {
+  const accessToken = useSelector((state) => state.user.newToken);
   const [errorInicioSesion, setErrorInicioSesion] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -19,7 +20,13 @@ function Login() {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = async (formData) => {
+  useEffect(() => {
+    if (accessToken) {
+      navigate("/");
+    }
+  }, [accessToken, navigate]);
+
+  const handlerLogin = async (formData) => {
     const { data } = await axios({
       method: "post",
       url: `${process.env.REACT_APP_API_URL}tokens`,
@@ -41,51 +48,51 @@ function Login() {
               <strong className="fs-4 text-center">LOGIN</strong>
             </h1>
             <div>
-              <Form onSubmit={handleSubmit(onSubmit)} className="py-1 ">
-                <div>
-                  <Form.Group className="py-2 text-start">
-                    <Form.Label className="form-label" htmlFor="email">
-                      Email
-                    </Form.Label>
-                    <Form.Control
-                      className="form-control"
-                      type="email"
-                      {...register("email", {
-                        required: true,
-                        pattern: patronEmail,
-                      })}
-                      id="email"
-                      placeholder="Escribe tu E-mail"
-                    />
-                    {errors.email && (
-                      <div className=" text-center">
-                        <span className="mt-1 pt-2 text-danger">
-                          This field is required
-                        </span>
-                      </div>
-                    )}
-                  </Form.Group>
-                  <Form.Group className="py-2 text-start">
-                    <Form.Label className="form-label" htmlFor="password">
-                      Contraseña
-                    </Form.Label>
-                    <Form.Control
-                      className="form-control"
-                      type="password"
-                      {...register("password", { required: true })}
-                      id="password"
-                      placeholder="Contraseña"
-                    />
-                    {errors.password && (
-                      <div className=" text-center">
-                        <span className="pt-2 text-danger">
-                          This field is required
-                        </span>
-                      </div>
-                    )}
-                  </Form.Group>
-                </div>
+              <Form onSubmit={handleSubmit(handlerLogin)} className="py-1 ">
+                <Form.Group className="py-2 text-start">
+                  <Form.Label className="form-label" htmlFor="email">
+                    Email
+                  </Form.Label>
+                  <Form.Control
+                    className="form-control"
+                    type="email"
+                    {...register("email", {
+                      required: true,
+                      pattern: patronEmail,
+                    })}
+                    id="email"
+                    placeholder="Escribe tu E-mail"
+                  />
+                  {errors.email && (
+                    <div className=" text-center">
+                      <span className="mt-1 pt-2 text-danger">
+                        Este campo es requerido
+                      </span>
+                    </div>
+                  )}
+                </Form.Group>
+                <Form.Group className="py-2 text-start">
+                  <Form.Label className="form-label" htmlFor="password">
+                    Contraseña
+                  </Form.Label>
+                  <Form.Control
+                    className="form-control"
+                    type="password"
+                    {...register("password", { required: true })}
+                    id="password"
+                    placeholder="Contraseña"
+                  />
+                  {errors.password && (
+                    <div className=" text-center">
+                      <span className="pt-2 text-danger">
+                        Este campo es requerido
+                      </span>
+                    </div>
+                  )}
+                </Form.Group>
+
                 <Button
+                  title="Iniciar sesión"
                   type="submit"
                   className="btn rounded-pill bg-black text-white mt-2 mx-auto w-auto px-4 fs-6"
                 >

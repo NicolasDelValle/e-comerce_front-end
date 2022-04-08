@@ -2,23 +2,36 @@ import { Button, Form } from "react-bootstrap";
 import NavigationBar from "../../components/NavigationBar";
 import actions from "../../redux/actions/userActions";
 import { useNavigate, Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import "./register.css";
+import { useForm } from "react-hook-form";
 
 function Register() {
+  const accessToken = useSelector((state) => state.user.newToken);
+
   const [userRegister, setUserRegister] = useState({});
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const patronEmail = /^\w+([.-]?\w+)@\w+([.-]?\w+)(.\w{2,3})+$/;
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
-  const handleRegister = async (e) => {
-    e.preventDefault();
+  useEffect(() => {
+    if (accessToken) {
+      navigate("/");
+    }
+  }, [accessToken, navigate]);
 
+  const handleRegister = async (formData) => {
     const { data } = await axios({
       method: "post",
       url: `${process.env.REACT_APP_API_URL}users`,
-      data: userRegister,
+      data: formData,
     });
 
     if (data) {
@@ -39,124 +52,135 @@ function Register() {
             </h4>
             <Form
               className="row text-start"
-              onSubmit={(e) => handleRegister(e)}
+              onSubmit={handleSubmit(handleRegister)}
             >
               <Form.Group className="col-md-4 ">
                 <Form.Label className="form-label my-2" htmlFor="firstname">
                   Nombre
                 </Form.Label>
                 <Form.Control
-                  required
                   className="form-control"
                   type="text"
-                  name="firstname"
+                  {...register("firstname", {
+                    required: true,
+                    minLength: 3,
+                    maxLength: 30,
+                  })}
                   id="firstname"
                   placeholder="Nombre"
-                  onChange={(e) => {
-                    setUserRegister({
-                      ...userRegister,
-                      firstname: e.target.value,
-                    });
-                  }}
                 />
+                {errors.firstname && (
+                  <div className=" text-center">
+                    <span className=" validacionAlerta text-danger">
+                      Campo requerido, por favor corrobore.
+                    </span>
+                  </div>
+                )}
               </Form.Group>
               <Form.Group className="col-md-4  ">
                 <Form.Label className="form-label my-2" htmlFor="lastname">
                   Apellido
                 </Form.Label>
                 <Form.Control
-                  required
                   placeholder="Apellido"
                   className="form-control "
                   type="text"
-                  name="lastname"
+                  {...register("lastname", {
+                    required: true,
+                    minLength: 3,
+                    maxLength: 30,
+                  })}
                   id="lastname"
-                  onChange={(e) => {
-                    setUserRegister({
-                      ...userRegister,
-                      lastname: e.target.value,
-                    });
-                  }}
                 />
+                {errors.lastname && (
+                  <div className=" text-center">
+                    <span className=" validacionAlerta text-danger">
+                      Campo requerido, por favor corrobore.
+                    </span>
+                  </div>
+                )}
               </Form.Group>
               <Form.Group className="col-md-4  ">
                 <Form.Label className="form-label my-2" htmlFor="number">
                   Teléfono
                 </Form.Label>
                 <Form.Control
-                  required
                   placeholder="Teléfono"
                   className="form-control "
                   type="number"
-                  name="number"
+                  {...register("number", { required: true })}
                   id="number"
-                  onChange={(e) => {
-                    setUserRegister({
-                      ...userRegister,
-                      number: e.target.value,
-                    });
-                  }}
                 />
+                {errors.number && (
+                  <div className=" text-center">
+                    <span className=" validacionAlerta text-danger">
+                      Campo requerido, por favor corrobore.
+                    </span>
+                  </div>
+                )}
               </Form.Group>
               <Form.Group className="col-md-6  ">
                 <Form.Label className="form-label my-2" htmlFor="email">
                   Email
                 </Form.Label>
                 <Form.Control
-                  required
                   placeholder="E-mail"
                   className="form-control "
                   type="email"
-                  name="email"
+                  {...register("email", {
+                    required: true,
+                    pattern: patronEmail,
+                  })}
                   id="email"
-                  onChange={(e) => {
-                    setUserRegister({
-                      ...userRegister,
-                      email: e.target.value,
-                    });
-                  }}
                 />
+                {errors.email && (
+                  <div className=" text-center">
+                    <span className=" validacionAlerta text-danger">
+                      Campo requerido, por favor corrobore.
+                    </span>
+                  </div>
+                )}
               </Form.Group>
               <Form.Group className="col-md-6">
                 <Form.Label className="form-label my-2" htmlFor="password">
                   Contraseña
                 </Form.Label>
                 <Form.Control
-                  required
                   placeholder="Contraseña"
                   className="form-control "
                   type="password"
-                  name="password"
+                  {...register("password", { required: true })}
                   id="password"
-                  onChange={(e) => {
-                    setUserRegister({
-                      ...userRegister,
-                      password: e.target.value,
-                    });
-                  }}
                 />
-                {userRegister.password === "" && <p>Error</p>}
+                {errors.password && (
+                  <div className=" text-center">
+                    <span className=" validacionAlerta text-danger">
+                      Campo requerido, por favor corrobore.
+                    </span>
+                  </div>
+                )}
               </Form.Group>
               <Form.Group className="">
                 <Form.Label className="form-label my-2" htmlFor="address">
                   Dirección
                 </Form.Label>
                 <Form.Control
-                  required
                   placeholder="Dirección"
                   className="form-control "
                   type="text"
-                  name="address"
+                  {...register("address", { required: true })}
                   id="address"
-                  onChange={(e) => {
-                    setUserRegister({
-                      ...userRegister,
-                      address: e.target.value,
-                    });
-                  }}
                 />
+                {errors.address && (
+                  <div className=" text-center">
+                    <span className=" validacionAlerta text-danger">
+                      Campo requerido, por favor corrobore.
+                    </span>
+                  </div>
+                )}
               </Form.Group>
               <Button
+                title="Registrarme"
                 type="submit"
                 className="w-auto bg-black text-white fs-6  mt-4 mx-auto btn rounded-pill"
               >
