@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
 import NavigationBar from "../../components/NavigationBar";
 import OrderListItem from "../../components/OrderListItem";
-import { Col, Container, Row, Button, Accordion } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Container } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import { getUserOrders } from "../../api/orderApi";
 export const UserOrderHistory = () => {
