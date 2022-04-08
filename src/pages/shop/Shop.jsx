@@ -1,5 +1,5 @@
 import "./shopStyles.css";
-import { FormCheck, Form } from "react-bootstrap";
+import { Form } from "react-bootstrap";
 import React, { useEffect, useState } from "react";
 import NavigationBar from "../../components/NavigationBar";
 import Footer from "../../components/Footer";
