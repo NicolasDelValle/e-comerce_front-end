@@ -42,8 +42,7 @@ function Cart() {
       <Container className="mt-5">
         {cart.length !== 0 ? (
           <Row className="d-flex justify-content-center">
-            <Col md={12} lg={6} className="pe-lg-0">
-              <p className="strong">Listado de productos</p>
+            <Col md={12} lg={6} className="pe-lg-0 pt-3">
               {cart.map((product, i) => (
                 <CartItem
                   key={i}
