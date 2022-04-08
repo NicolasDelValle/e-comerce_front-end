@@ -1,15 +1,14 @@
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Sidebar from "../../components/Sidebar";
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import axios from "axios";
-import { Toast, ToastContainer } from "react-bootstrap";
+import { Button, Form, Toast, ToastContainer } from "react-bootstrap";
 
 function AdminProductEdit() {
   const { newToken } = useSelector((state) => state.user);
   const [editProduct, setEditProduct] = useState({});
   const [loading, setLoading] = useState(false);
-  const navigate = useNavigate;
   let { slug } = useParams();
 
   useEffect(() => {
@@ -21,7 +20,7 @@ function AdminProductEdit() {
       setEditProduct(data);
     };
     getProduct();
-  }, []);
+  }, [slug]);
 
   const handleEditProduct = async (e) => {
     e.preventDefault();
@@ -46,17 +45,18 @@ function AdminProductEdit() {
       <div className="w-100  position-relative">
         <div className="container px-4 mx-auto pt-5 ">
           <h2>Editar un producto</h2>
-          <form
+          <Form
             id="product-form"
             className="d-flex flex-column "
             onSubmit={(e) => handleEditProduct(e)}
           >
             <div className="row text-start">
-              <div className="col- col-lg-4 py-2">
-                <label className="pe-2" htmlFor="product-name">
+              <Form.Group className="col- col-lg-4 py-2">
+                <Form.Label className="pe-2 form-label" htmlFor="product-name">
                   Nombre
-                </label>
-                <input
+                </Form.Label>
+                <Form.Control
+                  required
                   value={editProduct.name}
                   type="text"
                   name="name"
@@ -70,12 +70,13 @@ function AdminProductEdit() {
                   placeholder="Nombre del producto"
                   className="form-control"
                 />
-              </div>
-              <div className="col-4 col-lg-4  py-2">
-                <label className="pe-2" htmlFor="product-category">
+              </Form.Group>
+              <Form.Group className="col-4 col-lg-4  py-2">
+                <Form.Label className="pe-2" htmlFor="product-category">
                   Categoría
-                </label>
-                <select
+                </Form.Label>
+                <Form.Select
+                  required
                   defaultValue={editProduct.category}
                   id="product-category"
                   name="categoryId"
@@ -91,13 +92,14 @@ function AdminProductEdit() {
                   <option value="2">Hardware</option>
                   <option value="3">Ruedas</option>
                   <option value="4">Ropa</option>
-                </select>
-              </div>
+                </Form.Select>
+              </Form.Group>
               <div className="col-4 col-lg-4 py-2">
-                <label className="pe-2" htmlFor="product-featured">
+                <Form.Label className="pe-2" htmlFor="product-featured">
                   Destacado
-                </label>
-                <select
+                </Form.Label>
+                <Form.Select
+                  required
                   defaultValue={editProduct.featured}
                   id="product-featured"
                   name="featured"
@@ -112,13 +114,14 @@ function AdminProductEdit() {
                   <option disabled>Seleccionar</option>
                   <option value="true">Sí</option>
                   <option value="false">No</option>
-                </select>
+                </Form.Select>
               </div>
-              <div className="col-4 col-lg-4 py-2">
-                <label className="pe-2" htmlFor="product-price">
+              <Form.Group className="col-4 col-lg-4 py-2">
+                <Form.Label className="pe-2" htmlFor="product-price">
                   Precio
-                </label>
-                <input
+                </Form.Label>
+                <Form.Control
+                  required
                   value={editProduct.price}
                   type="number"
                   name="price"
@@ -132,12 +135,13 @@ function AdminProductEdit() {
                   placeholder="Precio del producto"
                   className="form-control"
                 />
-              </div>
-              <div className="col- col-lg-4 py-2">
-                <label className="pe-2" htmlFor="product-stock">
+              </Form.Group>
+              <Form.Group className="col- col-lg-4 py-2">
+                <Form.Label className="pe-2" htmlFor="product-stock">
                   Stock
-                </label>
-                <input
+                </Form.Label>
+                <Form.Control
+                  required
                   value={editProduct.stock}
                   type="number"
                   name="stock"
@@ -151,14 +155,14 @@ function AdminProductEdit() {
                   placeholder="Stock del producto"
                   className="form-control"
                 />
-              </div>
-              <div className="col- py-2">
-                <label className="form-label pe-2" htmlFor="product-image">
+              </Form.Group>
+              <Form.Group className="col- py-2">
+                <Form.Label className="form-label pe-2" htmlFor="product-image">
                   Imagen
-                </label>
-                <input
+                </Form.Label>
+                <Form.Control
                   defaultValue={editProduct.imageUrl}
-                  //value={editProduct.imageUrl}
+                  required
                   type="file"
                   placeholder={editProduct.imageUrl}
                   name="imageUrl"
@@ -170,12 +174,14 @@ function AdminProductEdit() {
                   }}
                   className="form-control"
                 />
-              </div>
-              <div className="col- py-2">
-                <label className="pe-2" htmlFor="product-description">
+              </Form.Group>
+              <Form.Group className="col- py-2">
+                <Form.Label className="pe-2" htmlFor="product-description">
                   Descripción
-                </label>
-                <textarea
+                </Form.Label>
+                <Form.Control
+                  required
+                  as="textarea"
                   value={editProduct.description}
                   type="text"
                   name="description"
@@ -190,12 +196,14 @@ function AdminProductEdit() {
                   placeholder="Descripcion del producto"
                   className="form-control"
                 />
-              </div>
-              <div className="col- py-2">
-                <label className="pe-2" htmlFor="product-details">
+              </Form.Group>
+              <Form.Group className="col- py-2">
+                <Form.Label className="pe-2" htmlFor="product-details">
                   Detalles
-                </label>
-                <textarea
+                </Form.Label>
+                <Form.Control
+                  required
+                  as="textarea"
                   value={editProduct.details}
                   type="text"
                   name="details"
@@ -210,7 +218,7 @@ function AdminProductEdit() {
                   placeholder="Detalles del producto"
                   className="form-control"
                 />
-              </div>
+              </Form.Group>
             </div>
             {loading ? (
               <ToastContainer
@@ -234,15 +242,15 @@ function AdminProductEdit() {
               </ToastContainer>
             ) : (
               <div>
-                <button className="boton me-2 botonCrear" type="submit">
+                <Button className="boton me-2 botonCrear" type="submit">
                   Aceptar
-                </button>
-                <button className="boton text-dark botonEliminar">
+                </Button>
+                <Button className="boton text-dark botonEliminar">
                   <Link to={"/admin/products"}>Cancelar</Link>
-                </button>
+                </Button>
               </div>
             )}
-          </form>
+          </Form>
         </div>
       </div>
     </div>

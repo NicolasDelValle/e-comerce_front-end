@@ -1,4 +1,4 @@
-import { Container, Row, Col, Button } from "react-bootstrap";
+import { Container, Row, Col, Button, Modal } from "react-bootstrap";
 import NavigationBar from "../../components/NavigationBar";
 import CheckOutItem from "../../components/CheckOutItem";
 import Footer from "../../components/Footer";
@@ -9,7 +9,6 @@ import "./checkOut.css";
 import "./card.css";
 import { postOrder } from "../../api/orderApi";
 import CardReactFormContainer from "card-react";
-import { Modal } from "react-bootstrap";
 
 function CheckOut() {
 	const { cart, user, address } = useSelector((state) => state);
@@ -59,6 +58,7 @@ function CheckOut() {
 		await postOrder(productList, addressSelected, total, user.newToken);
 		// navigate("/cart/thankyou");
 		setShowModal(true);
+		setTimeout(() => handleClose(), 5000);
 	};
 	console.log(user);
 	return (
@@ -175,10 +175,13 @@ function CheckOut() {
 									<Modal.Header closeButton>
 										<Modal.Title>¡Compra realizada con éxito!</Modal.Title>
 									</Modal.Header>
-									<Modal.Body className="text-start">
-										Has realizado tu compra en LOSI con éxito. Ya puedes verla en el
-										historial de órdenes. Nos comunicaremos contigo para coordinar el
-										envío. ¡Muchas gracias!
+									<Modal.Body className="text-start" style={{ fontSize: "0.8rem" }}>
+										<p>
+											Ya puedes verla en el historial de órdenes. Nos comunicaremos contigo
+											para coordinar el envío.
+										</p>
+										<p>Serás redirigido al Home.</p>
+										<p>¡Muchas gracias!</p>
 									</Modal.Body>
 									<Modal.Footer>
 										<Button variant="dark" className="rounded-pill" onClick={handleClose}>
