@@ -95,7 +95,7 @@ function NavigationBar() {
 							>
 								{user?.newToken ? (
 									<div className="navegacion d-flex flex-column text-center">
-										<Link className="p-1 w-100 " to="/settings/account" title="Ajustes">
+										<Link className="p-1 w-100 " to="/settings/address" title="Ajustes">
 											<p className="p-0 m-0 ">Ajustes</p>
 										</Link>
 										<Link className="p-1 w-100 " to="/history" title="Historial">
