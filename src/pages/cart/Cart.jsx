@@ -114,7 +114,8 @@ function Cart() {
             </div>
           </div>
         )}
-        <Row className="  justify-content-center g-5 my-5  border-top py-1">
+        <h3 className="my-5 text-start ">Otros productos</h3>
+        <Row className="  justify-content-center g-5  border-top py-1">
           {randomProducts
             .filter((product) => product.id < 5)
             .map((product, i) => (
