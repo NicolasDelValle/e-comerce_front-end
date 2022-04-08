@@ -3,7 +3,7 @@ import Sidebar from "../../components/Sidebar";
 import { useSelector } from "react-redux";
 import { useState } from "react";
 import axios from "axios";
-import { Button, Form } from "react-bootstrap";
+import { Form } from "react-bootstrap";
 
 function AdminProductCreateNew() {
   const { newToken } = useSelector((state) => state.user);
