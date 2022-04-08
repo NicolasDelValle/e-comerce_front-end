@@ -12,7 +12,7 @@ export const OrderListItem = ({
   const subTotal = Number(total) - iva;
   return (
     <>
-      <Accordion>
+      <Accordion className="mb-2">
         <Accordion.Item eventKey="0">
           <Accordion.Header>
             <div className="d-flex flex-column w-100 border-end me-3">

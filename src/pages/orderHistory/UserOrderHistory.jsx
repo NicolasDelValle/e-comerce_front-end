@@ -35,7 +35,7 @@ export const UserOrderHistory = () => {
               date={new Date(order.createdAt).toLocaleDateString()}
               total={order.totalPrice}
               address={order.address}
-              productList={JSON.parse(order.productList)}
+              productList={order.productList}
               status={order.status}
             />
           ))}
