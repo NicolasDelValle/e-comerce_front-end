@@ -43,6 +43,7 @@ function Cart() {
         {cart.length !== 0 ? (
           <Row className="d-flex justify-content-center">
             <Col md={12} lg={6} className="pe-lg-0">
+              <p className="strong">Listado de productos</p>
               {cart.map((product, i) => (
                 <CartItem
                   key={i}
@@ -62,13 +63,13 @@ function Cart() {
                 </div>
                 <div className="d-flex align-items-start mb-2">
                   <span>Subtotal</span>
-                  <span className="fs-4 ms-auto">{SubTotalCost}</span>
+                  <span className="fs-5 ms-auto">{SubTotalCost}</span>
                 </div>
                 <div className="d-flex align-items-start mb-2">
                   <span>Total</span>
-                  <span className="fs-4 ms-auto">{total}</span>
+                  <span className="fs-5 ms-auto">{total}</span>
                 </div>
-                <div>
+                <div className="my-3">
                   <Link to={user.newToken ? "/cart/checkout" : "/login"}>
                     <Button
                       className="rounded-pill w-100 px-auto py-1 text-decoration-none"
