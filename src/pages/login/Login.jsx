@@ -19,7 +19,7 @@ function Login() {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = async (formData) => {
+  const handlerLogin = async (formData) => {
     const { data } = await axios({
       method: "post",
       url: `${process.env.REACT_APP_API_URL}tokens`,
@@ -41,50 +41,49 @@ function Login() {
               <strong className="fs-4 text-center">LOGIN</strong>
             </h1>
             <div>
-              <Form onSubmit={handleSubmit(onSubmit)} className="py-1 ">
-                <div>
-                  <Form.Group className="py-2 text-start">
-                    <Form.Label className="form-label" htmlFor="email">
-                      Email
-                    </Form.Label>
-                    <Form.Control
-                      className="form-control"
-                      type="email"
-                      {...register("email", {
-                        required: true,
-                        pattern: patronEmail,
-                      })}
-                      id="email"
-                      placeholder="Escribe tu E-mail"
-                    />
-                    {errors.email && (
-                      <div className=" text-center">
-                        <span className="mt-1 pt-2 text-danger">
-                          This field is required
-                        </span>
-                      </div>
-                    )}
-                  </Form.Group>
-                  <Form.Group className="py-2 text-start">
-                    <Form.Label className="form-label" htmlFor="password">
-                      Contraseña
-                    </Form.Label>
-                    <Form.Control
-                      className="form-control"
-                      type="password"
-                      {...register("password", { required: true })}
-                      id="password"
-                      placeholder="Contraseña"
-                    />
-                    {errors.password && (
-                      <div className=" text-center">
-                        <span className="pt-2 text-danger">
-                          This field is required
-                        </span>
-                      </div>
-                    )}
-                  </Form.Group>
-                </div>
+              <Form onSubmit={handleSubmit(handlerLogin)} className="py-1 ">
+                <Form.Group className="py-2 text-start">
+                  <Form.Label className="form-label" htmlFor="email">
+                    Email
+                  </Form.Label>
+                  <Form.Control
+                    className="form-control"
+                    type="email"
+                    {...register("email", {
+                      required: true,
+                      pattern: patronEmail,
+                    })}
+                    id="email"
+                    placeholder="Escribe tu E-mail"
+                  />
+                  {errors.email && (
+                    <div className=" text-center">
+                      <span className="mt-1 pt-2 text-danger">
+                        This field is required
+                      </span>
+                    </div>
+                  )}
+                </Form.Group>
+                <Form.Group className="py-2 text-start">
+                  <Form.Label className="form-label" htmlFor="password">
+                    Contraseña
+                  </Form.Label>
+                  <Form.Control
+                    className="form-control"
+                    type="password"
+                    {...register("password", { required: true })}
+                    id="password"
+                    placeholder="Contraseña"
+                  />
+                  {errors.password && (
+                    <div className=" text-center">
+                      <span className="pt-2 text-danger">
+                        This field is required
+                      </span>
+                    </div>
+                  )}
+                </Form.Group>
+
                 <Button
                   type="submit"
                   className="btn rounded-pill bg-black text-white mt-2 mx-auto w-auto px-4 fs-6"
