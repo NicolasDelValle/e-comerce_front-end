@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 
 function Footer() {
   return (
-    <div className="text-white mb-0 mt-auto pt-4">
-      <div className=" mt-5 pt-4 w-100 bg-black">
+    <div className="text-white mb-0 mt-auto mt-5">
+      <div className=" pt-5 w-100 bg-black">
         <div className="container">
           <div className="row py-2">
             <div className="col-md-3 col-6 text-start">
