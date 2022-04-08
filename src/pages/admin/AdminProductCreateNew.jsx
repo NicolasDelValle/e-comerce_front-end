@@ -3,6 +3,7 @@ import Sidebar from "../../components/Sidebar";
 import { useSelector } from "react-redux";
 import { useState } from "react";
 import axios from "axios";
+import { Button, Form } from "react-bootstrap";
 
 function AdminProductCreateNew() {
   const { newToken } = useSelector((state) => state.user);
@@ -42,18 +43,19 @@ function AdminProductCreateNew() {
       <Sidebar />
       <div className="w-100">
         <div className="container px-4 mx-auto py-3 ">
-          <form
+          <Form
             id="product-form"
             className="d-flex flex-column"
             onSubmit={(e) => handleCreateNewProduct(e)}
           >
             <h2>Crear un producto</h2>
             <div className="row text-start">
-              <div className="col- py-2">
-                <label className="pe-2 form-label" htmlFor="product-name">
+              <Form.Group className="col- py-2">
+                <Form.Label className="pe-2 form-label" htmlFor="product-name">
                   Nombre
-                </label>
-                <input
+                </Form.Label>
+                <Form.Control
+                  required
                   value={newProduct.name}
                   type="text"
                   name="name"
@@ -67,12 +69,15 @@ function AdminProductCreateNew() {
                   placeholder="Nombre del producto"
                   className="form-control p-1"
                 />
-              </div>
-              <div className="col-4 col-lg-2  py-2">
-                <label className="pe-2 form-label" htmlFor="product-category">
+              </Form.Group>
+              <Form.Group className="col-4 col-lg-2  py-2">
+                <Form.Label
+                  className="pe-2 form-label"
+                  htmlFor="product-category"
+                >
                   Categoría
-                </label>
-                <select
+                </Form.Label>
+                <Form.Select
                   defaultValue={"Seleccionar"}
                   value={newProduct.category}
                   id="product-category"
@@ -90,13 +95,16 @@ function AdminProductCreateNew() {
                   <option value="2">Hardware</option>
                   <option value="3">Ruedas</option>
                   <option value="4">Ropa</option>
-                </select>
-              </div>
-              <div className="col-4 col-lg-2 py-2">
-                <label className="form-label pe-2" htmlFor="product-featured">
+                </Form.Select>
+              </Form.Group>
+              <Form.Group className="col-4 col-lg-2 py-2">
+                <Form.Label
+                  className="form-label pe-2"
+                  htmlFor="product-featured"
+                >
                   Destacado
-                </label>
-                <select
+                </Form.Label>
+                <Form.Select
                   defaultValue={"Seleccionar"}
                   value={newProduct.featured}
                   id="product-featured"
@@ -112,13 +120,14 @@ function AdminProductCreateNew() {
                   <option disabled>Seleccionar</option>
                   <option value="true">Si</option>
                   <option value="false">No</option>
-                </select>
-              </div>
-              <div className="col-4 col-lg-2 py-2">
-                <label className="form-label pe-2" htmlFor="product-price">
+                </Form.Select>
+              </Form.Group>
+              <Form.Group className="col-4 col-lg-2 py-2">
+                <Form.Label className="form-label pe-2" htmlFor="product-price">
                   Precio
-                </label>
-                <input
+                </Form.Label>
+                <Form.Control
+                  required
                   value={newProduct.price}
                   type="number"
                   name="price"
@@ -132,13 +141,14 @@ function AdminProductCreateNew() {
                   placeholder="($) Precio "
                   className="form-control"
                 />
-              </div>
+              </Form.Group>
 
-              <div className="col- col-lg-2 py-2">
-                <label className="form-label pe-2" htmlFor="product-stock">
+              <Form.Group className="col- col-lg-2 py-2">
+                <Form.Label className="form-label pe-2" htmlFor="product-stock">
                   Stock
-                </label>
-                <input
+                </Form.Label>
+                <Form.Control
+                  required
                   value={newProduct.stock}
                   type="number"
                   name="stock"
@@ -152,12 +162,13 @@ function AdminProductCreateNew() {
                   placeholder="Stock"
                   className="form-control"
                 />
-              </div>
-              <div className="col- col-lg-4 py-2">
-                <label className="form-label pe-2" htmlFor="product-image">
+              </Form.Group>
+              <Form.Group className="col- col-lg-4 py-2">
+                <Form.Label className="form-label pe-2" htmlFor="product-image">
                   Imagen
-                </label>
-                <input
+                </Form.Label>
+                <Form.Control
+                  required
                   value={newProduct.imageUrl}
                   type="file"
                   placeholder="http://via.placeholder.com/640x360"
@@ -170,15 +181,17 @@ function AdminProductCreateNew() {
                   }}
                   className="form-control"
                 />
-              </div>
-              <div className="col- py-2">
-                <label
+              </Form.Group>
+              <Form.Group className="col- py-2">
+                <Form.Label
                   className="form-label pe-2"
                   htmlFor="product-description"
                 >
                   Descripción
-                </label>
-                <textarea
+                </Form.Label>
+                <Form.Control
+                  required
+                  as="textarea"
                   value={newProduct.description}
                   type="text"
                   name="description"
@@ -193,12 +206,16 @@ function AdminProductCreateNew() {
                   placeholder="Descripcion del producto"
                   className="form-control"
                 />
-              </div>
-              <div className="col- py-2">
-                <label className="form-label pe-2" htmlFor="product-details">
+              </Form.Group>
+              <Form.Group className="col- py-2">
+                <Form.Label
+                  className="form-label pe-2"
+                  htmlFor="product-details"
+                >
                   Detalles
-                </label>
-                <input
+                </Form.Label>
+                <Form.Control
+                  required
                   value={newProduct.details}
                   type="text"
                   name="details"
@@ -212,17 +229,17 @@ function AdminProductCreateNew() {
                     });
                   }}
                 />
-              </div>
+              </Form.Group>
             </div>
             <div>
-              <button className="boton me-2 botonCrear" type="submit">
+              <Button className="boton me-2 botonCrear" type="submit">
                 Crear
-              </button>
-              <button className="boton text-dark botonEliminar">
+              </Button>
+              <Button className="boton text-dark botonEliminar">
                 <Link to={"/admin/products"}>Cancelar</Link>
-              </button>
+              </Button>
             </div>
-          </form>
+          </Form>
         </div>
       </div>
     </div>
