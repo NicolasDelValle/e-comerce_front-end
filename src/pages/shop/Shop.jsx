@@ -13,7 +13,6 @@ function Shop() {
   const [apiCategories, setApiCategories] = useState([]);
   const [apiProducts, setApiProducts] = useState([]);
   const [itemTitle, setItemTitle] = useState("");
-  const [isChecked, setIsChecked] = useState(false);
 
   useEffect(() => {
     const getCategories = async () => {
