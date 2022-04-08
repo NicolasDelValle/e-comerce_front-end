@@ -39,7 +39,10 @@ function Home() {
     <>
       <NavigationBar />
       <div className="homeScrollContainer ">
-        <div className="fixed-top w-100" style={{ zIndex: -1 }}>
+        <div
+          className="fixed-top w-100 d-none d-sm-block"
+          style={{ zIndex: -1 }}
+        >
           <video
             loop
             className="vw-100"
@@ -49,7 +52,7 @@ function Home() {
           />
         </div>
 
-        <div className="homeScrollContainer-header">
+        <div className="homeScrollContainer-header d-none d-sm-flex ">
           <img
             className="homeScrollContainer-header-logo_overlay"
             src={losilogo}
@@ -57,7 +60,7 @@ function Home() {
           />
         </div>
 
-        <section className="homeScrollContainer-seccion bg-white pt-5">
+        <section className="homeScrollContainer-seccion bg-white pt-3">
           <Container className="">
             <div id="shop">
               <Row className="mt-3 d-flex justify-content-center pt-5 new-release-row">
@@ -66,7 +69,7 @@ function Home() {
                   <p>Enterate de cuales son nuestros ultimos modelos </p>
                 </div>
 
-                <div className="col-md-6 overflow-hidden ">
+                <div className="col-md-6 col-8 overflow-hidden ">
                   <Link to={`/shop`}>
                     <img
                       src={newRelease.imageUrl}

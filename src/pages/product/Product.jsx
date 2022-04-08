@@ -64,10 +64,8 @@ function Product(props) {
         >
           <div id="ProductImg" className="col-lg-6 px-5">
             <img
-              src={
-                product &&
-                `https://cybmmybwfbmxasdepuyj.supabase.co/storage/v1/object/public/images/${product.imageUrl}`
-              }
+              // agregar supabaseurl para imagenes de la DB
+              src={product && product.imageUrl}
               className="img-fluid"
               alt="productImage"
             />
