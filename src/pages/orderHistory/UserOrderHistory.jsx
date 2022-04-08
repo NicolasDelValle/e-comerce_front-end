@@ -5,7 +5,7 @@ import { Col, Container, Row, Button, Accordion } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { getUserOrders } from "../../api/orderApi";
-export const UserOrderHistory = (props) => {
+export const UserOrderHistory = () => {
   const user = useSelector((state) => state.user);
   const [orders, setOrders] = useState();
 
