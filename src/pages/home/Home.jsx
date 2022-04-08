@@ -125,14 +125,15 @@ function Home() {
                 </div>
               </Row>
 
-              <Row className="border-top border-1 justify-content-around  home-shop-section py-5">
-                <div className="">
-                  <h2>Shop</h2>
-                </div>
-                {products.slice(0, 8).map((product, i) => (
-                  <ProductCard key={i} product={product} />
-                ))}
-              </Row>
+              <div className="border-top border-1 justify-content-around  home-shop-section py-5 ">
+                <h2 className="pt-5">Shop</h2>
+
+                <Row className="g-5">
+                  {products.slice(0, 8).map((product, i) => (
+                    <ProductCard key={i} product={product} />
+                  ))}
+                </Row>
+              </div>
             </div>
           </Container>
         </section>

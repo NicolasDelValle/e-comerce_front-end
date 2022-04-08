@@ -146,7 +146,7 @@ function Product() {
               <div className="border-bottom border-1">
                 <h2>Otros Productos</h2>
               </div>
-              <Row className="pt-3  justify-content-center ">
+              <Row className="pt-3  justify-content-center g-5">
                 {randomProducts
                   .filter((product) => product.id < 5)
                   .map((product, i) => (

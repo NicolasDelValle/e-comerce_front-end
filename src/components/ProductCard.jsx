@@ -34,10 +34,10 @@ function ProductCard({ product }) {
                 alt={product.name}
                 onLoad={() => setIsLoading(false)}
               />
-              <p className="product-info mt-2">
+              <p className="product-info mt-2 text-center">
                 <strong>{product.name}</strong>
               </p>
-              <p className="product-info">
+              <p className="product-info  text-center">
                 <strong>${product.price}</strong>
               </p>
             </span>

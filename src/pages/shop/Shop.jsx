@@ -75,7 +75,7 @@ function Shop() {
       <NavigationBar className="bg-dark" />
       <div className="section pb-5 mb-5">
         <div className="container product-category-section pt-3">
-          <span className="row search mt-4 d-flex justify-content-center">
+          <span className="row search mt-4 d-flex justify-content-center g-5">
             <span className="col-md-4 ">
               <input
                 type="text"
