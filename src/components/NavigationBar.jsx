@@ -20,8 +20,11 @@ function NavigationBar() {
         onClick(e);
       }}
     >
-      <i className="bi bi-person-circle fs-5 d-flex me-1"></i>
-      {/* <span className="d-none d-sm-flex">Cuenta</span> */}
+      <i
+        title="Perfil del usuario"
+        className="bi bi-person-circle fs-5 d-flex me-1"
+      ></i>
+
       <i className="bi bi-chevron-down pt-1"></i>
     </a>
   ));
@@ -49,6 +52,7 @@ function NavigationBar() {
             {/*SI YA SE LOGUE CON EL NOMBRE Y TODO */}
 
             <Link
+              title="Tienda"
               to={"/shop"}
               className="px-2 text-white text-decoration-none d-flex justify-content-between align-items-center"
             >
@@ -57,6 +61,7 @@ function NavigationBar() {
             </Link>
             <Link
               to={"/about"}
+              title="Nosotros"
               className="px-2 text-white text-decoration-none d-flex justify-content-between align-items-center"
             >
               <i className="bi bi-people fs-6 d-flex d-sm-none"></i>
@@ -67,9 +72,12 @@ function NavigationBar() {
               <Link
                 to="/admin"
                 className="d-flex  align-items-start "
-                title="Administrador"
+                title="Panel de control"
               >
-                <i className="bi bi-gear fs-6 position-relative"></i>
+                <i className="d-flex d-sm-none bi bi-gear  position-relative"></i>
+                <span className="d-none d-sm-flex text-white text-decoration-none ">
+                  Panel de control
+                </span>
               </Link>
             ) : (
               <></>
@@ -89,10 +97,9 @@ function NavigationBar() {
                     <Link
                       className="p-1 w-100 "
                       to="/settings/account"
-                      title="Perfil"
+                      title="Ajustes"
                     >
                       <p className="p-0 m-0 ">Ajustes</p>
-                      {/* <i className="bi bi-box-arrow-up-right ms-1"></i> */}
                     </Link>
                     <Link
                       className="p-1 w-100 "
@@ -100,17 +107,16 @@ function NavigationBar() {
                       title="Historial"
                     >
                       <p className="p-0 m-0 ">Historial</p>
-                      {/* <i className="bi bi-box-arrow-up-right ms-1"></i> */}
                     </Link>
                     <Dropdown.Divider />
                     <Link
-                      className="p-1 w-100 text-danger"
+                      className="p-0 w-100 fs-6 text-danger"
                       to="/"
-                      title="Cerrar sesion"
+                      title="Cerrar sesión"
                       /*cerrar sesion*/
                       onClick={() => dispatch(actions.deleteUser)}
                     >
-                      <span>Cerrar Sesion</span>
+                      <span className="fs-6">Cerrar Sesión</span>
                     </Link>
                   </div>
                 ) : (
@@ -121,7 +127,6 @@ function NavigationBar() {
                       title="Ingresar"
                     >
                       <p className="p-0 m-0 ">Ingresar</p>
-                      {/* <i className="bi bi-box-arrow-up-right ms-1"></i> */}
                     </Link>
                     <Dropdown.Divider />
                     <Link
@@ -129,8 +134,7 @@ function NavigationBar() {
                       to="/register"
                       title="Registrarse"
                     >
-                      <p className="p-0 m-0 fw-6">Registrarse</p>
-                      {/* <i className="bi bi-box-arrow-up-right ms-1"></i> */}
+                      <p className="p-0 m-0 ">Registrarse</p>
                     </Link>
                   </div>
                 )}
@@ -139,11 +143,11 @@ function NavigationBar() {
 
             <Link
               to="/cart"
-              className=" ps-3 d-flex align-items-start"
+              className=" ms-3 d-flex align-items-start"
               title="Carrito de compras"
             >
               <div className="ms-auto position-relative">
-                <i className="bi bi-cart3 fs-6 position-relative"></i>
+                <i className="bi bi-cart3  position-relative"></i>
                 <span className=" badge rounded-pill bg-danger py-1 px-1 position-absolute top-0 end-50">
                   {totalItemsCart}
                 </span>

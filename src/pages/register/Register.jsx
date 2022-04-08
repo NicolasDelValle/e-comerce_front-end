@@ -1,32 +1,34 @@
-import { useNavigate, Link } from "react-router-dom";
+import { Button, Form } from "react-bootstrap";
 import NavigationBar from "../../components/NavigationBar";
-import "./register.css";
+import actions from "../../redux/actions/userActions";
+import { useNavigate, Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import { useState } from "react";
 import axios from "axios";
-import { useDispatch } from "react-redux";
-import actions from "../../redux/actions/userActions";
-import { Toast, ToastContainer } from "react-bootstrap";
+import "./register.css";
+import { useForm } from "react-hook-form";
 
 function Register() {
+  const [userRegister, setUserRegister] = useState({});
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const [userRegister, setUserRegister] = useState({});
-  const [errorInicioSesion, seterrorInicioSesion] = useState(false);
+  const patronEmail = /^\w+([.-]?\w+)@\w+([.-]?\w+)(.\w{2,3})+$/;
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
-  const handleRegister = async () => {
-    try {
-      const { data } = await axios({
-        method: "post",
-        url: `${process.env.REACT_APP_API_URL}users`,
-        data: userRegister,
-      });
+  const handleRegister = async (formData) => {
+    const { data } = await axios({
+      method: "post",
+      url: `${process.env.REACT_APP_API_URL}users`,
+      data: formData,
+    });
 
-      if (data) {
-        dispatch(actions.createUser(data));
-        navigate("/login");
-      }
-    } catch (error) {
-      seterrorInicioSesion((prev) => !prev);
+    if (data) {
+      dispatch(actions.createUser(data));
+      navigate("/login");
     }
   };
 
@@ -40,131 +42,138 @@ function Register() {
             <h4>
               <strong>REGISTRO</strong>
             </h4>
-
-            <form
+            <Form
               className="row text-start"
-              onSubmit={(e) => {
-                e.preventDefault();
-                handleRegister();
-              }}
+              onSubmit={handleSubmit(handleRegister)}
             >
-              <div className="col-md-4 ">
-                <label className="form-label my-2" htmlFor="firstname">
+              <Form.Group className="col-md-4 ">
+                <Form.Label className="form-label my-2" htmlFor="firstname">
                   Nombre
-                </label>
-                <input
-                  className="form-control "
+                </Form.Label>
+                <Form.Control
+                  className="form-control"
                   type="text"
-                  name="firstname"
+                  {...register("firstname", {
+                    required: true,
+                  })}
                   id="firstname"
                   placeholder="Nombre"
-                  onChange={(e) => {
-                    setUserRegister({
-                      ...userRegister,
-                      firstname: e.target.value,
-                    });
-                  }}
                 />
-              </div>
-              <div className="col-md-4  ">
-                <label className="form-label my-2" htmlFor="lastname">
+                {errors.firstname && (
+                  <div className=" text-center">
+                    <span className="mt-1 pt-2 text-danger">
+                      Este campo es requerido
+                    </span>
+                  </div>
+                )}
+              </Form.Group>
+              <Form.Group className="col-md-4  ">
+                <Form.Label className="form-label my-2" htmlFor="lastname">
                   Apellido
-                </label>
-                <input
+                </Form.Label>
+                <Form.Control
                   placeholder="Apellido"
                   className="form-control "
                   type="text"
-                  name="lastname"
+                  {...register("lastname", {
+                    required: true,
+                  })}
                   id="lastname"
-                  onChange={(e) => {
-                    setUserRegister({
-                      ...userRegister,
-                      lastname: e.target.value,
-                    });
-                  }}
                 />
-              </div>
-              <div className="col-md-4  ">
-                <label className="form-label my-2" htmlFor="number">
+                {errors.lastname && (
+                  <div className=" text-center">
+                    <span className="mt-1 pt-2 text-danger">
+                      Este campo es requerido
+                    </span>
+                  </div>
+                )}
+              </Form.Group>
+              <Form.Group className="col-md-4  ">
+                <Form.Label className="form-label my-2" htmlFor="number">
                   Teléfono
-                </label>
-                <input
+                </Form.Label>
+                <Form.Control
                   placeholder="Teléfono"
                   className="form-control "
                   type="number"
-                  name="number"
+                  {...register("number", { required: true })}
                   id="number"
-                  onChange={(e) => {
-                    setUserRegister({
-                      ...userRegister,
-                      number: e.target.value,
-                    });
-                  }}
                 />
-              </div>
-              <div className="col-md-6  ">
-                <label className="form-label my-2" htmlFor="email">
+                {errors.number && (
+                  <div className=" text-center">
+                    <span className="pt-2 text-danger">
+                      Este campo es requerido
+                    </span>
+                  </div>
+                )}
+              </Form.Group>
+              <Form.Group className="col-md-6  ">
+                <Form.Label className="form-label my-2" htmlFor="email">
                   Email
-                </label>
-                <input
+                </Form.Label>
+                <Form.Control
                   placeholder="E-mail"
                   className="form-control "
                   type="email"
-                  name="email"
+                  {...register("email", {
+                    required: true,
+                    pattern: patronEmail,
+                  })}
                   id="email"
-                  onChange={(e) => {
-                    setUserRegister({
-                      ...userRegister,
-                      email: e.target.value,
-                    });
-                  }}
                 />
-              </div>
-
-              <div className="col-md-6">
-                <label className="form-label my-2" htmlFor="password">
+                {errors.email && (
+                  <div className=" text-center">
+                    <span className="mt-1 pt-2 text-danger">
+                      Este campo es requerido
+                    </span>
+                  </div>
+                )}
+              </Form.Group>
+              <Form.Group className="col-md-6">
+                <Form.Label className="form-label my-2" htmlFor="password">
                   Contraseña
-                </label>
-                <input
+                </Form.Label>
+                <Form.Control
                   placeholder="Contraseña"
                   className="form-control "
                   type="password"
-                  name="password"
+                  {...register("password", { required: true })}
                   id="password"
-                  onChange={(e) => {
-                    setUserRegister({
-                      ...userRegister,
-                      password: e.target.value,
-                    });
-                  }}
                 />
-              </div>
-              <div className="">
-                <label className="form-label my-2" htmlFor="address">
+                {errors.password && (
+                  <div className=" text-center">
+                    <span className="mt-1 pt-2 text-danger">
+                      Este campo es requerido
+                    </span>
+                  </div>
+                )}
+              </Form.Group>
+              <Form.Group className="">
+                <Form.Label className="form-label my-2" htmlFor="address">
                   Dirección
-                </label>
-                <input
+                </Form.Label>
+                <Form.Control
                   placeholder="Dirección"
                   className="form-control "
                   type="text"
-                  name="address"
+                  {...register("address", { required: true })}
                   id="address"
-                  onChange={(e) => {
-                    setUserRegister({
-                      ...userRegister,
-                      address: e.target.value,
-                    });
-                  }}
                 />
-              </div>
-
-              <button
+                {errors.address && (
+                  <div className=" text-center">
+                    <span className="pt-2 text-danger">
+                      Este campo es requerido
+                    </span>
+                  </div>
+                )}
+              </Form.Group>
+              <Button
                 type="submit"
                 className="w-auto bg-black text-white fs-6  mt-4 mx-auto btn rounded-pill"
               >
                 Registrarme
-              </button>
-            </form>
+              </Button>
+            </Form>
             <p className="mt-3">
               ¿Ya tienes una cuenta?
               <Link className="text-black ps-2" to="/login">
@@ -173,32 +182,6 @@ function Register() {
             </p>
           </div>
         </div>
-        {errorInicioSesion && (
-          <ToastContainer
-            className="p-3 position-absolute "
-            position={"middle-center"}
-          >
-            <Toast className="bg-white">
-              <div className="text-end pe-2 pt-1 ">
-                <button
-                  className="btn"
-                  onClick={() => seterrorInicioSesion((prev) => !prev)}
-                >
-                  X
-                </button>
-              </div>
-              <Toast.Body className="p-5">
-                <h6>A ocurrido un error.</h6>
-              </Toast.Body>
-              <button
-                onClick={() => seterrorInicioSesion((prev) => !prev)}
-                className="btn boton m-2 mx-auto"
-              >
-                Intentar nuevamente
-              </button>
-            </Toast>
-          </ToastContainer>
-        )}
       </div>
     </>
   );

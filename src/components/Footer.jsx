@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./css/Footer.css";
+
 function Footer() {
   return (
-    <div className="colorFooter text-white mb-0 mt-auto pt-4">
-      <div className="footer">
+    <div className="text-white mb-0 mt-auto pt-4">
+      <div className=" mt-5 pt-4 w-100 bg-black">
         <div className="container">
           <div className="row py-2">
             <div className="col-md-3 col-6 text-start">
@@ -57,22 +57,17 @@ function Footer() {
             <p>© 2022 LOSI SKATE CO.</p>
 
             <p>
-              By{" "}
+              By
               <a href="https://www.linkedin.com/in/luis-zunino/">L. Zunino</a>,
               <a href="https://www.linkedin.com/in/nico-del-valle-dev/">
-                {" "}
-                N. del Valle{" "}
+                N. del Valle
               </a>
               ,
               <a href="https://www.linkedin.com/in/carlos-garcia-arocena-fernandez/">
-                {" "}
-                C. García Arocena{" "}
+                C. García Arocena
               </a>
-              y{" "}
-              <a href="https://www.linkedin.com/in/mauroraviolo/">
-                {" "}
-                M. Raviolo
-              </a>
+              y
+              <a href="https://www.linkedin.com/in/mauroraviolo/">M. Raviolo</a>
               .
             </p>
           </div>
