@@ -2,13 +2,15 @@ import { Button, Form } from "react-bootstrap";
 import NavigationBar from "../../components/NavigationBar";
 import actions from "../../redux/actions/userActions";
 import { useNavigate, Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import "./register.css";
 import { useForm } from "react-hook-form";
 
 function Register() {
+  const accessToken = useSelector((state) => state.user.newToken);
+
   const [userRegister, setUserRegister] = useState({});
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -18,6 +20,12 @@ function Register() {
     handleSubmit,
     formState: { errors },
   } = useForm();
+
+  useEffect(() => {
+    if (accessToken) {
+      navigate("/");
+    }
+  }, [accessToken, navigate]);
 
   const handleRegister = async (formData) => {
     const { data } = await axios({

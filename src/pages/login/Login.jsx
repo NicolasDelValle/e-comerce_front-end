@@ -19,11 +19,13 @@ function Login() {
     handleSubmit,
     formState: { errors },
   } = useForm();
+
   useEffect(() => {
     if (accessToken) {
       navigate("/");
     }
   }, [accessToken, navigate]);
+
   const handlerLogin = async (formData) => {
     const { data } = await axios({
       method: "post",
