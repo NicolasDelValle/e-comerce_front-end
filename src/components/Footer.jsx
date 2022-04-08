@@ -58,16 +58,23 @@ function Footer() {
 
             <p>
               By
-              <a href="https://www.linkedin.com/in/luis-zunino/">L. Zunino</a>,
+              <a href="https://www.linkedin.com/in/luis-zunino/">
+                {" "}
+                L. Zunino,{" "}
+              </a>
               <a href="https://www.linkedin.com/in/nico-del-valle-dev/">
                 N. del Valle
               </a>
               ,
               <a href="https://www.linkedin.com/in/carlos-garcia-arocena-fernandez/">
+                {" "}
                 C. García Arocena
-              </a>
+              </a>{" "}
               y
-              <a href="https://www.linkedin.com/in/mauroraviolo/">M. Raviolo</a>
+              <a href="https://www.linkedin.com/in/mauroraviolo/">
+                {" "}
+                M. Raviolo
+              </a>
               .
             </p>
           </div>
