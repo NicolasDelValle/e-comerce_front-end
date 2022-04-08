@@ -1,3 +1,6 @@
+
+
+
 .homeScrollContainer {
   margin: 0;
   padding: 0;
@@ -43,6 +46,20 @@
     height: 20px;
   }
 } */
+.modalImage{
+
+  
+  height: 400px; /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-color: black;
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+}
+.my-modal img{
+  max-width: 400px;
+
+  
+}
 
 
 @media (max-width: 880px) {

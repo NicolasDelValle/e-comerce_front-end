@@ -1,5 +1,5 @@
 import { useNavigate, Link } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect, Fragment } from "react";
 import axios from "axios";
 import "./login.css";
 import { useDispatch, useSelector } from "react-redux";
@@ -58,6 +58,7 @@ function Login() {
                       Email
                     </label>
                     <input
+                      defaultValue="admin@mail.com"
                       className="form-control"
                       type="email"
                       name="email"
@@ -73,6 +74,7 @@ function Login() {
                       Contraseña
                     </label>
                     <input
+                      defaultValue="1234"
                       className="form-control"
                       type="password"
                       name="password"

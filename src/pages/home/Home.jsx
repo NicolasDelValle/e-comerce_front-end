@@ -7,11 +7,21 @@ import losilogo from "../../img/logos/logoBlanco.png";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import ProductCard from "../../components/ProductCard";
-import { Link } from "react-router-dom";
-
+import { Link, useNavigate } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { Modal, Button } from "react-bootstrap";
+import actions from "../../redux/actions/welcomeActions";
+import tablasDestacadas from "../../img/newReleasesImg/tablasDestacadas.png";
 function Home() {
+  const { welcomeModal } = useSelector((state) => state);
+  const dispatch = useDispatch();
   const [products, setProducts] = useState([]);
   const [newRelease, setNewRelease] = useState([]);
+  const navigate = useNavigate();
+
+  function handleModalClick() {
+    navigate("/login");
+  }
 
   useEffect(() => {
     const getProducts = async () => {
@@ -35,8 +45,47 @@ function Home() {
     getNewRelease();
   }, []);
 
+  const handleCloseModal = () => {
+    dispatch(actions.changeWelcome());
+  };
+
   return (
     <>
+      {" "}
+      <Modal
+        className="rounded text-white my-modal container-fluid"
+        show={welcomeModal}
+        size="lg"
+        aria-labelledby="contained-modal-title-vcenter "
+        centered
+      >
+        {" "}
+        <div className="row mx-0">
+          <div
+            className="col m-0 border-end-2 modalImage"
+            style={{
+              backgroundImage: `url(${tablasDestacadas})`,
+            }}
+          >
+            {" "}
+          </div>
+          <div className="col p-3 pt-5 text-center text-black ">
+            {" "}
+            <h2>Bienvenidos a Losi Skateboards</h2>
+            <p>Este es un proyecto academico</p>
+            <Button
+              className="my-5"
+              variant=" btn-dark"
+              onClick={() => handleCloseModal()}
+            >
+              Solo quiero navegar la pagina.
+            </Button>
+            <Button variant=" btn-dark" onClick={() => handleModalClick()}>
+              Me interesa navegar como administrador.
+            </Button>
+          </div>
+        </div>
+      </Modal>
       <NavigationBar />
       <div className="homeScrollContainer ">
         <div
